@@ -1,0 +1,322 @@
+{
+  "entries": [
+    {
+      "category_id": "golf_club",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "striking_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "골프공을 치는 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat_head",
+            "straight_tube"
+          ],
+          "description_ko": "긴 샤프트 끝에 납작한 헤드가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "ball_game"
+          ],
+          "description_ko": "공을 쳐서 경기한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hockey_puck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "game_ball",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "아이스하키 경기용 원반"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "cylindrical"
+          ],
+          "description_ko": "납작한 원통형 원반이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "ball_game"
+          ],
+          "description_ko": "스틱으로 쳐서 경기에 쓴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hockey_stick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "striking_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "하키에서 퍽을 치는 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "flat_head"
+          ],
+          "description_ko": "긴 막대 끝이 꺾여 넓적한 날이 된다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "ball_game"
+          ],
+          "description_ko": "퍽이나 공을 쳐서 경기한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "roller_coaster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "play_equipment",
+            "artifact"
+          ],
+          "description_ko": "놀이공원 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rails",
+            "wavy_line"
+          ],
+          "description_ko": "오르내리는 굽은 레일 위로 차량이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "transport_people"
+          ],
+          "description_ko": "사람을 태우고 레일을 질주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rollerskates",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "wheeled_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "바퀴 달린 신발형 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_wheels",
+            "sole",
+            "curved_outline"
+          ],
+          "description_ko": "신발 밑창 아래 바퀴 네 개가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "rolling",
+            "play"
+          ],
+          "description_ko": "신고 굴러가며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "see_saw",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "play_equipment",
+            "artifact"
+          ],
+          "description_ko": "놀이터 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "triangular"
+          ],
+          "description_ko": "삼각 받침 위에 긴 널빤지가 걸쳐 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "sitting"
+          ],
+          "description_ko": "양 끝에 앉아 오르내리며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "skateboard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "wheeled_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "바퀴 달린 판 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "elongated",
+            "four_wheels"
+          ],
+          "description_ko": "길쭉한 판 아래 바퀴 네 개가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "rolling",
+            "play",
+            "exercise"
+          ],
+          "description_ko": "올라타 굴러가며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snorkel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "water_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "잠수할 때 쓰는 호흡관"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "elongated"
+          ],
+          "description_ko": "J자로 굽은 긴 호흡관이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "smelling_breathing"
+          ],
+          "description_ko": "물속을 보며 헤엄칠 때 숨을 쉰다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snowman",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "toy",
+            "artifact"
+          ],
+          "description_ko": "눈으로 만든 놀이 조형물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "face_features",
+            "branches"
+          ],
+          "description_ko": "둥근 눈덩이를 쌓고 얼굴과 나뭇가지 팔을 붙인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "decoration"
+          ],
+          "description_ko": "겨울 놀이로 만들어 세운다"
+        }
+      },
+      "notes": [
+        "눈 조형물이라 장난감 분류가 모호하다."
+      ]
+    },
+    {
+      "category_id": "soccer_ball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "game_ball",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "축구 경기용 공"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "panel_lines",
+            "spots"
+          ],
+          "description_ko": "둥근 공이 조각 면으로 나뉘고 검은 무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "ball_game",
+            "exercise"
+          ],
+          "description_ko": "발로 차며 경기한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "entries": [
+    {
+      "category_id": "snorkel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "잠수용 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "elongated"
+          ],
+          "description_ko": "J자로 굽은 긴 호흡관이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming"
+          ],
+          "description_ko": "수면 아래를 보며 헤엄칠 때 쓴다"
+        }
+      },
+      "notes": [
+        "호흡 기능 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "snowman",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "toy"
+          ],
+          "description_ko": "눈으로 만든 놀이 조형물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "branches",
+            "spots"
+          ],
+          "description_ko": "둥근 눈덩이를 쌓고 나뭇가지 팔을 꽂는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "decoration"
+          ],
+          "description_ko": "겨울 놀이로 만들어 세운다"
+        }
+      },
+      "notes": [
+        "눈 조형물이라 장난감 분류가 모호하다."
+      ]
+    },
+    {
+      "category_id": "soccer_ball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "ball"
+          ],
+          "description_ko": "축구 경기용 공"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "panel_lines",
+            "spots"
+          ],
+          "description_ko": "둥근 공이 조각 면으로 나뉘고 검은 무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bouncing",
+            "play",
+            "exercise"
+          ],
+          "description_ko": "발로 차고 튀기며 경기한다"
+        }
+      },
+      "notes": [
+        "차기 동작을 나타낼 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "swing_set",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "놀이터 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "strings",
+            "flat"
+          ],
+          "description_ko": "A자 틀에 줄로 납작한 의자가 매달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "sitting"
+          ],
+          "description_ko": "앉아서 앞뒤로 흔들며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "teddy-bear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "toy"
+          ],
+          "description_ko": "봉제 인형 장난감"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rounded_ears",
+            "stitched_seams"
+          ],
+          "description_ko": "둥근 머리와 귀, 바느질선이 있는 몸이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play"
+          ],
+          "description_ko": "안고 노는 인형이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tennis_racquet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "테니스 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "handle",
+            "strings"
+          ],
+          "description_ko": "타원형 틀에 줄이 격자로 엮이고 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "play",
+            "exercise"
+          ],
+          "description_ko": "공을 쳐서 넘긴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "waterslide",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "물놀이 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "elongated",
+            "curved_outline"
+          ],
+          "description_ko": "높은 곳에서 굽이치며 내려오는 긴 관이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "swimming"
+          ],
+          "description_ko": "미끄러져 물로 내려오며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hammer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "손으로 쓰는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "flat_head"
+          ],
+          "description_ko": "긴 자루 끝에 넓적한 쇠머리가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "construction"
+          ],
+          "description_ko": "못 등을 두드려 박는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "knife",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "날붙이 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "blade",
+            "handle",
+            "pointed_tip",
+            "elongated"
+          ],
+          "description_ko": "손잡이에 한쪽 날이 선 뾰족한 칼날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "음식이나 물건을 자른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ladder",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "작업용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "panel_lines"
+          ],
+          "description_ko": "긴 두 기둥 사이에 가로대가 반복된다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "construction"
+          ],
+          "description_ko": "딛고 높은 곳에 오른다"
+        }
+      },
+      "notes": [
+        "가로대를 나타낼 전용 태그가 없어 패널 선으로 표현했다."
+      ]
+    }
+  ]
+}

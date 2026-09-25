@@ -1,0 +1,318 @@
+{
+  "entries": [
+    {
+      "category_id": "grass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "herbaceous_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "땅을 덮는 초본 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pointed_tip",
+            "clustered_units",
+            "elongated"
+          ],
+          "description_ko": "가늘고 뾰족한 잎이 촘촘히 모여 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며 자란다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "house_plant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "herbaceous_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "실내에서 기르는 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "leaves",
+            "stem",
+            "conical"
+          ],
+          "description_ko": "원뿔대 화분 위로 줄기와 잎이 자란다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis",
+            "decoration"
+          ],
+          "description_ko": "광합성을 하며 실내를 장식한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "leaf",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant_part",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "식물의 잎"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "pointed_tip",
+            "stem"
+          ],
+          "description_ko": "끝이 뾰족한 타원형에 잎자루와 잎맥이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mushroom",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fungus",
+            "organism"
+          ],
+          "description_ko": "균류에 속하는 생물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "dome",
+            "stem",
+            "spots"
+          ],
+          "description_ko": "둥근 갓 아래 굵은 대가 있고 갓에 점이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "요리해 먹는 식재료로 쓰인다"
+        }
+      },
+      "notes": [
+        "야생 버섯은 식용이 아닐 수 있다."
+      ]
+    },
+    {
+      "category_id": "palm_tree",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "woody_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "열대 목본 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "tree_trunk",
+            "leaves",
+            "curved_outline"
+          ],
+          "description_ko": "휘어진 줄기 끝에 큰 잎이 부채처럼 퍼진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며 자란다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tree",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "woody_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "굵은 줄기가 있는 목본 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "tree_trunk",
+            "puffy_outline",
+            "branches"
+          ],
+          "description_ko": "굵은 줄기 위에 가지와 둥근 잎 덩어리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며 자란다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cannon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "firearm",
+            "weapon",
+            "artifact"
+          ],
+          "description_ko": "큰 포탄을 쏘는 화기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "straight_tube",
+            "two_wheels"
+          ],
+          "description_ko": "바퀴 위에 굵은 원통 포신이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat"
+          ],
+          "description_ko": "포탄을 쏘아 싸운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "fire_hydrant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "road_facility",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "도로의 소방 시설"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "dome",
+            "spout"
+          ],
+          "description_ko": "원통 몸체 위에 둥근 머리와 옆 배출구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "firefighting",
+            "water_flow"
+          ],
+          "description_ko": "불을 끌 물을 공급한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rifle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "firearm",
+            "weapon",
+            "artifact"
+          ],
+          "description_ko": "어깨에 대고 쏘는 화기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "handle"
+          ],
+          "description_ko": "긴 총열과 개머리판, 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat"
+          ],
+          "description_ko": "탄환을 쏘아 싸운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "stop_sign",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "road_facility",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "도로의 교통 표지"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "octagonal",
+            "pole",
+            "flat",
+            "polygonal"
+          ],
+          "description_ko": "기둥 위에 팔각형 표지판이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "signaling"
+          ],
+          "description_ko": "차량에 정지 신호를 보낸다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

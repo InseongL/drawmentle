@@ -1,0 +1,335 @@
+{
+  "entries": [
+    {
+      "category_id": "feather",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "body_part"
+          ],
+          "description_ko": "몸을 이루는 가벼운 덮개로 쓰이는 부분이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "pointed_tip",
+            "short_tail"
+          ],
+          "description_ko": "가늘고 납작하며 끝이 점점 좁아지는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection",
+            "decoration"
+          ],
+          "description_ko": "몸을 덮고, 종종 장식적 역할도 한다."
+        }
+      },
+      "notes": [
+        "몸의 일부로 보는 축을 사용했다."
+      ]
+    },
+    {
+      "category_id": "fence",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure"
+          ],
+          "description_ko": "경계를 세우는 외부 구조물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "parallel_stitches"
+          ],
+          "description_ko": "가로세로가 반복되는 패널형 구성으로 나타나기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection",
+            "shelter"
+          ],
+          "description_ko": "출입을 제한하고 구역을 나누는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "울타리와 담장처럼 유사한 경계 구조와 겹칠 수 있다."
+      ]
+    },
+    {
+      "category_id": "finger",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "손 끝에 붙은 길고 분화된 부분이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "rounded_ears"
+          ],
+          "description_ko": "가늘고 길며 끝이 비교적 둥글다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "holding_objects"
+          ],
+          "description_ko": "물건을 잡거나 집는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "기능은 손의 세부 움직임에 맞춘 대표 용도만 적었다."
+      ]
+    },
+    {
+      "category_id": "fire_hydrant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure"
+          ],
+          "description_ko": "도로변에 설치되는 급수 설비다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "box_like",
+            "opening",
+            "lid"
+          ],
+          "description_ko": "짧은 기둥형 몸체에 뚜껑이나 연결부가 보이기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "firefighting",
+            "holding_liquid"
+          ],
+          "description_ko": "소화 작업에 필요한 물 공급 지점으로 쓰인다."
+        }
+      },
+      "notes": [
+        "공공 설비 축의 대표 예로 잡았다."
+      ]
+    },
+    {
+      "category_id": "fireplace",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "실내에 놓이는 난방용 구조다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "opening",
+            "roof"
+          ],
+          "description_ko": "사각 틀 안에 불을 넣는 개구부가 있는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "shelter"
+          ],
+          "description_ko": "불을 피워 공간을 따뜻하게 한다."
+        }
+      },
+      "notes": [
+        "벽감형과 독립형 표현이 모두 있을 수 있다."
+      ]
+    },
+    {
+      "category_id": "firetruck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "소방 업무에 쓰이는 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "four_wheels",
+            "windows",
+            "lid"
+          ],
+          "description_ko": "각진 차체에 바퀴와 장비 수납부가 결합된 모습이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "firefighting",
+            "rescue"
+          ],
+          "description_ko": "소방대원과 장비를 실어 화재 진압과 구조에 사용한다."
+        }
+      },
+      "notes": [
+        "사다리차 등 변형 차종과는 구분이 느슨할 수 있다."
+      ]
+    },
+    {
+      "category_id": "fish",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "fish"
+          ],
+          "description_ko": "물속에서 사는 어류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "fins",
+            "long_tail",
+            "curved_body",
+            "smooth_surface"
+          ],
+          "description_ko": "지느러미와 꼬리가 있고 몸통이 유선형이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming"
+          ],
+          "description_ko": "물속을 헤엄치는 데 맞춰진 생물이다."
+        }
+      },
+      "notes": [
+        "상어처럼 비슷한 수중 형태와 겹칠 수 있다."
+      ]
+    },
+    {
+      "category_id": "flamingo",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "긴 다리를 지닌 물새류 조류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "long_neck",
+            "beak",
+            "wings"
+          ],
+          "description_ko": "긴 목과 다리가 두드러지고 부리가 길다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "swimming"
+          ],
+          "description_ko": "얕은 물가를 걷고 물에서 먹이를 찾는다."
+        }
+      },
+      "notes": [
+        "서 있는 자세와 굽은 목이 자주 함께 표현된다."
+      ]
+    },
+    {
+      "category_id": "flashlight",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "휴대 가능한 전기 조명 기기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle",
+            "opening"
+          ],
+          "description_ko": "손에 쥐는 길쭉한 본체와 앞쪽 발광부가 있는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "signaling"
+          ],
+          "description_ko": "어두운 곳을 비추거나 신호를 보낼 때 쓴다."
+        }
+      },
+      "notes": [
+        "손전등과 비슷한 휴대 조명 기기와 겹칠 수 있다."
+      ]
+    },
+    {
+      "category_id": "flip_flops",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "발에 신는 가벼운 착용 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "oval",
+            "two_legs"
+          ],
+          "description_ko": "평평한 밑창에 발가락 사이 끈이 연결된 형태로 그려지기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "발바닥을 덮어 신고 다닐 때 보호한다."
+        }
+      },
+      "notes": [
+        "샌들과 경계가 겹칠 수 있어 끈 구조를 중심으로 잡았다."
+      ]
+    }
+  ]
+}

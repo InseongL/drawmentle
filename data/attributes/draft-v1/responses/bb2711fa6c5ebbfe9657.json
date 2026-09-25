@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "floor_lamp",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance",
+            "furniture"
+          ],
+          "description_ko": "실내에서 바닥에 세워 두고 주변을 비추는 조명용 물체."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "기둥처럼 길게 서 있고 아래받침과 위쪽 등갓이 분리된 인상이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "공간을 밝히는 조명 역할을 한다."
+        }
+      },
+      "notes": [
+        "가구와 가전의 경계가 다소 애매할 수 있음.",
+        "등갓 형태는 다양하므로 특정 모양은 고정하지 않음."
+      ]
+    },
+    {
+      "category_id": "flower",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "식물의 생식 기관으로 피어 있는 꽃 부분."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "petals",
+            "stem"
+          ],
+          "description_ko": "꽃잎이 중심을 둘러싸고 줄기에 달린 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "식물의 일부로 광합성을 포함한 생명 활동과 번식에 관련된다."
+        }
+      },
+      "notes": [
+        "꽃 자체는 식물의 한 부분이므로 전체 식물과 구분해 볼 수 있음.",
+        "꽃 종류에 따라 꽃잎 수와 모양은 크게 달라질 수 있음."
+      ]
+    },
+    {
+      "category_id": "flying_saucer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft",
+            "fictional_entity"
+          ],
+          "description_ko": "공상과학에서 자주 그려지는 원반형 비행 물체."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat"
+          ],
+          "description_ko": "대체로 납작한 원반 형태로 표현된다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "현실적 기능이 정해진 대상이 아니어서 운송이나 비행 기능으로 단정하기 어렵다."
+        }
+      },
+      "notes": [
+        "가상 존재·상징적 이미지와 겹칠 수 있음.",
+        "실제 항공기와는 다른 상상적 도안이 흔함."
+      ]
+    },
+    {
+      "category_id": "foot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "다리의 끝부분으로 체중을 받치고 바닥에 닿는 신체 부위."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "발가락 쪽으로 길게 뻗은 덩어리 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "jumping",
+            "climbing"
+          ],
+          "description_ko": "서거나 걷고 달리며 균형을 잡는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "좌우 한 쌍으로 등장할 수 있음.",
+        "신발과는 별개로 신체 부위만 지칭함."
+      ]
+    },
+    {
+      "category_id": "fork",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "stationery"
+          ],
+          "description_ko": "음식을 집거나 나눌 때 쓰는 손잡이 달린 도구."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "teeth"
+          ],
+          "description_ko": "아래에 손잡이가 있고 위쪽에 여러 갈래의 이가 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food",
+            "eating"
+          ],
+          "description_ko": "음식을 집어 먹거나 옮기는 데 사용된다."
+        }
+      },
+      "notes": [
+        "식기류와 도구의 경계에 가까운 항목임.",
+        "개수나 이빨 모양은 다양할 수 있음."
+      ]
+    },
+    {
+      "category_id": "frog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "amphibian"
+          ],
+          "description_ko": "양서류에 속하며 물가와 육지를 오가며 사는 동물."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "short_tail"
+          ],
+          "description_ko": "네 다리와 비교적 짧은 몸통이 보통이며 성체는 꼬리가 거의 없다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "swimming",
+            "crawling"
+          ],
+          "description_ko": "뛰어오르거나 헤엄치고 기어가는 움직임이 대표적이다."
+        }
+      },
+      "notes": [
+        "올챙이 시기와 성체를 혼동하지 않도록 주의.",
+        "종에 따라 크기와 다리 길이가 크게 달라질 수 있음."
+      ]
+    },
+    {
+      "category_id": "frying_pan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "container"
+          ],
+          "description_ko": "음식을 직접 가열할 때 쓰는 평평한 조리 용기."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "handle"
+          ],
+          "description_ko": "넓고 얕은 몸체에 한쪽 손잡이가 붙는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "재료를 볶거나 지져 조리할 때 사용한다."
+        }
+      },
+      "notes": [
+        "뚜껑은 보통 핵심 특징이 아님.",
+        "후라이팬의 깊이나 손잡이 길이는 다양할 수 있음."
+      ]
+    },
+    {
+      "category_id": "garden",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "scene"
+          ],
+          "description_ko": "집이나 건물 주변에 조성된 식물 중심의 야외 공간."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "정해진 고유 윤곽이 없고 배치에 따라 형태가 달라진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration",
+            "exercise"
+          ],
+          "description_ko": "식물을 가꾸고 쉬거나 산책하는 공간으로 쓰인다."
+        }
+      },
+      "notes": [
+        "장소와 장면의 경계가 겹칠 수 있음.",
+        "공원과 달리 사적인 식재 공간을 가리킬 때가 많음."
+      ]
+    },
+    {
+      "category_id": "garden_hose",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "정원에 물을 보내는 길고 유연한 관."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "hollow"
+          ],
+          "description_ko": "길게 이어진 원통형이며 내부가 비어 있는 구조로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "cleaning"
+          ],
+          "description_ko": "물을 흘려보내 식물에 주거나 세척에 쓴다."
+        }
+      },
+      "notes": [
+        "물 저장 용기와는 다른, 전달용 관에 가까움.",
+        "감긴 상태로 그려질 수도 있음."
+      ]
+    },
+    {
+      "category_id": "giraffe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "긴 목을 가진 초식성 포유류."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "spots"
+          ],
+          "description_ko": "네 다리에 매우 긴 목이 있고 몸에는 얼룩무늬가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "walking"
+          ],
+          "description_ko": "나뭇잎을 뜯어 먹고 서서 걷는 동물이다."
+        }
+      },
+      "notes": [
+        "무늬는 개체마다 달라질 수 있으나 얼룩 패턴이 대표적임.",
+        "뿔처럼 보이는 작은 돌기가 있을 수 있으나 핵심 특징은 긴 목임."
+      ]
+    }
+  ]
+}

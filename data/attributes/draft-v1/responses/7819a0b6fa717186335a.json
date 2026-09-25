@@ -1,0 +1,333 @@
+{
+  "entries": [
+    {
+      "category_id": "goatee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "턱 아래와 입 주변에 자라는 얼굴의 털 부분이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular"
+          ],
+          "description_ko": "얼굴 윤곽에 붙는 작은 털 덩어리처럼 보이며, 길게 늘어진 단일 물체는 아니다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "신체 부위이므로 별도의 고유 기능 축을 두기 어렵다."
+        }
+      },
+      "notes": [
+        "수염의 한 종류로 볼 수 있는 범주다.",
+        "콧수염이나 턱 전체 수염과 구분이 애매할 수 있다.",
+        "얼굴 장식·스타일 요소로 함께 인식될 수 있다."
+      ]
+    },
+    {
+      "category_id": "golf_club",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "tool"
+          ],
+          "description_ko": "공을 치는 데 쓰는 스포츠용 막대형 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "길고 가느다란 자루와 끝부분이 이어진 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking"
+          ],
+          "description_ko": "공을 맞혀 보내는 데 사용된다."
+        }
+      },
+      "notes": [
+        "골프 경기용 장비로 분류하는 것이 핵심이다.",
+        "채의 머리 부분 모양은 세부 종류에 따라 달라질 수 있다.",
+        "막대와 타격부가 함께 보이는 형태를 우선 반영한다."
+      ]
+    },
+    {
+      "category_id": "grapes",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "여러 알이 무리 지어 달리는 작은 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "spots"
+          ],
+          "description_ko": "작은 둥근 알들이 한 덩어리로 모여 있는 모습이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 먹는 과일이다."
+        }
+      },
+      "notes": [
+        "보라색이나 초록색 등 색상은 고정하지 않는다.",
+        "송이 전체보다 알맹이들의 집합으로 나타나는 경우가 많다.",
+        "건포도는 별도 조리·가공 식품으로 볼 수 있어 여기서는 제외한다."
+      ]
+    },
+    {
+      "category_id": "grass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "땅을 덮으며 무리 지어 자라는 가는 식물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "branches"
+          ],
+          "description_ko": "가늘고 길게 뻗는 잎과 여러 줄기의 무리가 반복되는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "햇빛을 받아 자라는 식물로 본다."
+        }
+      },
+      "notes": [
+        "개별 풀잎보다 군락 형태로 그려질 수 있다.",
+        "잔디와 들풀의 구분은 문맥에 따라 흔들릴 수 있다.",
+        "꽃이나 열매 특징은 대표 속성으로 삼지 않는다."
+      ]
+    },
+    {
+      "category_id": "guitar",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "현을 튕기거나 치며 소리를 내는 현악기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rounded_ears",
+            "strings"
+          ],
+          "description_ko": "몸통과 긴 목, 여러 줄의 현이 함께 보이는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "연주를 통해 소리를 내는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "전기기타와 어쿠스틱 기타를 모두 포괄할 수 있다.",
+        "줄의 수와 몸통 모양은 세부 종류에 따라 달라질 수 있다.",
+        "악기 본체와 목이 함께 보이는 구성을 우선 반영한다."
+      ]
+    },
+    {
+      "category_id": "hamburger",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "빵 사이에 패티와 여러 재료를 넣어 먹는 조리 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat"
+          ],
+          "description_ko": "둥글고 납작한 빵층이 여러 겹 겹친 모습이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹는 음식이다."
+        }
+      },
+      "notes": [
+        "치즈버거 등 변형은 포함될 수 있다.",
+        "속 재료는 다양하므로 대표 재료를 고정하지 않는다.",
+        "샌드위치류와 경계가 겹칠 수 있다."
+      ]
+    },
+    {
+      "category_id": "hammer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "못을 박거나 물체를 두드리는 데 쓰는 손도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "blade"
+          ],
+          "description_ko": "자루와 단단한 머리 부분이 이어진 형태가 일반적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "construction",
+            "fastening"
+          ],
+          "description_ko": "두드리거나 못을 고정하는 데 사용된다."
+        }
+      },
+      "notes": [
+        "머리 모양은 망치 종류에 따라 달라질 수 있다.",
+        "주된 용도는 타격이지만 고정 작업도 함께 떠올릴 수 있다.",
+        "도구 전체보다 손에 쥐는 자루와 머리의 결합 구조를 반영한다."
+      ]
+    },
+    {
+      "category_id": "hand",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "팔 끝에 있는 손가락을 포함한 신체 부위다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "four_wheels"
+          ],
+          "description_ko": "손바닥과 손가락이 갈라진 불규칙한 윤곽이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "fastening",
+            "communication"
+          ],
+          "description_ko": "잡기, 조작하기, 몸짓으로 의사 전달하기에 쓰인다."
+        }
+      },
+      "notes": [
+        "왼손과 오른손의 구분은 일반적으로 중요하지 않다.",
+        "손가락 수나 자세는 그림마다 크게 달라질 수 있다.",
+        "스케치에서는 손바닥과 손가락의 분지 형태가 핵심이다."
+      ]
+    },
+    {
+      "category_id": "harp",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "여러 줄의 현을 세워 놓고 연주하는 현악기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "strings"
+          ],
+          "description_ko": "높게 선 몸체와 여러 줄의 현이 함께 보이는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "현을 뜯어 음악 소리를 내는 데 사용된다."
+        }
+      },
+      "notes": [
+        "프레임이 큰 삼각형처럼 보일 수 있으나 단정하지 않는다.",
+        "현의 수는 세부 종류에 따라 다를 수 있다.",
+        "오케스트라 악기로 인식될 가능성이 높다."
+      ]
+    },
+    {
+      "category_id": "hat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "머리에 쓰는 착용 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval"
+          ],
+          "description_ko": "머리를 덮는 둥글거나 타원형의 윗부분이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection",
+            "decoration"
+          ],
+          "description_ko": "머리에 착용하며 햇빛 가리기나 멋내기에 쓰일 수 있다."
+        }
+      },
+      "notes": [
+        "모자 종류가 매우 다양해 챙의 유무는 고정하지 않는다.",
+        "방한용, 장식용, 작업용 등 용도가 겹칠 수 있다.",
+        "머리 전체를 덮는 형태와 얕게 얹는 형태가 모두 가능하다."
+      ]
+    }
+  ]
+}

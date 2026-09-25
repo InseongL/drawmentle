@@ -1,0 +1,348 @@
+{
+  "entries": [
+    {
+      "category_id": "frog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "amphibian",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "물과 뭍을 오가는 양서류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "four_legs"
+          ],
+          "description_ko": "납작한 몸에 접힌 긴 뒷다리와 큰 눈이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "swimming",
+            "hunting"
+          ],
+          "description_ko": "뛰어오르고 헤엄치며 혀로 곤충을 잡는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "giraffe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "ungulate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "목이 긴 대형 초식 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "spots",
+            "horns"
+          ],
+          "description_ko": "매우 긴 목과 반점 무늬, 짧은 뿔이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing"
+          ],
+          "description_ko": "높은 나뭇잎을 뜯어 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hedgehog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "small_mammal",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "몸집이 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "spikes"
+          ],
+          "description_ko": "타원형 몸 위로 가시가 촘촘히 돋아 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "foraging",
+            "hiding"
+          ],
+          "description_ko": "먹이를 찾아다니고 몸을 말아 방어한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "horse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "ungulate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "발굽이 있는 대형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "mane",
+            "long_tail"
+          ],
+          "description_ko": "네 다리와 긴 목, 갈기와 긴 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "running",
+            "walking",
+            "grazing",
+            "transport_people"
+          ],
+          "description_ko": "달리고 풀을 뜯으며 사람을 태운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "kangaroo",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "marsupial",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "새끼를 주머니에 키우는 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "long_tail",
+            "long_ears"
+          ],
+          "description_ko": "굵은 뒷다리 둘과 긴 꼬리, 긴 귀가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "grazing"
+          ],
+          "description_ko": "뒷다리로 뛰어다니며 풀을 뜯는다"
+        }
+      },
+      "notes": [
+        "배 주머니를 나타낼 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "lion",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "feline",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "고양잇과에 속하는 대형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "mane",
+            "long_tail",
+            "whiskers"
+          ],
+          "description_ko": "머리 둘레 갈기와 끝이 뭉친 긴 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hunting",
+            "running",
+            "walking"
+          ],
+          "description_ko": "무리 지어 사냥하고 달린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lobster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "crustacean",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "바다에 사는 갑각류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "shell",
+            "many_legs",
+            "pincers",
+            "feelers"
+          ],
+          "description_ko": "마디진 긴 몸에 큰 집게발과 더듬이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "crawling",
+            "swimming"
+          ],
+          "description_ko": "바닥을 걷거나 기며 헤엄도 친다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "monkey",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "primate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "영장류 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_tail",
+            "rounded_ears",
+            "two_legs"
+          ],
+          "description_ko": "둥근 귀와 말린 긴 꼬리, 긴 팔다리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "jumping",
+            "foraging"
+          ],
+          "description_ko": "나무를 타고 뛰어다니며 열매를 찾는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mosquito",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "insect",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "파리목에 속하는 작은 곤충"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "many_legs",
+            "long_snout",
+            "elongated"
+          ],
+          "description_ko": "가는 몸에 날개와 긴 다리, 침 같은 주둥이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "stinging"
+          ],
+          "description_ko": "날아다니며 동물을 물어 피를 빤다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "small_mammal",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "설치류에 속하는 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "rounded_ears",
+            "long_tail",
+            "whiskers"
+          ],
+          "description_ko": "타원형 몸에 둥근 귀와 가는 긴 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "running",
+            "climbing",
+            "foraging"
+          ],
+          "description_ko": "재빠르게 다니며 먹이를 찾는다"
+        }
+      },
+      "notes": [
+        "표본에 컴퓨터 마우스도 섞여 있으나 한국어 이름 '쥐' 기준이다."
+      ]
+    }
+  ]
+}

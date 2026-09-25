@@ -1,0 +1,329 @@
+{
+  "entries": [
+    {
+      "category_id": "brain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "몸 안에 있는 신체 기관의 한 부분이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "bumpy_surface",
+            "curved_body"
+          ],
+          "description_ko": "좌우로 접히고 주름진 불규칙한 덩어리 형태로 잡는 것이 적합하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "medical_care"
+          ],
+          "description_ko": "감각과 사고를 조절하는 중추 기관이다."
+        }
+      },
+      "notes": [
+        "몸통 내부의 연부 조직으로 보는 것이 적절하다."
+      ]
+    },
+    {
+      "category_id": "bread",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "익혀서 먹는 곡물 기반 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "flat"
+          ],
+          "description_ko": "덩어리나 조각으로 보이는 납작하고 불규칙한 형상이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "serving_food"
+          ],
+          "description_ko": "식사로 먹는 주식성 음식이다."
+        }
+      },
+      "notes": [
+        "덩어리빵과 식빵 조각을 함께 포괄할 수 있다."
+      ]
+    },
+    {
+      "category_id": "bridge",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure",
+            "place"
+          ],
+          "description_ko": "지형이나 장애물을 넘어 이동을 이어 주는 구조물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "길게 뻗은 상판과 지지부가 드러나는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "사람과 물건이 한쪽에서 다른 쪽으로 지나가게 한다."
+        }
+      },
+      "notes": [
+        "도로교와 보행교를 함께 포괄한다."
+      ]
+    },
+    {
+      "category_id": "broccoli",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "먹는 채소의 한 종류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "stem",
+            "clustered_units",
+            "bumpy_surface"
+          ],
+          "description_ko": "굵은 줄기 위에 작은 덩어리들이 모여 있는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식재료로 먹는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "꽃봉오리처럼 보이는 윗부분이 핵심 특징이다."
+      ]
+    },
+    {
+      "category_id": "broom",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "바닥을 쓸어 모으는 가정용 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "branches"
+          ],
+          "description_ko": "긴 자루 끝에 솔 모양의 퍼진 부분이 붙는다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "먼지나 이물을 쓸어 모으는 데 쓴다."
+        }
+      },
+      "notes": [
+        "대걸레와 달리 액체보다 마른 이물 제거에 가깝다."
+      ]
+    },
+    {
+      "category_id": "bucket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "물건이나 액체를 담아 옮기는 용기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "handle",
+            "opening",
+            "hollow"
+          ],
+          "description_ko": "윗부분이 열린 빈 통에 손잡이가 달린 형태가 일반적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "물, 모래 같은 내용물을 담거나 옮기는 데 쓴다."
+        }
+      },
+      "notes": [
+        "통 모양의 단순 용기로 보는 것이 적절하다."
+      ]
+    },
+    {
+      "category_id": "bulldozer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "땅을 밀고 정지하는 건설용 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "blade",
+            "box_like"
+          ],
+          "description_ko": "앞쪽의 큰 밀개와 뒤쪽의 무게감 있는 차체가 두드러진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "construction",
+            "digging"
+          ],
+          "description_ko": "흙을 밀거나 고르는 건설 작업에 쓰인다."
+        }
+      },
+      "notes": [
+        "궤도식으로 그려질 수 있지만 핵심은 전면 밀개와 작업용 차체이다."
+      ]
+    },
+    {
+      "category_id": "bus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "여러 사람이 함께 타는 대중 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "four_wheels"
+          ],
+          "description_ko": "길쭉한 차체에 창문이 여러 개 배열된 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "승객을 실어 나르는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "시내버스와 같은 일반적인 여객용 형태를 기준으로 한다."
+      ]
+    },
+    {
+      "category_id": "bush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "작고 낮게 퍼지는 목본성 식물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "branches",
+            "leaves",
+            "irregular"
+          ],
+          "description_ko": "가지와 잎이 여러 갈래로 퍼진 덩어리 윤곽이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "잎을 통해 성장하는 식물이다."
+        }
+      },
+      "notes": [
+        "나무보다 낮고 덩어리감이 강한 식물로 잡는다."
+      ]
+    },
+    {
+      "category_id": "butterfly",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "날개를 가진 곤충이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "two_legs",
+            "antenna",
+            "curved_body"
+          ],
+          "description_ko": "큰 날개 두 장과 가느다란 몸통, 더듬이가 있는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying"
+          ],
+          "description_ko": "주로 날아다니며 이동한다."
+        }
+      },
+      "notes": [
+        "나방과 겹칠 수 있어 날개무늬는 쓰지 않았다."
+      ]
+    }
+  ]
+}

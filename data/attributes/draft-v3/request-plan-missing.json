@@ -1,0 +1,16 @@
+{
+  "profile": "compact",
+  "selection": "missing",
+  "pending_categories": 0,
+  "selected_categories": 0,
+  "initial_calls": 0,
+  "input_characters": 0,
+  "api_call_cap": null,
+  "output_token_limit_per_call": null,
+  "previous_usage": {
+    "recorded_responses": 0,
+    "note": "Recorded responses only; includes cache tokens in input. Failed requests may have unreported usage. Not a cost estimate."
+  },
+  "note": "Offline character count, not tokens or price. Every repair repeats its reduced input. API call cap includes HTTP retries.",
+  "jobs": []
+}

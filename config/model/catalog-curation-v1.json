@@ -1,0 +1,2891 @@
+{
+  "version": "catalog-curation-v1.1",
+  "status": "draft",
+  "decided_at": "2026-09-23",
+  "source_catalog": {
+    "file": "data/quickdraw/metadata/labels.json",
+    "version": "qd-categories-v1",
+    "categories_sha256": "6326fde883ce71b53153bdf50b3671dc6652c8c14e67c7d07d23c1af6d103f4b"
+  },
+  "rationale_doc": "docs/catalog-curation-v1.md",
+  "evidence": {
+    "attributes": "data/attributes/draft-v3/dictionary.json (sketch-attributes-v3)",
+    "tag_similarity": "모듈별 태그 multi-hot 코사인의 평균. 두 대상 모두 known인 축만 사용한다.",
+    "samples": "data/quickdraw/previews (라벨별 20장)",
+    "recognition_model": null
+  },
+  "model_handling": {
+    "raw_outputs": 345,
+    "class_order": "unchanged",
+    "merge": "원본 클래스의 확률을 service_id 대표 카테고리로 합산한 뒤 Top-3를 뽑는다.",
+    "retraining": "현재 345개 학습 라벨을 유지한다. 출력 라벨을 바꾸는 재학습은 별도 모델·카탈로그 버전과 재평가가 필요하다.",
+    "unsupported": "bird도 자신의 ID와 원래 확률을 유지하여 Top-3 후보에 포함한다. 미지원 후보가 Top-3에 있으면 deferred/unsupported_candidate로 보류한다. 마스킹·재정규화하지 않는다.",
+    "candidate_order": "대표 ID별로 소속 원본 class_index의 최솟값을 candidate_index로 사용한다. p가 같으면 candidate_index 오름차순이다.",
+    "calibration": "전체 345개 logits에 온도 보정·softmax를 적용하고 service_id별 확률을 합산한다. 합산 후 재정규화하지 않는다. 인식·성공 임계값과 확률 보정 품질은 매핑 적용 후 별도로 평가한다."
+  },
+  "criteria_ko": {
+    "same_or_subtype": "같은 개념이거나 한쪽이 다른 쪽의 하위 종류다. 부분을 전체로 인정하는 규칙은 part_as_whole로 구분한다.",
+    "no_sketch_difference": "태그 유사도와 미리보기만으로 구분 불가를 확정할 수 없다. 별개 개념의 통합은 보류하고 원본 후보를 유지한다.",
+    "broad_parent": "넓은 상위 개념은 점수·정답에서 제외할 수 있지만 인식 확률과 후보에는 남긴다.",
+    "part_as_whole": "그림 구분 불가능의 증명이 아니라 부분을 전체의 정답으로도 인정하는 게임 규칙 초안이다. 양방향 혼동과 부분 그림의 성공 허용은 출시 전 검증한다."
+  },
+  "counts": {
+    "raw_classes": 345,
+    "inference_candidates": 335,
+    "service_categories": 334,
+    "merged_away": 10,
+    "dropped": 0,
+    "unsupported_candidates": 1,
+    "daily_candidates": 323,
+    "held_merge_groups": 6
+  },
+  "groups": [
+    {
+      "id": "drinking_cup",
+      "decision": "merge",
+      "keep": "cup",
+      "remove": [
+        "mug",
+        "coffee_cup"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "cup~mug": 1.0,
+        "cup~coffee_cup": 0.92,
+        "mug~coffee_cup": 0.92
+      },
+      "reason_ko": "머그잔·커피잔은 컵의 한 종류다. 손잡이 달린 원통 잔이라는 형태·기능 태그가 같다. 한국어로도 '컵'이 가장 일반적이다."
+    },
+    {
+      "id": "bus",
+      "decision": "merge",
+      "keep": "bus",
+      "remove": [
+        "school_bus"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "bus~school_bus": 1.0
+      },
+      "reason_ko": "통학버스는 버스의 용도 구분일 뿐이다. v3 태그 구성이 완전히 같아 점수로도 구분되지 않는다."
+    },
+    {
+      "id": "truck",
+      "decision": "merge",
+      "keep": "truck",
+      "remove": [
+        "pickup_truck"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "truck~pickup_truck": 0.82
+      },
+      "reason_ko": "픽업트럭은 트럭의 한 종류다. 열린 짐칸 외에는 형태·기능이 트럭과 같다."
+    },
+    {
+      "id": "bowed_string",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "violin~cello": 0.96
+      },
+      "reason_ko": "첼로와 바이올린은 별개 악기다. 크기·받침 등 구분 단서의 사용 여부를 태그와 20장 표본만으로 확정할 수 없어 통합을 보류한다.",
+      "proposed_keep": "violin",
+      "members": [
+        "violin",
+        "cello"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "small_berry",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "blueberry~blackberry": 0.94
+      },
+      "reason_ko": "블랙베리의 작은 알갱이 표면과 블루베리의 둥근 열매는 스케치에서도 구분 단서가 될 수 있어 통합을 보류한다.",
+      "proposed_keep": "blueberry",
+      "members": [
+        "blueberry",
+        "blackberry"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "cake",
+      "decision": "merge",
+      "keep": "cake",
+      "remove": [
+        "birthday_cake"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "cake~birthday_cake": 0.89
+      },
+      "reason_ko": "생일 케이크는 케이크에 초를 꽂은 것이다. 생일 케이크를 그려도 케이크 정답으로 인정되는 편이 자연스럽다."
+    },
+    {
+      "id": "pencil",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "pencil~crayon": 0.9
+      },
+      "reason_ko": "크레용과 연필은 별개 도구다. 태그 공유만으로 형태 구분 불가나 정답 상호 인정이 입증되지 않아 통합을 보류한다.",
+      "proposed_keep": "pencil",
+      "members": [
+        "pencil",
+        "crayon"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "foot",
+      "decision": "merge",
+      "keep": "foot",
+      "remove": [
+        "toe"
+      ],
+      "criterion": "part_as_whole",
+      "tag_similarity": {
+        "foot~toe": 0.9
+      },
+      "reason_ko": "부분을 그려도 전체 정답으로 인정하는 게임 규칙 초안으로 통합을 유지한다. 그림 구분 불가능이나 낮은 태그 유사도의 원인이 입증된 것은 아니며 출시 전 검증한다."
+    },
+    {
+      "id": "arm",
+      "decision": "merge",
+      "keep": "arm",
+      "remove": [
+        "elbow"
+      ],
+      "criterion": "part_as_whole",
+      "tag_similarity": {
+        "arm~elbow": 0.9
+      },
+      "reason_ko": "부분을 그려도 전체 정답으로 인정하는 게임 규칙 초안으로 통합을 유지한다. 그림 구분 불가능이나 낮은 태그 유사도의 원인이 입증된 것은 아니며 출시 전 검증한다."
+    },
+    {
+      "id": "beard",
+      "decision": "merge",
+      "keep": "beard",
+      "remove": [
+        "goatee"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "beard~goatee": 0.7
+      },
+      "reason_ko": "턱수염은 수염의 한 종류다. 털 가닥 뭉치라는 형태가 같고 둘 다 기능이 없다."
+    },
+    {
+      "id": "clock",
+      "decision": "merge",
+      "keep": "clock",
+      "remove": [
+        "alarm_clock"
+      ],
+      "criterion": "same_or_subtype",
+      "tag_similarity": {
+        "clock~alarm_clock": 0.64
+      },
+      "reason_ko": "알람시계는 시계의 한 종류다. 알람 시계를 그려도 시계 정답으로 인정되는 편이 자연스럽다. 손목시계는 착용품이라 유지한다."
+    },
+    {
+      "id": "book",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "book~passport": 0.9
+      },
+      "reason_ko": "여권과 책은 별개 개념이다. 스케치 중첩만으로 책 정답에 여권을 인정하는 규칙을 확정하지 않고 통합을 보류한다.",
+      "proposed_keep": "book",
+      "members": [
+        "book",
+        "passport"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "washer",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "washing_machine~dishwasher": 0.92
+      },
+      "reason_ko": "식기세척기의 식기·선반과 세탁기의 둥근 창은 구분 단서가 될 수 있다. 한쪽을 그리면 다른 쪽 정답으로 인정하는 문제 때문에 통합을 보류한다.",
+      "proposed_keep": "washing_machine",
+      "members": [
+        "washing_machine",
+        "dishwasher"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "whirlwind",
+      "decision": "hold",
+      "criterion": "no_sketch_difference",
+      "tag_similarity": {
+        "tornado~hurricane": 0.74
+      },
+      "reason_ko": "허리케인의 원형 소용돌이와 토네이도의 깔때기 윤곽은 구분 단서가 될 수 있어 통합을 보류한다.",
+      "proposed_keep": "tornado",
+      "members": [
+        "tornado",
+        "hurricane"
+      ],
+      "previous_decision": "merge"
+    },
+    {
+      "id": "leg",
+      "decision": "merge",
+      "keep": "leg",
+      "remove": [
+        "knee"
+      ],
+      "criterion": "part_as_whole",
+      "tag_similarity": {
+        "leg~knee": 0.47
+      },
+      "reason_ko": "부분을 그려도 전체 정답으로 인정하는 게임 규칙 초안으로 통합을 유지한다. 그림 구분 불가능이나 낮은 태그 유사도의 원인이 입증된 것은 아니며 출시 전 검증한다."
+    },
+    {
+      "id": "generic_bird",
+      "decision": "unsupported",
+      "keep": "bird",
+      "remove": [],
+      "criterion": "broad_parent",
+      "tag_similarity": {
+        "bird~duck": 0.82,
+        "bird~owl": 0.75,
+        "bird~parrot": 0.68,
+        "bird~penguin": 0.72,
+        "bird~swan": 0.65,
+        "bird~flamingo": 0.6
+      },
+      "reason_ko": "상위 개념 bird는 점수·정답에서 제외하되 인식 후보로 유지한다. bird 확률을 지우고 재정규화하면 다른 새의 확신도가 부풀려지므로 Top-3에 포함되면 판정을 보류한다.",
+      "members": [
+        "bird"
+      ]
+    }
+  ],
+  "reviewed_and_kept": [
+    {
+      "pair": [
+        "guitar",
+        "violin"
+      ],
+      "tag_similarity": 0.96,
+      "reason_ko": "둥근 울림구멍과 뜯는 연주 방식이 다르고 한국 사용자에게 별개 악기로 익숙하다."
+    },
+    {
+      "pair": [
+        "van",
+        "truck"
+      ],
+      "tag_similarity": 0.9,
+      "reason_ko": "승합차는 사람을 태우는 높은 차체, 트럭은 짐칸이 따로 있는 형태로 그려진다."
+    },
+    {
+      "pair": [
+        "marker",
+        "pencil"
+      ],
+      "tag_similarity": 0.89,
+      "reason_ko": "마커는 뚜껑이 있는 굵은 몸체라 뾰족한 연필과 구분된다."
+    },
+    {
+      "pair": [
+        "laptop",
+        "computer"
+      ],
+      "tag_similarity": 0.89,
+      "reason_ko": "노트북은 접힌 화면+자판, 컴퓨터는 모니터와 분리된 자판으로 그려진다."
+    },
+    {
+      "pair": [
+        "rain",
+        "cloud"
+      ],
+      "tag_similarity": 0.9,
+      "reason_ko": "비는 빗방울이 함께 그려져 구름만 있는 그림과 구분된다."
+    },
+    {
+      "pair": [
+        "house_plant",
+        "flower"
+      ],
+      "tag_similarity": 0.89,
+      "reason_ko": "화분 식물은 화분이 그려지고 꽃은 꽃잎이 중심이다."
+    },
+    {
+      "pair": [
+        "police_car",
+        "car"
+      ],
+      "tag_similarity": 0.81,
+      "reason_ko": "경광등이라는 분명한 그림 특징이 있다. 구급차·소방차와 함께 긴급 차량으로 구분된다."
+    },
+    {
+      "pair": [
+        "ceiling_fan",
+        "fan"
+      ],
+      "tag_similarity": 0.78,
+      "reason_ko": "천장에 매달린 구조와 받침 위 망 구조로 그림이 다르다."
+    },
+    {
+      "pair": [
+        "finger",
+        "hand"
+      ],
+      "tag_similarity": 0.61,
+      "reason_ko": "손가락 하나만 길게 그리는 경우가 많아 다섯 갈래 손과 구분된다."
+    },
+    {
+      "pair": [
+        "moustache",
+        "beard"
+      ],
+      "tag_similarity": 0.75,
+      "reason_ko": "콧수염은 코 아래, 수염은 턱을 덮어 위치와 모양이 다르다."
+    },
+    {
+      "pair": [
+        "microwave",
+        "oven"
+      ],
+      "tag_similarity": 0.86,
+      "reason_ko": "전자레인지는 창문 문과 버튼판, 오븐은 앞문과 내부 선반으로 그려진다."
+    },
+    {
+      "pair": [
+        "stove",
+        "oven"
+      ],
+      "tag_similarity": 0.77,
+      "reason_ko": "레인지는 윗면 화구와 불꽃이 특징이다."
+    },
+    {
+      "pair": [
+        "grapes",
+        "blueberry"
+      ],
+      "tag_similarity": 0.9,
+      "reason_ko": "포도는 역삼각형 송이와 꼭지로 그려지고, 블루베리는 몇 개의 둥근 알이다."
+    },
+    {
+      "pair": [
+        "van",
+        "bus"
+      ],
+      "tag_similarity": 0.9,
+      "reason_ko": "승합차는 버스보다 짧고 창문 줄이 적은 차체로 그려진다."
+    },
+    {
+      "pair": [
+        "car",
+        "bus"
+      ],
+      "tag_similarity": 0.96,
+      "reason_ko": "승용차와 버스는 차체 길이와 창문 줄로 구분된다. 태그가 비슷한 것은 같은 육상 탈것이라서다."
+    },
+    {
+      "pair": [
+        "tiger",
+        "lion"
+      ],
+      "tag_similarity": 0.89,
+      "reason_ko": "줄무늬와 갈기로 구분된다. 같은 고양잇과라 점수가 가깝게 나오는 것은 의도한 결과다."
+    },
+    {
+      "pair": [
+        "trombone",
+        "trumpet"
+      ],
+      "tag_similarity": 0.92,
+      "reason_ko": "긴 슬라이드와 밸브로 구분된다."
+    },
+    {
+      "pair": [
+        "hockey_stick",
+        "golf_club"
+      ],
+      "tag_similarity": 0.89,
+      "reason_ko": "꺾인 날과 곧은 샤프트 끝 헤드로 구분된다."
+    },
+    {
+      "pair": [
+        "panda",
+        "bear"
+      ],
+      "tag_similarity": 0.81,
+      "reason_ko": "눈가·팔다리 무늬로 구분된다."
+    }
+  ],
+  "daily_overrides": [
+    {
+      "category_id": "star",
+      "catalog_daily_status": "exclude_proposed",
+      "daily_candidate": true,
+      "reason_ko": "도형이지만 누구나 같은 모양으로 알아보고 그리는 대표 기호다. 사용자 결정(2026-09-23)으로 정답 후보에 넣는다."
+    },
+    {
+      "category_id": "smiley_face",
+      "catalog_daily_status": "exclude_proposed",
+      "daily_candidate": true,
+      "reason_ko": "기호이지만 얼굴이라는 구체적 대상으로 인식되고 그리기 쉽다. 사용자 결정(2026-09-23)으로 정답 후보에 넣는다."
+    }
+  ],
+  "categories": {
+    "aircraft_carrier": {
+      "class_index": 0,
+      "display_name_ko": "항공모함",
+      "service_id": "aircraft_carrier",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "airplane": {
+      "class_index": 1,
+      "display_name_ko": "비행기",
+      "service_id": "airplane",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "alarm_clock": {
+      "class_index": 2,
+      "display_name_ko": "알람시계",
+      "service_id": "clock",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "clock"
+    },
+    "ambulance": {
+      "class_index": 3,
+      "display_name_ko": "구급차",
+      "service_id": "ambulance",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "angel": {
+      "class_index": 4,
+      "display_name_ko": "천사",
+      "service_id": "angel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "animal_migration": {
+      "class_index": 5,
+      "display_name_ko": "동물의 이동",
+      "service_id": "animal_migration",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "ant": {
+      "class_index": 6,
+      "display_name_ko": "개미",
+      "service_id": "ant",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "anvil": {
+      "class_index": 7,
+      "display_name_ko": "모루",
+      "service_id": "anvil",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "apple": {
+      "class_index": 8,
+      "display_name_ko": "사과",
+      "service_id": "apple",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "arm": {
+      "class_index": 9,
+      "display_name_ko": "팔",
+      "service_id": "arm",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "arm"
+    },
+    "asparagus": {
+      "class_index": 10,
+      "display_name_ko": "아스파라거스",
+      "service_id": "asparagus",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "axe": {
+      "class_index": 11,
+      "display_name_ko": "도끼",
+      "service_id": "axe",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "backpack": {
+      "class_index": 12,
+      "display_name_ko": "배낭",
+      "service_id": "backpack",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "banana": {
+      "class_index": 13,
+      "display_name_ko": "바나나",
+      "service_id": "banana",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bandage": {
+      "class_index": 14,
+      "display_name_ko": "붕대",
+      "service_id": "bandage",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "barn": {
+      "class_index": 15,
+      "display_name_ko": "헛간",
+      "service_id": "barn",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "baseball": {
+      "class_index": 16,
+      "display_name_ko": "야구공",
+      "service_id": "baseball",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "baseball_bat": {
+      "class_index": 17,
+      "display_name_ko": "야구 방망이",
+      "service_id": "baseball_bat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "basket": {
+      "class_index": 18,
+      "display_name_ko": "바구니",
+      "service_id": "basket",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "basketball": {
+      "class_index": 19,
+      "display_name_ko": "농구공",
+      "service_id": "basketball",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bat": {
+      "class_index": 20,
+      "display_name_ko": "박쥐",
+      "service_id": "bat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bathtub": {
+      "class_index": 21,
+      "display_name_ko": "욕조",
+      "service_id": "bathtub",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "beach": {
+      "class_index": 22,
+      "display_name_ko": "해변",
+      "service_id": "beach",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bear": {
+      "class_index": 23,
+      "display_name_ko": "곰",
+      "service_id": "bear",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "beard": {
+      "class_index": 24,
+      "display_name_ko": "수염",
+      "service_id": "beard",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "beard"
+    },
+    "bed": {
+      "class_index": 25,
+      "display_name_ko": "침대",
+      "service_id": "bed",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bee": {
+      "class_index": 26,
+      "display_name_ko": "벌",
+      "service_id": "bee",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "belt": {
+      "class_index": 27,
+      "display_name_ko": "허리띠",
+      "service_id": "belt",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bench": {
+      "class_index": 28,
+      "display_name_ko": "벤치",
+      "service_id": "bench",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bicycle": {
+      "class_index": 29,
+      "display_name_ko": "자전거",
+      "service_id": "bicycle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "binoculars": {
+      "class_index": 30,
+      "display_name_ko": "쌍안경",
+      "service_id": "binoculars",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bird": {
+      "class_index": 31,
+      "display_name_ko": "새",
+      "service_id": "bird",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "generic_bird"
+    },
+    "birthday_cake": {
+      "class_index": 32,
+      "display_name_ko": "생일 케이크",
+      "service_id": "cake",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "cake"
+    },
+    "blackberry": {
+      "class_index": 33,
+      "display_name_ko": "블랙베리",
+      "service_id": "blackberry",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "small_berry"
+    },
+    "blueberry": {
+      "class_index": 34,
+      "display_name_ko": "블루베리",
+      "service_id": "blueberry",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "small_berry"
+    },
+    "book": {
+      "class_index": 35,
+      "display_name_ko": "책",
+      "service_id": "book",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "book"
+    },
+    "boomerang": {
+      "class_index": 36,
+      "display_name_ko": "부메랑",
+      "service_id": "boomerang",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bottlecap": {
+      "class_index": 37,
+      "display_name_ko": "병뚜껑",
+      "service_id": "bottlecap",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bowtie": {
+      "class_index": 38,
+      "display_name_ko": "나비넥타이",
+      "service_id": "bowtie",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bracelet": {
+      "class_index": 39,
+      "display_name_ko": "팔찌",
+      "service_id": "bracelet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "brain": {
+      "class_index": 40,
+      "display_name_ko": "뇌",
+      "service_id": "brain",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bread": {
+      "class_index": 41,
+      "display_name_ko": "빵",
+      "service_id": "bread",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bridge": {
+      "class_index": 42,
+      "display_name_ko": "다리(교량)",
+      "service_id": "bridge",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "broccoli": {
+      "class_index": 43,
+      "display_name_ko": "브로콜리",
+      "service_id": "broccoli",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "broom": {
+      "class_index": 44,
+      "display_name_ko": "빗자루",
+      "service_id": "broom",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bucket": {
+      "class_index": 45,
+      "display_name_ko": "양동이",
+      "service_id": "bucket",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bulldozer": {
+      "class_index": 46,
+      "display_name_ko": "불도저",
+      "service_id": "bulldozer",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "bus": {
+      "class_index": 47,
+      "display_name_ko": "버스",
+      "service_id": "bus",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "bus"
+    },
+    "bush": {
+      "class_index": 48,
+      "display_name_ko": "덤불",
+      "service_id": "bush",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "butterfly": {
+      "class_index": 49,
+      "display_name_ko": "나비",
+      "service_id": "butterfly",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cactus": {
+      "class_index": 50,
+      "display_name_ko": "선인장",
+      "service_id": "cactus",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cake": {
+      "class_index": 51,
+      "display_name_ko": "케이크",
+      "service_id": "cake",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "cake"
+    },
+    "calculator": {
+      "class_index": 52,
+      "display_name_ko": "계산기",
+      "service_id": "calculator",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "calendar": {
+      "class_index": 53,
+      "display_name_ko": "달력",
+      "service_id": "calendar",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "camel": {
+      "class_index": 54,
+      "display_name_ko": "낙타",
+      "service_id": "camel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "camera": {
+      "class_index": 55,
+      "display_name_ko": "카메라",
+      "service_id": "camera",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "camouflage": {
+      "class_index": 56,
+      "display_name_ko": "위장",
+      "service_id": "camouflage",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "campfire": {
+      "class_index": 57,
+      "display_name_ko": "모닥불",
+      "service_id": "campfire",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "candle": {
+      "class_index": 58,
+      "display_name_ko": "양초",
+      "service_id": "candle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cannon": {
+      "class_index": 59,
+      "display_name_ko": "대포",
+      "service_id": "cannon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "canoe": {
+      "class_index": 60,
+      "display_name_ko": "카누",
+      "service_id": "canoe",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "car": {
+      "class_index": 61,
+      "display_name_ko": "자동차",
+      "service_id": "car",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "carrot": {
+      "class_index": 62,
+      "display_name_ko": "당근",
+      "service_id": "carrot",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "castle": {
+      "class_index": 63,
+      "display_name_ko": "성",
+      "service_id": "castle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cat": {
+      "class_index": 64,
+      "display_name_ko": "고양이",
+      "service_id": "cat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "ceiling_fan": {
+      "class_index": 65,
+      "display_name_ko": "천장 선풍기",
+      "service_id": "ceiling_fan",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cello": {
+      "class_index": 66,
+      "display_name_ko": "첼로",
+      "service_id": "cello",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "bowed_string"
+    },
+    "cell_phone": {
+      "class_index": 67,
+      "display_name_ko": "휴대전화",
+      "service_id": "cell_phone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "chair": {
+      "class_index": 68,
+      "display_name_ko": "의자",
+      "service_id": "chair",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "chandelier": {
+      "class_index": 69,
+      "display_name_ko": "샹들리에",
+      "service_id": "chandelier",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "church": {
+      "class_index": 70,
+      "display_name_ko": "교회",
+      "service_id": "church",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "circle": {
+      "class_index": 71,
+      "display_name_ko": "원",
+      "service_id": "circle",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "clarinet": {
+      "class_index": 72,
+      "display_name_ko": "클라리넷",
+      "service_id": "clarinet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "clock": {
+      "class_index": 73,
+      "display_name_ko": "시계",
+      "service_id": "clock",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "clock"
+    },
+    "cloud": {
+      "class_index": 74,
+      "display_name_ko": "구름",
+      "service_id": "cloud",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "coffee_cup": {
+      "class_index": 75,
+      "display_name_ko": "커피잔",
+      "service_id": "cup",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "drinking_cup"
+    },
+    "compass": {
+      "class_index": 76,
+      "display_name_ko": "나침반",
+      "service_id": "compass",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "computer": {
+      "class_index": 77,
+      "display_name_ko": "컴퓨터",
+      "service_id": "computer",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cookie": {
+      "class_index": 78,
+      "display_name_ko": "쿠키",
+      "service_id": "cookie",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cooler": {
+      "class_index": 79,
+      "display_name_ko": "아이스박스",
+      "service_id": "cooler",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "couch": {
+      "class_index": 80,
+      "display_name_ko": "소파",
+      "service_id": "couch",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cow": {
+      "class_index": 81,
+      "display_name_ko": "소",
+      "service_id": "cow",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "crab": {
+      "class_index": 82,
+      "display_name_ko": "게",
+      "service_id": "crab",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "crayon": {
+      "class_index": 83,
+      "display_name_ko": "크레용",
+      "service_id": "crayon",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "pencil"
+    },
+    "crocodile": {
+      "class_index": 84,
+      "display_name_ko": "악어",
+      "service_id": "crocodile",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "crown": {
+      "class_index": 85,
+      "display_name_ko": "왕관",
+      "service_id": "crown",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cruise_ship": {
+      "class_index": 86,
+      "display_name_ko": "크루즈선",
+      "service_id": "cruise_ship",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "cup": {
+      "class_index": 87,
+      "display_name_ko": "컵",
+      "service_id": "cup",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "drinking_cup"
+    },
+    "diamond": {
+      "class_index": 88,
+      "display_name_ko": "다이아몬드",
+      "service_id": "diamond",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dishwasher": {
+      "class_index": 89,
+      "display_name_ko": "식기세척기",
+      "service_id": "dishwasher",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "washer"
+    },
+    "diving_board": {
+      "class_index": 90,
+      "display_name_ko": "다이빙대",
+      "service_id": "diving_board",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dog": {
+      "class_index": 91,
+      "display_name_ko": "개",
+      "service_id": "dog",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dolphin": {
+      "class_index": 92,
+      "display_name_ko": "돌고래",
+      "service_id": "dolphin",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "donut": {
+      "class_index": 93,
+      "display_name_ko": "도넛",
+      "service_id": "donut",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "door": {
+      "class_index": 94,
+      "display_name_ko": "문",
+      "service_id": "door",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dragon": {
+      "class_index": 95,
+      "display_name_ko": "드래곤",
+      "service_id": "dragon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dresser": {
+      "class_index": 96,
+      "display_name_ko": "서랍장",
+      "service_id": "dresser",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "drill": {
+      "class_index": 97,
+      "display_name_ko": "드릴",
+      "service_id": "drill",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "drums": {
+      "class_index": 98,
+      "display_name_ko": "드럼",
+      "service_id": "drums",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "duck": {
+      "class_index": 99,
+      "display_name_ko": "오리",
+      "service_id": "duck",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "dumbbell": {
+      "class_index": 100,
+      "display_name_ko": "아령",
+      "service_id": "dumbbell",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "ear": {
+      "class_index": 101,
+      "display_name_ko": "귀",
+      "service_id": "ear",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "elbow": {
+      "class_index": 102,
+      "display_name_ko": "팔꿈치",
+      "service_id": "arm",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "arm"
+    },
+    "elephant": {
+      "class_index": 103,
+      "display_name_ko": "코끼리",
+      "service_id": "elephant",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "envelope": {
+      "class_index": 104,
+      "display_name_ko": "봉투",
+      "service_id": "envelope",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "eraser": {
+      "class_index": 105,
+      "display_name_ko": "지우개",
+      "service_id": "eraser",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "eye": {
+      "class_index": 106,
+      "display_name_ko": "눈",
+      "service_id": "eye",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "eyeglasses": {
+      "class_index": 107,
+      "display_name_ko": "안경",
+      "service_id": "eyeglasses",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "face": {
+      "class_index": 108,
+      "display_name_ko": "얼굴",
+      "service_id": "face",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "fan": {
+      "class_index": 109,
+      "display_name_ko": "선풍기",
+      "service_id": "fan",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "feather": {
+      "class_index": 110,
+      "display_name_ko": "깃털",
+      "service_id": "feather",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "fence": {
+      "class_index": 111,
+      "display_name_ko": "울타리",
+      "service_id": "fence",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "finger": {
+      "class_index": 112,
+      "display_name_ko": "손가락",
+      "service_id": "finger",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "fire_hydrant": {
+      "class_index": 113,
+      "display_name_ko": "소화전",
+      "service_id": "fire_hydrant",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "fireplace": {
+      "class_index": 114,
+      "display_name_ko": "벽난로",
+      "service_id": "fireplace",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "firetruck": {
+      "class_index": 115,
+      "display_name_ko": "소방차",
+      "service_id": "firetruck",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "fish": {
+      "class_index": 116,
+      "display_name_ko": "물고기",
+      "service_id": "fish",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "flamingo": {
+      "class_index": 117,
+      "display_name_ko": "플라밍고",
+      "service_id": "flamingo",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "flashlight": {
+      "class_index": 118,
+      "display_name_ko": "손전등",
+      "service_id": "flashlight",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "flip_flops": {
+      "class_index": 119,
+      "display_name_ko": "쪼리",
+      "service_id": "flip_flops",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "floor_lamp": {
+      "class_index": 120,
+      "display_name_ko": "플로어 램프",
+      "service_id": "floor_lamp",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "flower": {
+      "class_index": 121,
+      "display_name_ko": "꽃",
+      "service_id": "flower",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "flying_saucer": {
+      "class_index": 122,
+      "display_name_ko": "비행접시",
+      "service_id": "flying_saucer",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "foot": {
+      "class_index": 123,
+      "display_name_ko": "발",
+      "service_id": "foot",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "foot"
+    },
+    "fork": {
+      "class_index": 124,
+      "display_name_ko": "포크",
+      "service_id": "fork",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "frog": {
+      "class_index": 125,
+      "display_name_ko": "개구리",
+      "service_id": "frog",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "frying_pan": {
+      "class_index": 126,
+      "display_name_ko": "프라이팬",
+      "service_id": "frying_pan",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "garden": {
+      "class_index": 127,
+      "display_name_ko": "정원",
+      "service_id": "garden",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "garden_hose": {
+      "class_index": 128,
+      "display_name_ko": "정원 호스",
+      "service_id": "garden_hose",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "giraffe": {
+      "class_index": 129,
+      "display_name_ko": "기린",
+      "service_id": "giraffe",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "goatee": {
+      "class_index": 130,
+      "display_name_ko": "턱수염",
+      "service_id": "beard",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "beard"
+    },
+    "golf_club": {
+      "class_index": 131,
+      "display_name_ko": "골프채",
+      "service_id": "golf_club",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "grapes": {
+      "class_index": 132,
+      "display_name_ko": "포도",
+      "service_id": "grapes",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "grass": {
+      "class_index": 133,
+      "display_name_ko": "풀",
+      "service_id": "grass",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "guitar": {
+      "class_index": 134,
+      "display_name_ko": "기타",
+      "service_id": "guitar",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hamburger": {
+      "class_index": 135,
+      "display_name_ko": "햄버거",
+      "service_id": "hamburger",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hammer": {
+      "class_index": 136,
+      "display_name_ko": "망치",
+      "service_id": "hammer",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hand": {
+      "class_index": 137,
+      "display_name_ko": "손",
+      "service_id": "hand",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "harp": {
+      "class_index": 138,
+      "display_name_ko": "하프",
+      "service_id": "harp",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hat": {
+      "class_index": 139,
+      "display_name_ko": "모자",
+      "service_id": "hat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "headphones": {
+      "class_index": 140,
+      "display_name_ko": "헤드폰",
+      "service_id": "headphones",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hedgehog": {
+      "class_index": 141,
+      "display_name_ko": "고슴도치",
+      "service_id": "hedgehog",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "helicopter": {
+      "class_index": 142,
+      "display_name_ko": "헬리콥터",
+      "service_id": "helicopter",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "helmet": {
+      "class_index": 143,
+      "display_name_ko": "헬멧",
+      "service_id": "helmet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hexagon": {
+      "class_index": 144,
+      "display_name_ko": "육각형",
+      "service_id": "hexagon",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "hockey_puck": {
+      "class_index": 145,
+      "display_name_ko": "하키 퍽",
+      "service_id": "hockey_puck",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hockey_stick": {
+      "class_index": 146,
+      "display_name_ko": "하키 스틱",
+      "service_id": "hockey_stick",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "horse": {
+      "class_index": 147,
+      "display_name_ko": "말",
+      "service_id": "horse",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hospital": {
+      "class_index": 148,
+      "display_name_ko": "병원",
+      "service_id": "hospital",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hot_air_balloon": {
+      "class_index": 149,
+      "display_name_ko": "열기구",
+      "service_id": "hot_air_balloon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hot_dog": {
+      "class_index": 150,
+      "display_name_ko": "핫도그",
+      "service_id": "hot_dog",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hot_tub": {
+      "class_index": 151,
+      "display_name_ko": "온수 욕조",
+      "service_id": "hot_tub",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hourglass": {
+      "class_index": 152,
+      "display_name_ko": "모래시계",
+      "service_id": "hourglass",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "house": {
+      "class_index": 153,
+      "display_name_ko": "집",
+      "service_id": "house",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "house_plant": {
+      "class_index": 154,
+      "display_name_ko": "화분 식물",
+      "service_id": "house_plant",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "hurricane": {
+      "class_index": 155,
+      "display_name_ko": "허리케인",
+      "service_id": "hurricane",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "whirlwind"
+    },
+    "ice_cream": {
+      "class_index": 156,
+      "display_name_ko": "아이스크림",
+      "service_id": "ice_cream",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "jacket": {
+      "class_index": 157,
+      "display_name_ko": "재킷",
+      "service_id": "jacket",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "jail": {
+      "class_index": 158,
+      "display_name_ko": "감옥",
+      "service_id": "jail",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "kangaroo": {
+      "class_index": 159,
+      "display_name_ko": "캥거루",
+      "service_id": "kangaroo",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "key": {
+      "class_index": 160,
+      "display_name_ko": "열쇠",
+      "service_id": "key",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "keyboard": {
+      "class_index": 161,
+      "display_name_ko": "키보드",
+      "service_id": "keyboard",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "knee": {
+      "class_index": 162,
+      "display_name_ko": "무릎",
+      "service_id": "leg",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "leg"
+    },
+    "knife": {
+      "class_index": 163,
+      "display_name_ko": "칼",
+      "service_id": "knife",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "ladder": {
+      "class_index": 164,
+      "display_name_ko": "사다리",
+      "service_id": "ladder",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lantern": {
+      "class_index": 165,
+      "display_name_ko": "랜턴",
+      "service_id": "lantern",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "laptop": {
+      "class_index": 166,
+      "display_name_ko": "노트북",
+      "service_id": "laptop",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "leaf": {
+      "class_index": 167,
+      "display_name_ko": "나뭇잎",
+      "service_id": "leaf",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "leg": {
+      "class_index": 168,
+      "display_name_ko": "다리",
+      "service_id": "leg",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "leg"
+    },
+    "light_bulb": {
+      "class_index": 169,
+      "display_name_ko": "전구",
+      "service_id": "light_bulb",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lighter": {
+      "class_index": 170,
+      "display_name_ko": "라이터",
+      "service_id": "lighter",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lighthouse": {
+      "class_index": 171,
+      "display_name_ko": "등대",
+      "service_id": "lighthouse",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lightning": {
+      "class_index": 172,
+      "display_name_ko": "번개",
+      "service_id": "lightning",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "line": {
+      "class_index": 173,
+      "display_name_ko": "직선",
+      "service_id": "line",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "lion": {
+      "class_index": 174,
+      "display_name_ko": "사자",
+      "service_id": "lion",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lipstick": {
+      "class_index": 175,
+      "display_name_ko": "립스틱",
+      "service_id": "lipstick",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lobster": {
+      "class_index": 176,
+      "display_name_ko": "바닷가재",
+      "service_id": "lobster",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "lollipop": {
+      "class_index": 177,
+      "display_name_ko": "막대사탕",
+      "service_id": "lollipop",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mailbox": {
+      "class_index": 178,
+      "display_name_ko": "우편함",
+      "service_id": "mailbox",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "map": {
+      "class_index": 179,
+      "display_name_ko": "지도",
+      "service_id": "map",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "marker": {
+      "class_index": 180,
+      "display_name_ko": "마커펜",
+      "service_id": "marker",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "matches": {
+      "class_index": 181,
+      "display_name_ko": "성냥",
+      "service_id": "matches",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "megaphone": {
+      "class_index": 182,
+      "display_name_ko": "확성기",
+      "service_id": "megaphone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mermaid": {
+      "class_index": 183,
+      "display_name_ko": "인어",
+      "service_id": "mermaid",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "microphone": {
+      "class_index": 184,
+      "display_name_ko": "마이크",
+      "service_id": "microphone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "microwave": {
+      "class_index": 185,
+      "display_name_ko": "전자레인지",
+      "service_id": "microwave",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "monkey": {
+      "class_index": 186,
+      "display_name_ko": "원숭이",
+      "service_id": "monkey",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "moon": {
+      "class_index": 187,
+      "display_name_ko": "달",
+      "service_id": "moon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mosquito": {
+      "class_index": 188,
+      "display_name_ko": "모기",
+      "service_id": "mosquito",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "motorbike": {
+      "class_index": 189,
+      "display_name_ko": "오토바이",
+      "service_id": "motorbike",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mountain": {
+      "class_index": 190,
+      "display_name_ko": "산",
+      "service_id": "mountain",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mouse": {
+      "class_index": 191,
+      "display_name_ko": "쥐",
+      "service_id": "mouse",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "moustache": {
+      "class_index": 192,
+      "display_name_ko": "콧수염",
+      "service_id": "moustache",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mouth": {
+      "class_index": 193,
+      "display_name_ko": "입",
+      "service_id": "mouth",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "mug": {
+      "class_index": 194,
+      "display_name_ko": "머그잔",
+      "service_id": "cup",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "drinking_cup"
+    },
+    "mushroom": {
+      "class_index": 195,
+      "display_name_ko": "버섯",
+      "service_id": "mushroom",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "nail": {
+      "class_index": 196,
+      "display_name_ko": "못",
+      "service_id": "nail",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "necklace": {
+      "class_index": 197,
+      "display_name_ko": "목걸이",
+      "service_id": "necklace",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "nose": {
+      "class_index": 198,
+      "display_name_ko": "코",
+      "service_id": "nose",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "ocean": {
+      "class_index": 199,
+      "display_name_ko": "바다",
+      "service_id": "ocean",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "octagon": {
+      "class_index": 200,
+      "display_name_ko": "팔각형",
+      "service_id": "octagon",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "octopus": {
+      "class_index": 201,
+      "display_name_ko": "문어",
+      "service_id": "octopus",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "onion": {
+      "class_index": 202,
+      "display_name_ko": "양파",
+      "service_id": "onion",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "oven": {
+      "class_index": 203,
+      "display_name_ko": "오븐",
+      "service_id": "oven",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "owl": {
+      "class_index": 204,
+      "display_name_ko": "올빼미",
+      "service_id": "owl",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "paintbrush": {
+      "class_index": 205,
+      "display_name_ko": "붓",
+      "service_id": "paintbrush",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "paint_can": {
+      "class_index": 206,
+      "display_name_ko": "페인트통",
+      "service_id": "paint_can",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "palm_tree": {
+      "class_index": 207,
+      "display_name_ko": "야자수",
+      "service_id": "palm_tree",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "panda": {
+      "class_index": 208,
+      "display_name_ko": "판다",
+      "service_id": "panda",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pants": {
+      "class_index": 209,
+      "display_name_ko": "바지",
+      "service_id": "pants",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "paper_clip": {
+      "class_index": 210,
+      "display_name_ko": "클립",
+      "service_id": "paper_clip",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "parachute": {
+      "class_index": 211,
+      "display_name_ko": "낙하산",
+      "service_id": "parachute",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "parrot": {
+      "class_index": 212,
+      "display_name_ko": "앵무새",
+      "service_id": "parrot",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "passport": {
+      "class_index": 213,
+      "display_name_ko": "여권",
+      "service_id": "passport",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "book"
+    },
+    "peanut": {
+      "class_index": 214,
+      "display_name_ko": "땅콩",
+      "service_id": "peanut",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pear": {
+      "class_index": 215,
+      "display_name_ko": "배",
+      "service_id": "pear",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "peas": {
+      "class_index": 216,
+      "display_name_ko": "완두콩",
+      "service_id": "peas",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pencil": {
+      "class_index": 217,
+      "display_name_ko": "연필",
+      "service_id": "pencil",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "pencil"
+    },
+    "penguin": {
+      "class_index": 218,
+      "display_name_ko": "펭귄",
+      "service_id": "penguin",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "piano": {
+      "class_index": 219,
+      "display_name_ko": "피아노",
+      "service_id": "piano",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pickup_truck": {
+      "class_index": 220,
+      "display_name_ko": "픽업트럭",
+      "service_id": "truck",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "truck"
+    },
+    "picture_frame": {
+      "class_index": 221,
+      "display_name_ko": "액자",
+      "service_id": "picture_frame",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pig": {
+      "class_index": 222,
+      "display_name_ko": "돼지",
+      "service_id": "pig",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pillow": {
+      "class_index": 223,
+      "display_name_ko": "베개",
+      "service_id": "pillow",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pineapple": {
+      "class_index": 224,
+      "display_name_ko": "파인애플",
+      "service_id": "pineapple",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pizza": {
+      "class_index": 225,
+      "display_name_ko": "피자",
+      "service_id": "pizza",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pliers": {
+      "class_index": 226,
+      "display_name_ko": "펜치",
+      "service_id": "pliers",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "police_car": {
+      "class_index": 227,
+      "display_name_ko": "경찰차",
+      "service_id": "police_car",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pond": {
+      "class_index": 228,
+      "display_name_ko": "연못",
+      "service_id": "pond",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "pool": {
+      "class_index": 229,
+      "display_name_ko": "수영장",
+      "service_id": "pool",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "popsicle": {
+      "class_index": 230,
+      "display_name_ko": "아이스바",
+      "service_id": "popsicle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "postcard": {
+      "class_index": 231,
+      "display_name_ko": "엽서",
+      "service_id": "postcard",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "potato": {
+      "class_index": 232,
+      "display_name_ko": "감자",
+      "service_id": "potato",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "power_outlet": {
+      "class_index": 233,
+      "display_name_ko": "콘센트",
+      "service_id": "power_outlet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "purse": {
+      "class_index": 234,
+      "display_name_ko": "핸드백",
+      "service_id": "purse",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rabbit": {
+      "class_index": 235,
+      "display_name_ko": "토끼",
+      "service_id": "rabbit",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "raccoon": {
+      "class_index": 236,
+      "display_name_ko": "라쿤",
+      "service_id": "raccoon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "radio": {
+      "class_index": 237,
+      "display_name_ko": "라디오",
+      "service_id": "radio",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rain": {
+      "class_index": 238,
+      "display_name_ko": "비",
+      "service_id": "rain",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rainbow": {
+      "class_index": 239,
+      "display_name_ko": "무지개",
+      "service_id": "rainbow",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rake": {
+      "class_index": 240,
+      "display_name_ko": "갈퀴",
+      "service_id": "rake",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "remote_control": {
+      "class_index": 241,
+      "display_name_ko": "리모컨",
+      "service_id": "remote_control",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rhinoceros": {
+      "class_index": 242,
+      "display_name_ko": "코뿔소",
+      "service_id": "rhinoceros",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rifle": {
+      "class_index": 243,
+      "display_name_ko": "소총",
+      "service_id": "rifle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "river": {
+      "class_index": 244,
+      "display_name_ko": "강",
+      "service_id": "river",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "roller_coaster": {
+      "class_index": 245,
+      "display_name_ko": "롤러코스터",
+      "service_id": "roller_coaster",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "rollerskates": {
+      "class_index": 246,
+      "display_name_ko": "롤러스케이트",
+      "service_id": "rollerskates",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sailboat": {
+      "class_index": 247,
+      "display_name_ko": "돛단배",
+      "service_id": "sailboat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sandwich": {
+      "class_index": 248,
+      "display_name_ko": "샌드위치",
+      "service_id": "sandwich",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "saw": {
+      "class_index": 249,
+      "display_name_ko": "톱",
+      "service_id": "saw",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "saxophone": {
+      "class_index": 250,
+      "display_name_ko": "색소폰",
+      "service_id": "saxophone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "school_bus": {
+      "class_index": 251,
+      "display_name_ko": "통학버스",
+      "service_id": "bus",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "bus"
+    },
+    "scissors": {
+      "class_index": 252,
+      "display_name_ko": "가위",
+      "service_id": "scissors",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "scorpion": {
+      "class_index": 253,
+      "display_name_ko": "전갈",
+      "service_id": "scorpion",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "screwdriver": {
+      "class_index": 254,
+      "display_name_ko": "드라이버",
+      "service_id": "screwdriver",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sea_turtle": {
+      "class_index": 255,
+      "display_name_ko": "바다거북",
+      "service_id": "sea_turtle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "see_saw": {
+      "class_index": 256,
+      "display_name_ko": "시소",
+      "service_id": "see_saw",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "shark": {
+      "class_index": 257,
+      "display_name_ko": "상어",
+      "service_id": "shark",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sheep": {
+      "class_index": 258,
+      "display_name_ko": "양",
+      "service_id": "sheep",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "shoe": {
+      "class_index": 259,
+      "display_name_ko": "신발",
+      "service_id": "shoe",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "shorts": {
+      "class_index": 260,
+      "display_name_ko": "반바지",
+      "service_id": "shorts",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "shovel": {
+      "class_index": 261,
+      "display_name_ko": "삽",
+      "service_id": "shovel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sink": {
+      "class_index": 262,
+      "display_name_ko": "싱크대",
+      "service_id": "sink",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "skateboard": {
+      "class_index": 263,
+      "display_name_ko": "스케이트보드",
+      "service_id": "skateboard",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "skull": {
+      "class_index": 264,
+      "display_name_ko": "두개골",
+      "service_id": "skull",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "skyscraper": {
+      "class_index": 265,
+      "display_name_ko": "고층 빌딩",
+      "service_id": "skyscraper",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sleeping_bag": {
+      "class_index": 266,
+      "display_name_ko": "침낭",
+      "service_id": "sleeping_bag",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "smiley_face": {
+      "class_index": 267,
+      "display_name_ko": "웃는 얼굴 기호",
+      "service_id": "smiley_face",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "snail": {
+      "class_index": 268,
+      "display_name_ko": "달팽이",
+      "service_id": "snail",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "snake": {
+      "class_index": 269,
+      "display_name_ko": "뱀",
+      "service_id": "snake",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "snorkel": {
+      "class_index": 270,
+      "display_name_ko": "스노클",
+      "service_id": "snorkel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "snowflake": {
+      "class_index": 271,
+      "display_name_ko": "눈송이",
+      "service_id": "snowflake",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "snowman": {
+      "class_index": 272,
+      "display_name_ko": "눈사람",
+      "service_id": "snowman",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "soccer_ball": {
+      "class_index": 273,
+      "display_name_ko": "축구공",
+      "service_id": "soccer_ball",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sock": {
+      "class_index": 274,
+      "display_name_ko": "양말",
+      "service_id": "sock",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "speedboat": {
+      "class_index": 275,
+      "display_name_ko": "쾌속정",
+      "service_id": "speedboat",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "spider": {
+      "class_index": 276,
+      "display_name_ko": "거미",
+      "service_id": "spider",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "spoon": {
+      "class_index": 277,
+      "display_name_ko": "숟가락",
+      "service_id": "spoon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "spreadsheet": {
+      "class_index": 278,
+      "display_name_ko": "스프레드시트",
+      "service_id": "spreadsheet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "square": {
+      "class_index": 279,
+      "display_name_ko": "정사각형",
+      "service_id": "square",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "squiggle": {
+      "class_index": 280,
+      "display_name_ko": "구불구불한 선",
+      "service_id": "squiggle",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "squirrel": {
+      "class_index": 281,
+      "display_name_ko": "다람쥐",
+      "service_id": "squirrel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stairs": {
+      "class_index": 282,
+      "display_name_ko": "계단",
+      "service_id": "stairs",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "star": {
+      "class_index": 283,
+      "display_name_ko": "별 모양",
+      "service_id": "star",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "steak": {
+      "class_index": 284,
+      "display_name_ko": "스테이크",
+      "service_id": "steak",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stereo": {
+      "class_index": 285,
+      "display_name_ko": "스테레오 오디오",
+      "service_id": "stereo",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stethoscope": {
+      "class_index": 286,
+      "display_name_ko": "청진기",
+      "service_id": "stethoscope",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stitches": {
+      "class_index": 287,
+      "display_name_ko": "봉합 자국",
+      "service_id": "stitches",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stop_sign": {
+      "class_index": 288,
+      "display_name_ko": "정지 표지판",
+      "service_id": "stop_sign",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "stove": {
+      "class_index": 289,
+      "display_name_ko": "레인지",
+      "service_id": "stove",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "strawberry": {
+      "class_index": 290,
+      "display_name_ko": "딸기",
+      "service_id": "strawberry",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "streetlight": {
+      "class_index": 291,
+      "display_name_ko": "가로등",
+      "service_id": "streetlight",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "string_bean": {
+      "class_index": 292,
+      "display_name_ko": "껍질콩",
+      "service_id": "string_bean",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "submarine": {
+      "class_index": 293,
+      "display_name_ko": "잠수함",
+      "service_id": "submarine",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "suitcase": {
+      "class_index": 294,
+      "display_name_ko": "여행 가방",
+      "service_id": "suitcase",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sun": {
+      "class_index": 295,
+      "display_name_ko": "태양",
+      "service_id": "sun",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "swan": {
+      "class_index": 296,
+      "display_name_ko": "백조",
+      "service_id": "swan",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sweater": {
+      "class_index": 297,
+      "display_name_ko": "스웨터",
+      "service_id": "sweater",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "swing_set": {
+      "class_index": 298,
+      "display_name_ko": "그네",
+      "service_id": "swing_set",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "sword": {
+      "class_index": 299,
+      "display_name_ko": "검",
+      "service_id": "sword",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "syringe": {
+      "class_index": 300,
+      "display_name_ko": "주사기",
+      "service_id": "syringe",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "table": {
+      "class_index": 301,
+      "display_name_ko": "탁자",
+      "service_id": "table",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "teapot": {
+      "class_index": 302,
+      "display_name_ko": "찻주전자",
+      "service_id": "teapot",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "teddy-bear": {
+      "class_index": 303,
+      "display_name_ko": "곰 인형",
+      "service_id": "teddy-bear",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "telephone": {
+      "class_index": 304,
+      "display_name_ko": "전화기",
+      "service_id": "telephone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "television": {
+      "class_index": 305,
+      "display_name_ko": "텔레비전",
+      "service_id": "television",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tennis_racquet": {
+      "class_index": 306,
+      "display_name_ko": "테니스 라켓",
+      "service_id": "tennis_racquet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tent": {
+      "class_index": 307,
+      "display_name_ko": "텐트",
+      "service_id": "tent",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "the_eiffel_tower": {
+      "class_index": 308,
+      "display_name_ko": "에펠탑",
+      "service_id": "the_eiffel_tower",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "the_great_wall_of_china": {
+      "class_index": 309,
+      "display_name_ko": "만리장성",
+      "service_id": "the_great_wall_of_china",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "the_mona_lisa": {
+      "class_index": 310,
+      "display_name_ko": "모나리자",
+      "service_id": "the_mona_lisa",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tiger": {
+      "class_index": 311,
+      "display_name_ko": "호랑이",
+      "service_id": "tiger",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "toaster": {
+      "class_index": 312,
+      "display_name_ko": "토스터",
+      "service_id": "toaster",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "toe": {
+      "class_index": 313,
+      "display_name_ko": "발가락",
+      "service_id": "foot",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "foot"
+    },
+    "toilet": {
+      "class_index": 314,
+      "display_name_ko": "변기",
+      "service_id": "toilet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tooth": {
+      "class_index": 315,
+      "display_name_ko": "치아",
+      "service_id": "tooth",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "toothbrush": {
+      "class_index": 316,
+      "display_name_ko": "칫솔",
+      "service_id": "toothbrush",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "toothpaste": {
+      "class_index": 317,
+      "display_name_ko": "치약",
+      "service_id": "toothpaste",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tornado": {
+      "class_index": 318,
+      "display_name_ko": "토네이도",
+      "service_id": "tornado",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "whirlwind"
+    },
+    "tractor": {
+      "class_index": 319,
+      "display_name_ko": "트랙터",
+      "service_id": "tractor",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "traffic_light": {
+      "class_index": 320,
+      "display_name_ko": "신호등",
+      "service_id": "traffic_light",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "train": {
+      "class_index": 321,
+      "display_name_ko": "기차",
+      "service_id": "train",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "tree": {
+      "class_index": 322,
+      "display_name_ko": "나무",
+      "service_id": "tree",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "triangle": {
+      "class_index": 323,
+      "display_name_ko": "삼각형",
+      "service_id": "triangle",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "trombone": {
+      "class_index": 324,
+      "display_name_ko": "트롬본",
+      "service_id": "trombone",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "truck": {
+      "class_index": 325,
+      "display_name_ko": "트럭",
+      "service_id": "truck",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "truck"
+    },
+    "trumpet": {
+      "class_index": 326,
+      "display_name_ko": "트럼펫",
+      "service_id": "trumpet",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "t-shirt": {
+      "class_index": 327,
+      "display_name_ko": "티셔츠",
+      "service_id": "t-shirt",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "umbrella": {
+      "class_index": 328,
+      "display_name_ko": "우산",
+      "service_id": "umbrella",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "underwear": {
+      "class_index": 329,
+      "display_name_ko": "속옷",
+      "service_id": "underwear",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "van": {
+      "class_index": 330,
+      "display_name_ko": "승합차",
+      "service_id": "van",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "vase": {
+      "class_index": 331,
+      "display_name_ko": "꽃병",
+      "service_id": "vase",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "violin": {
+      "class_index": 332,
+      "display_name_ko": "바이올린",
+      "service_id": "violin",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "bowed_string"
+    },
+    "washing_machine": {
+      "class_index": 333,
+      "display_name_ko": "세탁기",
+      "service_id": "washing_machine",
+      "scoring": true,
+      "daily_candidate": true,
+      "curation_group": "washer"
+    },
+    "watermelon": {
+      "class_index": 334,
+      "display_name_ko": "수박",
+      "service_id": "watermelon",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "waterslide": {
+      "class_index": 335,
+      "display_name_ko": "워터슬라이드",
+      "service_id": "waterslide",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "whale": {
+      "class_index": 336,
+      "display_name_ko": "고래",
+      "service_id": "whale",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "wheel": {
+      "class_index": 337,
+      "display_name_ko": "바퀴",
+      "service_id": "wheel",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "windmill": {
+      "class_index": 338,
+      "display_name_ko": "풍차",
+      "service_id": "windmill",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "wine_bottle": {
+      "class_index": 339,
+      "display_name_ko": "와인병",
+      "service_id": "wine_bottle",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "wine_glass": {
+      "class_index": 340,
+      "display_name_ko": "와인잔",
+      "service_id": "wine_glass",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "wristwatch": {
+      "class_index": 341,
+      "display_name_ko": "손목시계",
+      "service_id": "wristwatch",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "yoga": {
+      "class_index": 342,
+      "display_name_ko": "요가",
+      "service_id": "yoga",
+      "scoring": true,
+      "daily_candidate": false
+    },
+    "zebra": {
+      "class_index": 343,
+      "display_name_ko": "얼룩말",
+      "service_id": "zebra",
+      "scoring": true,
+      "daily_candidate": true
+    },
+    "zigzag": {
+      "class_index": 344,
+      "display_name_ko": "지그재그",
+      "service_id": "zigzag",
+      "scoring": true,
+      "daily_candidate": false
+    }
+  },
+  "previous_version": "catalog-curation-v1"
+}

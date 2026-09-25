@@ -1,0 +1,170 @@
+{
+  "entries": [
+    {
+      "category_id": "tractor",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "농사용 작업 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "chimney",
+            "windows"
+          ],
+          "description_ko": "큰 뒷바퀴와 작은 앞바퀴에 운전실과 굴뚝이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "farming",
+            "transport_goods"
+          ],
+          "description_ko": "밭을 갈고 짐을 끈다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "train",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "선로를 달리는 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "many_wheels",
+            "windows",
+            "rails",
+            "chimney"
+          ],
+          "description_ko": "여러 칸의 긴 차량이 선로 위를 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "선로를 따라 사람과 화물을 나른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "truck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "화물을 싣는 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "앞 운전실 뒤로 큰 상자형 짐칸이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_goods"
+          ],
+          "description_ko": "많은 짐을 싣고 나른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "van",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "승합용 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "지붕이 높은 상자형 차체에 창문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "여러 사람이나 짐을 싣는다"
+        }
+      },
+      "notes": [
+        "truck과 형태 태그가 같다."
+      ]
+    },
+    {
+      "category_id": "wheel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle_part",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "탈것의 바퀴 부품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rays"
+          ],
+          "description_ko": "둥근 테두리에서 중심으로 바큇살이 모인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "rolling",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "굴러서 탈것이 사람과 짐을 옮기게 한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

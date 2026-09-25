@@ -1,0 +1,191 @@
+{
+  "entries": [
+    {
+      "category_id": "backpack",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory",
+            "container"
+          ],
+          "description_ko": "등에 메는 가방 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "handle",
+            "lid"
+          ],
+          "description_ko": "사각 몸체 위에 덮개와 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing",
+            "transport_goods"
+          ],
+          "description_ko": "소지품을 넣어 등에 메고 다닌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "banana",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "열대 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "stem"
+          ],
+          "description_ko": "초승달처럼 길게 휘고 끝에 꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "껍질을 벗겨 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "chair",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "실내 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "flat",
+            "rectangular"
+          ],
+          "description_ko": "네 다리 위에 앉는 판과 등받이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "사람이 앉는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "couch",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "실내 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "panel_lines"
+          ],
+          "description_ko": "팔걸이와 등받이 사이에 방석이 나뉘어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting",
+            "sleeping"
+          ],
+          "description_ko": "여러 사람이 앉거나 눕는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "airplane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "고정익 항공 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wings",
+            "windows"
+          ],
+          "description_ko": "긴 동체 양옆에 날개, 옆면에 창문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "하늘을 날아 사람과 화물을 옮긴다"
+        }
+      },
+      "notes": [
+        "꼬리 날개는 지느러미 대신 날개로 표현했다."
+      ]
+    },
+    {
+      "category_id": "cruise_ship",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "대형 여객 수상 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "box_like",
+            "windows"
+          ],
+          "description_ko": "긴 선체 위에 여러 층 갑판과 창문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "living_accommodation"
+          ],
+          "description_ko": "승객을 태우고 숙박하며 항해한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "entries": [
+    {
+      "category_id": "bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "날아다니는 포유류로 분류된다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "curved_body",
+            "pointed_ears",
+            "short_tail"
+          ],
+          "description_ko": "접힌 날개와 작은 귀가 보이는, 몸통이 짧고 꼬리가 짧은 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "hunting"
+          ],
+          "description_ko": "주로 날아다니며 먹이를 찾고 잡는다."
+        }
+      },
+      "notes": [
+        "박쥐(동물)로 해석한 항목이다.",
+        "날개는 곤충처럼 보일 수 있어도 포유류 분류를 우선했다."
+      ]
+    },
+    {
+      "category_id": "bathtub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "물이 고이도록 만든 큰 받침형 용기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "oval",
+            "hollow",
+            "opening",
+            "curved_outline"
+          ],
+          "description_ko": "윗부분이 열린 길쭉한 빈 구조이며, 가장자리가 완만하게 굽은 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "cleaning"
+          ],
+          "description_ko": "물을 담아 몸을 씻는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "샤워부스와는 달리 물을 모아 두는 그릇형 구조를 중시했다."
+      ]
+    },
+    {
+      "category_id": "beach",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place"
+          ],
+          "description_ko": "물가에 형성된 자연 지형의 장소이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "bounded_outline",
+            "flat",
+            "irregular"
+          ],
+          "description_ko": "물과 맞닿은 경계가 있고, 넓고 비교적 평평한 띠 모양으로 그려지는 경우가 많다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 지형이라 고유한 사용 기능은 없다."
+        }
+      },
+      "notes": [
+        "해변은 장소·장면 경계가 흐릴 수 있다.",
+        "건물이나 도구가 아니라 자연 환경으로 본다."
+      ]
+    },
+    {
+      "category_id": "bear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "덩치가 큰 육식성 포유류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail",
+            "irregular",
+            "curved_body"
+          ],
+          "description_ko": "네 다리와 둥근 귀, 짧은 꼬리가 보이는 둥글고 무거운 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "hunting"
+          ],
+          "description_ko": "걷고 오르며, 먹이를 찾을 때 사냥 행동을 보인다."
+        }
+      },
+      "notes": [
+        "곰 종류에 따라 잡식·초식 경향이 섞일 수 있으나 대표 행동만 적었다."
+      ]
+    },
+    {
+      "category_id": "beard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "얼굴 아래쪽에 나는 털의 일부이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "irregular",
+            "stripes"
+          ],
+          "description_ko": "턱 아래로 길게 늘어지는 가느다란 털 덩어리로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration"
+          ],
+          "description_ko": "주로 얼굴의 외형을 형성하는 신체 털이다."
+        }
+      },
+      "notes": [
+        "머리카락이나 수염 스타일과 혼동될 수 있다.",
+        "신체 부위로서의 수염만 다룬다."
+      ]
+    },
+    {
+      "category_id": "bed",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "사람이 눕거나 쉬도록 만든 가구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "box_like",
+            "four_legs"
+          ],
+          "description_ko": "납작하고 길쭉한 받침면이 있는 직사각형 가구로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping",
+            "sitting"
+          ],
+          "description_ko": "잠자거나 잠시 몸을 쉬게 하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "침대의 받침대, 매트리스, 머리판은 그림마다 단순화될 수 있다."
+      ]
+    },
+    {
+      "category_id": "bee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "날개가 있는 곤충으로 분류된다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "stripes",
+            "oval",
+            "irregular"
+          ],
+          "description_ko": "작은 타원형 몸통에 날개가 붙고, 줄무늬가 자주 나타나는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "grazing",
+            "hunting"
+          ],
+          "description_ko": "날아다니며 꽃 자원을 찾고, 먹이를 모은다."
+        }
+      },
+      "notes": [
+        "벌의 채집 행위는 풀·잎 먹기보다 꽃에서 자원을 얻는 행동에 가깝다.",
+        "곤충답게 몸통은 작고 분절된 느낌으로 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "belt",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "옷 위나 허리에 둘러 착용하는 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "ring_bow",
+            "rectangular"
+          ],
+          "description_ko": "얇고 길게 이어진 띠 모양이며, 고리나 버클이 함께 표현되기도 한다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "fastening",
+            "decoration"
+          ],
+          "description_ko": "허리를 고정하고 옷차림을 정리하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "버클은 명확히 보이지 않을 수 있어 몸통 띠 자체를 중심으로 잡았다."
+      ]
+    },
+    {
+      "category_id": "bench",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "여러 사람이 함께 앉을 수 있는 긴 가구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "elongated",
+            "flat",
+            "four_legs"
+          ],
+          "description_ko": "길고 평평한 좌판에 다리가 달린 단순한 직선형 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "잠시 앉아 쉬거나 기다릴 때 사용한다."
+        }
+      },
+      "notes": [
+        "등받이가 없는 경우가 많아 의자와 구별된다."
+      ]
+    },
+    {
+      "category_id": "bicycle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "사람이 타고 이동하는 바퀴 달린 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle",
+            "elongated",
+            "curved_outline"
+          ],
+          "description_ko": "두 바퀴와 손잡이가 보이는 길쭉한 프레임 구조다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "exercise"
+          ],
+          "description_ko": "사람을 이동시키거나 운동에 사용된다."
+        }
+      },
+      "notes": [
+        "자전거는 이동 수단과 운동 기구 성격이 함께 있다."
+      ]
+    }
+  ]
+}

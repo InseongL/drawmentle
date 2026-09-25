@@ -1,0 +1,352 @@
+{
+  "entries": [
+    {
+      "category_id": "saxophone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "금속 재질의 관악기로, 입으로 부는 방식의 연주 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "buttons"
+          ],
+          "description_ko": "길쭉한 관 모양에 여러 개의 키와 버튼이 있는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "입으로 불어 소리를 내며 음악을 연주한다."
+        }
+      },
+      "notes": [
+        "관악기 범주에 속함",
+        "재즈·밴드 악기로도 자주 쓰임",
+        "그림에서는 키 배열이 단순화될 수 있음"
+      ]
+    },
+    {
+      "category_id": "school_bus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "여러 사람을 태우는 도로용 대형 차량으로, 통학 용도로 쓰이는 버스이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "길고 네모난 차체에 창문이 여러 개 있고 바퀴가 네 개 이상 보이는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "학생을 학교와 집 사이에서 이동시키는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "버스의 한 용도에 해당함",
+        "승객 수송이 핵심",
+        "정지한 그림에서는 노선 정보는 드러나지 않음"
+      ]
+    },
+    {
+      "category_id": "scissors",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "두 날이 교차하는 절단용 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "blade",
+            "handle"
+          ],
+          "description_ko": "두 개의 고리 손잡이와 가운데 회전축, 뾰족한 날이 있는 길쭉한 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "종이, 천, 실 등을 자르는 데 사용한다."
+        }
+      },
+      "notes": [
+        "손잡이 고리와 교차 날이 중요함",
+        "재봉용 가위와 일반 가위를 모두 포괄할 수 있음",
+        "그림에서는 좌우 대칭으로 단순화되기 쉬움"
+      ]
+    },
+    {
+      "category_id": "scorpion",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "arachnid"
+          ],
+          "description_ko": "절지동물 가운데 거미류에 속하는 육상 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "many_legs",
+            "long_tail",
+            "horns"
+          ],
+          "description_ko": "여러 다리와 앞쪽 집게, 뒤로 굽은 꼬리처럼 보이는 부분이 있는 불규칙한 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "crawling",
+            "hunting",
+            "combat"
+          ],
+          "description_ko": "땅 위를 기어 다니며 먹이를 사냥하고, 위협 시 방어 자세를 취한다."
+        }
+      },
+      "notes": [
+        "독성 여부는 그림만으로 판단하지 않음",
+        "꼬리 끝의 침이 강조될 수 있음",
+        "집게발과 꼬리 형태가 핵심 단서"
+      ]
+    },
+    {
+      "category_id": "screwdriver",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "나사를 돌려 조이거나 푸는 데 쓰는 손도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "손잡이와 가느다란 금속 축으로 이루어진 길쭉한 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening"
+          ],
+          "description_ko": "나사를 회전시켜 고정하거나 분리하는 데 사용한다."
+        }
+      },
+      "notes": [
+        "십자드라이버와 일자드라이버를 모두 포괄 가능",
+        "끝부분 형상은 종류에 따라 다름",
+        "대체로 길고 손잡이가 뚜렷함"
+      ]
+    },
+    {
+      "category_id": "sea_turtle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "reptile"
+          ],
+          "description_ko": "바다에 사는 파충류로, 등딱지가 있는 거북이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "shell",
+            "four_legs",
+            "short_tail"
+          ],
+          "description_ko": "둥글거나 타원형의 등딱지와 네 개의 지느러미형 팔다리가 있는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling"
+          ],
+          "description_ko": "물속을 헤엄치고, 육지에서는 느리게 기어 이동한다."
+        }
+      },
+      "notes": [
+        "지느러미가 다리보다 강조될 수 있음",
+        "육상 거북과 구분되는 수중 생활 동물",
+        "종에 따라 머리·등딱지 모양은 다양함"
+      ]
+    },
+    {
+      "category_id": "see_saw",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "activity"
+          ],
+          "description_ko": "두 사람이 양끝에 올라타 균형을 맞추며 움직이는 놀이·운동 기구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat"
+          ],
+          "description_ko": "가운데 지지점을 기준으로 긴 판이 놓인 단순한 막대형 구조이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise"
+          ],
+          "description_ko": "몸의 균형을 맞추며 함께 타는 놀이에 사용된다."
+        }
+      },
+      "notes": [
+        "기구와 놀이 활동이 함께 연관됨",
+        "공원 놀이기구로도 볼 수 있음",
+        "상황에 따라 운동·놀이 기구 범주가 겹침"
+      ]
+    },
+    {
+      "category_id": "shark",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "fish"
+          ],
+          "description_ko": "연골성 어류에 속하는 바다 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "fins",
+            "long_tail"
+          ],
+          "description_ko": "유선형 몸체에 여러 지느러미와 긴 꼬리가 있는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "hunting"
+          ],
+          "description_ko": "물속을 빠르게 헤엄치며 먹이를 사냥한다."
+        }
+      },
+      "notes": [
+        "어류 범주에 속함",
+        "등지느러미와 삼각형 몸통이 단서가 될 수 있음",
+        "종에 따라 크기와 체형 차이가 큼"
+      ]
+    },
+    {
+      "category_id": "sheep",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "풀을 먹는 포유류로, 양털이 있는 가축이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail",
+            "spots"
+          ],
+          "description_ko": "네 다리와 둥근 몸통, 작은 머리를 가진 털 많은 동물의 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "walking"
+          ],
+          "description_ko": "풀과 잎을 먹으며 무리를 지어 이동한다."
+        }
+      },
+      "notes": [
+        "가축이지만 동물 분류가 우선",
+        "양털로 인해 윤곽이 둥글게 보일 수 있음",
+        "그림에 따라 뿔은 없거나 생략됨"
+      ]
+    },
+    {
+      "category_id": "shoe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "발에 신는 착용 소품으로, 걷기와 보호에 쓰인다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "elongated",
+            "opening"
+          ],
+          "description_ko": "발을 넣는 입구가 있고 앞쪽으로 길게 뻗는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection",
+            "walking"
+          ],
+          "description_ko": "발을 감싸 보호하고 걸을 때 착용한다."
+        }
+      },
+      "notes": [
+        "한 짝 또는 한 켤레로 그려질 수 있음",
+        "신발 종류에 따라 굽·끈이 다를 수 있음",
+        "의류와 장신구 성격이 일부 겹침"
+      ]
+    }
+  ]
+}

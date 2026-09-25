@@ -1,0 +1,306 @@
+{
+  "entries": [
+    {
+      "category_id": "mountain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "place"
+          ],
+          "description_ko": "자연 지형으로 형성된 높은 땅이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "irregular"
+          ],
+          "description_ko": "대체로 위로 솟은 삼각형 윤곽이지만 능선은 불규칙할 수 있다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 지형이라 별도의 기능 축을 두기 어렵다."
+        }
+      },
+      "notes": [
+        "자연물과 장소 의미가 함께 걸릴 수 있다.",
+        "단일 산봉우리와 산맥 일부가 혼재될 수 있다."
+      ]
+    },
+    {
+      "category_id": "mouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "작고 민첩한 설치류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "four_legs",
+            "rounded_ears",
+            "long_tail"
+          ],
+          "description_ko": "작은 몸집에 길쭉한 몸과 긴 꼬리가 두드러진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "climbing"
+          ],
+          "description_ko": "빠르게 이동하고 틈새를 오르내리는 행동이 대표적이다."
+        }
+      },
+      "notes": [
+        "컴퓨터 장치인 마우스와 혼동 가능하다."
+      ]
+    },
+    {
+      "category_id": "moustache",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "입 위에 나는 수염 또는 그 형태를 가리킨다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "입 양옆으로 길게 뻗는 가느다란 형태가 대표적이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "신체 장식이나 특징이라 별도 기능 축을 두지 않는다."
+        }
+      },
+      "notes": [
+        "얼굴의 수염과 의도적 스타일링을 함께 포함할 수 있다.",
+        "개체 자체보다 부위의 형태로 인식되는 항목이다."
+      ]
+    },
+    {
+      "category_id": "mouth",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "얼굴의 먹고 말하는 입 부위이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "opening"
+          ],
+          "description_ko": "얼굴의 열린 구멍처럼 표현되는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "communication"
+          ],
+          "description_ko": "먹기와 말하기에 주로 쓰인다."
+        }
+      },
+      "notes": [
+        "웃는 입, 벌린 입 등 표현 상태에 따라 단서가 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "mug",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "손잡이가 달린 음료용 그릇이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "handle",
+            "opening"
+          ],
+          "description_ko": "대체로 원통형 몸체에 손잡이와 위쪽 개구부가 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_food"
+          ],
+          "description_ko": "음료를 담아 마시거나 내놓는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "컵류와 경계가 겹칠 수 있다.",
+        "머그컵 형태의 변형은 손잡이 유무가 핵심 단서다."
+      ]
+    },
+    {
+      "category_id": "mushroom",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fungus"
+          ],
+          "description_ko": "갓과 대를 가진 균류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "stem",
+            "round"
+          ],
+          "description_ko": "대가 있고 위에 둥근 갓이 얹힌 형태가 대표적이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 생물이라 도구적 기능보다 생물 분류가 핵심이다."
+        }
+      },
+      "notes": [
+        "식용 버섯과 독버섯이 모두 포함될 수 있다.",
+        "식물로 오인되기 쉽지만 분류는 균류다."
+      ]
+    },
+    {
+      "category_id": "nail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "재료를 고정하는 작은 금속 못이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "가늘고 길며 한쪽은 뾰족하고 다른 쪽은 머리가 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening"
+          ],
+          "description_ko": "나무나 재료를 서로 고정하는 데 쓴다."
+        }
+      },
+      "notes": [
+        "손톱과 동형어이므로 문맥 혼동이 있을 수 있다."
+      ]
+    },
+    {
+      "category_id": "necklace",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "목에 거는 장신구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "elongated"
+          ],
+          "description_ko": "목을 둘러 원형에 가깝게 놓이는 긴 연결 형태가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "착용하여 몸을 꾸미는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "펜던트가 달린 형태도 포함될 수 있다."
+      ]
+    },
+    {
+      "category_id": "nose",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "얼굴의 냄새를 맡는 돌출 부위이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "얼굴 중앙에서 앞으로 짧게 돌출되는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "주된 기능은 호흡과 후각이지만 이 축에서는 대표 행동보다 신체 부위로 본다."
+        }
+      },
+      "notes": [
+        "정면 스케치에서 작은 돌출로 보일 수 있다.",
+        "얼굴 전체 표현과 함께 등장하는 경우가 많다."
+      ]
+    },
+    {
+      "category_id": "ocean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "natural_object"
+          ],
+          "description_ko": "지구를 덮는 넓은 바닷물 공간이다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "경계가 넓고 불규칙해 대표 형상을 고정하기 어렵다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 공간이라 별도 기능 축을 적용하기 어렵다."
+        }
+      },
+      "notes": [
+        "바다와 거의 같은 뜻으로 쓰일 수 있다.",
+        "장소와 자연물 의미가 함께 걸릴 수 있다."
+      ]
+    }
+  ]
+}

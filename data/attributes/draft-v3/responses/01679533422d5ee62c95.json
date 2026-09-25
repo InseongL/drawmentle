@@ -1,0 +1,324 @@
+{
+  "entries": [
+    {
+      "category_id": "nail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "박아서 고정하는 철물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat_head",
+            "pointed_tip"
+          ],
+          "description_ko": "납작한 머리 아래 뾰족한 가는 몸체가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "construction"
+          ],
+          "description_ko": "박아서 물건을 고정한다"
+        }
+      },
+      "notes": [
+        "손톱이 아닌 한국어 이름 '못' 기준이다."
+      ]
+    },
+    {
+      "category_id": "paintbrush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "writing_tool",
+            "stationery",
+            "artifact"
+          ],
+          "description_ko": "칠하는 데 쓰는 붓"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "bristles"
+          ],
+          "description_ko": "긴 자루 끝에 털이 모여 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "drawing"
+          ],
+          "description_ko": "물감을 칠해 그림을 그린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "paint_can",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storage_container",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "페인트를 담는 통"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "handle",
+            "lid"
+          ],
+          "description_ko": "원통형 통에 뚜껑과 철사 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid"
+          ],
+          "description_ko": "페인트를 담아 둔다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pliers",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "집고 비트는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "teeth"
+          ],
+          "description_ko": "두 손잡이가 교차하고 끝에 톱니 입이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "gripping",
+            "cutting"
+          ],
+          "description_ko": "물건을 집어 비틀거나 자른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "garden_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "긁어모으는 원예 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "teeth"
+          ],
+          "description_ko": "긴 자루 끝에 빗살 같은 갈퀴가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "farming",
+            "cleaning"
+          ],
+          "description_ko": "낙엽을 긁어모으거나 흙을 고른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "saw",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "켜서 자르는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "blade",
+            "teeth",
+            "handle"
+          ],
+          "description_ko": "넓은 날의 한쪽에 톱니가 있고 손잡이가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting",
+            "construction"
+          ],
+          "description_ko": "나무 등을 켜서 자른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "scissors",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "office_supply",
+            "stationery",
+            "artifact"
+          ],
+          "description_ko": "자르는 사무·생활 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "loop",
+            "blade",
+            "pointed_tip"
+          ],
+          "description_ko": "두 고리 손잡이와 교차한 두 날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "종이나 천을 자른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "screwdriver",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "나사를 돌리는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "straight_tube",
+            "pointed_tip"
+          ],
+          "description_ko": "두꺼운 손잡이에 곧은 쇠대와 좁은 끝이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "construction"
+          ],
+          "description_ko": "나사를 돌려 조이거나 푼다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "shovel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "garden_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "흙을 퍼내는 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "flat_head"
+          ],
+          "description_ko": "긴 자루 끝에 넓적한 삽날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "digging",
+            "farming"
+          ],
+          "description_ko": "흙을 파서 퍼낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "aircraft_carrier",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "항공기를 싣는 군함"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hull",
+            "flat",
+            "elongated"
+          ],
+          "description_ko": "길고 평평한 갑판의 큰 선체다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat",
+            "transport_people"
+          ],
+          "description_ko": "항공기를 싣고 바다에서 작전한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

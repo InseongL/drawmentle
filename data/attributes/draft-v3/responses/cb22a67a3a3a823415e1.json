@@ -1,0 +1,307 @@
+{
+  "entries": [
+    {
+      "category_id": "trombone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "brass_instrument",
+            "instrument",
+            "artifact"
+          ],
+          "description_ko": "슬라이드가 있는 금관악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "curved_tube",
+            "flared_bell"
+          ],
+          "description_ko": "길게 뻗은 슬라이드 관 끝에 나팔 입구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "슬라이드를 밀고 당기며 분다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "trumpet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "brass_instrument",
+            "instrument",
+            "artifact"
+          ],
+          "description_ko": "밸브가 있는 금관악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "flared_bell",
+            "finger_keys",
+            "elongated"
+          ],
+          "description_ko": "고리 모양 관에 밸브가 있고 끝이 벌어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "입으로 불고 밸브를 눌러 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "violin",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "string_instrument",
+            "instrument",
+            "artifact"
+          ],
+          "description_ko": "활로 켜는 작은 현악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pinched_waist",
+            "long_neck",
+            "strings"
+          ],
+          "description_ko": "잘록한 작은 몸통과 긴 목에 줄이 걸린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "활로 줄을 켜서 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "campfire",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fire",
+            "nature"
+          ],
+          "description_ko": "장작을 태우는 불"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flame",
+            "irregular"
+          ],
+          "description_ko": "엇갈린 장작 위로 불꽃이 솟는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "lighting",
+            "cooking"
+          ],
+          "description_ko": "열과 빛을 내고 음식을 익힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cloud",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cloud_precipitation",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "하늘에 뜬 구름"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "puffy_outline"
+          ],
+          "description_ko": "둥근 봉우리가 이어진 부푼 윤곽이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "precipitation"
+          ],
+          "description_ko": "비나 눈을 내린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hurricane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storm",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "열대성 폭풍"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "spiral",
+            "round"
+          ],
+          "description_ko": "둥근 중심에서 팔이 소용돌이친다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "air_movement",
+            "precipitation"
+          ],
+          "description_ko": "강한 바람과 비를 몰고 온다"
+        }
+      },
+      "notes": [
+        "tornado와 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "lightning",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storm",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "구름에서 치는 번개"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "zigzag",
+            "pointed_tip"
+          ],
+          "description_ko": "꺾이며 내려오는 뾰족한 번개 줄기다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "electric_power",
+            "lighting"
+          ],
+          "description_ko": "번쩍이며 전기를 방전한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "moon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "celestial_body",
+            "nature"
+          ],
+          "description_ko": "지구의 위성"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "crescent",
+            "round",
+            "spots"
+          ],
+          "description_ko": "초승달 곡선이나 분화구 점이 있는 원이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "밤하늘을 밝힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mountain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "landform",
+            "nature"
+          ],
+          "description_ko": "높이 솟은 지형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "pointed_tip"
+          ],
+          "description_ko": "뾰족한 봉우리의 삼각 윤곽이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도나 작용이 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ocean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "water_body",
+            "nature"
+          ],
+          "description_ko": "넓게 트인 바다"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "water_waves",
+            "flat"
+          ],
+          "description_ko": "끝없이 펼쳐진 수면에 물결선이 있다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도나 작용이 적용되지 않는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

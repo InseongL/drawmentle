@@ -1,0 +1,310 @@
+{
+  "entries": [
+    {
+      "category_id": "pillow",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "침구 분류 태그가 없어 보류한다"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "oval",
+            "flat"
+          ],
+          "description_ko": "둥근 모서리의 납작한 사각 쿠션이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping"
+          ],
+          "description_ko": "잘 때 머리를 받친다"
+        }
+      },
+      "notes": [
+        "침구 분류 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "power_outlet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "벽면 전기 설비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "slots",
+            "flat"
+          ],
+          "description_ko": "납작한 사각판에 플러그 구멍이 있다"
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "전력 공급 기능 태그가 없어 보류한다"
+        }
+      },
+      "notes": [
+        "전력 공급 기능 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "remote_control",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "무선 조작 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "elongated",
+            "buttons"
+          ],
+          "description_ko": "길쭉한 사각 몸체에 버튼이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "signaling"
+          ],
+          "description_ko": "신호를 보내 기기를 조작한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sink",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "주방·욕실 설비 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "hollow",
+            "opening",
+            "curved_tube"
+          ],
+          "description_ko": "움푹한 사각 수조 위로 굽은 수도꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning",
+            "holding_liquid"
+          ],
+          "description_ko": "물을 받아 씻는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sleeping_bag",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "야영 침구 분류 태그가 없어 보류한다"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "opening"
+          ],
+          "description_ko": "길쭉한 자루 윗부분이 열려 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping",
+            "protection"
+          ],
+          "description_ko": "몸을 넣어 따뜻하게 잔다"
+        }
+      },
+      "notes": [
+        "침구·야영 용품 분류 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "spoon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "식사용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "oval",
+            "handle"
+          ],
+          "description_ko": "긴 손잡이 끝에 오목한 타원 머리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food"
+          ],
+          "description_ko": "음식을 떠서 입으로 옮긴다"
+        }
+      },
+      "notes": [
+        "식사 도구 기능 태그가 없어 음식 제공으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "stove",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "flat",
+            "round",
+            "buttons",
+            "door"
+          ],
+          "description_ko": "납작한 윗면에 둥근 화구, 앞에 조절 버튼이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "화구로 음식을 익힌다"
+        }
+      },
+      "notes": [
+        "'레인지'는 전자레인지와 혼동될 수 있어 조리대 의미로 작성했다."
+      ]
+    },
+    {
+      "category_id": "table",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "실내 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "rectangular",
+            "four_legs"
+          ],
+          "description_ko": "넓은 평판을 네 다리가 받친다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects"
+          ],
+          "description_ko": "물건을 올려두고 식사·작업을 한다"
+        }
+      },
+      "notes": [
+        "bench와 형태가 겹친다."
+      ]
+    },
+    {
+      "category_id": "teapot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "주방용 음료 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "handle",
+            "lid",
+            "curved_tube",
+            "hollow"
+          ],
+          "description_ko": "둥근 몸체에 뚜껑, 손잡이, 굽은 주둥이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_drink"
+          ],
+          "description_ko": "차를 우려 잔에 따른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "toaster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "slots"
+          ],
+          "description_ko": "상자형 본체 위에 빵 넣는 좁은 홈이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "cooking"
+          ],
+          "description_ko": "빵을 넣어 굽는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

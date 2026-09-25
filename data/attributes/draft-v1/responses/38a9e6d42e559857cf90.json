@@ -1,0 +1,327 @@
+{
+  "entries": [
+    {
+      "category_id": "marker",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "tool"
+          ],
+          "description_ko": "그리거나 글씨를 쓰는 데 쓰는 필기구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "길쭉한 몸통에 손에 쥐는 형태가 보통이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "writing",
+            "drawing"
+          ],
+          "description_ko": "종이나 보드에 선과 글자를 남기는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "펜보다 굵게 표현될 수 있다.",
+        "뚜껑형과 뚜껑 없는 형태가 모두 가능하다."
+      ]
+    },
+    {
+      "category_id": "matches",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "마찰로 불을 붙이는 작은 점화 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "짧고 가는 막대 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "성냥머리를 문질러 불씨를 만든다."
+        }
+      },
+      "notes": [
+        "한 개보다 여러 개가 한 상자에 묶여 나타날 수 있다.",
+        "불을 내는 용도만 대표적으로 본다."
+      ]
+    },
+    {
+      "category_id": "megaphone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "electronic_device"
+          ],
+          "description_ko": "소리를 멀리 크게 전달하는 확성용 기기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "conical",
+            "handle"
+          ],
+          "description_ko": "앞으로 넓어지는 원뿔형 통로와 잡는 부분이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "sound_output",
+            "signaling"
+          ],
+          "description_ko": "음성을 증폭해 여러 사람에게 전달한다."
+        }
+      },
+      "notes": [
+        "전자식과 비전자식이 모두 가능하다.",
+        "스피커와 겹칠 수 있으나 지시용 발화에 더 가깝다."
+      ]
+    },
+    {
+      "category_id": "mermaid",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fictional_entity"
+          ],
+          "description_ko": "사람의 상반신과 물고기 꼬리를 함께 지닌 상상 속 존재다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_tail"
+          ],
+          "description_ko": "인간형 몸통과 물고기형 꼬리가 함께 떠오른다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "고정된 실용 기능이 있는 대상이 아니다. 이야기 속 등장 인물이나 장식적 표현으로 쓰일 수 있다."
+        }
+      },
+      "notes": [
+        "민담·동화의 상징적 존재로 보아야 한다.",
+        "인간과 물고기 특징이 섞인 복합 형상이다."
+      ]
+    },
+    {
+      "category_id": "microphone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "tool"
+          ],
+          "description_ko": "소리를 받아 전기 신호로 바꾸는 음향 장치다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle"
+          ],
+          "description_ko": "막대형 손잡이와 머리 부분이 있는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_recording",
+            "communication",
+            "sound_output"
+          ],
+          "description_ko": "말소리나 노래를 수집해 전달하거나 녹음에 쓴다."
+        }
+      },
+      "notes": [
+        "유선형과 무선형이 모두 가능하다.",
+        "무대용, 녹음용 등 여러 종류가 있다."
+      ]
+    },
+    {
+      "category_id": "microwave",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance",
+            "electronic_device"
+          ],
+          "description_ko": "전자파를 이용해 음식을 데우는 주방 가전이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "opening",
+            "buttons"
+          ],
+          "description_ko": "네모난 본체에 문과 조작부가 있는 구성이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "음식을 빠르게 가열하거나 조리한다."
+        }
+      },
+      "notes": [
+        "주방용 오븐과는 다른 기기다.",
+        "회전판이 보일 수 있지만 항상 드러나지는 않는다."
+      ]
+    },
+    {
+      "category_id": "monkey",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "영장류에 속하는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail"
+          ],
+          "description_ko": "네 팔다리와 꼬리가 있는 모습으로 자주 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing"
+          ],
+          "description_ko": "주로 나무를 오르내리며 이동한다."
+        }
+      },
+      "notes": [
+        "꼬리 길이는 종마다 차이가 크다.",
+        "침팬지처럼 꼬리가 없는 영장류와는 구분이 필요하다."
+      ]
+    },
+    {
+      "category_id": "moon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "celestial_body",
+            "natural_object"
+          ],
+          "description_ko": "지구 주변을 도는 자연 천체다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "하늘에 떠 있는 둥근 원반으로 표현되는 경우가 많다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 천체이므로 고정된 실용 기능을 두지 않는다."
+        }
+      },
+      "notes": [
+        "초승달이나 보름달처럼 보이는 위상 차이가 있다.",
+        "밤하늘 장면의 일부로 함께 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "mosquito",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "작고 날아다니는 곤충이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "elongated"
+          ],
+          "description_ko": "가느다란 몸과 날개가 있는 형태로 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying"
+          ],
+          "description_ko": "날아다니며 이동한다."
+        }
+      },
+      "notes": [
+        "작은 곤충이라 단순화해 그리기 쉽다.",
+        "흡혈 습성은 있으나 그림에서는 생략되기 쉽다."
+      ]
+    },
+    {
+      "category_id": "motorbike",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "두 바퀴로 달리는 개인용 오토바이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle",
+            "elongated"
+          ],
+          "description_ko": "앞뒤 바퀴 두 개와 핸들이 있는 길쭉한 차체가 보통이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "navigation"
+          ],
+          "description_ko": "사람을 태우고 도로를 달린다."
+        }
+      },
+      "notes": [
+        "스쿠터와 형태가 겹칠 수 있다.",
+        "경주용과 일상용이 모두 가능하다."
+      ]
+    }
+  ]
+}

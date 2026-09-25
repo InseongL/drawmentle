@@ -1,0 +1,9 @@
+﻿{
+    "pid":  40288,
+    "started_at":  "2026-09-22T17:27:16.1268896+09:00",
+    "model":  "gpt-5.4-mini",
+    "provider":  "gms",
+    "remaining_categories_at_launch":  335,
+    "stdout":  "C:\\Users\\SSAFY\\stealth\\꼬맨틀\\data\\attributes\\draft-v1\\logs\\20260922-172716.stdout.log",
+    "stderr":  "C:\\Users\\SSAFY\\stealth\\꼬맨틀\\data\\attributes\\draft-v1\\logs\\20260922-172716.stderr.log"
+}

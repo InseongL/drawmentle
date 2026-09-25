@@ -1,0 +1,523 @@
+{
+  "catalog_sha256": "2a6787635dc335e8922821ded0900fa97b3ef106c53c9ffb600314cd1c0f53a5",
+  "vocabulary_sha256": "f88848ece6a1b41dcbbd63b05ba92fd83e17ae9c709099a13309fc2f38e5bf8c",
+  "pipeline_version": "attribute-drafts-v1",
+  "prompt_version": "attribute-prompt-v1",
+  "records": {
+    "airplane": {
+      "category_id": "airplane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "사람이나 화물을 공중으로 운송하는 항공 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wings",
+            "windows"
+          ],
+          "description_ko": "길쭉한 동체 양옆으로 날개가 뻗고 창문이 줄지어 있는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "하늘을 날아 사람과 물건을 운송함"
+        }
+      },
+      "notes": [
+        "대표적인 여객기 형태를 가정한 예시 초안이며 실제 그림 표본 검수 전이다."
+      ],
+      "class_index": 1,
+      "label_en": "airplane",
+      "display_name_ko": "비행기",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "car": {
+      "category_id": "car",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "도로 위에서 사람을 운송하는 육상 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "차체에 네 바퀴와 창문이 달린 구조"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "도로를 따라 사람을 운송함"
+        }
+      },
+      "notes": [
+        "등록 속성은 물체 기준이다. 옆모습 그림에서는 바퀴 두 개만 보일 수 있다."
+      ],
+      "class_index": 61,
+      "label_en": "car",
+      "display_name_ko": "자동차",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "helicopter": {
+      "category_id": "helicopter",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "회전 날개로 비행하는 항공 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rotor",
+            "windows"
+          ],
+          "description_ko": "동체 위에 회전 날개가 있고 뒤로 긴 꼬리 부분이 뻗음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "rescue"
+          ],
+          "description_ko": "비행하며 사람을 운송하거나 구조에 활용됨"
+        }
+      },
+      "notes": [],
+      "class_index": 142,
+      "label_en": "helicopter",
+      "display_name_ko": "헬리콥터",
+      "review_status": "unreviewed",
+      "review_flags": [],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "bicycle": {
+      "category_id": "bicycle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "사람이 페달을 밟아 이동하는 육상 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle"
+          ],
+          "description_ko": "두 바퀴를 연결하는 프레임과 조향 손잡이가 있음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "exercise"
+          ],
+          "description_ko": "사람의 이동과 운동에 사용됨"
+        }
+      },
+      "notes": [],
+      "class_index": 29,
+      "label_en": "bicycle",
+      "display_name_ko": "자전거",
+      "review_status": "unreviewed",
+      "review_flags": [],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "bird": {
+      "category_id": "bird",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "부리와 깃털을 가진 조류의 넓은 범주"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "beak",
+            "two_legs"
+          ],
+          "description_ko": "몸통에 날개 한 쌍과 부리, 두 다리가 있는 형태"
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "비행이 대표적이지만 모든 조류가 날지는 않아 범주의 대표 행동 정책이 필요함"
+        }
+      },
+      "notes": [
+        "개별 조류 클래스와 겹치는 넓은 범주다."
+      ],
+      "class_index": 31,
+      "label_en": "bird",
+      "display_name_ko": "새",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "function:uncertain",
+        "catalog_requires_review",
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "giraffe": {
+      "category_id": "giraffe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "육상에서 생활하는 초식 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "spots",
+            "horns"
+          ],
+          "description_ko": "매우 긴 목과 네 다리, 반점 무늬와 머리 위의 작은 뿔 모양 돌기가 있음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing"
+          ],
+          "description_ko": "걸어 다니며 높은 곳의 나뭇잎 등을 먹음"
+        }
+      },
+      "notes": [],
+      "class_index": 129,
+      "label_en": "giraffe",
+      "display_name_ko": "기린",
+      "review_status": "unreviewed",
+      "review_flags": [],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "horse": {
+      "category_id": "horse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "육상에서 생활하는 초식 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail",
+            "elongated"
+          ],
+          "description_ko": "길쭉한 몸통과 네 다리, 긴 꼬리를 가진 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "grazing"
+          ],
+          "description_ko": "걷거나 달리며 풀을 먹음"
+        }
+      },
+      "notes": [],
+      "class_index": 147,
+      "label_en": "horse",
+      "display_name_ko": "말",
+      "review_status": "unreviewed",
+      "review_flags": [],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "apple": {
+      "category_id": "apple",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "먹을 수 있는 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stem"
+          ],
+          "description_ko": "대체로 둥근 윤곽에 짧은 꼭지가 붙음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식품으로 먹음"
+        }
+      },
+      "notes": [
+        "대표 색상은 품종에 따라 달라진다. 현재 색상 모듈은 비활성이다."
+      ],
+      "class_index": 8,
+      "label_en": "apple",
+      "display_name_ko": "사과",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "banana": {
+      "category_id": "banana",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "먹을 수 있는 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "stem"
+          ],
+          "description_ko": "길쭉하게 휘어진 몸체와 끝부분의 꼭지가 있음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식품으로 먹음"
+        }
+      },
+      "notes": [
+        "곡선 형태의 세분화 태그가 필요하면 어휘 사전의 다음 버전에서 추가할 수 있다."
+      ],
+      "class_index": 13,
+      "label_en": "banana",
+      "display_name_ko": "바나나",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "cup": {
+      "category_id": "cup",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "음료를 담아 마시는 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening",
+            "hollow"
+          ],
+          "description_ko": "위가 열려 있고 내부에 액체를 담을 수 있는 원통에 가까운 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid"
+          ],
+          "description_ko": "마실 액체를 담음"
+        }
+      },
+      "notes": [
+        "머그와 커피 컵 클래스의 시각적 경계를 실제 표본으로 확인해야 한다."
+      ],
+      "class_index": 87,
+      "label_en": "cup",
+      "display_name_ko": "컵",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "catalog_requires_review",
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "mug": {
+      "category_id": "mug",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "음료를 담아 마시는 손잡이 있는 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening",
+            "hollow",
+            "handle"
+          ],
+          "description_ko": "위가 열린 몸체의 옆면에 손잡이가 붙음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid"
+          ],
+          "description_ko": "마실 액체를 담음"
+        }
+      },
+      "notes": [
+        "컵과 커피 컵 클래스와의 경계를 확인해야 한다."
+      ],
+      "class_index": 194,
+      "label_en": "mug",
+      "display_name_ko": "머그잔",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "catalog_requires_review",
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    },
+    "fan": {
+      "category_id": "fan",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "부채와 전기 선풍기 중 어떤 의미를 채택할지 표본 확인이 필요함"
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "부채꼴 구조와 회전 날개 구조가 모두 가능해 단정하지 않음"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooling"
+          ],
+          "description_ko": "공기를 움직여 더위를 식히는 데 사용됨"
+        }
+      },
+      "notes": [
+        "표본을 확인하기 전에는 분류와 형태 벡터를 생성하지 않는다."
+      ],
+      "class_index": 109,
+      "label_en": "fan",
+      "display_name_ko": "선풍기",
+      "review_status": "unreviewed",
+      "review_flags": [
+        "classification:uncertain",
+        "shape:uncertain",
+        "catalog_requires_review",
+        "author_notes"
+      ],
+      "provenance": {
+        "source": "assistant-authored-example",
+        "job_id": "aee11a8a0b1a87395326",
+        "imported_at": "2026-09-22T07:44:09.086131+00:00"
+      }
+    }
+  }
+}

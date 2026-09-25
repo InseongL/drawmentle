@@ -1,0 +1,71 @@
+{
+  "entries": [
+    {
+      "category_id": "screwdriver",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "나사를 돌리는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "pointed_tip"
+          ],
+          "description_ko": "두꺼운 손잡이에 곧은 쇠대와 좁은 끝이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "construction"
+          ],
+          "description_ko": "나사를 돌려 조이거나 푼다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sea_turtle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "reptile",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "바다에 사는 거북류 파충류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "shell",
+            "dome",
+            "oval",
+            "fins"
+          ],
+          "description_ko": "돔형 등딱지에 지느러미 같은 네 발이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling"
+          ],
+          "description_ko": "물속에서 헤엄치고 모래 위를 기어 이동한다"
+        }
+      },
+      "notes": [
+        "노 모양 앞발을 지느러미 태그로 표현했다."
+      ]
+    }
+  ]
+}

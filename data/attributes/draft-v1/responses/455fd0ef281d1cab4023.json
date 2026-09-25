@@ -1,0 +1,327 @@
+{
+  "entries": [
+    {
+      "category_id": "lighter",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "불을 붙이기 위해 손에 쥐고 사용하는 휴대용 점화 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "작고 길쭉한 몸체가 많고, 끝부분에 점화부가 있는 형태로 그려지기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "점화를 일으켜 담배나 양초 같은 것을 태우는 데 쓴다."
+        }
+      },
+      "notes": [
+        "휴대용 도구로 보는 것이 적절하다.",
+        "라이터 종류에 따라 버튼이나 덮개가 다를 수 있다."
+      ]
+    },
+    {
+      "category_id": "lighthouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure"
+          ],
+          "description_ko": "해안이나 항로 근처에 세워져 선박의 위치 확인을 돕는 탑형 구조물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "cylindrical",
+            "rectangular",
+            "roof",
+            "windows"
+          ],
+          "description_ko": "탑처럼 높고 위쪽에 방이나 불빛이 있으며, 몸체에 창문이 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "signaling"
+          ],
+          "description_ko": "등불이나 신호로 배가 바다에서 방향을 잡도록 돕는다."
+        }
+      },
+      "notes": [
+        "건축물과 기반 시설이 모두 어울린다.",
+        "바다 풍경과 함께 그려지는 경우가 많다."
+      ]
+    },
+    {
+      "category_id": "lightning",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "대기 중 전기 방전으로 생기는 순간적인 빛 현상이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "elongated"
+          ],
+          "description_ko": "구불구불하고 갈라지는 번개 모양 선으로 표현되기 쉽다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 고유한 사용 목적은 없다."
+        }
+      },
+      "notes": [
+        "자연 현상으로 분류한다.",
+        "그림에서는 지그재그 선으로 자주 나타난다."
+      ]
+    },
+    {
+      "category_id": "line",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "길이만 강조되고 폭은 거의 없는 추상적 선 요소다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat"
+          ],
+          "description_ko": "아주 가늘고 길게 뻗은 형태로 보인다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형·기호 성격이 강해 일반적인 기능은 적용하지 않는다."
+        }
+      },
+      "notes": [
+        "직선은 구체 물체가 아니라 도형/기호 범주에 가깝다.",
+        "다른 대상의 일부 선분과 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "lion",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "고양잇과의 대형 육식 포유류로, 무리를 이루기도 하는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "short_tail",
+            "rounded_ears"
+          ],
+          "description_ko": "네 다리와 비교적 짧은 꼬리가 보이며, 귀와 머리 윤곽이 뚜렷하게 그려질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "hunting"
+          ],
+          "description_ko": "사냥하고 달리며 이동하는 육식 동물의 대표적 행동이 어울린다."
+        }
+      },
+      "notes": [
+        "수컷은 갈기가 특징이지만 항상 포함되지는 않는다.",
+        "동물 항목으로 보되 맹수 이미지가 강하다."
+      ]
+    },
+    {
+      "category_id": "lipstick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "입술에 색이나 윤기를 더하기 위해 바르는 화장용 막대 형태의 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "작은 원통형 본체와 뚜껑 또는 돌출된 색 부분이 함께 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "입술에 바르는 화장품으로 외모를 꾸미는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "의류는 아니고 착용 소품으로 본다.",
+        "색상은 제품마다 달라 특정하지 않는다."
+      ]
+    },
+    {
+      "category_id": "lobster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "crustacean"
+          ],
+          "description_ko": "딱딱한 껍질과 집게발이 있는 갑각류로, 바다에 사는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "shell",
+            "many_legs"
+          ],
+          "description_ko": "길쭉한 몸통에 단단한 껍질, 여러 다리와 큰 집게가 함께 표현되기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling"
+          ],
+          "description_ko": "바다에서 기어가거나 헤엄치며 이동한다."
+        }
+      },
+      "notes": [
+        "집게와 긴 더듬이가 눈에 띌 수 있다.",
+        "바닷가재와 크레이피시 구분은 문맥에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "lollipop",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "막대에 붙은 단단한 사탕으로 먹는 간식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "elongated"
+          ],
+          "description_ko": "둥근 사탕 부분과 길쭉한 막대가 결합된 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "달콤한 간식으로 먹는다."
+        }
+      },
+      "notes": [
+        "막대와 사탕 머리의 대비가 핵심이다.",
+        "개별 포장 여부는 형태 판단에 필수적이지 않다."
+      ]
+    },
+    {
+      "category_id": "mailbox",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "편지나 소포를 임시로 넣어두는 우편 수납 장치다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "opening"
+          ],
+          "description_ko": "상자형 몸체에 편지 투입구나 문이 있는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "communication"
+          ],
+          "description_ko": "우편물을 모아 담아 두고 전달 흐름을 돕는다."
+        }
+      },
+      "notes": [
+        "건물형 우편함과 가정용 우편함이 모두 가능하다.",
+        "주로 투입구나 열리는 문이 그려진다."
+      ]
+    },
+    {
+      "category_id": "map",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "장소의 위치와 관계를 도식화해 보여 주는 평면 정보 매체다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "종이처럼 납작한 사각형으로 그려지는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "displaying"
+          ],
+          "description_ko": "길 찾기와 위치 확인을 위해 지리 정보를 보여 준다."
+        }
+      },
+      "notes": [
+        "종이지도와 접힌 지도 모두 가능하다.",
+        "전자 지도와는 구분되는 문맥일 수 있다."
+      ]
+    }
+  ]
+}

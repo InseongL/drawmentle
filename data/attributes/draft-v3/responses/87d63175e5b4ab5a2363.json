@@ -1,0 +1,314 @@
+{
+  "entries": [
+    {
+      "category_id": "wristwatch",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "timepiece",
+            "artifact"
+          ],
+          "description_ko": "손목에 차는 시계"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "strap",
+            "buttons"
+          ],
+          "description_ko": "둥근 문자판 양옆으로 손목 줄이 이어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "wearing"
+          ],
+          "description_ko": "손목에 차고 시간을 본다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "binoculars",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "measuring_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "멀리 보는 광학 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening"
+          ],
+          "description_ko": "원통 두 개가 나란히 붙어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "seeing"
+          ],
+          "description_ko": "멀리 있는 것을 크게 본다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "book",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "document",
+            "artifact"
+          ],
+          "description_ko": "종이를 묶은 인쇄물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "가운데 접힌 두 쪽의 사각 종이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "displaying"
+          ],
+          "description_ko": "글과 그림을 담아 읽게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "calculator",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "computing_device",
+            "electronic_device",
+            "artifact"
+          ],
+          "description_ko": "계산용 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "사각 몸체 위쪽에 화면, 아래에 버튼이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing"
+          ],
+          "description_ko": "숫자를 계산한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "calendar",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "document",
+            "artifact"
+          ],
+          "description_ko": "날짜를 적은 인쇄물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "grid_pattern"
+          ],
+          "description_ko": "사각 종이에 날짜 칸이 격자로 나뉜다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "displaying"
+          ],
+          "description_ko": "날짜와 일정을 보여준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "camera",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "video_device",
+            "electronic_device",
+            "artifact"
+          ],
+          "description_ko": "사진을 찍는 기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "round",
+            "buttons"
+          ],
+          "description_ko": "상자형 몸체 앞에 둥근 렌즈가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photography"
+          ],
+          "description_ko": "사진을 찍는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cell_phone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "phone",
+            "electronic_device",
+            "artifact"
+          ],
+          "description_ko": "휴대용 전화기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "세로로 긴 사각 몸체 앞면이 화면이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "computing"
+          ],
+          "description_ko": "통화하고 정보를 처리한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "compass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "measuring_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "방향을 재는 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "pointed_tip"
+          ],
+          "description_ko": "둥근 판 안에 뾰족한 바늘이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "measuring"
+          ],
+          "description_ko": "방향을 재어 길을 찾게 한다"
+        }
+      },
+      "notes": [
+        "한국어 '나침반' 기준이며 제도용 컴퍼스와 구분했다."
+      ]
+    },
+    {
+      "category_id": "computer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "computing_device",
+            "electronic_device",
+            "artifact"
+          ],
+          "description_ko": "정보 처리 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "screen",
+            "key_rows"
+          ],
+          "description_ko": "사각 화면 모니터 앞에 자판이 놓인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "정보를 처리하고 화면에 보여준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "crayon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "writing_tool",
+            "stationery",
+            "artifact"
+          ],
+          "description_ko": "그림용 필기 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "pointed_tip"
+          ],
+          "description_ko": "짧은 원통 몸체 끝이 뭉툭하게 뾰족하다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "drawing"
+          ],
+          "description_ko": "색을 칠해 그림을 그린다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "entries": [
+    {
+      "category_id": "key",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "자물쇠용 금속 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "ring_bow",
+            "elongated",
+            "serrated_edge"
+          ],
+          "description_ko": "둥근 고리 머리와 톱니 홈이 난 긴 막대다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "unlocking"
+          ],
+          "description_ko": "자물쇠를 열고 잠근다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lantern",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "휴대용 조명 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "cylindrical",
+            "windows"
+          ],
+          "description_ko": "위쪽 손잡이와 유리창에 둘러싸인 몸체가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "들고 다니며 빛을 비춘다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "light_bulb",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "전기 조명 부품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stripes",
+            "rays"
+          ],
+          "description_ko": "둥근 유리구 아래 나사 줄무늬 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "전기로 빛을 낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lighter",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "휴대용 점화 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "lid"
+          ],
+          "description_ko": "작은 사각 몸체 위에 뚜껑과 불꽃이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "lighting"
+          ],
+          "description_ko": "불꽃을 일으켜 불을 붙인다"
+        }
+      },
+      "notes": [
+        "점화 기능 태그가 없어 가열·조명으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "mailbox",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "우편물 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "pedestal",
+            "door"
+          ],
+          "description_ko": "기둥 위 상자형 함에 여닫는 문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "communication"
+          ],
+          "description_ko": "우편물을 받아 보관한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "matches",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "휴대용 점화 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "round",
+            "box_like"
+          ],
+          "description_ko": "가는 나무 막대 끝에 둥근 머리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "lighting"
+          ],
+          "description_ko": "그어서 불을 붙인다"
+        }
+      },
+      "notes": [
+        "점화 기능 태그가 없어 가열·조명으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "microwave",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "door",
+            "buttons",
+            "screen"
+          ],
+          "description_ko": "상자형 본체에 창문 문과 버튼판이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "microwave_heating",
+            "heating"
+          ],
+          "description_ko": "전자파로 음식을 데운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mug",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container",
+            "drinkware"
+          ],
+          "description_ko": "음료용 잔 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "hollow",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "두꺼운 원통형 잔에 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_drink"
+          ],
+          "description_ko": "음료를 담아 마신다"
+        }
+      },
+      "notes": [
+        "cup, coffee_cup과 형태·기능이 대부분 겹친다."
+      ]
+    },
+    {
+      "category_id": "oven",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "door",
+            "rack",
+            "buttons"
+          ],
+          "description_ko": "상자형 본체에 앞문과 안쪽 선반이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "baking",
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "뜨거운 내부에서 음식을 굽는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "picture_frame",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "액자·장식품 분류 태그가 없어 보류한다"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "사각 테두리 안에 그림이 들어간다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration",
+            "displaying"
+          ],
+          "description_ko": "그림이나 사진을 걸어 보여준다"
+        }
+      },
+      "notes": [
+        "장식 소품 분류 태그가 없다."
+      ]
+    }
+  ]
+}

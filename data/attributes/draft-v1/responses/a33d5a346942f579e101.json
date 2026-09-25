@@ -1,0 +1,329 @@
+{
+  "entries": [
+    {
+      "category_id": "snorkel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "수중에서 숨을 쉬기 위해 입에 물고 사용하는 관형 장비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "opening"
+          ],
+          "description_ko": "길고 가는 관에 입을 대는 부분과 끝쪽 개구부가 있는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming"
+          ],
+          "description_ko": "수면 가까이에서 호흡을 돕고 잠수 중 시야 확보에 보조적으로 쓰인다"
+        }
+      },
+      "notes": [
+        "수영 보조 장비로 분류했음",
+        "가면과 결합된 세트는 별도 검토 필요",
+        "관형 부품이 핵심 형태임"
+      ]
+    },
+    {
+      "category_id": "snowflake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object"
+          ],
+          "description_ko": "대기 중 물이 얼어 형성되는 작은 얼음 결정"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular"
+          ],
+          "description_ko": "대칭성이 있으나 매우 복잡해 단순 도형으로는 고정하기 어려운 형태"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 고유한 사용 목적은 적용하지 않음"
+        }
+      },
+      "notes": [
+        "자연 현상 산물에 가까운 자연물임",
+        "개별 결정 모양은 매우 다양함",
+        "장식적 문양과 혼동될 수 있음"
+      ]
+    },
+    {
+      "category_id": "snowman",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "activity",
+            "artwork"
+          ],
+          "description_ko": "눈을 뭉쳐 사람 모양으로 만든 임시 조형물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "two_legs"
+          ],
+          "description_ko": "여러 개의 둥근 덩어리를 겹친 사람형 실루엣"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "decoration"
+          ],
+          "description_ko": "눈놀이의 결과물이나 겨울 장식으로 쓰인다"
+        }
+      },
+      "notes": [
+        "장난감이 아니라 임시 눈 조형물임",
+        "사람 모양이지만 인물은 아님",
+        "목도리·모자 유무는 핵심 아님"
+      ]
+    },
+    {
+      "category_id": "soccer_ball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "발로 차며 사용하는 공형 경기 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "spots"
+          ],
+          "description_ko": "둥근 공 몸체에 여러 패널 무늬가 나타나는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise"
+          ],
+          "description_ko": "축구 경기와 훈련에서 차고 주고받는 데 쓰인다"
+        }
+      },
+      "notes": [
+        "무늬는 단순화될 수 있음",
+        "공은 공기 주입형으로 보일 수 있음",
+        "표면 색상은 변수로 두는 것이 안전함"
+      ]
+    },
+    {
+      "category_id": "sock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing"
+          ],
+          "description_ko": "발과 발목에 착용하는 직물성 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "길고 좁은 관 형태로 발끝에서 종아리 쪽으로 이어지는 구조"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "발을 덮어 보호하고 신발 안에서 마찰을 줄인다"
+        }
+      },
+      "notes": [
+        "한 짝 또는 짝이 있는 개념 모두 가능",
+        "길이와 발목 높이는 다양함",
+        "장식 양말도 있지만 핵심은 착용물"
+      ]
+    },
+    {
+      "category_id": "speedboat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "빠른 주행을 위해 설계된 소형 수상 탈것"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "hollow"
+          ],
+          "description_ko": "길쭉한 선체 위에 조종 공간과 엔진부가 붙는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "사람을 빠르게 이동시키거나 가벼운 물건을 운반한다"
+        }
+      },
+      "notes": [
+        "보트와 제트스키는 구분 필요",
+        "경주용과 레저용이 모두 가능함",
+        "선외기 여부는 생략 가능"
+      ]
+    },
+    {
+      "category_id": "spider",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "arachnid"
+          ],
+          "description_ko": "여러 다리를 가진 절지동물 계열의 동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "many_legs",
+            "irregular"
+          ],
+          "description_ko": "작은 몸통에 다리가 여러 개 달린 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "crawling",
+            "hunting"
+          ],
+          "description_ko": "대체로 기어다니며 먹이를 사냥한다"
+        }
+      },
+      "notes": [
+        "거미줄은 일부 종에서만 두드러짐",
+        "다리는 보통 여덟 개로 인식됨",
+        "곤충과는 분류가 다름"
+      ]
+    },
+    {
+      "category_id": "spoon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "container"
+          ],
+          "description_ko": "음식이나 액체를 떠서 옮기는 식사용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "hollow"
+          ],
+          "description_ko": "얕은 오목한 부분과 손잡이가 이어진 길쭉한 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food",
+            "eating"
+          ],
+          "description_ko": "음식이나 국물을 떠서 먹거나 담아 옮긴다"
+        }
+      },
+      "notes": [
+        "일회용과 금속제 모두 가능",
+        "숟가락 머리 부분의 오목함이 핵심임",
+        "조리용 국자와는 별개로 볼 수 있음"
+      ]
+    },
+    {
+      "category_id": "spreadsheet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "stationery"
+          ],
+          "description_ko": "표 형식의 데이터를 다루는 화면 또는 문서 개념"
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "화면, 문서, 격자 등 여러 표현이 가능해 단일 형태로 고정하기 어려움"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying",
+            "writing"
+          ],
+          "description_ko": "셀 단위로 정보를 입력하고 계산하며 표 형태로 보여준다"
+        }
+      },
+      "notes": [
+        "실물 물건이 아니라 문서·화면 개념임",
+        "표 계산용 소프트웨어를 뜻할 수 있음",
+        "분류 축에서 전자기기와 문구가 겹칠 수 있음"
+      ]
+    },
+    {
+      "category_id": "square",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "네 변의 길이가 같은 평면 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular"
+          ],
+          "description_ko": "모서리가 네 개이고 변 길이가 같은 사각 윤곽"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 일반적인 사용 기능은 적용하지 않음"
+        }
+      },
+      "notes": [
+        "기호·도형 범주로 보는 것이 적절함",
+        "정사각형은 사각형의 한 종류임",
+        "물체가 아니라 추상 형상임"
+      ]
+    }
+  ]
+}

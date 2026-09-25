@@ -1,0 +1,71 @@
+{
+  "verified_at_utc": "2026-09-22T05:57:48.574750+00:00",
+  "categories": 345,
+  "counts": {
+    "samples": 345000,
+    "recognized_true": 316388,
+    "train": 276292,
+    "validation": 34442,
+    "test": 34266,
+    "exact_duplicate_images_after_first": 75
+  },
+  "unique_image_hashes": 344925,
+  "cross_label_exact_duplicate_pairs": {
+    "knife / line": 5,
+    "hockey_puck / line": 3,
+    "bucket / line": 2,
+    "backpack / coffee_cup": 1,
+    "animal_migration / elephant": 1,
+    "animal_migration / lighthouse": 1,
+    "animal_migration / line": 1,
+    "jail / line": 1,
+    "cake / line": 1,
+    "line / octagon": 1,
+    "line / paper_clip": 1,
+    "animal_migration / pig": 1,
+    "pickup_truck / police_car": 1,
+    "animal_migration / raccoon": 1,
+    "animal_migration / rhinoceros": 1,
+    "line / skyscraper": 1,
+    "line / speedboat": 1,
+    "steak / the_eiffel_tower": 1,
+    "squiggle / the_great_wall_of_china": 1,
+    "hockey_puck / underwear": 1,
+    "animal_migration / yoga": 1
+  },
+  "raw_bytes": 164392464,
+  "processed_bytes": 298946640,
+  "label_groups": {
+    "transport": 26,
+    "household": 57,
+    "imaginary_art": 4,
+    "action_abstract": 3,
+    "animal": 48,
+    "tool": 15,
+    "food": 30,
+    "body": 20,
+    "clothing_accessory": 22,
+    "medical": 4,
+    "building_place": 18,
+    "sport_play": 20,
+    "electronics_stationery": 27,
+    "plant_fungus": 9,
+    "nature": 14,
+    "public_equipment_weapon": 7,
+    "music": 10,
+    "shape_symbol": 11
+  },
+  "daily_status": {
+    "candidate_unvalidated": 314,
+    "review": 18,
+    "exclude_proposed": 13
+  },
+  "passed": true,
+  "limitations": [
+    "Prefix subset, not random full-dataset sampling.",
+    "recognized is the original game's output, not human-verified ground truth.",
+    "Prompt labels may not match what was actually drawn.",
+    "Near-duplicate and same-user leakage not audited; use independent service drawings for final evaluation.",
+    "Exact duplicates are reported, retained, and grouped into the same split."
+  ]
+}

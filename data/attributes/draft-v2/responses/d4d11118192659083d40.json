@@ -1,0 +1,277 @@
+{
+  "entries": [
+    {
+      "category_id": "hurricane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "열대성 폭풍 자연 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "curved_outline"
+          ],
+          "description_ko": "둥근 중심에서 휘어진 팔이 소용돌이친다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "나선을 나타낼 태그가 없다.",
+        "tornado와 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "lightning",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "대기 방전 자연 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "pointed_tip",
+            "serrated_edge"
+          ],
+          "description_ko": "꺾이며 내려오는 뾰족한 번개 줄기다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "지그재그 전용 태그가 없어 톱니 윤곽으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "moon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "celestial_body",
+            "natural_object"
+          ],
+          "description_ko": "지구의 위성인 천체"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "round",
+            "spots"
+          ],
+          "description_ko": "초승달 곡선이나 분화구 점이 있는 원이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "mountain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object"
+          ],
+          "description_ko": "솟은 지형 자연물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "pointed_tip"
+          ],
+          "description_ko": "뾰족한 봉우리의 삼각 윤곽이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ocean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "water_body"
+          ],
+          "description_ko": "넓게 트인 바다 수역"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wave_lines",
+            "flat"
+          ],
+          "description_ko": "끝없이 펼쳐진 수면에 물결선이 있다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pond",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "water_body"
+          ],
+          "description_ko": "내륙의 작은 고인 수역"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "bounded_outline",
+            "oval",
+            "irregular"
+          ],
+          "description_ko": "닫힌 물가 윤곽 안에 물이 고여 있다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "대기 강수 자연 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "clustered_units",
+            "pointed_tip"
+          ],
+          "description_ko": "구름 아래로 뾰족한 빗방울이 여럿 떨어진다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rainbow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "빛의 굴절 자연 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "stripes"
+          ],
+          "description_ko": "반원 아치에 여러 줄의 띠가 겹친다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "river",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "water_body"
+          ],
+          "description_ko": "흐르는 내륙 수역"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "wave_lines"
+          ],
+          "description_ko": "구불구불 길게 이어지는 물줄기다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snowflake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object"
+          ],
+          "description_ko": "얼음 결정 자연물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rays",
+            "branches"
+          ],
+          "description_ko": "중심에서 여섯 갈래가 뻗고 곁가지가 난다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

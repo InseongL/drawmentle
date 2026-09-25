@@ -1,0 +1,312 @@
+{
+  "entries": [
+    {
+      "category_id": "flashlight",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "손에 드는 조명"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "elongated",
+            "rays"
+          ],
+          "description_ko": "원통형 몸체 앞쪽에서 빛줄기가 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "어두운 곳을 비춘다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "floor_lamp",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "바닥에 세우는 조명"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pedestal",
+            "pole",
+            "conical"
+          ],
+          "description_ko": "받침에서 기둥이 올라가 원뿔형 갓이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "바닥에 세워 방을 밝힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "fork",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cutlery",
+            "kitchenware",
+            "artifact"
+          ],
+          "description_ko": "식사용 수저"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "teeth"
+          ],
+          "description_ko": "긴 손잡이 끝에 뾰족한 살이 여럿 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "dining"
+          ],
+          "description_ko": "음식을 찍어 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "frying_pan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "kitchenware",
+            "artifact"
+          ],
+          "description_ko": "음식을 볶는 조리 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "handle"
+          ],
+          "description_ko": "납작한 원형 팬에 긴 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "불 위에서 음식을 볶거나 부친다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "garden_hose",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "garden_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "물을 뿌리는 원예 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "spiral",
+            "elongated"
+          ],
+          "description_ko": "길게 휘는 관이 둥글게 감겨 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "water_flow",
+            "farming"
+          ],
+          "description_ko": "물을 뿌려 식물에 준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hot_tub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plumbing_fixture",
+            "artifact"
+          ],
+          "description_ko": "따뜻한 물을 채운 욕조"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "hollow",
+            "steam_lines",
+            "water_waves"
+          ],
+          "description_ko": "둥근 욕조 위로 김과 물결이 보인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "heating"
+          ],
+          "description_ko": "따뜻한 물을 담아 몸을 담근다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hourglass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "timepiece",
+            "artifact"
+          ],
+          "description_ko": "모래로 시간을 재는 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pinched_waist",
+            "triangular",
+            "pedestal"
+          ],
+          "description_ko": "가운데가 잘록한 유리와 위아래 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "measuring"
+          ],
+          "description_ko": "모래가 떨어지는 동안 시간을 잰다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "key",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "자물쇠용 금속 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "loop",
+            "elongated",
+            "teeth"
+          ],
+          "description_ko": "둥근 고리 머리와 톱니 홈이 난 막대다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "security"
+          ],
+          "description_ko": "자물쇠를 잠그고 연다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lantern",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "들고 다니는 조명"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "flame",
+            "windows"
+          ],
+          "description_ko": "위쪽 손잡이와 유리창 안에 불빛이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "travel"
+          ],
+          "description_ko": "들고 다니며 주변을 밝힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "light_bulb",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "전기로 빛을 내는 조명 부품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stripes",
+            "rays"
+          ],
+          "description_ko": "둥근 유리구 아래 나사 줄무늬 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "전기로 빛을 낸다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

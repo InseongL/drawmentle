@@ -1,0 +1,300 @@
+{
+  "entries": [
+    {
+      "category_id": "star",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "도형이자 기호"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pointed_tip",
+            "rays"
+          ],
+          "description_ko": "다섯 꼭짓점이 바깥으로 뾰족하게 뻗는다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "천체인 별이 아니라 별 모양 도형으로 작성했다."
+      ]
+    },
+    {
+      "category_id": "triangle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "세 변의 다각형 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular"
+          ],
+          "description_ko": "세 변과 세 꼭짓점이 있는 윤곽이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "zigzag",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "꺾인 선 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "serrated_edge"
+          ],
+          "description_ko": "좌우로 뾰족하게 꺾이며 이어지는 선이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "지그재그 전용 태그가 없어 톱니 윤곽으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "golf_club",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "골프 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "flat_head"
+          ],
+          "description_ko": "긴 샤프트 끝에 납작한 헤드가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "exercise",
+            "play"
+          ],
+          "description_ko": "공을 쳐서 운동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hockey_puck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "아이스하키 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "cylindrical"
+          ],
+          "description_ko": "납작한 원통형 원반이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise"
+          ],
+          "description_ko": "스틱으로 쳐서 경기에 쓴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hockey_stick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "하키 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "flat_head"
+          ],
+          "description_ko": "긴 막대 끝이 꺾여 넓적한 날이 된다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "exercise",
+            "play"
+          ],
+          "description_ko": "퍽이나 공을 쳐서 운동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "roller_coaster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "놀이공원 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "elongated"
+          ],
+          "description_ko": "오르내리는 굽은 레일 위로 차량이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "transport_people"
+          ],
+          "description_ko": "사람을 태우고 레일을 질주한다"
+        }
+      },
+      "notes": [
+        "놀이 시설이라 운동·놀이 기구로 분류했다."
+      ]
+    },
+    {
+      "category_id": "rollerskates",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "바퀴 달린 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_wheels",
+            "curved_outline"
+          ],
+          "description_ko": "신발 밑창 아래 바퀴 네 개가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "play",
+            "exercise"
+          ],
+          "description_ko": "신고 굴러가며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "see_saw",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "놀이터 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "triangular"
+          ],
+          "description_ko": "삼각 받침 위에 긴 널빤지가 걸쳐 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "sitting"
+          ],
+          "description_ko": "양 끝에 앉아 오르내리며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "skateboard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "바퀴 달린 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "elongated",
+            "four_wheels"
+          ],
+          "description_ko": "길쭉한 판 아래 바퀴 네 개가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise",
+            "transport_people"
+          ],
+          "description_ko": "올라타 굴러가며 논다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

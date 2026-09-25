@@ -1,0 +1,347 @@
+{
+  "entries": [
+    {
+      "category_id": "octagon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "여덟 개의 변과 꼭짓점을 가진 평면 도형이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "irregular"
+          ],
+          "description_ko": "평평한 윤곽의 다각형이며, 변이 여러 번 꺾이는 형태다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이나 도구의 기능이 아니라 도형의 형태를 나타내므로 기능 축은 적용하지 않는다."
+        }
+      },
+      "notes": [
+        "기호로도 쓰일 수 있어 도형과 상징이 겹칠 수 있음",
+        "그림에서는 정팔각형보다 일반 팔각형으로 보일 수 있음"
+      ]
+    },
+    {
+      "category_id": "octopus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mollusk"
+          ],
+          "description_ko": "바다에 사는 연체동물로, 팔이 여러 개인 생물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "tentacles",
+            "round"
+          ],
+          "description_ko": "둥근 몸통에 여러 팔이 퍼진 불규칙한 윤곽이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling",
+            "hunting"
+          ],
+          "description_ko": "물속에서 움직이고, 바닥을 기어가며, 먹이를 사냥하는 생물이다."
+        }
+      },
+      "notes": [
+        "문어는 팔이 8개인 대표적 연체동물",
+        "종에 따라 크기와 모양 차이가 있음",
+        "몸통보다 팔 표현이 강조되기 쉬움"
+      ]
+    },
+    {
+      "category_id": "onion",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant",
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "땅속에서 자라는 채소로, 식재료로 널리 쓰인다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "conical"
+          ],
+          "description_ko": "겹겹이 쌓인 둥글거나 타원형 덩어리로 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "cooking"
+          ],
+          "description_ko": "식용으로 사용되며, 조리 재료로 쓰인다."
+        }
+      },
+      "notes": [
+        "색은 품종에 따라 달라질 수 있음",
+        "대개 겹겹의 껍질 표현이 함께 나타남",
+        "잎이나 줄기보다 덩이 부분이 중심"
+      ]
+    },
+    {
+      "category_id": "oven",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance",
+            "electronic_device"
+          ],
+          "description_ko": "음식을 가열하기 위해 쓰는 주방용 기기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "opening",
+            "buttons"
+          ],
+          "description_ko": "직사각형 상자형 몸체에 문이나 조작부가 있는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "음식을 굽거나 데우는 데 사용한다."
+        }
+      },
+      "notes": [
+        "빌트인형과 독립형이 모두 가능함",
+        "문과 내부 공간 표현이 자주 등장함",
+        "전자식 조작부가 함께 그려질 수 있음"
+      ]
+    },
+    {
+      "category_id": "owl",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "야행성으로 알려진 조류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "beak",
+            "wings",
+            "rounded_ears"
+          ],
+          "description_ko": "둥근 머리와 짧은 부리, 몸 옆의 날개가 보이는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "hunting"
+          ],
+          "description_ko": "날아다니며 작은 동물을 사냥하는 행동이 대표적이다."
+        }
+      },
+      "notes": [
+        "머리 위의 귀처럼 보이는 깃털이 표현될 수 있음",
+        "올빼미는 부엉이와 혼용될 수 있어 용어가 넓게 쓰임",
+        "야간 활동성이 강조되는 경우가 많음"
+      ]
+    },
+    {
+      "category_id": "paintbrush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "stationery"
+          ],
+          "description_ko": "색을 칠하거나 바르는 데 쓰는 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "branches"
+          ],
+          "description_ko": "길쭉한 손잡이 끝에 솔 모양의 묶음이 붙은 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "drawing",
+            "decoration"
+          ],
+          "description_ko": "표면에 물감이나 안료를 바르거나 칠하는 데 사용한다."
+        }
+      },
+      "notes": [
+        "붓끝 모양은 종류에 따라 달라질 수 있음",
+        "미술용과 공사용 표현이 겹칠 수 있음"
+      ]
+    },
+    {
+      "category_id": "paint_can",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "페인트를 담아 보관하고 운반하는 용기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "원통형 몸체에 윗부분 개구부와 손잡이가 있는 경우가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "transport_goods",
+            "holding_objects"
+          ],
+          "description_ko": "액체 형태의 페인트를 담고 옮기는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "뚜껑이 함께 보일 수 있음",
+        "금속통과 플라스틱통이 모두 가능함"
+      ]
+    },
+    {
+      "category_id": "palm_tree",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "열대나 아열대 지역에서 자라는 키 큰 나무다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_neck",
+            "branches",
+            "leaves"
+          ],
+          "description_ko": "길게 뻗은 줄기 위쪽에 잎이 퍼진 실루엣이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "잎으로 광합성을 하는 식물이다."
+        }
+      },
+      "notes": [
+        "야자과 전체를 넓게 가리킬 수 있음",
+        "잎이 꼭대기에 모여 보이는 경우가 많음",
+        "열매나 줄기 굵기는 종에 따라 크게 다름"
+      ]
+    },
+    {
+      "category_id": "panda",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "곰과에 속하는 포유류로, 대나무를 주로 먹는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "four_legs",
+            "short_tail",
+            "rounded_ears"
+          ],
+          "description_ko": "둥근 몸통에 네 다리와 작은 귀가 보이는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "grazing"
+          ],
+          "description_ko": "네 발로 걷고 나무를 오르며 식물을 먹는다."
+        }
+      },
+      "notes": [
+        "흑백 무늬가 특징적이지만 색 정보에만 의존하지 않음",
+        "대나무를 먹는 행동이 자주 함께 연상됨"
+      ]
+    },
+    {
+      "category_id": "pants",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing"
+          ],
+          "description_ko": "하체에 입는 의류로, 다리 두 개를 각각 감싸는 형태다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "two_legs"
+          ],
+          "description_ko": "허리에서 아래로 길게 내려오며 두 다리 부분이 나뉘는 윤곽이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "입어서 몸을 가리고 다리 부분을 보호한다."
+        }
+      },
+      "notes": [
+        "바지 길이는 종류에 따라 달라질 수 있음",
+        "치마와 달리 다리 분리 윤곽이 핵심"
+      ]
+    }
+  ]
+}

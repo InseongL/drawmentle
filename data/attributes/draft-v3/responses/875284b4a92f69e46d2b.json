@@ -1,0 +1,328 @@
+{
+  "entries": [
+    {
+      "category_id": "tooth",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "입안의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "pointed_tip"
+          ],
+          "description_ko": "둥근 머리 아래 두 갈래 뿌리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "chewing"
+          ],
+          "description_ko": "음식을 끊고 씹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "barn",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "farm_building",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "농장 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "door",
+            "windows"
+          ],
+          "description_ko": "뾰족한 지붕 아래 큰 여닫이문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "farming",
+            "holding_objects",
+            "shelter"
+          ],
+          "description_ko": "가축과 농기구·곡식을 보관한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "beach",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "landform",
+            "nature"
+          ],
+          "description_ko": "바다와 맞닿은 해안 지형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "water_waves",
+            "water_edge",
+            "flat"
+          ],
+          "description_ko": "모래사장 옆으로 물결치는 바다가 닿는다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 지형이라 용도나 작용이 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "표본에는 야자수·태양 등이 함께 그려진 장면이 많다."
+      ]
+    },
+    {
+      "category_id": "bridge",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "outdoor_structure",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "강이나 길 위의 구조물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "bars"
+          ],
+          "description_ko": "물 위를 가로지르는 아치와 난간이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "passage",
+            "transport_people"
+          ],
+          "description_ko": "사람과 차가 강을 건너게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "castle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fortification",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "왕족이 살던 방어 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "crenellation",
+            "spire",
+            "windows",
+            "door"
+          ],
+          "description_ko": "성가퀴 성벽과 뾰족탑, 성문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection",
+            "living_accommodation"
+          ],
+          "description_ko": "적을 막고 사람이 거주했다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "church",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "religious_building",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "기독교 종교 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "roof",
+            "spire",
+            "cross_mark",
+            "door",
+            "windows"
+          ],
+          "description_ko": "뾰족탑 위에 십자가가 있고 문과 창이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "worship"
+          ],
+          "description_ko": "사람들이 모여 예배한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "fence",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "outdoor_structure",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "경계를 두르는 구조물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "bars",
+            "elongated"
+          ],
+          "description_ko": "세로 말뚝이 가로대로 길게 이어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "security",
+            "protection"
+          ],
+          "description_ko": "경계를 나누고 출입을 막는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "garden",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "artifact"
+          ],
+          "description_ko": "식물을 가꾸는 야외 공간"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "petals",
+            "leaves",
+            "stem"
+          ],
+          "description_ko": "땅 위로 꽃과 풀이 줄지어 자란다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "farming",
+            "decoration"
+          ],
+          "description_ko": "식물을 기르고 가꾼다"
+        }
+      },
+      "notes": [
+        "여러 대상을 담은 장면이라 flower와 형태가 겹친다."
+      ]
+    },
+    {
+      "category_id": "hospital",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "public_building",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "의료 공공 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "cross_mark",
+            "door"
+          ],
+          "description_ko": "창문이 많은 사각 건물에 십자 표시가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care"
+          ],
+          "description_ko": "환자를 진료하고 치료한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "house",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "dwelling",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "사람이 사는 주거 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "windows",
+            "door",
+            "chimney"
+          ],
+          "description_ko": "삼각 지붕 아래 문과 창, 굴뚝이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "living_accommodation",
+            "shelter"
+          ],
+          "description_ko": "사람이 거주하고 비바람을 피한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

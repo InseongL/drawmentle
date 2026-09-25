@@ -1,0 +1,311 @@
+{
+  "entries": [
+    {
+      "category_id": "steak",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "구운 고기 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "oval",
+            "flat",
+            "stripes"
+          ],
+          "description_ko": "납작하고 불규칙한 고기에 구운 줄무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "잘라서 먹는 음식이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "strawberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "장미과에 속하는 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "spots",
+            "leaves"
+          ],
+          "description_ko": "역삼각형 몸에 씨 점이 박히고 위에 잎이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "string_bean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "콩과 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "pointed_tip"
+          ],
+          "description_ko": "가늘고 길게 휜 꼬투리 끝이 뾰족하다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "꼬투리째 익혀 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "watermelon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "박과의 큰 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "triangular",
+            "stripes",
+            "spots"
+          ],
+          "description_ko": "줄무늬 둥근 몸통이나 씨가 박힌 삼각 조각이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "잘라서 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "floor_lamp",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "실내 조명 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "conical",
+            "pedestal",
+            "straight_tube"
+          ],
+          "description_ko": "받침에서 긴 기둥이 올라가 원뿔형 갓이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "바닥에 세워 방을 밝힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "fork",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "식사용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "teeth",
+            "pointed_tip"
+          ],
+          "description_ko": "긴 손잡이 끝에 뾰족한 살이 여럿 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food"
+          ],
+          "description_ko": "음식을 찍어 입으로 옮긴다"
+        }
+      },
+      "notes": [
+        "식사 도구 기능 태그가 없어 음식 제공으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "frying_pan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "container"
+          ],
+          "description_ko": "조리용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "handle"
+          ],
+          "description_ko": "납작한 원형 팬에 긴 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "불 위에서 음식을 볶거나 부친다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "garden_hose",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "원예용 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_tube",
+            "round"
+          ],
+          "description_ko": "길고 휘는 관이 둥글게 감겨 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "물을 뿌려 씻거나 식물에 준다"
+        }
+      },
+      "notes": [
+        "물 공급·물주기 기능 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "hot_tub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "목욕용 대형 용기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "hollow",
+            "opening",
+            "wave_lines"
+          ],
+          "description_ko": "둥근 욕조 안에 물결이 보인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "heating"
+          ],
+          "description_ko": "따뜻한 물을 담아 몸을 담근다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hourglass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "모래를 쓰는 측정 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "curved_outline",
+            "pedestal"
+          ],
+          "description_ko": "가운데가 잘록한 두 삼각 유리와 위아래 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "measuring"
+          ],
+          "description_ko": "모래가 떨어지는 동안 시간을 잰다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

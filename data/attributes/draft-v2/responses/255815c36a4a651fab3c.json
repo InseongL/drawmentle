@@ -1,0 +1,337 @@
+{
+  "entries": [
+    {
+      "category_id": "canoe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "물 위를 이동하는 작은 노를 젓는 배로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "opening"
+          ],
+          "description_ko": "길고 낮은 선체에 덮개가 거의 없는 열린 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "transport_people"
+          ],
+          "description_ko": "사람이 물 위를 이동할 때 쓰는 수상 탈것이다."
+        }
+      },
+      "notes": [
+        "노로 젓는 수상 탈것과의 겹침이 있다."
+      ]
+    },
+    {
+      "category_id": "car",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "땅 위를 이동하는 개인용 이동 수단으로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "대체로 네 바퀴와 차체, 창문이 있는 낮은 덩어리 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "사람과 짐을 도로로 옮기는 데 쓰는 탈것이다."
+        }
+      },
+      "notes": [
+        "다양한 차종을 포괄하므로 세부 차체 형상은 단순화했다."
+      ]
+    },
+    {
+      "category_id": "carrot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "수확해 먹는 뿌리채소로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "conical",
+            "pointed_tip",
+            "stem"
+          ],
+          "description_ko": "길고 끝이 가늘어지는 뿌리 모양이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹는 재료로 쓰이는 식품이다."
+        }
+      },
+      "notes": [
+        "식물 전체가 아니라 식용 부분을 가리키는 분류로 해석했다."
+      ]
+    },
+    {
+      "category_id": "castle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "방어와 거주를 겸할 수 있는 대형 건축물로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "two_legs",
+            "roof",
+            "spire",
+            "windows",
+            "triangular"
+          ],
+          "description_ko": "높은 탑과 성벽, 지붕과 창문이 어우러진 복합 실루엣이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection",
+            "shelter"
+          ],
+          "description_ko": "방어와 임시 거처의 성격을 함께 지닌 건물이다."
+        }
+      },
+      "notes": [
+        "교회·집·고층 빌딩과 겹칠 수 있어 탑과 성벽을 대표 단서로 잡았다."
+      ]
+    },
+    {
+      "category_id": "cat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "포유류에 속하는 작은 동물로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "pointed_ears",
+            "long_tail",
+            "rounded_ears"
+          ],
+          "description_ko": "네 다리와 뾰족한 귀, 길거나 짧은 꼬리가 보이는 소형 체형이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "hunting"
+          ],
+          "description_ko": "걷고 기어오르며 작은 먹이를 사냥하는 동물이다."
+        }
+      },
+      "notes": [
+        "체구와 꼬리 길이는 개체차가 있으나 대표적 고양이 형상으로 선택했다."
+      ]
+    },
+    {
+      "category_id": "ceiling_fan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "실내 공기를 움직이는 가전으로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "wings",
+            "cylindrical"
+          ],
+          "description_ko": "천장에 붙고 여러 날개가 중심 축에서 퍼지는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "ventilation",
+            "cooling"
+          ],
+          "description_ko": "공기를 순환시켜 바람을 일으키고 더위를 덜어 주는 데 쓴다."
+        }
+      },
+      "notes": [
+        "형태는 제품마다 달라질 수 있으나 회전 날개와 천장 고정이 핵심이다."
+      ]
+    },
+    {
+      "category_id": "cello",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "string_instrument"
+          ],
+          "description_ko": "현을 켜서 소리를 내는 현악기로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_body",
+            "long_neck",
+            "strings",
+            "round"
+          ],
+          "description_ko": "길쭉한 몸체와 목, 현이 있는 큰 울림통이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "활로 연주하는 음악용 악기이다."
+        }
+      },
+      "notes": [
+        "바이올린보다 큰 현악기로서 곡선형 몸통과 긴 목이 핵심 단서이다."
+      ]
+    },
+    {
+      "category_id": "cell_phone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "휴대하여 통신과 정보 처리를 하는 전자기기로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "손에 쥘 수 있는 직사각형 몸체에 화면이 중심으로 잡히는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "통화와 메시지, 여러 정보 표시를 위해 쓰는 휴대 기기이다."
+        }
+      },
+      "notes": [
+        "버튼형과 터치형이 섞일 수 있어 화면 중심의 공통 특징만 잡았다."
+      ]
+    },
+    {
+      "category_id": "chair",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "앉을 때 쓰는 가구로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "flat",
+            "rectangular",
+            "rounded_ears"
+          ],
+          "description_ko": "좌판과 등받이, 네 다리로 이루어진 단순한 구조가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "사람이 앉도록 지지하는 가구이다."
+        }
+      },
+      "notes": [
+        "팔걸이 유무나 등받이 높이는 다양할 수 있어 기본 좌석 구조만 반영했다."
+      ]
+    },
+    {
+      "category_id": "chandelier",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "조명을 제공하는 실내 설비로 보는 분류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hollow",
+            "branches",
+            "rays",
+            "cylindrical"
+          ],
+          "description_ko": "중앙에서 여러 팔이 뻗고 아래로 장식물이나 전등이 매달리는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "decoration"
+          ],
+          "description_ko": "실내를 밝히면서 장식 효과도 주는 조명기구이다."
+        }
+      },
+      "notes": [
+        "샹들리에는 조명과 장식이 함께 드러나는 경우가 많다."
+      ]
+    }
+  ]
+}

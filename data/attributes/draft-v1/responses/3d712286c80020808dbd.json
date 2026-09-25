@@ -1,0 +1,331 @@
+{
+  "entries": [
+    {
+      "category_id": "pickup_truck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "화물 적재를 위한 자동차 계열의 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "four_wheels"
+          ],
+          "description_ko": "운전석과 적재함이 함께 보이는 각진 차체가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_goods"
+          ],
+          "description_ko": "짐이나 장비를 싣고 옮기는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "승객 운송보다 적재가 더 중심인 차량이다.",
+        "차종 세부 구분은 그림마다 생략될 수 있다."
+      ]
+    },
+    {
+      "category_id": "picture_frame",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture",
+            "artwork"
+          ],
+          "description_ko": "사진이나 그림을 둘러서 보여 주는 실내 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "대체로 평평한 사각 테두리로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "displaying",
+            "decoration"
+          ],
+          "description_ko": "내용물을 전시하고 장식 효과를 낸다."
+        }
+      },
+      "notes": [
+        "내용물은 사진, 그림, 인쇄물 등으로 다양할 수 있다.",
+        "벽걸이형과 탁상형이 모두 있을 수 있다."
+      ]
+    },
+    {
+      "category_id": "pig",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "포유류에 속하는 가축 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail"
+          ],
+          "description_ko": "네 다리와 짧은 꼬리, 비교적 둥근 귀가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing"
+          ],
+          "description_ko": "땅을 파헤치며 먹이를 찾고 여러 먹이를 먹는다."
+        }
+      },
+      "notes": [
+        "야생종과 가축종의 세부 모습은 다를 수 있다.",
+        "꼬리 모양과 체형은 개체차가 있다."
+      ]
+    },
+    {
+      "category_id": "pillow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "머리나 몸을 받치는 침구용 쿠션이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "oval",
+            "flat"
+          ],
+          "description_ko": "대체로 납작한 직사각형이나 둥근 사각형으로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting",
+            "sleeping"
+          ],
+          "description_ko": "눕거나 기대어 쉴 때 몸을 받쳐 준다."
+        }
+      },
+      "notes": [
+        "침대용, 소파용 등 크기와 형태가 다양하다.",
+        "장식용 쿠션과 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "pineapple",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant",
+            "fruit"
+          ],
+          "description_ko": "열대 식물의 열매로 먹는 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "elongated",
+            "spots"
+          ],
+          "description_ko": "타원형 몸체에 표면의 거친 무늬가 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식용 과일로 먹는다."
+        }
+      },
+      "notes": [
+        "윗부분의 잎 모양 꼭지가 함께 그려질 수 있다.",
+        "겉표면의 세부 무늬는 단순화될 수 있다."
+      ]
+    },
+    {
+      "category_id": "pizza",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "반죽 위에 재료를 올려 구운 조리 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat"
+          ],
+          "description_ko": "대체로 납작한 원형으로 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "serving_food"
+          ],
+          "description_ko": "잘라서 먹는 식사 음식이다."
+        }
+      },
+      "notes": [
+        "조각으로 나뉜 형태가 자주 나타난다.",
+        "토핑 종류는 매우 다양하다."
+      ]
+    },
+    {
+      "category_id": "pliers",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "잡고 구부리거나 비트는 데 쓰는 손도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "opening",
+            "elongated"
+          ],
+          "description_ko": "손잡이와 앞쪽 집게 부분이 이어진 길쭉한 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "cutting"
+          ],
+          "description_ko": "물체를 집거나 선을 자르고 비틀 때 쓴다."
+        }
+      },
+      "notes": [
+        "끝부분 형태는 종류에 따라 조금씩 다르다.",
+        "전선 작업용과 일반 작업용이 모두 있다."
+      ]
+    },
+    {
+      "category_id": "police_car",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "경찰 업무에 쓰는 자동차이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "four_wheels",
+            "roof",
+            "windows"
+          ],
+          "description_ko": "일반 승용차와 비슷한 차체에 지붕과 창문이 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "rescue",
+            "signaling"
+          ],
+          "description_ko": "경찰 인력을 이동시키고 현장 대응과 신호 전달에 쓰인다."
+        }
+      },
+      "notes": [
+        "경광등이나 사이렌 표현이 더해질 수 있다.",
+        "차종은 세단형과 SUV형 등으로 다양하다."
+      ]
+    },
+    {
+      "category_id": "pond",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "place"
+          ],
+          "description_ko": "작고 비교적 고인 물이 있는 자연 장소다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "경계가 불규칙하며 특별한 고정 형태를 두기 어렵다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 장소이므로 고유한 기능 태그를 붙이지 않는다."
+        }
+      },
+      "notes": [
+        "연못은 인공 못과 구분이 모호할 수 있다.",
+        "식물이나 물고기가 함께 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "pool",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "building"
+          ],
+          "description_ko": "수영이나 물놀이를 위한 인공 물 공간이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "대체로 길쭉한 사각 형태의 물웅덩이로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming"
+          ],
+          "description_ko": "물에서 수영하거나 훈련하는 데 쓴다."
+        }
+      },
+      "notes": [
+        "실내형과 야외형이 모두 가능하다.",
+        "주변 가장자리나 사다리가 함께 보일 수 있다."
+      ]
+    }
+  ]
+}

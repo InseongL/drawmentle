@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "jail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "public_building",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "수감용 공공 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "bars",
+            "windows"
+          ],
+          "description_ko": "사각 건물의 창에 세로 창살이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "security"
+          ],
+          "description_ko": "죄수를 가두어 격리한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lighthouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tower",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "해안의 항로 표지 탑"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "conical",
+            "stripes",
+            "rays",
+            "windows"
+          ],
+          "description_ko": "위로 좁아지는 탑에 줄무늬와 빛줄기가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "navigation",
+            "signaling"
+          ],
+          "description_ko": "빛을 비춰 배의 길을 안내한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pool",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "artifact"
+          ],
+          "description_ko": "수영을 위한 인공 시설"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "water_edge",
+            "water_waves"
+          ],
+          "description_ko": "둥근 모서리 사각 수조에 물결이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "exercise",
+            "play"
+          ],
+          "description_ko": "사람이 헤엄치고 물놀이를 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "skyscraper",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tower",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "매우 높은 도시 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "windows"
+          ],
+          "description_ko": "위로 긴 사각 건물에 창문이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter"
+          ],
+          "description_ko": "많은 사람이 일하거나 머무는 공간이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "stairs",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building_part",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "층을 잇는 건물 구조"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rungs",
+            "rectangular"
+          ],
+          "description_ko": "직각으로 꺾인 단이 반복된다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "passage",
+            "climbing"
+          ],
+          "description_ko": "층을 오르내리며 이동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tent",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "dwelling",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "천으로 만든 임시 거처"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "opening"
+          ],
+          "description_ko": "삼각 윤곽 앞쪽이 열린 천막이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter",
+            "sleeping",
+            "travel"
+          ],
+          "description_ko": "야외에서 머물며 잠을 잔다"
+        }
+      },
+      "notes": [
+        "야영 장비라 건축물 분류가 모호하다."
+      ]
+    },
+    {
+      "category_id": "the_eiffel_tower",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tower",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "파리의 대표 철탑"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "elongated",
+            "spire",
+            "grid_pattern"
+          ],
+          "description_ko": "위로 좁아지는 격자 철골 탑이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sightseeing"
+          ],
+          "description_ko": "도시를 상징하는 관광 명소다"
+        }
+      },
+      "notes": [
+        "고유 명소라 데일리 정답 정책 결정이 필요하다."
+      ]
+    },
+    {
+      "category_id": "the_great_wall_of_china",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fortification",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "중국의 고대 방어 성벽"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wavy_line",
+            "crenellation"
+          ],
+          "description_ko": "굽이치며 길게 이어지는 성가퀴 성벽이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection",
+            "sightseeing"
+          ],
+          "description_ko": "외적을 막던 성벽이자 관광 명소다"
+        }
+      },
+      "notes": [
+        "고유 명소라 데일리 정답 정책 결정이 필요하다."
+      ]
+    },
+    {
+      "category_id": "windmill",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "farm_building",
+            "building",
+            "artifact"
+          ],
+          "description_ko": "바람 동력을 쓰는 농장 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "conical",
+            "door"
+          ],
+          "description_ko": "원뿔형 탑 위에 큰 날개 넷이 돈다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "farming"
+          ],
+          "description_ko": "바람의 힘으로 곡식을 빻는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "backpack",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bag",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "등에 메는 가방"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "strap",
+            "lid"
+          ],
+          "description_ko": "사각 몸체에 덮개와 어깨끈이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing",
+            "travel"
+          ],
+          "description_ko": "소지품을 넣어 등에 메고 다닌다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

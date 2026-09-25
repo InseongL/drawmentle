@@ -1,0 +1,319 @@
+{
+  "entries": [
+    {
+      "category_id": "necklace",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "jewelry",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "목에 거는 장신구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "loop",
+            "curved_outline",
+            "clustered_units"
+          ],
+          "description_ko": "구슬이 이어진 굽은 고리에 펜던트가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "목에 걸어 꾸민다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pants",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bottom",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "하체에 입는 긴 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "split_legs",
+            "elongated"
+          ],
+          "description_ko": "허리에서 두 갈래 긴 다리통으로 갈라진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "하체에 입어 몸을 가린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "purse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bag",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "들고 다니는 작은 가방"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "handle",
+            "lid"
+          ],
+          "description_ko": "사각 몸체 위에 손잡이와 덮개가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing"
+          ],
+          "description_ko": "소지품을 넣어 들거나 멘다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "shoe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "footwear",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "발에 신는 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "sole",
+            "opening",
+            "curved_outline"
+          ],
+          "description_ko": "굽은 윤곽 아래 밑창과 발 넣는 입구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "발에 신어 보호한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "shorts",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bottom",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "하체에 입는 짧은 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "split_legs",
+            "rectangular"
+          ],
+          "description_ko": "허리 아래 짧은 두 갈래 다리통이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing"
+          ],
+          "description_ko": "하체에 가볍게 입는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "footwear",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "발에 신는 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "elongated",
+            "opening"
+          ],
+          "description_ko": "발목에서 꺾인 L자 주머니 모양이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "발에 신어 감싼다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "suitcase",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bag",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "여행용 짐 가방"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "handle"
+          ],
+          "description_ko": "사각 상자형 몸체 위에 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods",
+            "travel"
+          ],
+          "description_ko": "짐을 넣어 여행에 가져간다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sweater",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "top",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "상체에 입는 편물 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "sleeves",
+            "stripes",
+            "rectangular"
+          ],
+          "description_ko": "소매 달린 상의에 뜨개 무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "입어서 몸을 따뜻하게 감싼다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "t-shirt",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "top",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "상체에 입는 가벼운 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "sleeves",
+            "flat"
+          ],
+          "description_ko": "짧은 소매가 옆으로 뻗은 T자 윤곽이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing"
+          ],
+          "description_ko": "상체에 가볍게 입는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "underwear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bottom",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "몸에 직접 입는 속옷"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "split_legs",
+            "triangular",
+            "flat"
+          ],
+          "description_ko": "허리 밴드 아래 역삼각형과 다리 구멍이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing"
+          ],
+          "description_ko": "겉옷 안에 입는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

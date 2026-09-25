@@ -1,0 +1,328 @@
+{
+  "entries": [
+    {
+      "category_id": "church",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "place"
+          ],
+          "description_ko": "예배와 종교 모임에 쓰이는 건축물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "roof",
+            "windows",
+            "rectangular"
+          ],
+          "description_ko": "본체와 지붕이 함께 보이는 건물 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter"
+          ],
+          "description_ko": "종교 행사를 위한 실내 공간과 피난처 역할을 한다."
+        }
+      },
+      "notes": [
+        "종교 시설과 건축물 분류가 함께 걸친다.",
+        "탑이나 첨탑은 그려질 수도 있으나 필수는 아니다."
+      ]
+    },
+    {
+      "category_id": "circle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "중심에서 같은 거리의 점들로 이루어진 평면 도형이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "가장자리 없이 둥글게 이어지는 윤곽이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "기능보다는 도형 자체를 나타내는 항목이라 적용하지 않는다."
+        }
+      },
+      "notes": [
+        "도형과 기호 범주가 겹칠 수 있다.",
+        "구체 물체가 아니므로 일상적 용도는 없다."
+      ]
+    },
+    {
+      "category_id": "clarinet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "입으로 불어 소리를 내는 목관 악기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "buttons"
+          ],
+          "description_ko": "길쭉한 관 몸체에 구멍이나 키가 이어진 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "연주하여 멜로디와 음색을 낸다."
+        }
+      },
+      "notes": [
+        "관악기이지만 금속 악기와 혼동될 수 있다.",
+        "키와 벨 모양 세부는 그림에 따라 생략될 수 있다."
+      ]
+    },
+    {
+      "category_id": "clock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance",
+            "electronic_device"
+          ],
+          "description_ko": "시간을 확인하거나 표시하는 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "buttons"
+          ],
+          "description_ko": "원형 또는 사각형 화면과 조작부가 함께 나타나는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "displaying"
+          ],
+          "description_ko": "현재 시각을 알려 주고 시간을 읽게 한다."
+        }
+      },
+      "notes": [
+        "벽시계, 탁상시계, 손목시계와 구분이 필요하다.",
+        "아날로그 바늘형과 디지털 표시형이 모두 가능하다."
+      ]
+    },
+    {
+      "category_id": "cloud",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "대기 중 수증기 응결로 생기는 하늘의 현상이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "round"
+          ],
+          "description_ko": "윤곽이 고정되지 않고 둥글고 불규칙하게 그려지기 쉽다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 고유한 사용 기능은 없다."
+        }
+      },
+      "notes": [
+        "날씨나 하늘 장면의 일부로 나타날 수 있다.",
+        "비나 눈과 함께 그려질 수 있으나 별도 대상은 아니다."
+      ]
+    },
+    {
+      "category_id": "coffee_cup",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "커피를 담아 마시는 작은 손잡이 달린 잔이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "위가 열린 원통형 몸체와 옆의 손잡이가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_food"
+          ],
+          "description_ko": "음료를 담아 제공하고 마시게 한다."
+        }
+      },
+      "notes": [
+        "컵과 머그의 중간처럼 보일 수 있어 주의가 필요하다.",
+        "받침 접시가 함께 그려질 수도 있다."
+      ]
+    },
+    {
+      "category_id": "compass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "stationery"
+          ],
+          "description_ko": "방향을 찾거나 그리는 데 쓰는 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "pointed_ears",
+            "buttons"
+          ],
+          "description_ko": "원형 본체에 바늘이나 조작부가 있는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "drawing"
+          ],
+          "description_ko": "방위를 확인하거나 원을 그리는 데 쓴다."
+        }
+      },
+      "notes": [
+        "나침반과 제도용 컴퍼스가 한국어에서 혼동될 수 있다.",
+        "이 항목은 보통 방향 확인 도구를 우선 뜻하는 것으로 본다."
+      ]
+    },
+    {
+      "category_id": "computer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "정보를 처리하고 화면으로 결과를 보여 주는 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "화면과 입력부가 결합된 직사각형 구성으로 자주 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "계산, 저장, 실행, 정보 표시를 수행한다."
+        }
+      },
+      "notes": [
+        "데스크톱, 노트북, 일체형 등 여러 형태가 있다.",
+        "모니터만 그려지면 컴퓨터 본체와 구분이 필요하다."
+      ]
+    },
+    {
+      "category_id": "cookie",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "밀가루 반죽을 구워 만든 단단한 간식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "irregular",
+            "spots"
+          ],
+          "description_ko": "작고 납작한 원형이나 불규칙한 모양이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "간식으로 먹는 음식이다."
+        }
+      },
+      "notes": [
+        "초콜릿칩, 견과류 조각 등이 점처럼 보일 수 있다.",
+        "비스킷과 형태가 비슷해 맥락이 필요할 수 있다."
+      ]
+    },
+    {
+      "category_id": "cooler",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "차가운 상태를 유지하도록 만든 운반용 보관 상자이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "lid",
+            "handle"
+          ],
+          "description_ko": "뚜껑이 있는 상자형 몸체와 손잡이가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooling",
+            "holding_objects"
+          ],
+          "description_ko": "음료나 음식을 차갑게 보관하고 담아 둔다."
+        }
+      },
+      "notes": [
+        "아이스박스와 쿨러박스 의미가 겹칠 수 있다.",
+        "전기식 냉장장치가 아니라 휴대용 보관 용기로 본다."
+      ]
+    }
+  ]
+}

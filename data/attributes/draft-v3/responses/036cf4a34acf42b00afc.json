@@ -1,0 +1,321 @@
+{
+  "entries": [
+    {
+      "category_id": "swing_set",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "play_equipment",
+            "artifact"
+          ],
+          "description_ko": "놀이터 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "strings",
+            "suspended",
+            "flat"
+          ],
+          "description_ko": "A자 틀에 줄로 납작한 의자가 매달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "sitting"
+          ],
+          "description_ko": "앉아서 앞뒤로 흔들며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "teddy-bear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "toy",
+            "artifact"
+          ],
+          "description_ko": "곰 모양 봉제 인형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rounded_ears",
+            "stitched_seams",
+            "face_features"
+          ],
+          "description_ko": "둥근 머리와 귀, 바느질선이 있는 몸이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play"
+          ],
+          "description_ko": "안고 노는 인형이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tennis_racquet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "striking_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "테니스공을 치는 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "handle",
+            "strings",
+            "grid_pattern"
+          ],
+          "description_ko": "타원형 틀에 줄이 격자로 엮이고 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "ball_game"
+          ],
+          "description_ko": "공을 쳐서 넘긴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "waterslide",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "play_equipment",
+            "artifact"
+          ],
+          "description_ko": "물놀이 놀이 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "wavy_line"
+          ],
+          "description_ko": "높은 곳에서 굽이치며 내려오는 긴 관이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "swimming"
+          ],
+          "description_ko": "미끄러져 물로 내려오며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "anvil",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "대장간 작업 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "box_like",
+            "pedestal",
+            "pointed_tip"
+          ],
+          "description_ko": "넓은 윗면 한쪽이 뾰족하고 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "construction"
+          ],
+          "description_ko": "쇠를 올려 두드려 편다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "axe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "나무를 쪼개는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "blade",
+            "elongated"
+          ],
+          "description_ko": "긴 자루 끝에 넓은 쇠날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "나무를 찍어 쪼갠다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "drill",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "구멍을 뚫는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "pointed_tip",
+            "spiral"
+          ],
+          "description_ko": "손잡이 달린 몸체 앞에 나선형 날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "construction",
+            "digging"
+          ],
+          "description_ko": "돌려서 구멍을 뚫는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hammer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "두드리는 공구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "elongated",
+            "flat_head"
+          ],
+          "description_ko": "긴 자루 끝에 넓적한 쇠머리가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "construction"
+          ],
+          "description_ko": "못 등을 두드려 박는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "knife",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cutlery",
+            "kitchenware",
+            "artifact"
+          ],
+          "description_ko": "자르는 주방용 날붙이"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "blade",
+            "handle",
+            "pointed_tip",
+            "elongated"
+          ],
+          "description_ko": "손잡이에 한쪽 날이 선 뾰족한 칼날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "음식이나 물건을 자른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ladder",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hand_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "높은 곳에 쓰는 작업 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rungs",
+            "elongated"
+          ],
+          "description_ko": "긴 두 기둥 사이에 가로대가 반복된다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "construction"
+          ],
+          "description_ko": "딛고 높은 곳에 오른다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "entries": [
+    {
+      "category_id": "sink",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plumbing_fixture",
+            "artifact"
+          ],
+          "description_ko": "물을 쓰는 세면·주방 설비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hollow",
+            "opening",
+            "spout",
+            "rectangular"
+          ],
+          "description_ko": "움푹한 사각 수조 위로 수도꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hygiene",
+            "cleaning",
+            "water_flow"
+          ],
+          "description_ko": "물을 틀어 손이나 그릇을 씻는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sleeping_bag",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bedding",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "야외용 침구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "opening"
+          ],
+          "description_ko": "길쭉한 자루 윗부분이 열려 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping",
+            "travel"
+          ],
+          "description_ko": "몸을 넣어 야외에서 잔다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "spoon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cutlery",
+            "kitchenware",
+            "artifact"
+          ],
+          "description_ko": "식사용 수저"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "oval",
+            "handle"
+          ],
+          "description_ko": "긴 손잡이 끝에 오목한 타원 머리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "dining"
+          ],
+          "description_ko": "음식을 떠서 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "stove",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "kitchen_appliance",
+            "appliance",
+            "artifact"
+          ],
+          "description_ko": "화구가 있는 주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "round",
+            "buttons",
+            "flame"
+          ],
+          "description_ko": "윗면 둥근 화구에 불꽃, 앞에 조절 버튼이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "화구로 음식을 익힌다"
+        }
+      },
+      "notes": [
+        "'레인지'는 전자레인지와 혼동될 수 있어 조리대 의미로 작성했다."
+      ]
+    },
+    {
+      "category_id": "table",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "table_storage",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "물건을 올려두는 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "rectangular",
+            "four_legs"
+          ],
+          "description_ko": "넓은 평판을 네 다리가 받친다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "dining"
+          ],
+          "description_ko": "물건을 올려두고 식사한다"
+        }
+      },
+      "notes": [
+        "bench, bed와 형태가 겹친다."
+      ]
+    },
+    {
+      "category_id": "teapot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "drinkware",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "차를 우려 따르는 주전자"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "handle",
+            "lid",
+            "spout"
+          ],
+          "description_ko": "둥근 몸체에 뚜껑, 손잡이, 주둥이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_drink"
+          ],
+          "description_ko": "차를 우려 잔에 따른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "toaster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "kitchen_appliance",
+            "appliance",
+            "artifact"
+          ],
+          "description_ko": "빵을 굽는 주방 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "slots"
+          ],
+          "description_ko": "상자형 본체 위에 빵 넣는 좁은 홈이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "baking",
+            "heating"
+          ],
+          "description_ko": "빵을 넣어 굽는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "toilet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plumbing_fixture",
+            "artifact"
+          ],
+          "description_ko": "용변을 보는 욕실 설비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "lid",
+            "box_like",
+            "opening"
+          ],
+          "description_ko": "타원형 변기통에 뚜껑과 뒤쪽 물탱크가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hygiene",
+            "sitting"
+          ],
+          "description_ko": "앉아 용변을 보고 물로 내린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "toothbrush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hygiene_item",
+            "artifact"
+          ],
+          "description_ko": "이를 닦는 위생 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "bristles"
+          ],
+          "description_ko": "긴 손잡이 끝에 촘촘한 솔이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hygiene"
+          ],
+          "description_ko": "이를 닦는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "toothpaste",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hygiene_item",
+            "artifact"
+          ],
+          "description_ko": "튜브에 든 위생 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "lid"
+          ],
+          "description_ko": "납작하고 긴 튜브 끝에 뚜껑이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hygiene"
+          ],
+          "description_ko": "칫솔에 짜서 이를 닦는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "binoculars",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "멀리 있는 대상을 함께 보기 위한 광학 관찰 기기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "two_legs"
+          ],
+          "description_ko": "좌우 한 쌍의 관이 나란히 붙고, 가운데 연결부와 양쪽 접안부가 보이는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation"
+          ],
+          "description_ko": "먼 곳을 자세히 살펴 방향 판단이나 관찰에 쓰인다."
+        }
+      },
+      "notes": [
+        "전자기기보다 수동 광학 기구에 가까운 상으로도 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "bird",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "깃털과 부리를 가진 날짐승의 일반 범주다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "beak",
+            "wings",
+            "two_legs",
+            "short_tail"
+          ],
+          "description_ko": "부리, 날개, 두 다리와 비교적 짧은 꼬리가 함께 드러나는 전형적 새 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "walking"
+          ],
+          "description_ko": "대체로 날고, 지상에서는 걷는다."
+        }
+      },
+      "notes": [
+        "비행기, 헬리콥터와는 생물 여부와 날개/몸통 구성에서 대비된다."
+      ]
+    },
+    {
+      "category_id": "birthday_cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "축하용으로 준비되는 달콤한 구운 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "flat",
+            "cylindrical",
+            "crown_calyx"
+          ],
+          "description_ko": "겹쳐진 케이크 몸체 위에 장식이 올려진 덩어리형으로, 원형이나 사각형 단면이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food",
+            "eating",
+            "decoration"
+          ],
+          "description_ko": "생일을 기념해 내놓고 먹으며, 촛불이나 장식으로 꾸민다."
+        }
+      },
+      "notes": [
+        "일반 케이크와는 기념 장식 요소가 더 강조된다."
+      ]
+    },
+    {
+      "category_id": "blackberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작고 먹을 수 있는 베리류 열매다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "clustered_units",
+            "bumpy_surface"
+          ],
+          "description_ko": "여러 작은 알갱이가 뭉친 울퉁불퉁한 덩어리로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "그대로 먹는 과일 재료다."
+        }
+      },
+      "notes": [
+        "포도·블루베리보다 표면이 더 알갱이진 덩어리로 표현되는 경우가 많다."
+      ]
+    },
+    {
+      "category_id": "blueberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작고 단단한 베리류 열매다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "smooth_surface"
+          ],
+          "description_ko": "작은 둥근 알갱이 하나로 보이며 표면은 비교적 매끈하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "그대로 먹는 과일 재료다."
+        }
+      },
+      "notes": [
+        "블랙베리와 달리 여러 알갱이로 뭉친 질감보다 단일 구형이 두드러진다."
+      ]
+    },
+    {
+      "category_id": "book",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "페이지를 묶어 읽거나 보는 인쇄물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "opening"
+          ],
+          "description_ko": "납작한 직사각형 묶음으로, 한쪽에 펼치는 면이 드러난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "displaying",
+            "writing"
+          ],
+          "description_ko": "읽기용 내용을 담고, 메모나 글쓰기에 쓰이기도 한다."
+        }
+      },
+      "notes": [
+        "전자책 장치와 달리 종이 묶음의 형태로 해석하는 것이 자연스럽다."
+      ]
+    },
+    {
+      "category_id": "boomerang",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "tool"
+          ],
+          "description_ko": "던져서 되돌아오도록 설계된 던지기용 물건이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "elongated",
+            "triangular"
+          ],
+          "description_ko": "굽은 팔자형 또는 각진 곡선형 실루엣이 두드러진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise"
+          ],
+          "description_ko": "던지고 받는 놀이나 연습에 쓰인다."
+        }
+      },
+      "notes": [
+        "무기성 도구로 보일 여지도 있으나 놀이·운동 기구로 다루는 편이 적절하다."
+      ]
+    },
+    {
+      "category_id": "bottlecap",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fastener",
+            "tool"
+          ],
+          "description_ko": "병의 입구를 닫아 고정하는 작은 마개다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "serrated_edge"
+          ],
+          "description_ko": "작고 납작한 원판형이며 가장자리에 톱니 모양 굴곡이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening"
+          ],
+          "description_ko": "병 입구를 밀봉하거나 닫는다."
+        }
+      },
+      "notes": [
+        "뚜껑이지만 용기 본체는 아니므로 container로는 두지 않았다."
+      ]
+    },
+    {
+      "category_id": "bowtie",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "목에 매는 장식성 의복 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "curved_outline",
+            "ring_bow"
+          ],
+          "description_ko": "가운데가 조여지고 양쪽이 퍼진 리본 매듭 모양이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "옷차림에 매어 착용하고 꾸민다."
+        }
+      },
+      "notes": [
+        "넥타이와 겹치지만 더 대칭적인 매듭형 실루엣이 핵심이다."
+      ]
+    },
+    {
+      "category_id": "bracelet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "손목에 두르는 장신구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "ring_bow"
+          ],
+          "description_ko": "닫힌 고리 또는 둥근 띠 형태로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "손목에 착용해 장식한다."
+        }
+      },
+      "notes": [
+        "팔찌는 고리형 착용 소품으로서 반지·목걸이와 유사한 범주에 걸칠 수 있다."
+      ]
+    }
+  ]
+}

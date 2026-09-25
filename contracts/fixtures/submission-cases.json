@@ -1,0 +1,670 @@
+{
+  "fixtureVersion": "submission-cases-v1",
+  "purpose": "합성 API 계약 사례. 실행 가능한 서버/DB 테스트가 아니며 점수·성공 임계값·운영 카테고리 범위를 확정하지 않는다.",
+  "conventions": {
+    "isolation": "각 case는 별도의 새 익명 세션·미성공 게임에서 시작한다. setup이 있으면 그 조건만 추가한다.",
+    "overrides": "baseRequest를 복사한 뒤 overrides의 최상위 필드로 교체한다. 중첩 배열도 전체 교체한다.",
+    "stubResult": "판정기를 대체하는 합성 결과다. 입력 p로 실제 판정 함수를 검증하는 사례가 아니다.",
+    "ids": "0000 시작 UUID는 클라이언트 요청 ID, 1000 시작 UUID는 서버 대표 ID다.",
+    "expectations": "expect는 확인할 부분 상태다. API 응답에 storedResults/storedRequests 같은 내부 값을 추가하라는 뜻이 아니다.",
+    "release": "모델 출력/점수 지원 ID는 apple, pear, banana를 포함한다. 출력 순서는 apple, pear, banana다. setup에 따른 미지원 항목은 예외다.",
+    "consent": "초기 리비전 0·미동의. 이 fixture의 그림은 실제 사용자 원본에서 가져오지 않았다."
+  },
+  "baseRequest": {
+    "submissionId": "00000000-0000-4000-8000-000000000001",
+    "releaseId": "fixture-release-v1",
+    "modelVersion": "fixture-model-v1",
+    "preprocessingVersion": "fixture-preprocess-v1",
+    "catalogVersion": "fixture-catalog-v1",
+    "outputCalibrationVersion": "none-v1",
+    "drawingVersion": "strokes-v1",
+    "brushVersion": "pen-v1",
+    "drawingHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "top3": [
+      {
+        "categoryId": "apple",
+        "p": 0.55
+      },
+      {
+        "categoryId": "pear",
+        "p": 0.25
+      },
+      {
+        "categoryId": "banana",
+        "p": 0.1
+      }
+    ],
+    "collectionConsentRevision": 0
+  },
+  "responses": {
+    "recognized": {
+      "requestSubmissionId": "00000000-0000-4000-8000-000000000001",
+      "submissionId": "10000000-0000-4000-8000-000000000001",
+      "puzzleId": "fixture-puzzle-v1",
+      "releaseId": "fixture-release-v1",
+      "reuse": "new",
+      "result": {
+        "status": "recognized",
+        "reason": null,
+        "attemptNumber": 1,
+        "displayScore": 38.72,
+        "displayText": "38.72",
+        "solved": false,
+        "judgedAt": "2026-09-22T10:00:00Z"
+      },
+      "progress": {
+        "state": "playing",
+        "attemptCount": 1,
+        "bestSubmissionId": "10000000-0000-4000-8000-000000000001",
+        "bestDisplayScore": 38.72,
+        "bestDisplayText": "38.72"
+      },
+      "collection": {
+        "state": "not_consented",
+        "consentRevision": 0
+      }
+    },
+    "deferred": {
+      "requestSubmissionId": "00000000-0000-4000-8000-000000000001",
+      "submissionId": "10000000-0000-4000-8000-000000000001",
+      "puzzleId": "fixture-puzzle-v1",
+      "releaseId": "fixture-release-v1",
+      "reuse": "new",
+      "result": {
+        "status": "deferred",
+        "reason": "low_confidence",
+        "attemptNumber": null,
+        "displayScore": null,
+        "displayText": null,
+        "solved": false,
+        "judgedAt": "2026-09-22T10:00:00Z"
+      },
+      "progress": {
+        "state": "playing",
+        "attemptCount": 0,
+        "bestSubmissionId": null,
+        "bestDisplayScore": null,
+        "bestDisplayText": null
+      },
+      "collection": {
+        "state": "not_consented",
+        "consentRevision": 0
+      }
+    },
+    "solved": {
+      "requestSubmissionId": "00000000-0000-4000-8000-000000000001",
+      "submissionId": "10000000-0000-4000-8000-000000000001",
+      "puzzleId": "fixture-puzzle-v1",
+      "releaseId": "fixture-release-v1",
+      "reuse": "new",
+      "result": {
+        "status": "solved",
+        "reason": null,
+        "attemptNumber": 1,
+        "displayScore": 83.4,
+        "displayText": "83.40",
+        "solved": true,
+        "judgedAt": "2026-09-22T10:00:00Z",
+        "answer": {
+          "categoryId": "apple",
+          "displayNameKo": "사과"
+        }
+      },
+      "progress": {
+        "state": "solved",
+        "attemptCount": 1,
+        "bestSubmissionId": "10000000-0000-4000-8000-000000000001",
+        "bestDisplayScore": 83.4,
+        "bestDisplayText": "83.40"
+      },
+      "collection": {
+        "state": "not_consented",
+        "consentRevision": 0
+      }
+    }
+  },
+  "cases": [
+    {
+      "name": "first_submission",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "same_request_retry",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "same_id_changed_judgement",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "drawingHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "expect": {
+            "http": 409,
+            "errorCode": "IDEMPOTENCY_CONFLICT",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "same_drawing_new_id_and_alias_retry",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002"
+          },
+          "expect": {
+            "http": 200,
+            "reuse": "drawing_duplicate",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 2
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002"
+          },
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 2
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002",
+            "top3": [
+              {
+                "categoryId": "apple",
+                "p": 0.6
+              },
+              {
+                "categoryId": "pear",
+                "p": 0.2
+              },
+              {
+                "categoryId": "banana",
+                "p": 0.1
+              }
+            ]
+          },
+          "expect": {
+            "http": 409,
+            "errorCode": "IDEMPOTENCY_CONFLICT",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "same_hash_new_id_different_prediction",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002",
+            "top3": [
+              {
+                "categoryId": "pear",
+                "p": 0.6
+              },
+              {
+                "categoryId": "apple",
+                "p": 0.2
+              },
+              {
+                "categoryId": "banana",
+                "p": 0.1
+              }
+            ]
+          },
+          "expect": {
+            "http": 200,
+            "reuse": "drawing_duplicate",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 2,
+            "resultEquals": "responses.recognized.result"
+          }
+        }
+      ]
+    },
+    {
+      "name": "deferred_is_not_zero_score",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "deferred",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 0,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "deferred",
+            "displayScore": null,
+            "attemptNumber": null,
+            "answerAbsent": true
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 0,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "deferred",
+            "displayScore": null,
+            "attemptNumber": null,
+            "answerAbsent": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown_id_rejected",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "top3": [
+              {
+                "categoryId": "unknown-fixture-id",
+                "p": 0.55
+              },
+              {
+                "categoryId": "pear",
+                "p": 0.25
+              },
+              {
+                "categoryId": "banana",
+                "p": 0.1
+              }
+            ]
+          },
+          "expect": {
+            "http": 422,
+            "errorCode": "INVALID_TOP3",
+            "attemptCount": 0,
+            "storedResults": 0,
+            "storedRequests": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "known_but_unsupported_candidate",
+      "setup": {
+        "modelContains": [
+          "apple",
+          "pear",
+          "banana"
+        ],
+        "scoringContains": [
+          "apple",
+          "pear"
+        ]
+      },
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "unsupported_candidate",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 0,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "deferred",
+            "reason": "unsupported_candidate",
+            "displayScore": null,
+            "attemptNumber": null,
+            "answerAbsent": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "success_then_retry_and_new_drawing",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "solved",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "solved",
+            "solved": true,
+            "answerEquals": {
+              "categoryId": "apple",
+              "displayNameKo": "사과"
+            }
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "solved",
+            "solved": true
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002",
+            "drawingHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "expect": {
+            "http": 409,
+            "errorCode": "GAME_ALREADY_SOLVED",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "two_concurrent_ids_same_drawing",
+      "parallelRequests": [
+        {
+          "request": "baseRequest",
+          "overrides": {}
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002"
+          }
+        }
+      ],
+      "stubResult": "recognized",
+      "expect": {
+        "httpCodesUnordered": [
+          200,
+          201
+        ],
+        "reusesUnordered": [
+          "new",
+          "drawing_duplicate"
+        ],
+        "sameCanonicalId": true,
+        "attemptCount": 1,
+        "storedResults": 1,
+        "storedRequests": 2
+      }
+    },
+    {
+      "name": "lost_response_recovered_by_request",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          },
+          "transport": "drop_response_after_commit"
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles/fixture-puzzle-v1/submissions/by-request/00000000-0000-4000-8000-000000000001",
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "old_retry_returns_current_progress",
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "submissionId": "00000000-0000-4000-8000-000000000002",
+            "drawingHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "attemptCount": 2,
+            "storedResults": 2,
+            "storedRequests": 2
+          }
+        },
+        {
+          "request": "baseRequest",
+          "overrides": {},
+          "expect": {
+            "http": 200,
+            "reuse": "request_retry",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 2,
+            "storedResults": 2,
+            "storedRequests": 2,
+            "resultEquals": "responses.recognized.result"
+          }
+        }
+      ]
+    },
+    {
+      "name": "stale_consent_revision_never_reenables",
+      "setup": {
+        "consentHistory": [
+          {
+            "revision": 0,
+            "enabled": false
+          },
+          {
+            "revision": 1,
+            "enabled": true
+          },
+          {
+            "revision": 2,
+            "enabled": false
+          }
+        ]
+      },
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "collectionConsentRevision": 1
+          },
+          "stubResult": "recognized",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "collectionState": "not_consented",
+            "consentRevision": 2,
+            "collectionEnabled": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "upload_failure_preserves_solved_game",
+      "setup": {
+        "consentRevision": 1,
+        "collectionEnabled": true,
+        "samplingDecision": "success_sample"
+      },
+      "steps": [
+        {
+          "request": "baseRequest",
+          "overrides": {
+            "collectionConsentRevision": 1
+          },
+          "stubResult": "solved",
+          "expect": {
+            "http": 201,
+            "reuse": "new",
+            "canonicalSubmissionId": "10000000-0000-4000-8000-000000000001",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "storedRequests": 1,
+            "status": "solved",
+            "solved": true
+          }
+        },
+        {
+          "operation": "drawing_upload_network_failure",
+          "expect": {
+            "gameState": "solved",
+            "attemptCount": 1,
+            "storedResults": 1,
+            "noExtraGameAttempt": true
+          }
+        },
+        {
+          "operation": "withdraw_consent_then_late_drawing_complete",
+          "expect": {
+            "gameState": "solved",
+            "attemptCount": 1,
+            "sampleUsableForTraining": false,
+            "sampleNotVerified": true
+          }
+        }
+      ]
+    }
+  ]
+}

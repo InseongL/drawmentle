@@ -1,0 +1,314 @@
+{
+  "entries": [
+    {
+      "category_id": "stairs",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure"
+          ],
+          "description_ko": "층을 잇는 건축 구조물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "serrated_edge",
+            "rectangular"
+          ],
+          "description_ko": "직각으로 꺾인 단이 반복되는 윤곽이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "walking"
+          ],
+          "description_ko": "오르내리며 층을 이동한다"
+        }
+      },
+      "notes": [
+        "계단 단을 나타낼 전용 태그가 없어 톱니 윤곽으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "tent",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "dwelling"
+          ],
+          "description_ko": "천으로 만든 임시 주거 구조물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "opening"
+          ],
+          "description_ko": "삼각 윤곽 앞쪽에 열린 입구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter",
+            "sleeping"
+          ],
+          "description_ko": "야외에서 비바람을 피하고 잔다"
+        }
+      },
+      "notes": [
+        "야영 장비라 건축물 분류가 모호하다."
+      ]
+    },
+    {
+      "category_id": "the_eiffel_tower",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "파리의 대표 철탑 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "elongated",
+            "spire",
+            "panel_lines"
+          ],
+          "description_ko": "위로 좁아지는 격자 철골 탑이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration"
+          ],
+          "description_ko": "도시를 상징하는 기념물이다"
+        }
+      },
+      "notes": [
+        "고유 명소라 데일리 정답 정책 결정이 필요하다.",
+        "전망·기념 기능 태그가 없어 장식으로 표현했다."
+      ]
+    },
+    {
+      "category_id": "the_great_wall_of_china",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure"
+          ],
+          "description_ko": "중국의 고대 방어 성벽"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "serrated_edge",
+            "curved_outline"
+          ],
+          "description_ko": "굽이치며 길게 이어지는 톱니 성벽이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection"
+          ],
+          "description_ko": "외적을 막아 영토를 지켰다"
+        }
+      },
+      "notes": [
+        "고유 명소라 데일리 정답 정책 결정이 필요하다."
+      ]
+    },
+    {
+      "category_id": "windmill",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "탑 형태의 동력 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "conical",
+            "door"
+          ],
+          "description_ko": "원뿔형 탑 위에 큰 회전 날개 넷이 있다"
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "제분·양수 기능 태그가 없어 보류한다"
+        }
+      },
+      "notes": [
+        "바람으로 곡식을 빻는 기능 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "hat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing",
+            "accessory"
+          ],
+          "description_ko": "머리에 쓰는 의류 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "hollow"
+          ],
+          "description_ko": "둥근 윗부분 아래로 납작한 챙이 둘러 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "머리에 써서 햇빛 등을 가린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "helmet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "머리를 감싸는 보호 착용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "hollow",
+            "opening",
+            "smooth_surface"
+          ],
+          "description_ko": "매끈한 반구형 껍데기에 얼굴 구멍이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "머리에 써서 충격으로부터 보호한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "jacket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing"
+          ],
+          "description_ko": "상체에 입는 겉옷"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "buttons",
+            "opening"
+          ],
+          "description_ko": "소매가 있는 상의 앞쪽이 열리고 단추가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "겉에 입어 추위를 막는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lipstick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "입술용 화장 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "lid",
+            "pointed_tip"
+          ],
+          "description_ko": "원통형 몸체 위로 비스듬한 심이 나온다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration"
+          ],
+          "description_ko": "입술을 칠해 꾸민다"
+        }
+      },
+      "notes": [
+        "화장품 분류 태그가 없어 착용 소품으로 분류했다."
+      ]
+    },
+    {
+      "category_id": "necklace",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "목에 거는 장신구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "ring_bow",
+            "clustered_units"
+          ],
+          "description_ko": "구슬이 이어진 굽은 고리와 펜던트가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "목에 걸어 꾸민다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

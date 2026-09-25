@@ -1,0 +1,316 @@
+{
+  "entries": [
+    {
+      "category_id": "bathtub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plumbing_fixture",
+            "artifact"
+          ],
+          "description_ko": "목욕용 욕실 설비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "hollow",
+            "opening"
+          ],
+          "description_ko": "길쭉한 욕조에 물이 담겨 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hygiene",
+            "holding_liquid"
+          ],
+          "description_ko": "물을 받아 몸을 씻는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bed",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bedding",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "잠자는 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "four_legs"
+          ],
+          "description_ko": "머리판과 매트리스가 있는 넓은 평판이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping"
+          ],
+          "description_ko": "누워서 잠을 잔다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bench",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "seating",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "여럿이 앉는 긴 의자"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "four_legs",
+            "bars"
+          ],
+          "description_ko": "널을 이어 만든 긴 평판에 다리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "여러 사람이 앉는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bottlecap",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container",
+            "artifact"
+          ],
+          "description_ko": "병 입구를 막는 부품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "teeth"
+          ],
+          "description_ko": "톱니 가장자리의 납작한 원판이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening"
+          ],
+          "description_ko": "병 입구를 막아 밀봉한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "broom",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cleaning_tool",
+            "tool",
+            "artifact"
+          ],
+          "description_ko": "바닥을 쓰는 도구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "bristles"
+          ],
+          "description_ko": "긴 자루 끝에 솔이 펼쳐져 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "바닥의 먼지를 쓴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bucket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storage_container",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "액체나 물건을 나르는 통"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "handle",
+            "opening",
+            "hollow"
+          ],
+          "description_ko": "위가 열린 원통에 둥근 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "물이나 물건을 담아 나른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "candle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "불꽃으로 빛을 내는 조명"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "flame",
+            "elongated"
+          ],
+          "description_ko": "원통형 초 위에 불꽃이 탄다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "decoration"
+          ],
+          "description_ko": "불을 밝히고 분위기를 꾸민다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ceiling_fan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "air_appliance",
+            "appliance",
+            "artifact"
+          ],
+          "description_ko": "천장에 다는 공기 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "suspended"
+          ],
+          "description_ko": "천장에 매달린 축에 날개가 돈다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "air_movement",
+            "cooling"
+          ],
+          "description_ko": "바람을 일으켜 실내를 시원하게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "chair",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "seating",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "한 사람이 앉는 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "flat",
+            "rectangular"
+          ],
+          "description_ko": "네 다리 위에 앉는 판과 등받이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "사람이 앉는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "chandelier",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "artifact"
+          ],
+          "description_ko": "천장에 매다는 장식 조명"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "suspended",
+            "curved_outline"
+          ],
+          "description_ko": "천장에 매달린 여러 갈래 팔에 등이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "decoration"
+          ],
+          "description_ko": "방을 밝히고 꾸민다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

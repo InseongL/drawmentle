@@ -1,0 +1,328 @@
+{
+  "entries": [
+    {
+      "category_id": "dumbbell",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "운동이나 근력 훈련에 쓰는 기구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle",
+            "round"
+          ],
+          "description_ko": "가운데 손잡이가 길게 있고 양끝에 무게 덩어리가 붙는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "exercise",
+            "play"
+          ],
+          "description_ko": "팔과 상체 근력 운동에 쓰이며 놀이 기구로도 쓰일 수 있다."
+        }
+      },
+      "notes": [
+        "좌우 끝의 덩어리가 대칭적으로 붙는 점이 핵심이다."
+      ]
+    },
+    {
+      "category_id": "ear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "머리 양옆에 붙는 감각 기관이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "curved_outline",
+            "flat"
+          ],
+          "description_ko": "겉바퀴와 안쪽 홈이 있는 비대칭 곡선 윤곽이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "소리를 받아들이는 감각에 관여한다."
+        }
+      },
+      "notes": [
+        "청각 외에도 균형 감각과 관련될 수 있다."
+      ]
+    },
+    {
+      "category_id": "elbow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "팔의 중간 관절 부위이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "irregular"
+          ],
+          "description_ko": "팔이 꺾이는 접히는 관절의 형태를 나타낸다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bouncing"
+          ],
+          "description_ko": "팔을 굽히고 펴는 움직임을 가능하게 한다."
+        }
+      },
+      "notes": [
+        "관절 부위라서 독립된 전체 윤곽보다 굽힘 위치가 중요하다."
+      ]
+    },
+    {
+      "category_id": "elephant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "큰 육상 포유류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail",
+            "triangular",
+            "irregular"
+          ],
+          "description_ko": "네 다리와 긴 코, 큰 몸통이 함께 드러나는 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing"
+          ],
+          "description_ko": "주로 걷고 식물을 먹으며 생활한다."
+        }
+      },
+      "notes": [
+        "긴 코는 핵심 특징이지만 그림마다 생략될 수 있다."
+      ]
+    },
+    {
+      "category_id": "envelope",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "편지나 종이 한 장을 넣어 봉하는 문구류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "opening",
+            "triangular"
+          ],
+          "description_ko": "납작한 직사각형 봉투에 접힌 덮개와 입구가 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "communication"
+          ],
+          "description_ko": "종이 문서를 넣어 전달하거나 우편용으로 쓴다."
+        }
+      },
+      "notes": [
+        "편지봉투와 우편봉투를 함께 포괄한다."
+      ]
+    },
+    {
+      "category_id": "eraser",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "연필 자국을 지우는 문구류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "flat",
+            "smooth_surface"
+          ],
+          "description_ko": "대체로 작은 직사각형 블록 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "erasing"
+          ],
+          "description_ko": "종이나 표면의 연필 흔적을 지운다."
+        }
+      },
+      "notes": [
+        "지우개판이나 장식형 지우개도 같은 범주로 본다."
+      ]
+    },
+    {
+      "category_id": "eye",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "시각에 쓰이는 신체 부위이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "smooth_surface"
+          ],
+          "description_ko": "대체로 둥글거나 타원형의 눈알과 그 주위 구조가 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "보는 기능에 관여한다."
+        }
+      },
+      "notes": [
+        "눈꺼풀이나 눈썹은 별도 신체 부위이므로 핵심 윤곽에 포함하지 않는다."
+      ]
+    },
+    {
+      "category_id": "eyeglasses",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "얼굴에 쓰는 시력 보정용 착용 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "round",
+            "oval",
+            "handle"
+          ],
+          "description_ko": "두 개의 렌즈와 이를 잇는 다리, 귀걸이 부분이 있는 구조이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "시야 보정과 눈 보호에 쓰인다."
+        }
+      },
+      "notes": [
+        "선글라스와 안경테가 비슷하게 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "face",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "머리 앞쪽의 주요 신체 부위이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "irregular"
+          ],
+          "description_ko": "눈, 코, 입이 배치되는 머리 앞면 윤곽이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "signaling"
+          ],
+          "description_ko": "표정과 시선으로 의사 표현에 관여한다."
+        }
+      },
+      "notes": [
+        "얼굴 전체를 뜻하며 눈이나 입 같은 개별 부위와는 다르다."
+      ]
+    },
+    {
+      "category_id": "fan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "공기를 움직여 바람을 만드는 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "curved_outline",
+            "rotor",
+            "mesh_guard",
+            "pedestal"
+          ],
+          "description_ko": "회전 날개와 이를 감싸는 보호망, 받침대가 함께 보이는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooling",
+            "ventilation"
+          ],
+          "description_ko": "공기를 순환시켜 식히고 통풍을 돕는다."
+        }
+      },
+      "notes": [
+        "손에 들고 부채질하는 부채 의미가 아니라 전기식 선풍기 의미로 본다.",
+        "풍차와 달리 생활용 냉각·통풍 기기로 해석한다."
+      ]
+    }
+  ]
+}

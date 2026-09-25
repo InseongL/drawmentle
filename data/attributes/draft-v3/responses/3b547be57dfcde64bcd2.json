@@ -1,0 +1,319 @@
+{
+  "entries": [
+    {
+      "category_id": "pizza",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "meal",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "구운 반죽 위에 토핑을 얹은 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "round",
+            "flat",
+            "spots"
+          ],
+          "description_ko": "납작한 원형 또는 삼각 조각에 토핑 점이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "조각으로 나누어 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "popsicle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "confection",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "막대에 얼린 단 간식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "rectangular",
+            "handle"
+          ],
+          "description_ko": "둥근 사각 얼음에 막대가 꽂혀 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "막대를 쥐고 차갑게 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "potato",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "root_vegetable",
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "덩이줄기 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "irregular",
+            "spots"
+          ],
+          "description_ko": "울퉁불퉁한 타원형에 작은 눈 자국이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "익혀 먹는 채소다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sandwich",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "meal",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "빵 사이에 속을 넣은 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "flat",
+            "stripes"
+          ],
+          "description_ko": "삼각 빵 사이로 속재료 층이 보인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "손에 들고 먹는 음식이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "steak",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "meal",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "구운 고기 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "oval",
+            "flat",
+            "stripes"
+          ],
+          "description_ko": "납작하고 불규칙한 고기에 구운 줄무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "잘라서 먹는 음식이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "strawberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "berry",
+            "fruit",
+            "food"
+          ],
+          "description_ko": "씨가 겉에 박힌 열매"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "spots",
+            "leaves"
+          ],
+          "description_ko": "역삼각형 몸에 씨가 박히고 위에 잎이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "string_bean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "legume",
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "꼬투리째 먹는 콩류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "pointed_tip"
+          ],
+          "description_ko": "가늘고 길게 휜 꼬투리 끝이 뾰족하다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "꼬투리째 익혀 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "watermelon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "melon",
+            "fruit",
+            "food"
+          ],
+          "description_ko": "박과의 큰 열매"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stripes",
+            "spots",
+            "triangular"
+          ],
+          "description_ko": "줄무늬 둥근 몸통이나 씨가 박힌 삼각 조각이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "잘라서 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "alarm_clock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "timepiece",
+            "artifact"
+          ],
+          "description_ko": "깨우는 기능이 있는 시계"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "pedestal",
+            "buttons"
+          ],
+          "description_ko": "둥근 문자판 위에 종, 아래에 짧은 받침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "signaling"
+          ],
+          "description_ko": "정해진 시각에 소리로 깨운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "basket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storage_container",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "엮어 만든 운반 통"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "grid_pattern",
+            "opening",
+            "hollow"
+          ],
+          "description_ko": "엮은 무늬 통 위로 둥근 손잡이가 걸쳐 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "물건을 담아 들고 옮긴다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

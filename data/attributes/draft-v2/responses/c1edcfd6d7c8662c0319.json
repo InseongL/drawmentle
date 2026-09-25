@@ -1,0 +1,310 @@
+{
+  "entries": [
+    {
+      "category_id": "lollipop",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "설탕으로 만든 사탕 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "handle"
+          ],
+          "description_ko": "납작한 원형 사탕에 막대 손잡이가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "막대를 쥐고 핥아 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "onion",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "비늘줄기 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "pointed_tip",
+            "stripes"
+          ],
+          "description_ko": "둥근 몸통 끝이 뾰족하고 세로 결이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "익히거나 날로 먹는 채소다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "peanut",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food"
+          ],
+          "description_ko": "콩과 식물의 씨앗 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "curved_outline",
+            "shell"
+          ],
+          "description_ko": "가운데가 잘록한 땅콩 껍데기 모양이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "볶거나 까서 먹는다"
+        }
+      },
+      "notes": [
+        "견과 분류 태그가 없어 음식으로만 분류했다."
+      ]
+    },
+    {
+      "category_id": "pear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "배나무에서 열리는 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "curved_outline",
+            "stem",
+            "smooth_surface"
+          ],
+          "description_ko": "아래가 불룩한 물방울 모양에 꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "깎아서 먹는 과일이다"
+        }
+      },
+      "notes": [
+        "둥근 한국 배는 사과와 형태가 겹칠 수 있다."
+      ]
+    },
+    {
+      "category_id": "peas",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "콩과 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "round",
+            "clustered_units"
+          ],
+          "description_ko": "길쭉한 꼬투리 안에 둥근 알이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "익혀 먹는 채소다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pineapple",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "열대 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "leaves",
+            "panel_lines",
+            "bumpy_surface"
+          ],
+          "description_ko": "격자무늬 타원형 몸통 위로 뾰족한 잎이 솟는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "껍질을 벗겨 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pizza",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "구운 반죽 조리 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "round",
+            "flat",
+            "spots"
+          ],
+          "description_ko": "납작한 원형 또는 삼각 조각에 토핑 점이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "조각으로 나누어 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "popsicle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "얼린 디저트 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "rectangular",
+            "handle"
+          ],
+          "description_ko": "둥근 모서리 사각 얼음에 막대가 꽂혀 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "막대를 쥐고 차갑게 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "potato",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "덩이줄기 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "irregular",
+            "spots"
+          ],
+          "description_ko": "울퉁불퉁한 타원형에 작은 눈 자국이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "익혀 먹는 채소다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sandwich",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "빵으로 만든 조리 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "flat",
+            "panel_lines"
+          ],
+          "description_ko": "삼각 빵 사이로 속재료 층이 보인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "손에 들고 먹는 음식이다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

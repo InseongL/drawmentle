@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "clock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "timepiece",
+            "artifact"
+          ],
+          "description_ko": "벽이나 탁자에 두는 시계"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "pointed_tip"
+          ],
+          "description_ko": "둥근 문자판에 뾰족한 시곗바늘이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "displaying"
+          ],
+          "description_ko": "시간을 보여준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "coffee_cup",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "drinkware",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "커피를 마시는 잔"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hollow",
+            "opening",
+            "handle",
+            "steam_lines"
+          ],
+          "description_ko": "손잡이 달린 잔 위로 김이 오른다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_drink"
+          ],
+          "description_ko": "뜨거운 음료를 담아 마신다"
+        }
+      },
+      "notes": [
+        "cup, mug와 형태·기능이 대부분 겹친다."
+      ]
+    },
+    {
+      "category_id": "cooler",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storage_container",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "차갑게 보관하는 통"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "lid",
+            "handle"
+          ],
+          "description_ko": "뚜껑과 손잡이가 있는 상자형 통이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooling",
+            "holding_objects"
+          ],
+          "description_ko": "음식과 음료를 차갑게 보관한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "couch",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "seating",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "여럿이 앉는 푹신한 의자"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "panel_lines"
+          ],
+          "description_ko": "팔걸이와 등받이 사이에 방석이 나뉘어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting",
+            "sleeping"
+          ],
+          "description_ko": "여러 사람이 앉거나 눕는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cup",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "drinkware",
+            "container",
+            "artifact"
+          ],
+          "description_ko": "음료를 마시는 잔"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "hollow",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "위가 열린 원통형 잔에 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "serving_drink"
+          ],
+          "description_ko": "음료를 담아 마신다"
+        }
+      },
+      "notes": [
+        "mug, coffee_cup과 형태·기능이 대부분 겹친다."
+      ]
+    },
+    {
+      "category_id": "dishwasher",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cleaning_appliance",
+            "appliance",
+            "artifact"
+          ],
+          "description_ko": "그릇을 씻는 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "door",
+            "compartments",
+            "buttons"
+          ],
+          "description_ko": "상자형 본체에 앞문과 그릇 선반이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "그릇을 넣어 씻는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "door",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building_part",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "출입구를 여닫는 건물 부분"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "handle"
+          ],
+          "description_ko": "세로로 긴 사각 판에 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "passage",
+            "security"
+          ],
+          "description_ko": "드나들고 닫아 잠근다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "dresser",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "table_storage",
+            "furniture",
+            "artifact"
+          ],
+          "description_ko": "서랍이 있는 수납 가구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "compartments",
+            "handle"
+          ],
+          "description_ko": "사각 몸체가 손잡이 달린 서랍으로 나뉜다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects"
+          ],
+          "description_ko": "옷과 물건을 넣어 보관한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "fan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "air_appliance",
+            "appliance",
+            "artifact"
+          ],
+          "description_ko": "바람을 일으키는 가전"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "grid_pattern",
+            "pedestal",
+            "round"
+          ],
+          "description_ko": "받침 위 둥근 망 안에 날개가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "air_movement",
+            "cooling"
+          ],
+          "description_ko": "바람을 일으켜 시원하게 한다"
+        }
+      },
+      "notes": [
+        "손부채가 아닌 한국어 이름 '선풍기' 기준이다."
+      ]
+    },
+    {
+      "category_id": "fireplace",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building_part",
+            "infrastructure",
+            "artifact"
+          ],
+          "description_ko": "벽에 만든 난방 구조"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "opening",
+            "flame"
+          ],
+          "description_ko": "벽 속 네모난 화구 안에 불꽃이 탄다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating"
+          ],
+          "description_ko": "불을 피워 방을 데운다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

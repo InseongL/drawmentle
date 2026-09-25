@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "airplane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "aircraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "고정 날개 항공기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wings",
+            "windows"
+          ],
+          "description_ko": "긴 동체 양옆에 날개, 옆면에 창문이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "하늘을 날아 사람과 화물을 옮긴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ambulance",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "환자를 옮기는 긴급 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "cross_mark",
+            "siren_light"
+          ],
+          "description_ko": "상자형 차체에 십자 표시와 경광등이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "rescue",
+            "medical_care",
+            "transport_people"
+          ],
+          "description_ko": "환자를 병원으로 급히 옮긴다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bicycle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "페달로 움직이는 이륜차"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle",
+            "triangular"
+          ],
+          "description_ko": "삼각 차체 앞뒤로 바퀴 두 개와 핸들이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "exercise"
+          ],
+          "description_ko": "페달을 밟아 사람이 이동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bulldozer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "흙을 미는 작업 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "many_wheels",
+            "blade"
+          ],
+          "description_ko": "궤도 바퀴 위 차체 앞에 큰 삽날이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "construction",
+            "digging"
+          ],
+          "description_ko": "흙을 밀고 땅을 고른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "많은 사람을 태우는 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "four_wheels"
+          ],
+          "description_ko": "긴 사각 차체에 창문이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "많은 사람을 태워 나른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "canoe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "노를 젓는 작은 배"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hull",
+            "elongated",
+            "curved_outline"
+          ],
+          "description_ko": "양 끝이 올라간 길쭉한 선체다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "노를 저어 물 위를 이동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "car",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "사람이 타는 승용차"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "창문 달린 차체 아래 바퀴가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "사람을 태우고 달린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cruise_ship",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "여객을 태우는 대형 배"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hull",
+            "elongated",
+            "windows",
+            "chimney"
+          ],
+          "description_ko": "긴 선체 위에 층층 갑판과 굴뚝이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "travel"
+          ],
+          "description_ko": "승객을 태우고 여행하며 항해한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "firetruck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "불을 끄는 긴급 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "rungs",
+            "siren_light"
+          ],
+          "description_ko": "긴 차체 위에 사다리와 경광등이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "firefighting",
+            "rescue"
+          ],
+          "description_ko": "불을 끄고 사람을 구한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "flying_saucer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "aircraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "외계인이 탄다는 비행체"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "flat",
+            "dome",
+            "windows"
+          ],
+          "description_ko": "납작한 원반 위에 둥근 조종실이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people"
+          ],
+          "description_ko": "하늘을 날아 이동한다"
+        }
+      },
+      "notes": [
+        "외계 비행체라는 가상 개념이다."
+      ]
+    }
+  ]
+}

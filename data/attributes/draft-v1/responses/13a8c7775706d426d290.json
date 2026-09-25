@@ -1,0 +1,329 @@
+{
+  "entries": [
+    {
+      "category_id": "hot_dog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "빵에 소시지를 넣고 소스나 토핑을 더한 길쭉한 간식 음식입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "전체적으로 길쭉하고 둥근 막대 형태로 그려지기 쉽습니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "간식이나 한 끼로 먹는 음식입니다."
+        }
+      },
+      "notes": [
+        "음식 분류이며 도구나 용기가 아닙니다.",
+        "핫도그 번과 소시지 결합 형태를 대표로 둡니다."
+      ]
+    },
+    {
+      "category_id": "hot_tub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container",
+            "furniture"
+          ],
+          "description_ko": "몸을 담그고 쉬는 큰 욕조형 용기입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "hollow"
+          ],
+          "description_ko": "윗부분이 열린 둥글거나 타원형의 속 빈 형태가 대표적입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "sitting",
+            "heating"
+          ],
+          "description_ko": "물을 담아 몸을 담그고, 따뜻하게 유지해 사용하는 물건입니다."
+        }
+      },
+      "notes": [
+        "실내외 설치형 모두 가능하지만 대표적으로 욕조 형태를 따릅니다.",
+        "가구와 용기 성격이 함께 보일 수 있습니다."
+      ]
+    },
+    {
+      "category_id": "hourglass",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "container"
+          ],
+          "description_ko": "모래나 알갱이의 흐름으로 시간을 재는 도구입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "hollow"
+          ],
+          "description_ko": "위아래 두 용기와 가운데 좁은 목이 있는 길쭉한 형태입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "measuring"
+          ],
+          "description_ko": "흘러내리는 재료의 양으로 시간 경과를 재고 표시합니다."
+        }
+      },
+      "notes": [
+        "계량기보다는 시간 측정용으로 보는 것이 적절합니다.",
+        "유리 모래시계가 대표적이지만 재질은 고정하지 않습니다."
+      ]
+    },
+    {
+      "category_id": "house",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "place"
+          ],
+          "description_ko": "사람이 거주하는 주거용 건축물입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "windows"
+          ],
+          "description_ko": "사각형 몸체에 지붕과 창문이 있는 형태가 대표적입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter"
+          ],
+          "description_ko": "사람이 생활하고 비바람을 피하는 거처입니다."
+        }
+      },
+      "notes": [
+        "주택 일반을 뜻하며 특정 스타일의 건물로 한정하지 않습니다.",
+        "집 내부가 아니라 외형 실루엣이 중심입니다."
+      ]
+    },
+    {
+      "category_id": "house_plant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "실내에서 기르는 화분에 심긴 식물입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "branches",
+            "leaves",
+            "stem"
+          ],
+          "description_ko": "줄기와 잎이 드러난 작은 식물체로 그려지는 경우가 많습니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis",
+            "decoration"
+          ],
+          "description_ko": "광합성을 하며 실내 장식용으로도 두는 식물입니다."
+        }
+      },
+      "notes": [
+        "화분 자체보다 식물에 초점을 둡니다.",
+        "종류가 매우 다양하므로 잎 모양과 크기는 고정하지 않습니다."
+      ]
+    },
+    {
+      "category_id": "hurricane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon",
+            "scene"
+          ],
+          "description_ko": "강한 바람과 비를 동반하는 열대성 저기압 현상입니다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "소용돌이치는 구름 덩어리나 나선형 흐름으로 그려질 수 있으나, 스케치 표현이 다양해 고정하기 어렵습니다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상으로서 고정된 사용 목적은 없습니다."
+        }
+      },
+      "notes": [
+        "허리케인과 토네이도는 모양이 겹칠 수 있어 구분이 불안정합니다.",
+        "장면형 분류가 될 수 있어 주변 비바람 표현이 함께 나올 수 있습니다."
+      ]
+    },
+    {
+      "category_id": "ice_cream",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "차갑게 먹는 달콤한 유제품 또는 유사한 디저트입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "elongated",
+            "conical"
+          ],
+          "description_ko": "컵, 콘, 스쿱처럼 다양한 형태가 있으나 대표적으로 위가 둥글거나 원뿔 받침을 가질 수 있습니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "후식이나 간식으로 먹는 음식입니다."
+        }
+      },
+      "notes": [
+        "콘과 컵, 바 형태가 모두 가능해 형태를 하나로 고정하지 않습니다.",
+        "색은 다양하므로 특정 색을 전제하지 않습니다."
+      ]
+    },
+    {
+      "category_id": "jacket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing"
+          ],
+          "description_ko": "상체에 걸쳐 입는 바깥옷입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "buttons"
+          ],
+          "description_ko": "펼치면 앞여밈과 소매가 있는 상의 형태로 보입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "추위나 바람을 막기 위해 입는 옷입니다."
+        }
+      },
+      "notes": [
+        "재질과 길이는 다양하지만 대표적으로 겉옷 실루엣을 잡습니다.",
+        "코트나 셔츠와 겹칠 수 있으나 보통 앞여밈이 있는 상의로 봅니다."
+      ]
+    },
+    {
+      "category_id": "jail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "place"
+          ],
+          "description_ko": "수감자를 가두고 관리하는 시설입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "windows"
+          ],
+          "description_ko": "사각형 건물에 작은 창문이나 창살이 있는 모습이 대표적입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter"
+          ],
+          "description_ko": "사람을 일정 기간 격리해 수용하는 장소입니다."
+        }
+      },
+      "notes": [
+        "교도소와 감옥의 경계가 그림에서 모호할 수 있습니다.",
+        "정확한 법적 시설 구분보다 구금 시설의 일반형으로 봅니다."
+      ]
+    },
+    {
+      "category_id": "kangaroo",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "주머니를 가진 초식성 유대류 동물입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "long_tail",
+            "pointed_ears"
+          ],
+          "description_ko": "두 다리로 서고 긴 꼬리와 비교적 뾰족한 귀가 특징입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "grazing"
+          ],
+          "description_ko": "뛰어 이동하고 풀이나 식물을 먹습니다."
+        }
+      },
+      "notes": [
+        "유대류이지만 태그 체계에는 포유류만 사용합니다.",
+        "앞다리는 작게 표현될 수 있으나 핵심은 점프 자세와 긴 꼬리입니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "entries": [
+    {
+      "category_id": "stethoscope",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment"
+          ],
+          "description_ko": "진찰용 의료 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "round"
+          ],
+          "description_ko": "굽은 관 끝에 둥근 청진판이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care",
+            "measuring"
+          ],
+          "description_ko": "몸속 소리를 들어 진찰한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "stitches",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment"
+          ],
+          "description_ko": "상처 봉합 의료 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "parallel_stitches",
+            "elongated"
+          ],
+          "description_ko": "긴 선을 짧은 가로선이 반복해 가로지른다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wound_closure",
+            "medical_care"
+          ],
+          "description_ko": "상처를 꿰매어 닫는다"
+        }
+      },
+      "notes": [
+        "바느질 무늬로도 해석될 수 있어 표본 확인이 필요하다."
+      ]
+    },
+    {
+      "category_id": "syringe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment"
+          ],
+          "description_ko": "주사용 의료 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "elongated",
+            "pointed_tip",
+            "straight_tube"
+          ],
+          "description_ko": "눈금 있는 원통 끝에 가는 바늘이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care"
+          ],
+          "description_ko": "약을 몸에 주입한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "guitar",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "string_instrument"
+          ],
+          "description_ko": "현악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_body",
+            "long_neck",
+            "strings",
+            "round"
+          ],
+          "description_ko": "잘록한 몸통에 둥근 울림구멍과 긴 목이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "줄을 튕겨 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "harp",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "string_instrument"
+          ],
+          "description_ko": "현악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "strings",
+            "curved_outline"
+          ],
+          "description_ko": "굽은 삼각 틀에 여러 줄이 걸린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "줄을 뜯어 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "piano",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "건반 악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "finger_keys"
+          ],
+          "description_ko": "상자형 몸체에 흰·검은 건반이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "건반을 눌러 연주한다"
+        }
+      },
+      "notes": [
+        "건반 악기 세부 분류 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "saxophone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "woodwind_instrument"
+          ],
+          "description_ko": "목관 악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_tube",
+            "flared_bell",
+            "finger_keys",
+            "curved_body"
+          ],
+          "description_ko": "J자로 굽은 관 끝이 나팔처럼 벌어지고 키가 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "입으로 불어 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "trombone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "brass_instrument"
+          ],
+          "description_ko": "금관 악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "curved_tube",
+            "flared_bell"
+          ],
+          "description_ko": "길게 뻗은 슬라이드 관 끝에 나팔 입구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "슬라이드를 밀고 당기며 분다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "trumpet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "brass_instrument"
+          ],
+          "description_ko": "금관 악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_tube",
+            "flared_bell",
+            "finger_keys"
+          ],
+          "description_ko": "고리 모양 관에 밸브가 있고 끝이 벌어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "입으로 불고 밸브를 눌러 연주한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "violin",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "string_instrument"
+          ],
+          "description_ko": "현악기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_body",
+            "long_neck",
+            "strings",
+            "elongated"
+          ],
+          "description_ko": "잘록한 작은 몸통과 긴 목에 줄이 걸린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music"
+          ],
+          "description_ko": "활로 줄을 켜서 연주한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

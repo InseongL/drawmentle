@@ -1,0 +1,343 @@
+{
+  "entries": [
+    {
+      "category_id": "aircraft_carrier",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "함재기를 운용하는 대형 군함이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "rectangular",
+            "bounded_outline",
+            "opening"
+          ],
+          "description_ko": "길게 뻗은 평평한 선체 위에 넓은 비행갑판이 있는 모습이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods",
+            "navigation"
+          ],
+          "description_ko": "항공기와 인원을 싣고 이동하는 해상 플랫폼이다."
+        }
+      },
+      "notes": [
+        "군함과 수상 탈것 성격이 함께 있다.",
+        "활주갑판이 핵심 구분점이다."
+      ]
+    },
+    {
+      "category_id": "airplane",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "사람이나 화물을 싣고 하늘을 나는 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wings",
+            "fins",
+            "curved_outline",
+            "two_wheels"
+          ],
+          "description_ko": "중앙 동체에 날개가 붙고 뒤쪽 꼬리면이 달린 길쭉한 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "공중을 이동하며 승객이나 화물을 운송한다."
+        }
+      },
+      "notes": [
+        "새와는 날개가 있어도 인공 탈것이라는 점이 다르다.",
+        "헬리콥터와 달리 고정익 중심의 실루엣을 잡는다."
+      ]
+    },
+    {
+      "category_id": "alarm_clock",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "시간을 보여 주고 알림을 울리는 시계 장치다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "buttons",
+            "screen",
+            "pedestal"
+          ],
+          "description_ko": "탁상형 본체에 표시창과 조작 버튼이 있는 작은 시계 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "signaling"
+          ],
+          "description_ko": "시간을 표시하고 정해진 때에 소리로 깨운다."
+        }
+      },
+      "notes": [
+        "일반 시계보다 알람 기능이 강조된다.",
+        "탁상형과 디지털형이 함께 포착될 수 있다."
+      ]
+    },
+    {
+      "category_id": "ambulance",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "환자를 옮기기 위해 쓰는 긴급 차량이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "four_wheels",
+            "windows",
+            "antenna"
+          ],
+          "description_ko": "사각형 차체에 창문과 경광 장치가 붙은 구조로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "rescue",
+            "medical_care"
+          ],
+          "description_ko": "응급 환자를 이송하고 구조·의료 지원에 쓰인다."
+        }
+      },
+      "notes": [
+        "구급 활동과 환자 이송이 핵심이다.",
+        "일반 승합차보다 응급용 표시가 더 중요하다."
+      ]
+    },
+    {
+      "category_id": "angel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fictional_entity"
+          ],
+          "description_ko": "종교적·상징적 맥락에서 등장하는 초자연적 존재다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "rounded_ears",
+            "long_neck"
+          ],
+          "description_ko": "날개가 달린 인간형 실루엣으로 표현되는 경우가 많다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "고정된 실제 기능으로 보기 어렵고, 상징적 전달이나 수호의 의미로 그려질 수 있다."
+        }
+      },
+      "notes": [
+        "실재 동물이나 인물로 분류하지 않는다.",
+        "종교 상징과 예술적 인물이 겹칠 수 있다.",
+        "기능 축은 맥락 의존성이 커서 확정하지 않는다."
+      ]
+    },
+    {
+      "category_id": "animal_migration",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "activity"
+          ],
+          "description_ko": "동물이 계절이나 환경 변화에 따라 이동하는 행위이다."
+        },
+        "shape": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "정적인 물체의 형태로 다루지 않는다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도구나 용도의 기능 축에 해당하지 않는다."
+        }
+      },
+      "notes": [
+        "장면이 아니라 이동 행위 자체를 가리킨다.",
+        "구체적 동물 종은 포함하지 않는다."
+      ]
+    },
+    {
+      "category_id": "ant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "작고 군집 생활을 하는 곤충이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "elongated",
+            "many_legs",
+            "antenna"
+          ],
+          "description_ko": "가느다란 몸통에 더듬이와 여섯 다리가 있는 작은 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "transport_goods"
+          ],
+          "description_ko": "걷고 기어 다니며 먹이와 물건을 운반하는 행동이 대표적이다."
+        }
+      },
+      "notes": [
+        "개미는 다리가 많지만 포유류가 아니다.",
+        "군집성 행동이 자주 함께 떠오른다."
+      ]
+    },
+    {
+      "category_id": "anvil",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "금속을 두드리거나 성형할 때 받침으로 쓰는 작업 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "flat",
+            "pedestal"
+          ],
+          "description_ko": "무겁고 낮은 받침 위에 넓은 작업면이 있는 덩어리형이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "construction"
+          ],
+          "description_ko": "망치로 두드릴 때 재료를 받쳐 주는 용도다."
+        }
+      },
+      "notes": [
+        "주로 대장간 도구로 인식된다.",
+        "날카로운 절삭보다는 타격과 성형이 중심이다."
+      ]
+    },
+    {
+      "category_id": "apple",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "먹는 과일로, 둥근 열매류에 속한다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "smooth_surface",
+            "stem",
+            "crown_calyx"
+          ],
+          "description_ko": "대체로 둥글고 매끈하며 꼭지와 꽃받침 자국이 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "사람이 먹는 과일이다."
+        }
+      },
+      "notes": [
+        "배나 바나나보다 대체로 둥근 외형으로 그려진다.",
+        "파인애플이나 수박처럼 큰 거친 표면의 과일과 구별된다."
+      ]
+    },
+    {
+      "category_id": "arm",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "몸통에서 뻗어 나와 손을 포함하는 상지 부위다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "몸에서 길게 이어지는 가느다란 부분으로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing"
+          ],
+          "description_ko": "물건을 들고 조작하며 착용물을 지지하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "손은 포함하지 않고 팔 전체를 가리킨다.",
+        "신체 부위 항목으로 기능은 보조적이다."
+      ]
+    }
+  ]
+}

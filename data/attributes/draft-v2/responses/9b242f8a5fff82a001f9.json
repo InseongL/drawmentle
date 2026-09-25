@@ -1,0 +1,337 @@
+{
+  "entries": [
+    {
+      "category_id": "cactus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "가시가 있고 건조한 환경에 잘 적응한 다육 식물 계열이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "branches",
+            "spots"
+          ],
+          "description_ko": "기둥처럼 길게 서거나 여러 갈래로 갈라진 덩어리로 그려지며, 표면의 가시는 점이나 짧은 돌기처럼 단순화되기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "잎 대신 줄기 중심으로 빛을 받아 살아가는 식물이다."
+        }
+      },
+      "notes": [
+        "선인장류의 대표적 형태를 기준으로 한 초안이다.",
+        "꽃이 있는 종도 있으나 여기서는 대표 윤곽만 반영했다."
+      ]
+    },
+    {
+      "category_id": "cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "굽거나 굳혀 만든 단면 있는 디저트 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "flat",
+            "cylindrical"
+          ],
+          "description_ko": "층이 있거나 평평한 덩어리로 보이며, 원형·사각형·원통형 단면이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹기 위한 달콤한 음식으로 쓰인다."
+        }
+      },
+      "notes": [
+        "생일케이크와 겹칠 수 있어 장식은 핵심 특징으로 보지 않았다.",
+        "조각내어 먹는 음식이라는 점을 대표적으로 잡았다."
+      ]
+    },
+    {
+      "category_id": "calculator",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "숫자 계산을 위해 입력과 출력이 함께 있는 전자 기기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "buttons",
+            "screen"
+          ],
+          "description_ko": "납작한 본체에 버튼 배열과 표시창이 함께 있는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "계산 결과를 보여 주고 수치를 빠르게 처리하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "휴대용 계산기를 기준으로 한 초안이다.",
+        "버튼식 단말과 화면이 핵심 특징이다."
+      ]
+    },
+    {
+      "category_id": "calendar",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "날짜를 나누어 보여 주는 표나 묶음 형태의 문구류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "screen"
+          ],
+          "description_ko": "평평한 판이나 장으로 보이며, 날짜 칸이 격자처럼 배열되는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "displaying"
+          ],
+          "description_ko": "날짜와 요일의 흐름을 확인하게 해 주는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "종이 달력과 탁상 달력을 함께 포괄하는 초안이다.",
+        "전자 달력과는 달리 날짜 표시 자체를 중심으로 잡았다."
+      ]
+    },
+    {
+      "category_id": "camel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "사막 환경에 적응한 대형 포유류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "curved_body",
+            "long_tail"
+          ],
+          "description_ko": "긴 목과 긴 몸통, 네 다리가 드러나며 등선이 약간 굽어 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "주로 걸어서 이동하며 사람이나 짐을 나르는 동물로 알려져 있다."
+        }
+      },
+      "notes": [
+        "기린·말·얼룩말과의 구분에서는 긴 목과 사막형 체형을 우선했다.",
+        "혹부리 실루엣은 종에 따라 달라 대표 특징으로만 보았다."
+      ]
+    },
+    {
+      "category_id": "camera",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "사진을 찍기 위한 광학 전자 장치다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "cylindrical",
+            "round",
+            "opening",
+            "buttons"
+          ],
+          "description_ko": "렌즈가 앞으로 돌출된 상자형 몸체에 조작 버튼이나 원형 렌즈부가 함께 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photography"
+          ],
+          "description_ko": "장면을 촬영해 이미지로 남기는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "렌즈 돌출부와 본체 상자를 함께 반영한 초안이다.",
+        "카메라 종류가 다양해 세부 조작부는 최소한만 잡았다."
+      ]
+    },
+    {
+      "category_id": "camouflage",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "symbol"
+          ],
+          "description_ko": "물건 자체보다 상태·무늬·행동 방식을 가리키는 추상 표지다."
+        },
+        "shape": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "구체 물체의 고정된 윤곽으로 다루기 어렵다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "독립된 물건의 용도라기보다 숨김이나 섞임을 뜻하는 개념이다."
+        }
+      },
+      "notes": [
+        "구체 사물 분류가 아니라 추상 개념에 해당한다.",
+        "도형이나 물체의 실루엣으로 고정하기 어렵다."
+      ]
+    },
+    {
+      "category_id": "campfire",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon",
+            "scene"
+          ],
+          "description_ko": "야외에서 불꽃이 모여 있는 장면이나 현상이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "flared_bell",
+            "rays"
+          ],
+          "description_ko": "불길이 위로 퍼지며 들쭉날쭉한 불꽃 윤곽과 바깥쪽 빛 번짐이 함께 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "lighting"
+          ],
+          "description_ko": "주변을 따뜻하게 하고 어둠을 밝히는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "장면성 강한 항목이라 불 자체와 주변 맥락이 함께 떠오를 수 있다.",
+        "장작 더미는 대표 요소지만 항상 그려지지는 않는다."
+      ]
+    },
+    {
+      "category_id": "candle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "심지를 중심으로 왁스가 굳어 있는 작은 발광용 물체다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "elongated",
+            "straight_tube",
+            "pointed_tip"
+          ],
+          "description_ko": "가늘고 긴 원통형 덩어리에 위쪽 심지가 솟은 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "불을 붙여 빛을 내는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "용기라기보다 고형 광원에 가깝지만 분류 축상 container로 두었다.",
+        "받침대가 있는 경우도 있으나 핵심은 길쭉한 몸체와 심지다."
+      ]
+    },
+    {
+      "category_id": "cannon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weapon"
+          ],
+          "description_ko": "탄환이나 포탄을 발사하는 대형 무기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "straight_tube",
+            "wings",
+            "four_wheels"
+          ],
+          "description_ko": "길고 굵은 포신이 중심이며, 거치대나 바퀴가 함께 그려질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat",
+            "striking"
+          ],
+          "description_ko": "멀리 있는 목표를 공격하거나 타격하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "포신과 거치 구조를 중심으로 한 초안이다.",
+        "바퀴식 포와 고정식 포가 함께 있을 수 있어 지지 구조는 유동적이다."
+      ]
+    }
+  ]
+}

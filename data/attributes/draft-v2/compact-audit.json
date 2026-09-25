@@ -1,0 +1,239 @@
+{
+  "basis": "same 12 saved requests; serialized instructions, input text and schema character counts; not token or price estimates",
+  "api_calls_during_audit": 0,
+  "existing_records": 120,
+  "old_input_characters": 212620,
+  "compact_input_characters": 97549,
+  "character_reduction_percent": 54.1,
+  "missing_categories": 225,
+  "missing_initial_calls": 23,
+  "flagged_categories": {
+    "airplane": [
+      "airplane/shape: inappropriate literal anatomy/use tags: ['fins']"
+    ],
+    "backpack": [
+      "backpack/shape: inappropriate literal anatomy/use tags: ['rounded_ears']"
+    ],
+    "banana": [
+      "banana/shape: inappropriate literal anatomy/use tags: ['rounded_ears']"
+    ],
+    "chair": [
+      "chair/shape: inappropriate literal anatomy/use tags: ['rounded_ears']"
+    ],
+    "couch": [
+      "couch/shape: inappropriate literal anatomy/use tags: ['long_tail']"
+    ],
+    "cruise_ship": [
+      "cruise_ship/shape: inappropriate literal anatomy/use tags: ['fins']"
+    ]
+  },
+  "repair_initial_calls": 1,
+  "dictionary_sha256_before": "dfba010be139c18a23e2a639bae0a25806953049d1ffde30b64590625cacea7e",
+  "comparisons": [
+    {
+      "job_id": "06ca3ebc58c03011a04c",
+      "categories": [
+        "church",
+        "circle",
+        "clarinet",
+        "clock",
+        "cloud",
+        "coffee_cup",
+        "compass",
+        "computer",
+        "cookie",
+        "cooler"
+      ],
+      "old_input_characters": 18185,
+      "compact_input_characters": 8232
+    },
+    {
+      "job_id": "1dadf357e23254f4fee0",
+      "categories": [
+        "binoculars",
+        "bird",
+        "birthday_cake",
+        "blackberry",
+        "blueberry",
+        "book",
+        "boomerang",
+        "bottlecap",
+        "bowtie",
+        "bracelet"
+      ],
+      "old_input_characters": 18058,
+      "compact_input_characters": 8218
+    },
+    {
+      "job_id": "20fab0f606667c5b51f4",
+      "categories": [
+        "dumbbell",
+        "ear",
+        "elbow",
+        "elephant",
+        "envelope",
+        "eraser",
+        "eye",
+        "eyeglasses",
+        "face",
+        "fan"
+      ],
+      "old_input_characters": 17490,
+      "compact_input_characters": 8083
+    },
+    {
+      "job_id": "255815c36a4a651fab3c",
+      "categories": [
+        "canoe",
+        "car",
+        "carrot",
+        "castle",
+        "cat",
+        "ceiling_fan",
+        "cello",
+        "cell_phone",
+        "chair",
+        "chandelier"
+      ],
+      "old_input_characters": 17661,
+      "compact_input_characters": 8117
+    },
+    {
+      "job_id": "754b3801f84d8f7c82ef",
+      "categories": [
+        "diving_board",
+        "dog",
+        "dolphin",
+        "donut",
+        "door",
+        "dragon",
+        "dresser",
+        "drill",
+        "drums",
+        "duck"
+      ],
+      "old_input_characters": 17391,
+      "compact_input_characters": 8035
+    },
+    {
+      "job_id": "8792d2f7d7d7a3ec3398",
+      "categories": [
+        "feather",
+        "fence",
+        "finger",
+        "fire_hydrant",
+        "fireplace",
+        "firetruck",
+        "fish",
+        "flamingo",
+        "flashlight",
+        "flip_flops"
+      ],
+      "old_input_characters": 17468,
+      "compact_input_characters": 8115
+    },
+    {
+      "job_id": "968093a6c7b28f075f54",
+      "categories": [
+        "couch",
+        "cow",
+        "crab",
+        "crayon",
+        "crocodile",
+        "crown",
+        "cruise_ship",
+        "cup",
+        "diamond",
+        "dishwasher"
+      ],
+      "old_input_characters": 17709,
+      "compact_input_characters": 8130
+    },
+    {
+      "job_id": "9969eeb3f71180238ffd",
+      "categories": [
+        "aircraft_carrier",
+        "airplane",
+        "alarm_clock",
+        "ambulance",
+        "angel",
+        "animal_migration",
+        "ant",
+        "anvil",
+        "apple",
+        "arm"
+      ],
+      "old_input_characters": 17901,
+      "compact_input_characters": 8180
+    },
+    {
+      "job_id": "9b242f8a5fff82a001f9",
+      "categories": [
+        "cactus",
+        "cake",
+        "calculator",
+        "calendar",
+        "camel",
+        "camera",
+        "camouflage",
+        "campfire",
+        "candle",
+        "cannon"
+      ],
+      "old_input_characters": 17701,
+      "compact_input_characters": 8163
+    },
+    {
+      "job_id": "b3847ea059b60cf515b8",
+      "categories": [
+        "asparagus",
+        "axe",
+        "backpack",
+        "banana",
+        "bandage",
+        "barn",
+        "baseball",
+        "baseball_bat",
+        "basket",
+        "basketball"
+      ],
+      "old_input_characters": 18267,
+      "compact_input_characters": 8199
+    },
+    {
+      "job_id": "dd9584a02e765d5a758b",
+      "categories": [
+        "brain",
+        "bread",
+        "bridge",
+        "broccoli",
+        "broom",
+        "bucket",
+        "bulldozer",
+        "bus",
+        "bush",
+        "butterfly"
+      ],
+      "old_input_characters": 17407,
+      "compact_input_characters": 8051
+    },
+    {
+      "job_id": "f01958677317c2a403b8",
+      "categories": [
+        "bat",
+        "bathtub",
+        "beach",
+        "bear",
+        "beard",
+        "bed",
+        "bee",
+        "belt",
+        "bench",
+        "bicycle"
+      ],
+      "old_input_characters": 17382,
+      "compact_input_characters": 8026
+    }
+  ],
+  "dictionary_sha256_after": "dfba010be139c18a23e2a639bae0a25806953049d1ffde30b64590625cacea7e"
+}

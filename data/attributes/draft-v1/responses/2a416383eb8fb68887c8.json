@@ -1,0 +1,326 @@
+{
+  "entries": [
+    {
+      "category_id": "asparagus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant",
+            "vegetable"
+          ],
+          "description_ko": "먹는 어린 줄기 채소로, 길고 가는 식물성 재료이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "stem"
+          ],
+          "description_ko": "대체로 길쭉한 줄기 형태이며 끝이 가늘어지는 편이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 조리해 먹는 식재료로 쓰인다."
+        }
+      },
+      "notes": [
+        "채소로 취급하는 대표 예시이다.",
+        "초록색만을 전제하지 않는다.",
+        "식물 전체가 아니라 먹는 줄기 부분을 뜻한다."
+      ]
+    },
+    {
+      "category_id": "axe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "무언가를 찍거나 자르는 데 쓰는 손도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "blade"
+          ],
+          "description_ko": "손잡이와 날이 결합된 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting",
+            "striking"
+          ],
+          "description_ko": "대상을 내려치며 자르거나 쪼개는 데 사용된다."
+        }
+      },
+      "notes": [
+        "목재 작업 도구로 자주 쓰인다.",
+        "날의 크기와 자루 길이는 다양하다."
+      ]
+    },
+    {
+      "category_id": "backpack",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "등에 메고 이동하는 휴대용 소지품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "handle",
+            "opening"
+          ],
+          "description_ko": "여러 물건을 넣는 본체와 여닫는 입구가 있는 덩어리 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods",
+            "wearing"
+          ],
+          "description_ko": "물건을 넣어 등에 메고 옮기는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "의류는 아니고 착용 소품으로 본다.",
+        "가방류와 겹치는 범주이다."
+      ]
+    },
+    {
+      "category_id": "banana",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "껍질을 벗겨 먹는 길쭉한 열대 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "가늘고 긴 곡선형 덩어리로 그려지기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 그대로 먹는 과일이다."
+        }
+      },
+      "notes": [
+        "익기 전후 색은 다양할 수 있다.",
+        "껍질 유무는 그림 표현에 따라 다를 수 있다."
+      ]
+    },
+    {
+      "category_id": "bandage",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment"
+          ],
+          "description_ko": "상처를 감싸거나 고정하는 의료용 소모품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat"
+          ],
+          "description_ko": "대개 길고 납작한 띠 모양이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care",
+            "protection",
+            "fastening"
+          ],
+          "description_ko": "상처 부위를 덮어 보호하고 붕대 감기를 돕는다."
+        }
+      },
+      "notes": [
+        "의료 용품으로 분류한다.",
+        "접착식 여부는 특정하지 않는다."
+      ]
+    },
+    {
+      "category_id": "barn",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "농장에 있는 저장·사육용 건축물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "windows"
+          ],
+          "description_ko": "직사각형 몸체에 지붕이 얹힌 건물 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter",
+            "holding_objects"
+          ],
+          "description_ko": "가축을 두거나 농기구·곡물 등을 보관하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "목축 시설과 저장 공간이 함께 나타날 수 있다.",
+        "외형은 창문이나 문 배치에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "baseball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "야구 경기에서 치거나 던지는 작은 공이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "작고 둥근 공 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play"
+          ],
+          "description_ko": "야구 경기에서 사용된다."
+        }
+      },
+      "notes": [
+        "흰색 바탕과 실밥 표현이 흔하지만 필수는 아니다.",
+        "구기용 공의 대표 사례이다."
+      ]
+    },
+    {
+      "category_id": "baseball_bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "야구에서 공을 치는 길쭉한 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "한쪽이 두껍고 다른 쪽이 가늘어지는 긴 막대형이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "play"
+          ],
+          "description_ko": "공을 맞혀 보내는 데 사용된다."
+        }
+      },
+      "notes": [
+        "방망이류 스포츠 기구이다.",
+        "재질은 나무나 금속 등으로 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "basket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "물건을 담아 옮기거나 보관하는 바구니형 용기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "윗부분이 열려 있고 손잡이가 붙는 경우가 많은 그릇 모양이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "여러 물건을 담아 나르거나 놓아두는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "재질은 대나무, 철사, 플라스틱 등으로 다양하다.",
+        "뚜껑이 없는 형태를 대표로 본다."
+      ]
+    },
+    {
+      "category_id": "basketball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "농구 경기에서 사용하는 큰 공이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "둥글고 비교적 큰 공 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play"
+          ],
+          "description_ko": "농구 경기와 훈련에 쓰인다."
+        }
+      },
+      "notes": [
+        "주황색은 흔하지만 고정 속성은 아니다.",
+        "표면의 줄무늬가 표현될 수 있다."
+      ]
+    }
+  ]
+}

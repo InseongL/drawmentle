@@ -1,0 +1,333 @@
+{
+  "entries": [
+    {
+      "category_id": "mouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "설치류에 속하는 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "rounded_ears",
+            "long_tail",
+            "four_legs"
+          ],
+          "description_ko": "타원형 몸에 둥근 귀와 가는 긴 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "running",
+            "climbing"
+          ],
+          "description_ko": "재빠르게 달리고 기어오른다"
+        }
+      },
+      "notes": [
+        "영문 mouse는 컴퓨터 마우스와 겹치지만 한국어 이름 '쥐'를 기준으로 했다."
+      ]
+    },
+    {
+      "category_id": "octopus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mollusk"
+          ],
+          "description_ko": "바다에 사는 두족류 연체동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "tentacles"
+          ],
+          "description_ko": "둥근 머리 아래로 여러 개의 긴 다리가 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling",
+            "hunting"
+          ],
+          "description_ko": "헤엄치거나 바닥을 기며 먹이를 잡는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "owl",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "야행성 맹금류 조류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "beak",
+            "wings",
+            "two_legs"
+          ],
+          "description_ko": "통통한 몸에 큰 눈, 짧은 부리와 날개가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "hunting"
+          ],
+          "description_ko": "밤에 날아다니며 작은 동물을 사냥한다"
+        }
+      },
+      "notes": [
+        "머리 위 깃털 뭉치는 귀가 아니므로 귀 태그를 쓰지 않았다."
+      ]
+    },
+    {
+      "category_id": "panda",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "곰과에 속하는 포유류 동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "round",
+            "spots",
+            "short_tail"
+          ],
+          "description_ko": "둥근 몸과 귀에 눈가·몸통 반점 무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "climbing",
+            "walking"
+          ],
+          "description_ko": "대나무 잎을 먹고 나무를 탄다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "parrot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "앵무목에 속하는 조류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "beak",
+            "wings",
+            "long_tail",
+            "two_legs"
+          ],
+          "description_ko": "굽은 부리와 긴 꼬리깃, 날개가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "climbing"
+          ],
+          "description_ko": "날아다니고 부리와 발로 가지를 탄다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "penguin",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "남반구 바다에 사는 조류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "beak",
+            "wings",
+            "two_legs"
+          ],
+          "description_ko": "서 있는 타원형 몸에 짧은 날개와 부리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "walking",
+            "hunting"
+          ],
+          "description_ko": "헤엄쳐 물고기를 잡고 뒤뚱뒤뚱 걷는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pig",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "가축으로 기르는 포유류 동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "round",
+            "short_tail",
+            "pointed_ears"
+          ],
+          "description_ko": "둥근 몸에 넓은 코, 짧게 말린 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "digging"
+          ],
+          "description_ko": "걸어 다니며 코로 땅을 파헤친다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rabbit",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "토끼목에 속하는 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pointed_ears",
+            "short_tail",
+            "four_legs",
+            "oval"
+          ],
+          "description_ko": "위로 솟은 긴 귀와 짧고 둥근 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "grazing",
+            "running"
+          ],
+          "description_ko": "뛰어다니며 풀을 뜯는다"
+        }
+      },
+      "notes": [
+        "긴 귀를 나타낼 전용 태그가 없어 뾰족한 귀로 표현했다."
+      ]
+    },
+    {
+      "category_id": "raccoon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "미국너구릿과에 속하는 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail",
+            "stripes",
+            "pointed_ears"
+          ],
+          "description_ko": "고리 줄무늬 꼬리와 눈가의 검은 무늬가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "walking"
+          ],
+          "description_ko": "나무를 타고 돌아다니며 먹이를 찾는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rhinoceros",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "초식성 대형 포유류 동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "horns",
+            "short_tail"
+          ],
+          "description_ko": "육중한 몸에 코 위의 큰 뿔이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing",
+            "running"
+          ],
+          "description_ko": "풀을 뜯으며 걷고 돌진하기도 한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

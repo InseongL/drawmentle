@@ -1,0 +1,346 @@
+{
+  "entries": [
+    {
+      "category_id": "paper_clip",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "tool"
+          ],
+          "description_ko": "종이나 얇은 자료를 임시로 묶어 정리하는 작은 금속 문구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "irregular"
+          ],
+          "description_ko": "가느다란 선재를 휘어 만든 길쭉한 형태로, 반복된 곡선이 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening"
+          ],
+          "description_ko": "종이 여러 장을 한데 고정하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "금속 재질이 일반적이지만 색은 고정되지 않는다.",
+        "접은 선재의 반복 곡선이 핵심 특징이다.",
+        "클립의 크기나 모양 변형은 다양하다."
+      ]
+    },
+    {
+      "category_id": "parachute",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "낙하 중 공기 저항을 이용해 속도를 줄이는 장비다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "strings"
+          ],
+          "description_ko": "펼치면 넓은 천막과 여러 줄이 연결된 구조로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "rescue"
+          ],
+          "description_ko": "사람이나 장비의 안전한 강하를 돕는다."
+        }
+      },
+      "notes": [
+        "비행체 자체가 아니라 감속용 장비로 보는 것이 적절하다.",
+        "천막 부분과 다수의 줄이 함께 나타나는 경우가 많다.",
+        "색상은 다양하므로 특정 색을 전제하지 않는다."
+      ]
+    },
+    {
+      "category_id": "parrot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "부리와 날개를 가진 새이며, 열대 지역과 관련해 자주 떠올려지는 조류다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "beak",
+            "wings",
+            "two_legs",
+            "short_tail"
+          ],
+          "description_ko": "부리가 뚜렷하고 날개가 있으며, 꼬리는 대체로 길지 않은 새의 실루엣이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "climbing",
+            "communication"
+          ],
+          "description_ko": "날아다니고 나뭇가지를 오르며, 소리를 내어 의사표현을 하기도 한다."
+        }
+      },
+      "notes": [
+        "울음소리 흉내를 잘 내는 종으로 알려져 있지만 모든 앵무새에 동일하진 않다.",
+        "색은 매우 다양하므로 특정 색을 넣지 않는다.",
+        "애완동물과 야생종의 이미지를 모두 포괄할 수 있다."
+      ]
+    },
+    {
+      "category_id": "passport",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "tool"
+          ],
+          "description_ko": "신원을 확인하고 국경 통과에 쓰는 공식 문서다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "손에 들 수 있는 납작한 직사각형 책자 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "displaying"
+          ],
+          "description_ko": "신분 정보와 출입국 관련 정보를 제시하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "전자기기나 신용카드가 아니라 종이 문서 계열이다.",
+        "표지 색은 국가별로 달라질 수 있다.",
+        "내부에 사진과 각종 인적 사항이 포함될 수 있다."
+      ]
+    },
+    {
+      "category_id": "peanut",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "껍질 속에 씨앗이 들어 있는 먹거리로, 땅속에서 열매가 맺히는 콩과 식물의 한 예로 볼 수 있다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "shell"
+          ],
+          "description_ko": "알맹이는 보통 두 쪽이 맞물린 타원형이고, 껍질째 보이면 길쭉한 껍질 형태가 함께 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "볶아서 먹거나 각종 요리에 사용하는 식재료다."
+        }
+      },
+      "notes": [
+        "엄밀한 식물학 분류와 일상 분류가 다를 수 있다.",
+        "껍질 있는 상태와 알맹이 상태를 모두 포괄한다.",
+        "색은 껍질·가공 방식에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "pear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "달콤한 과육을 먹는 대표적인 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "elongated"
+          ],
+          "description_ko": "아래가 넓고 위로 갈수록 좁아지는 타원형 윤곽이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생과일로 먹거나 주스·디저트 재료로 사용된다."
+        }
+      },
+      "notes": [
+        "품종에 따라 둥글거나 길쭉한 차이가 있다.",
+        "색상은 품종별 편차가 크므로 단정하지 않는다.",
+        "보통 꼭지와 아래쪽 둥근 부분이 함께 암시된다."
+      ]
+    },
+    {
+      "category_id": "peas",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "꼬투리 안에 들어 있는 작은 알갱이 형태의 식재료다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "작은 원형 알갱이들이 여러 개 모여 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "삶거나 조리해 반찬이나 재료로 먹는다."
+        }
+      },
+      "notes": [
+        "꼬투리째인지 알갱이만인지에 따라 보이는 형태가 달라질 수 있다.",
+        "신선한 것은 초록색이 흔하지만 색은 가변적이다.",
+        "한 알보다 여러 알이 함께 묘사되는 경우가 많다."
+      ]
+    },
+    {
+      "category_id": "pencil",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "tool"
+          ],
+          "description_ko": "종이에 글씨를 쓰거나 그림을 그리는 필기도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "pointed_ears"
+          ],
+          "description_ko": "길쭉한 몸체에 끝이 뾰족하게 깎인 형태로 표현되기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "writing",
+            "drawing",
+            "erasing"
+          ],
+          "description_ko": "글씨 쓰기와 스케치에 쓰이며, 지우개가 붙은 형태도 흔하다."
+        }
+      },
+      "notes": [
+        "연필심과 지우개 유무는 모델마다 다를 수 있다.",
+        "목재 육각형 단면도 있으나 대표성은 길쭉한 막대형이다.",
+        "색은 노란색이 흔하지만 반드시 그렇지는 않다."
+      ]
+    },
+    {
+      "category_id": "penguin",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "날지 못하고 수영에 능한 바닷새다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "short_tail",
+            "wings"
+          ],
+          "description_ko": "두 다리로 서고, 몸통은 둥글며 날개가 짧게 붙은 실루엣이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "walking"
+          ],
+          "description_ko": "물속에서 헤엄치고 육지에서는 뒤뚱거리며 걷는다."
+        }
+      },
+      "notes": [
+        "비행 기능은 일반적 특징으로 보지 않는다.",
+        "종에 따라 크기와 무늬 차이가 크다.",
+        "남극 연상 이미지가 많지만 서식지는 종별로 다양하다."
+      ]
+    },
+    {
+      "category_id": "piano",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument"
+          ],
+          "description_ko": "건반을 눌러 소리를 내는 서양 악기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "strings",
+            "buttons"
+          ],
+          "description_ko": "큰 직사각형 몸체에 건반과 덮개가 있는 상자형 실루엣으로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "건반을 눌러 음을 내고 음악을 연주한다."
+        }
+      },
+      "notes": [
+        "그랜드피아노와 업라이트피아노를 모두 포괄할 수 있다.",
+        "건반은 버튼처럼 보일 수 있으나 본질은 건반 악기다.",
+        "색상은 보통 검정·흰색이지만 예외가 있다."
+      ]
+    }
+  ]
+}

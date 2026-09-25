@@ -1,0 +1,311 @@
+{
+  "entries": [
+    {
+      "category_id": "headphones",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "머리에 쓰는 음향 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "round"
+          ],
+          "description_ko": "굽은 머리띠 양 끝에 둥근 귀덮개가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_output",
+            "wearing"
+          ],
+          "description_ko": "머리에 쓰고 소리를 들려준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "keyboard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "컴퓨터 입력 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "buttons"
+          ],
+          "description_ko": "납작한 사각판에 작은 버튼이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "writing"
+          ],
+          "description_ko": "글자를 입력해 컴퓨터를 조작한다"
+        }
+      },
+      "notes": [
+        "한국어 '키보드'는 건반 악기도 뜻하지만 컴퓨터 입력기로 작성했다."
+      ]
+    },
+    {
+      "category_id": "laptop",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "휴대용 컴퓨터 기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "접히는 화면과 자판으로 이루어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying",
+            "communication"
+          ],
+          "description_ko": "정보를 처리하고 화면에 보여준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "map",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "종이로 된 지리 자료"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "panel_lines"
+          ],
+          "description_ko": "접힌 선이 있는 사각 종이에 길이 그려진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "displaying"
+          ],
+          "description_ko": "위치와 길을 안내한다"
+        }
+      },
+      "notes": [
+        "지도 문서 분류 태그가 없어 문구로 분류했다."
+      ]
+    },
+    {
+      "category_id": "marker",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "잉크를 쓰는 필기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "lid"
+          ],
+          "description_ko": "길쭉한 원통형 몸체에 뚜껑이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "drawing",
+            "writing"
+          ],
+          "description_ko": "굵은 선으로 쓰거나 그린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "megaphone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "휴대용 음향 기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "conical",
+            "flared_bell",
+            "handle"
+          ],
+          "description_ko": "원뿔형 나팔 입구와 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_output",
+            "communication",
+            "signaling"
+          ],
+          "description_ko": "목소리를 크게 키워 알린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "microphone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "음향 입력 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "elongated",
+            "handle"
+          ],
+          "description_ko": "둥근 머리 아래 긴 손잡이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_recording",
+            "communication"
+          ],
+          "description_ko": "소리를 받아 전달하거나 녹음한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "paper_clip",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "fastener",
+            "tool"
+          ],
+          "description_ko": "종이를 묶는 문구 철물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline"
+          ],
+          "description_ko": "가는 철사가 길쭉하게 겹쳐 굽은 형태다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "holding_objects"
+          ],
+          "description_ko": "종이 여러 장을 집어 고정한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "passport",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "여행용 신분 증명 문서"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "작고 납작한 직사각형 수첩이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "displaying"
+          ],
+          "description_ko": "신원 정보를 담아 보여준다"
+        }
+      },
+      "notes": [
+        "신분 증명 기능 태그가 없어 정보 표시로 표현했다."
+      ]
+    },
+    {
+      "category_id": "pencil",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "흑연심 필기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "pointed_tip"
+          ],
+          "description_ko": "긴 원통형 몸체 끝이 뾰족하게 깎여 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "writing",
+            "drawing"
+          ],
+          "description_ko": "글씨를 쓰거나 그림을 그린다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

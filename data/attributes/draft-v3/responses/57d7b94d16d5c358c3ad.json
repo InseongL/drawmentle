@@ -1,0 +1,312 @@
+{
+  "entries": [
+    {
+      "category_id": "zebra",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "ungulate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "말과에 속하는 초식 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "stripes",
+            "mane",
+            "long_tail"
+          ],
+          "description_ko": "몸 전체 줄무늬와 짧은 갈기, 긴 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "running"
+          ],
+          "description_ko": "무리 지어 풀을 뜯고 달린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "arm",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "어깨에서 손까지의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline"
+          ],
+          "description_ko": "길게 뻗은 팔이 팔꿈치에서 굽는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "gripping",
+            "bending"
+          ],
+          "description_ko": "물건을 들고 굽혔다 편다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "beard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "facial_hair",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "턱과 뺨에 나는 털"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hair_strands",
+            "irregular"
+          ],
+          "description_ko": "턱과 뺨을 덮는 털 가닥 뭉치다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "신체의 털이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "goatee, moustache와 개념이 겹친다."
+      ]
+    },
+    {
+      "category_id": "brain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "머리 속 신체 기관"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "bumpy_surface"
+          ],
+          "description_ko": "주름진 표면의 타원형 덩어리다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing"
+          ],
+          "description_ko": "생각하고 몸을 조절한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "머리 옆의 감각 기관"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "spiral"
+          ],
+          "description_ko": "C자 윤곽 안쪽에 휘어진 굴곡이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hearing"
+          ],
+          "description_ko": "소리를 듣는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "elbow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "팔 가운데 관절 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "elongated"
+          ],
+          "description_ko": "팔이 꺾이는 관절 부분이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bending"
+          ],
+          "description_ko": "팔을 굽혔다 편다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "eye",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "얼굴의 감각 기관"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "round"
+          ],
+          "description_ko": "타원형 윤곽 안에 둥근 눈동자가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "seeing"
+          ],
+          "description_ko": "사물을 본다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "face",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "머리 앞면의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "face_features"
+          ],
+          "description_ko": "타원형 윤곽에 눈·코·입이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "표정으로 감정을 드러낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "feather",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "새의 몸을 덮는 부분"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "pointed_tip",
+            "stem"
+          ],
+          "description_ko": "가운데 깃대 양옆으로 가는 깃이 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying"
+          ],
+          "description_ko": "새가 날 수 있게 돕는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "finger",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "손 끝의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "길쭉한 마디 끝에 손톱이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "gripping",
+            "bending",
+            "signaling"
+          ],
+          "description_ko": "물건을 집고 굽히며 가리킨다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

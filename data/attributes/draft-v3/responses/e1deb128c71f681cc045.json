@@ -1,0 +1,316 @@
+{
+  "entries": [
+    {
+      "category_id": "foot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "다리 끝의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "digits"
+          ],
+          "description_ko": "발바닥 윤곽 끝에 발가락이 나란히 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running"
+          ],
+          "description_ko": "몸을 받치고 걷거나 달리게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "goatee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "facial_hair",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "턱 끝에 나는 털"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hair_strands",
+            "triangular",
+            "pointed_tip"
+          ],
+          "description_ko": "턱 끝에 뾰족하게 모인 털 뭉치다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "신체의 털이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "beard, moustache와 개념이 겹친다."
+      ]
+    },
+    {
+      "category_id": "hand",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "팔 끝의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "digits",
+            "flat",
+            "irregular"
+          ],
+          "description_ko": "납작한 손바닥에서 다섯 손가락이 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "gripping",
+            "signaling"
+          ],
+          "description_ko": "물건을 쥐고 손짓으로 신호를 보낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "knee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "다리 가운데 관절 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "round"
+          ],
+          "description_ko": "굽은 다리 가운데 둥근 무릎뼈가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bending",
+            "walking"
+          ],
+          "description_ko": "다리를 굽혀 걷고 앉게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "leg",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "몸을 받치는 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "길고 곧은 원통형 다리와 발이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "jumping"
+          ],
+          "description_ko": "걷고 달리고 뛰어오르게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "moustache",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "facial_hair",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "코 아래에 나는 털"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hair_strands",
+            "curved_outline"
+          ],
+          "description_ko": "코 아래 양옆으로 말려 퍼지는 털이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "신체의 털이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "beard, goatee와 개념이 겹친다."
+      ]
+    },
+    {
+      "category_id": "mouth",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "얼굴 아래쪽 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "crescent",
+            "oval",
+            "teeth"
+          ],
+          "description_ko": "곡선 입술 사이로 이가 보이기도 한다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "chewing"
+          ],
+          "description_ko": "말을 하고 음식을 씹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "nose",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "얼굴 가운데 감각 기관"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "curved_outline"
+          ],
+          "description_ko": "얼굴 가운데 솟은 모양과 두 콧구멍이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "smelling_breathing"
+          ],
+          "description_ko": "냄새를 맡고 숨을 쉰다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "skull",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "head_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "머리를 이루는 뼈"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "face_features",
+            "teeth"
+          ],
+          "description_ko": "둥근 머리뼈에 눈구멍과 이가 드러난다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection"
+          ],
+          "description_ko": "뇌를 감싸 보호한다"
+        }
+      },
+      "notes": [
+        "위험·해적 기호로도 쓰인다."
+      ]
+    },
+    {
+      "category_id": "toe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "limb_part",
+            "body_part",
+            "organism"
+          ],
+          "description_ko": "발 끝의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "digits"
+          ],
+          "description_ko": "발끝에 작고 둥근 마디가 나란히 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking"
+          ],
+          "description_ko": "걸을 때 균형을 잡게 한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

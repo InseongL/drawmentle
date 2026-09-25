@@ -1,0 +1,345 @@
+{
+  "entries": [
+    {
+      "category_id": "sea_turtle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "reptile",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "바다에 사는 거북류 파충류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "shell",
+            "dome",
+            "oval",
+            "fins"
+          ],
+          "description_ko": "돔형 등딱지에 지느러미 같은 네 발이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "crawling",
+            "hiding"
+          ],
+          "description_ko": "헤엄치고 모래 위를 기며 등딱지로 몸을 지킨다"
+        }
+      },
+      "notes": [
+        "노 모양 앞발을 지느러미 태그로 표현했다."
+      ]
+    },
+    {
+      "category_id": "shark",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cartilaginous_fish",
+            "fish",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "연골어류에 속하는 대형 어류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "fins",
+            "teeth",
+            "pointed_tip"
+          ],
+          "description_ko": "유선형 몸에 등지느러미와 날카로운 이빨이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "hunting"
+          ],
+          "description_ko": "빠르게 헤엄치며 사냥한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sheep",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "ungulate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "가축으로 기르는 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "puffy_outline",
+            "short_tail"
+          ],
+          "description_ko": "구름처럼 부푼 털 몸통에 가는 다리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing",
+            "walking"
+          ],
+          "description_ko": "무리 지어 풀을 뜯는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "mollusk",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "복족류에 속하는 연체동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "shell",
+            "spiral",
+            "feelers",
+            "elongated"
+          ],
+          "description_ko": "나선형 껍데기와 길쭉한 몸, 더듬이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "crawling",
+            "hiding"
+          ],
+          "description_ko": "천천히 기고 껍데기 속에 숨는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "reptile",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "다리가 없는 파충류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wavy_line"
+          ],
+          "description_ko": "다리 없이 길게 구불거리는 몸이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "crawling",
+            "hunting",
+            "stinging"
+          ],
+          "description_ko": "기어 다니며 먹이를 물어 잡는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "spider",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "arachnid",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "거미류에 속하는 절지동물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "many_legs",
+            "round"
+          ],
+          "description_ko": "둥근 몸통에 여덟 개의 다리가 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hunting",
+            "climbing",
+            "stinging"
+          ],
+          "description_ko": "거미줄로 먹이를 잡고 독니로 문다"
+        }
+      },
+      "notes": [
+        "거미줄을 나타낼 전용 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "squirrel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "small_mammal",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "설치류에 속하는 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_tail",
+            "pointed_ears",
+            "curved_outline",
+            "four_legs"
+          ],
+          "description_ko": "등 위로 크게 말린 꼬리와 작은 귀가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "climbing",
+            "jumping",
+            "foraging"
+          ],
+          "description_ko": "나무를 오르내리며 열매를 모은다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "swan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "waterbird",
+            "bird",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "물가에 사는 대형 물새"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_neck",
+            "beak",
+            "wings",
+            "oval"
+          ],
+          "description_ko": "S자로 굽은 긴 목과 타원형 몸, 부리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "flying",
+            "migrating"
+          ],
+          "description_ko": "물 위를 헤엄치고 철 따라 날아 이동한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tiger",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "feline",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "고양잇과에 속하는 대형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "stripes",
+            "long_tail",
+            "whiskers",
+            "rounded_ears"
+          ],
+          "description_ko": "몸 전체의 줄무늬와 긴 꼬리가 두드러진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hunting",
+            "running",
+            "walking"
+          ],
+          "description_ko": "먹잇감을 쫓아 홀로 사냥한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "whale",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "marine_mammal",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "바다에 사는 거대한 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "fins",
+            "curved_outline"
+          ],
+          "description_ko": "거대한 타원 몸에 갈라진 꼬리지느러미가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "migrating"
+          ],
+          "description_ko": "바다를 헤엄치며 먼 거리를 이동한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

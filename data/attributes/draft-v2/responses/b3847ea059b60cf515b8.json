@@ -1,0 +1,315 @@
+{
+  "entries": [
+    {
+      "category_id": "asparagus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable"
+          ],
+          "description_ko": "식용으로 먹는 채소이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "stem"
+          ],
+          "description_ko": "대체로 가늘고 길며 줄기처럼 곧게 뻗은 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹는 데 쓰이는 식재료다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "axe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "무언가를 자르거나 쪼개는 데 쓰는 손도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "handle",
+            "blade",
+            "pointed_tip"
+          ],
+          "description_ko": "손잡이와 날이 결합된 형태이며 한쪽에 넓은 날 부분이 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "재료를 찍고 잘라내거나 쪼개는 데 쓰인다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "backpack",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "몸에 메고 휴대하는 착용 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rounded_ears",
+            "stripes",
+            "handle"
+          ],
+          "description_ko": "등에 지는 주머니형 본체에 어깨끈과 잡는 부분이 있는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing",
+            "transport_goods"
+          ],
+          "description_ko": "물건을 넣어 메고 다니는 데 쓰인다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "banana",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "먹는 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "rounded_ears"
+          ],
+          "description_ko": "길고 휘어진 열매 형태로 그려지는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹는 데 쓰이는 식재료다."
+        }
+      },
+      "notes": [
+        "사과·배·수박처럼 둥근 과일과 대비되는 긴 곡선형 윤곽을 우선 반영함."
+      ]
+    },
+    {
+      "category_id": "bandage",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment"
+          ],
+          "description_ko": "상처를 감싸는 의료용 물품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "elongated",
+            "parallel_stitches"
+          ],
+          "description_ko": "얇고 납작한 띠 모양이며 감는 부분이나 접착면이 함께 나타날 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care",
+            "wound_closure",
+            "protection"
+          ],
+          "description_ko": "상처를 보호하고 덮는 데 쓰인다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "barn",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "농장과 관련된 큰 건축물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "door",
+            "windows"
+          ],
+          "description_ko": "대체로 큰 직사각형 몸체에 지붕과 출입구가 있는 건물 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter",
+            "holding_objects"
+          ],
+          "description_ko": "농기구나 가축 관련 물건을 보관하는 데 쓰이기도 한다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "baseball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "ball"
+          ],
+          "description_ko": "구기 종목에서 쓰는 공이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stitched_seams"
+          ],
+          "description_ko": "둥근 공체에 꿰맨 이음선이 드러나는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bouncing",
+            "bat_striking"
+          ],
+          "description_ko": "방망이에 맞거나 튀어 오르며 경기에서 사용된다."
+        }
+      },
+      "notes": [
+        "테니스공이나 농구공보다 작고, 야구 특유의 꿰맨 이음선을 반영함."
+      ]
+    },
+    {
+      "category_id": "baseball_bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "야구에서 공을 치는 데 쓰는 장비다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "curved_outline",
+            "flat_head"
+          ],
+          "description_ko": "길고 둥근 막대 형태이며 끝으로 갈수록 약간 굵어지거나 좁아질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bat_striking"
+          ],
+          "description_ko": "공을 힘 있게 치는 데 쓰인다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "basket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "물건을 담아 옮기는 용기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "hollow",
+            "opening",
+            "handle",
+            "rack"
+          ],
+          "description_ko": "입구가 열려 있고 속이 비어 있으며 손잡이나 짜임이 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "물건을 담고 운반하는 데 쓰인다."
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "basketball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "ball"
+          ],
+          "description_ko": "구기 종목에서 쓰는 공이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "panel_lines"
+          ],
+          "description_ko": "둥근 공체에 패널 구분선이 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "bouncing",
+            "hoop_shooting"
+          ],
+          "description_ko": "튀기거나 골대에 넣는 경기용 공이다."
+        }
+      },
+      "notes": [
+        "야구공보다 크고 패널 구분선이 두드러지는 공으로 본다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "entries": [
+    {
+      "category_id": "stop_sign",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure",
+            "symbol"
+          ],
+          "description_ko": "교통 안전 표지"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "pedestal"
+          ],
+          "description_ko": "기둥 위에 납작한 팔각 표지판이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "signaling"
+          ],
+          "description_ko": "차량에 정지 신호를 보낸다"
+        }
+      },
+      "notes": [
+        "팔각형을 나타낼 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "streetlight",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure"
+          ],
+          "description_ko": "도로 조명 시설"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "straight_tube",
+            "rays"
+          ],
+          "description_ko": "긴 기둥 위 등에서 빛이 퍼진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting"
+          ],
+          "description_ko": "밤길을 밝힌다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sword",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weapon"
+          ],
+          "description_ko": "날붙이 무기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "blade",
+            "pointed_tip",
+            "handle"
+          ],
+          "description_ko": "긴 날 끝이 뾰족하고 손잡이와 가드가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat",
+            "cutting"
+          ],
+          "description_ko": "베거나 찔러 싸운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "traffic_light",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure"
+          ],
+          "description_ko": "도로 신호 시설"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "round",
+            "pedestal"
+          ],
+          "description_ko": "사각 틀에 둥근 등 세 개가 세로로 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "signaling"
+          ],
+          "description_ko": "색으로 통행 신호를 보낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hexagon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "여섯 변의 다각형 도형"
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "육각형을 나타낼 형태 태그가 없어 보류한다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "변 수를 나타낼 태그가 없어 octagon과 구분되지 않는다."
+      ]
+    },
+    {
+      "category_id": "line",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "가장 단순한 선 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "한 방향으로 곧게 뻗은 선이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "octagon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "여덟 변의 다각형 도형"
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "팔각형을 나타낼 형태 태그가 없어 보류한다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "변 수를 나타낼 태그가 없어 hexagon과 구분되지 않는다."
+      ]
+    },
+    {
+      "category_id": "smiley_face",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "symbol"
+          ],
+          "description_ko": "감정을 나타내는 기호"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "curved_outline",
+            "spots"
+          ],
+          "description_ko": "원 안에 두 점 눈과 웃는 곡선 입이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "기쁜 감정을 전달한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "square",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "네 변이 같은 사각 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular"
+          ],
+          "description_ko": "네 변과 네 각이 같은 사각 윤곽이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "squiggle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "자유 곡선 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_outline",
+            "irregular"
+          ],
+          "description_ko": "불규칙하게 구불거리는 선이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "낙서 같은 선이라 도형 분류가 모호하다."
+      ]
+    }
+  ]
+}

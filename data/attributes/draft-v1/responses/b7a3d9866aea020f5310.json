@@ -1,0 +1,330 @@
+{
+  "entries": [
+    {
+      "category_id": "squiggle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "규칙성이 약한 선형 표시로, 문자나 도형의 일부처럼 보일 수 있는 추상적 스케치 요소이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "elongated"
+          ],
+          "description_ko": "길게 이어지며 굴곡이 반복되는 불규칙한 선 형태이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "특정 물체의 실용 기능이 없는 추상 선 요소이다."
+        }
+      },
+      "notes": [
+        "추상적 기호나 낙서로 해석될 수 있음",
+        "구체적 사물로 단정하기 어려움"
+      ]
+    },
+    {
+      "category_id": "squirrel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "작은 설치류로, 나무를 오르내리며 먹이를 저장하는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail",
+            "pointed_ears"
+          ],
+          "description_ko": "네 다리와 비교적 긴 꼬리, 뾰족한 귀가 드러나는 작은 동물의 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "jumping",
+            "grazing"
+          ],
+          "description_ko": "땅 위를 걷고 나무를 오르며, 씨앗·견과류를 먹고 빠르게 이동한다."
+        }
+      },
+      "notes": [
+        "종에 따라 털색 차이가 큼",
+        "날카로운 이빨이나 발톱은 선택적 특징",
+        "주행보다 나무 이동 이미지가 더 대표적"
+      ]
+    },
+    {
+      "category_id": "stairs",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure"
+          ],
+          "description_ko": "층과 층, 혹은 다른 높이의 지점을 연결하는 보행용 구조물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "elongated"
+          ],
+          "description_ko": "반복되는 직사각형 발판이 위아래로 이어진 길쭉한 구조이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "construction"
+          ],
+          "description_ko": "사람이 높이를 이동하도록 돕고, 건축물의 일부로 설치된다."
+        }
+      },
+      "notes": [
+        "실내 계단과 실외 계단 모두 포함 가능",
+        "난간은 부가 요소일 수 있음",
+        "비상계단 맥락도 가능"
+      ]
+    },
+    {
+      "category_id": "star",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "symbol"
+          ],
+          "description_ko": "점이 뻗은 별꼴의 도형 또는 상징 표식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular",
+            "irregular"
+          ],
+          "description_ko": "뾰족한 꼭짓점이 여러 개 있는 대칭적이면서도 각진 윤곽이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이나 기호 자체에는 고유한 실용 기능이 없다."
+        }
+      },
+      "notes": [
+        "천체의 별이 아니라 별 모양 기호일 수 있음",
+        "장식용 도형과 상징 표시가 겹칠 수 있음"
+      ]
+    },
+    {
+      "category_id": "steak",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "구워서 먹는 고기 요리로, 일반적으로 잘린 덩어리 형태로 제공된다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "flat",
+            "irregular"
+          ],
+          "description_ko": "납작하고 가장자리가 고르지 않은 덩어리 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "cooking"
+          ],
+          "description_ko": "조리된 뒤 식사로 섭취하는 음식이다."
+        }
+      },
+      "notes": [
+        "소고기 스테이크가 가장 전형적이지만 부위에 따라 다양함",
+        "소스나 곁들임은 본체가 아님",
+        "굽기 정도 표현이 포함될 수 있음"
+      ]
+    },
+    {
+      "category_id": "stereo",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "여러 음원을 재생하는 가정용 오디오 장치이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "buttons"
+          ],
+          "description_ko": "직사각형의 상자형 본체에 조작 버튼이나 표시부가 붙는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_output",
+            "communication"
+          ],
+          "description_ko": "음악이나 소리를 재생하며, 일부는 외부 기기와 연결해 오디오를 출력한다."
+        }
+      },
+      "notes": [
+        "스피커 일체형 또는 분리형 구성이 모두 가능",
+        "라디오 기능이 함께 있는 경우도 있음",
+        "오디오 시스템 전체를 가리킬 수 있음"
+      ]
+    },
+    {
+      "category_id": "stethoscope",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "medical_equipment",
+            "tool"
+          ],
+          "description_ko": "몸의 소리를 듣기 위해 사용하는 진료용 청진 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "hollow"
+          ],
+          "description_ko": "가느다란 튜브가 길게 이어지고 끝에 접촉부와 귀걸이가 있는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care",
+            "sound_recording"
+          ],
+          "description_ko": "심장·폐 등의 소리를 청취해 진료에 활용한다."
+        }
+      },
+      "notes": [
+        "의료용 기구로 가장 전형적",
+        "귀에 거는 이중 튜브 구조가 특징",
+        "시각적으로는 청진기 헤드와 이어피스가 핵심"
+      ]
+    },
+    {
+      "category_id": "stitches",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "의학적 봉합 또는 천의 바느질 자국을 가리킬 수 있어, 단일 물체로 분류하기 어렵다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "작은 반복선, 점선, 실 자국처럼 다양하게 나타날 수 있어 대표 형태를 단정하기 어렵다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "봉합 표시인지 장식 무늬인지 맥락 확인이 필요해 기능을 정할 수 없다."
+        }
+      },
+      "notes": [
+        "봉합 수술 자국인지 패턴인지 구분 필요",
+        "단일 실밥 스케치일 수도 있음",
+        "샘플 맥락 확인 권장"
+      ]
+    },
+    {
+      "category_id": "stop_sign",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "symbol",
+            "infrastructure"
+          ],
+          "description_ko": "차량과 보행자에게 정지를 지시하는 도로 표지판이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "표지판 판면 자체는 평평한 면으로 보이며, 지지대가 붙을 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "signaling",
+            "navigation"
+          ],
+          "description_ko": "교통 통제를 위해 정지 신호를 전달하고 진행 방향을 조정한다."
+        }
+      },
+      "notes": [
+        "표지판 문구나 모양이 핵심",
+        "도로 교통 표지로서의 의미가 중요",
+        "배경의 기둥은 부속 요소일 수 있음"
+      ]
+    },
+    {
+      "category_id": "stove",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance"
+          ],
+          "description_ko": "음식 조리를 위해 열을 내는 주방용 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "buttons"
+          ],
+          "description_ko": "상자형 본체에 조리대와 조작부가 있는 직사각형 구성이 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cooking",
+            "heating"
+          ],
+          "description_ko": "열원을 이용해 음식을 조리하고 가열한다."
+        }
+      },
+      "notes": [
+        "가스레인지와 전기레인지가 모두 포함될 수 있음",
+        "오븐 일체형인지 별도인지 불명확할 수 있음",
+        "상부 버너나 노브가 보일 수 있음"
+      ]
+    }
+  ]
+}

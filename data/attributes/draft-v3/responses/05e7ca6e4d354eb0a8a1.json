@@ -1,0 +1,314 @@
+{
+  "entries": [
+    {
+      "category_id": "banana",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tropical_fruit",
+            "fruit",
+            "food"
+          ],
+          "description_ko": "열대 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "crescent",
+            "elongated",
+            "stem"
+          ],
+          "description_ko": "초승달처럼 휜 긴 몸에 꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "껍질을 벗겨 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "birthday_cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "baked_goods",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "축하용 케이크"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "flame",
+            "stripes"
+          ],
+          "description_ko": "층진 원통 케이크 위에 초와 불꽃이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "초를 꽂아 축하하며 나누어 먹는다"
+        }
+      },
+      "notes": [
+        "초·불꽃 외에는 cake와 대부분 겹친다."
+      ]
+    },
+    {
+      "category_id": "blackberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "berry",
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작은 알이 뭉친 장과"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "clustered_units",
+            "bumpy_surface"
+          ],
+          "description_ko": "작은 알갱이가 뭉친 오톨도톨한 열매다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "blueberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "berry",
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작고 둥근 장과"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "clustered_units"
+          ],
+          "description_ko": "작고 둥근 알 여러 개가 모여 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹는 과일이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bread",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "baked_goods",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "구운 밀가루 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "dome",
+            "rectangular"
+          ],
+          "description_ko": "둥근 윗면의 덩어리나 식빵 조각이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식사나 간식으로 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "broccoli",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "green_vegetable",
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "꽃송이를 먹는 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "puffy_outline",
+            "stem",
+            "clustered_units"
+          ],
+          "description_ko": "굵은 줄기 위에 몽글몽글한 꽃송이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "익혀 먹는 채소다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "baked_goods",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "구운 디저트"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "triangular",
+            "stripes"
+          ],
+          "description_ko": "층이 겹친 원통형이나 삼각 조각이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "디저트로 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "carrot",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "root_vegetable",
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "뿌리를 먹는 채소"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "conical",
+            "pointed_tip",
+            "leaves"
+          ],
+          "description_ko": "뾰족한 원뿔 뿌리 위로 잎이 난다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "날로 먹거나 익혀 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cookie",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "baked_goods",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "구운 과자"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat",
+            "spots"
+          ],
+          "description_ko": "납작한 원판에 초콜릿 점이 박혀 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "간식으로 먹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "donut",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "baked_goods",
+            "prepared_food",
+            "food"
+          ],
+          "description_ko": "기름에 튀긴 빵"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "loop",
+            "spots"
+          ],
+          "description_ko": "가운데 구멍 난 고리 모양에 토핑이 뿌려진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "간식으로 먹는다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

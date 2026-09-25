@@ -1,0 +1,314 @@
+{
+  "entries": [
+    {
+      "category_id": "postcard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "우편용 종이 카드"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "panel_lines"
+          ],
+          "description_ko": "납작한 사각 카드가 선으로 나뉜다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "writing"
+          ],
+          "description_ko": "짧은 글을 써서 우편으로 보낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "radio",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "broadcast_receiver"
+          ],
+          "description_ko": "방송 수신 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "antenna",
+            "speaker_grille",
+            "buttons"
+          ],
+          "description_ko": "상자형 몸체에 안테나와 스피커망이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "broadcast_reception",
+            "sound_output"
+          ],
+          "description_ko": "방송을 수신해 소리로 들려준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "spreadsheet",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "화면 속 문서 개념이라 분류 태그가 없다"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "panel_lines"
+          ],
+          "description_ko": "칸이 격자로 나뉜 사각 표 형태다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "자료를 계산하고 표로 보여준다"
+        }
+      },
+      "notes": [
+        "소프트웨어 문서 분류 태그가 없다.",
+        "데일리 정답 적합성 검토가 필요하다."
+      ]
+    },
+    {
+      "category_id": "stereo",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "audio_player"
+          ],
+          "description_ko": "음향 재생 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "speaker_grille",
+            "disc_slot",
+            "buttons"
+          ],
+          "description_ko": "상자형 본체에 스피커망과 디스크 투입구가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "audio_playback",
+            "sound_output"
+          ],
+          "description_ko": "녹음된 음악을 재생한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "telephone",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "유선 통신 전자기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "buttons",
+            "handle"
+          ],
+          "description_ko": "버튼이 있는 본체 위에 손잡이 수화기가 놓인다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "멀리 있는 사람과 통화한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "television",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "broadcast_receiver"
+          ],
+          "description_ko": "방송 수신 영상 기기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "screen",
+            "antenna"
+          ],
+          "description_ko": "사각 화면을 두른 상자형 몸체에 안테나가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "broadcast_reception",
+            "displaying",
+            "sound_output"
+          ],
+          "description_ko": "방송을 받아 영상과 소리로 보여준다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "grapes",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit"
+          ],
+          "description_ko": "덩굴에서 열리는 과일"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "clustered_units",
+            "triangular",
+            "round",
+            "stem"
+          ],
+          "description_ko": "둥근 알이 역삼각형 송이로 모이고 꼭지가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹거나 즙을 낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hamburger",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "빵으로 만든 조리 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "flat",
+            "spots",
+            "panel_lines"
+          ],
+          "description_ko": "둥근 빵 사이로 층이 겹치고 깨가 박혀 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "손에 들고 먹는 음식이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hot_dog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "소시지를 쓴 조리 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "oval",
+            "cylindrical"
+          ],
+          "description_ko": "길쭉한 빵 사이에 원통형 소시지가 끼워진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "손에 들고 먹는 음식이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ice_cream",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "얼린 디저트 음식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "conical",
+            "round",
+            "panel_lines"
+          ],
+          "description_ko": "격자무늬 원뿔 콘 위에 둥근 덩어리가 얹힌다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "차갑게 먹는 간식이다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

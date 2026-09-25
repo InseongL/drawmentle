@@ -1,0 +1,348 @@
+{
+  "entries": [
+    {
+      "category_id": "strawberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "fruit",
+            "plant"
+          ],
+          "description_ko": "작고 붉은 열매로, 생으로 먹는 과일이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "leaves"
+          ],
+          "description_ko": "아래가 넓고 위로 좁아지는 작은 열매 형태이며 꼭지 쪽 잎이 함께 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 먹는 용도의 식품이다."
+        }
+      },
+      "notes": [
+        "식물의 열매 범주로 볼 수 있다.",
+        "색은 일반적인 예시만 반영했다.",
+        "잎과 씨 점무늬가 함께 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "streetlight",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "infrastructure",
+            "tool"
+          ],
+          "description_ko": "도로 옆에 세워져 주변을 비추는 조명 설비이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "긴 기둥 위에 등 부분이 달린 수직형 구조가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "signaling"
+          ],
+          "description_ko": "밤에 길과 주변을 밝히는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "공공 기반 시설로 분류할 수 있다.",
+        "가로등 머리 모양은 다양하다.",
+        "신호 기능은 부차적일 수 있다."
+      ]
+    },
+    {
+      "category_id": "string_bean",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "vegetable",
+            "plant"
+          ],
+          "description_ko": "꼬투리째 먹는 채소성 식물의 열매 부분이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "가는 꼬투리가 길게 뻗은 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 식재료로 먹는다."
+        }
+      },
+      "notes": [
+        "콩과 식물의 꼬투리로 볼 수 있다.",
+        "다른 콩류와 혼동될 수 있어 이름 확인이 필요하다.",
+        "색은 품종에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "submarine",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "물속을 이동하도록 만든 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "길쭉한 선체에 둥근 앞뒤를 가진 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods",
+            "navigation"
+          ],
+          "description_ko": "수중에서 사람이나 장비를 싣고 이동하며 방향을 잡는다."
+        }
+      },
+      "notes": [
+        "군용과 민간용이 모두 있을 수 있다.",
+        "일부 스케치에서는 잠망경이나 프로펠러가 보일 수 있다.",
+        "수상 선박과 구분되는 수중 이동 수단이다."
+      ]
+    },
+    {
+      "category_id": "suitcase",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container",
+            "accessory"
+          ],
+          "description_ko": "옷이나 소지품을 넣어 옮기는 휴대용 가방이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "handle"
+          ],
+          "description_ko": "납작한 직사각형 상자형에 손잡이가 달린 모습이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "transport_goods"
+          ],
+          "description_ko": "여행할 때 물건을 담아 운반하는 데 쓴다."
+        }
+      },
+      "notes": [
+        "여행용 보관 용기 성격이 강하다.",
+        "바퀴가 있는 형태도 있으나 필수는 아니다.",
+        "의류 소품으로도 분류될 수 있다."
+      ]
+    },
+    {
+      "category_id": "sun",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "celestial_body",
+            "natural_object"
+          ],
+          "description_ko": "지구에서 보이는 중심 항성이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "round",
+            "round"
+          ],
+          "description_ko": "대개 원형의 밝은 천체로 단순화해 그린다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 천체라 사람처럼 쓰는 기능은 적용하지 않는다."
+        }
+      },
+      "notes": [
+        "천체와 자연물 성격이 함께 있다.",
+        "광선이나 광채가 함께 표현될 수 있다.",
+        "상징적 도형과 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "swan",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "물가에서 사는 큰 물새이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_neck",
+            "beak",
+            "wings"
+          ],
+          "description_ko": "긴 목과 부리가 눈에 띄고 날개 윤곽이 함께 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "flying",
+            "walking"
+          ],
+          "description_ko": "물 위를 헤엄치고 날 수 있으며 땅 위를 걷기도 한다."
+        }
+      },
+      "notes": [
+        "조류이며 물가 생물로 자주 그려진다.",
+        "목이 길어 백조와 구분되는 핵심 특징이다.",
+        "흰색은 흔하지만 절대적 속성은 아니다."
+      ]
+    },
+    {
+      "category_id": "sweater",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "clothing"
+          ],
+          "description_ko": "몸통을 따뜻하게 덮는 상의 옷이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "shell"
+          ],
+          "description_ko": "긴 소매가 달린 상의 실루엣이며 몸통을 감싸는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "입어 몸을 덮고 추위를 막는다."
+        }
+      },
+      "notes": [
+        "겨울 의류로 자주 인식된다.",
+        "풀오버와 카디건이 모두 있을 수 있다.",
+        "무늬와 재질은 다양하다."
+      ]
+    },
+    {
+      "category_id": "swing_set",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "activity"
+          ],
+          "description_ko": "매달린 좌석을 흔들며 타는 놀이 시설이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "two_legs",
+            "strings"
+          ],
+          "description_ko": "지지대 두 개와 매달린 줄, 좌석이 함께 보이는 구조가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "exercise"
+          ],
+          "description_ko": "사람이 앉아 앞뒤로 흔들리며 노는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "시설과 놀이 활동이 함께 연관된다.",
+        "그네 한 개보다 세트 구조를 가리킬 수 있다.",
+        "운동기구로도 볼 수 있다."
+      ]
+    },
+    {
+      "category_id": "sword",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weapon",
+            "tool"
+          ],
+          "description_ko": "베어내거나 찌르는 날이 긴 무기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "blade",
+            "handle"
+          ],
+          "description_ko": "긴 날과 손잡이가 이어진 직선형 윤곽이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat",
+            "cutting"
+          ],
+          "description_ko": "전투에 쓰거나 물체를 베는 데 사용된다."
+        }
+      },
+      "notes": [
+        "무기 범주가 핵심이다.",
+        "장식용 또는 역사적 형태가 있을 수 있다.",
+        "칼과 혼동될 수 있으나 보통 더 길다."
+      ]
+    }
+  ]
+}

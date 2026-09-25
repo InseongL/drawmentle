@@ -1,0 +1,339 @@
+{
+  "entries": [
+    {
+      "category_id": "animal_migration",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "activity",
+            "abstract"
+          ],
+          "description_ko": "동물이 무리 지어 이동하는 현상 개념"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "clustered_units"
+          ],
+          "description_ko": "여러 마리 새가 무리 지어 나는 모습이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "migrating",
+            "flying"
+          ],
+          "description_ko": "계절에 따라 무리 지어 먼 곳으로 이동한다"
+        }
+      },
+      "notes": [
+        "표본은 대부분 날아가는 새 떼 그림이다."
+      ]
+    },
+    {
+      "category_id": "camouflage",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "pattern",
+            "abstract"
+          ],
+          "description_ko": "몸을 숨기기 위한 무늬 개념"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "spots"
+          ],
+          "description_ko": "불규칙한 얼룩이 뒤섞인 무늬다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "hiding"
+          ],
+          "description_ko": "주변과 비슷하게 보여 몸을 숨긴다"
+        }
+      },
+      "notes": [
+        "표본은 대부분 얼룩무늬 낙서라 무늬로 분류했다."
+      ]
+    },
+    {
+      "category_id": "yoga",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "activity",
+            "abstract"
+          ],
+          "description_ko": "몸과 호흡을 수련하는 신체 활동"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "human_figure"
+          ],
+          "description_ko": "팔다리를 뻗거나 구부린 사람 자세다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "exercise"
+          ],
+          "description_ko": "몸을 늘이고 균형을 잡는 운동이다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "ant",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "insect",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "개미과에 속하는 곤충"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "many_legs",
+            "feelers",
+            "pinched_waist"
+          ],
+          "description_ko": "잘록한 마디 몸에 여섯 다리와 더듬이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "foraging",
+            "transport_goods"
+          ],
+          "description_ko": "무리 지어 먹이를 찾아 나른다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "chiropteran",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "날개가 있는 박쥐류 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "pointed_ears",
+            "curved_outline"
+          ],
+          "description_ko": "펼친 막 날개와 뾰족한 귀가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "hunting"
+          ],
+          "description_ko": "밤에 날아다니며 곤충을 잡는다"
+        }
+      },
+      "notes": [
+        "야구 방망이가 아닌 한국어 이름 '박쥐' 기준이다."
+      ]
+    },
+    {
+      "category_id": "bear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bear_family",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "곰과에 속하는 대형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail",
+            "round"
+          ],
+          "description_ko": "둥글고 육중한 몸에 둥근 귀와 짧은 꼬리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "foraging"
+          ],
+          "description_ko": "걷고 나무를 타며 먹이를 찾는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "insect",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "벌목에 속하는 곤충"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "stripes",
+            "wings",
+            "feelers",
+            "pointed_tip"
+          ],
+          "description_ko": "줄무늬 몸에 날개와 더듬이, 뾰족한 침이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "pollinating",
+            "stinging"
+          ],
+          "description_ko": "꽃 사이를 날며 꿀을 모으고 침을 쏜다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bird",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "bird",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "새 전반을 뜻하는 조류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "beak",
+            "wings",
+            "two_legs",
+            "short_tail"
+          ],
+          "description_ko": "타원 몸에 부리와 날개, 가는 두 다리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "walking"
+          ],
+          "description_ko": "날아다니고 땅에서 걷는다"
+        }
+      },
+      "notes": [
+        "특정 새 카테고리들과 겹치는 넓은 분류다."
+      ]
+    },
+    {
+      "category_id": "butterfly",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "insect",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "나비목에 속하는 곤충"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "feelers",
+            "elongated"
+          ],
+          "description_ko": "가는 몸 양옆에 큰 날개와 더듬이가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "pollinating"
+          ],
+          "description_ko": "꽃 사이를 날며 꿀을 빤다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "camel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "ungulate",
+            "mammal",
+            "animal",
+            "organism"
+          ],
+          "description_ko": "사막에 사는 대형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "curved_outline",
+            "short_tail"
+          ],
+          "description_ko": "등에 솟은 혹과 긴 목, 가는 네 다리가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "사막을 걸으며 사람과 짐을 나른다"
+        }
+      },
+      "notes": [
+        "혹을 나타낼 전용 태그가 없어 굽은 윤곽으로 표현했다."
+      ]
+    }
+  ]
+}

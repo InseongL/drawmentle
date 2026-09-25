@@ -1,0 +1,341 @@
+{
+  "entries": [
+    {
+      "category_id": "bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "날아다니는 포유류로, 밤에 활동하는 경우가 많은 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "elongated",
+            "pointed_ears"
+          ],
+          "description_ko": "몸통에 날개가 붙고 귀가 뾰족하게 보일 수 있는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "hunting"
+          ],
+          "description_ko": "먹이를 찾기 위해 날아다니며 곤충을 잡는 행동이 대표적이다."
+        }
+      },
+      "notes": [
+        "박쥐의 종에 따라 크기와 날개 모양이 다양할 수 있음",
+        "비행 포유류라는 점을 중심으로 잡음",
+        "야행성 성격은 흔하지만 항상 그런 것은 아님"
+      ]
+    },
+    {
+      "category_id": "bathtub",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container",
+            "furniture"
+          ],
+          "description_ko": "물을 받아 몸을 씻는 데 쓰는 실내 설비로, 고정된 생활용 용기 성격이 있다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "rectangular",
+            "hollow",
+            "opening"
+          ],
+          "description_ko": "속이 비어 있고 위가 열린 길쭉한 용기 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "cleaning"
+          ],
+          "description_ko": "물을 담아 목욕하거나 몸을 씻는 데 사용된다."
+        }
+      },
+      "notes": [
+        "욕실의 고정 설비로 보는 것이 일반적임",
+        "재질과 모양은 제품마다 달라질 수 있음",
+        "발목 욕조처럼 일부 변형형은 제외하고 대표형을 잡음"
+      ]
+    },
+    {
+      "category_id": "beach",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place",
+            "scene"
+          ],
+          "description_ko": "바다나 큰 물가와 맞닿은 모래·자갈 지대로, 장소이면서 풍경 장면으로도 다뤄진다."
+        },
+        "shape": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "장소 범주라 고정된 단일 외형을 두기 어렵다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 장소이므로 고유한 사용 기능을 두지 않는다."
+        }
+      },
+      "notes": [
+        "장소와 장면이 겹치는 범주임",
+        "사람 활동이 함께 그려질 수 있지만 본질은 지형임",
+        "해안 전체를 넓게 뜻할 수 있어 경계가 유동적임"
+      ]
+    },
+    {
+      "category_id": "bear",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "큰 몸집의 육식성 포유류로, 숲이나 산악 지역에 사는 경우가 많다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail"
+          ],
+          "description_ko": "네 다리와 둥근 귀, 짧은 꼬리를 가진 묵직한 체형이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "hunting"
+          ],
+          "description_ko": "주로 걷고 오르며, 종에 따라 사냥이나 채집 행동을 한다."
+        }
+      },
+      "notes": [
+        "종에 따라 잡식성 정도가 다를 수 있음",
+        "큰 몸집과 네 다리 체형을 우선 반영함",
+        "서 있는 자세나 곰 인형과는 구분 필요"
+      ]
+    },
+    {
+      "category_id": "beard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "얼굴 아래쪽에 자라는 털로, 사람의 신체 일부로 본다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "irregular"
+          ],
+          "description_ko": "얼굴 아래를 따라 길게 드리우는 불규칙한 털 덩어리로 보인다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "주된 기능이 고정되지 않아 문맥에 따라 장식이나 보호로 해석될 수 있다."
+        }
+      },
+      "notes": [
+        "남성에게만 한정되지 않는 신체 부위임",
+        "길이와 형태가 개인차가 큼",
+        "기능은 문화적 의미가 섞여 있어 확정하지 않음"
+      ]
+    },
+    {
+      "category_id": "bed",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "잠을 자거나 눕기 위한 실내 가구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "four_legs"
+          ],
+          "description_ko": "평평한 윗면과 직사각형 외곽, 받침 다리가 있는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sleeping",
+            "sitting"
+          ],
+          "description_ko": "휴식과 수면을 위해 사용되며, 잠시 앉는 용도로도 쓰인다."
+        }
+      },
+      "notes": [
+        "헤드보드가 있을 수도 없을 수도 있음",
+        "침대 겸 소파 같은 변형형은 대표형에서 제외",
+        "요람·매트리스 단독과는 구분 필요"
+      ]
+    },
+    {
+      "category_id": "bee",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "꽃가루를 옮기며 꿀과 관련된 생활을 하는 곤충이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "wings",
+            "stripes"
+          ],
+          "description_ko": "작은 몸에 날개가 있고 줄무늬가 보이는 경우가 많은 곤충형이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "grazing",
+            "hunting"
+          ],
+          "description_ko": "날아다니며 꽃에서 먹이를 찾고, 일부는 벌집 생활을 한다."
+        }
+      },
+      "notes": [
+        "종에 따라 색과 크기가 달라질 수 있음",
+        "줄무늬는 흔한 인상이지 필수는 아님",
+        "꿀벌과 다른 벌류를 포괄할 수 있음"
+      ]
+    },
+    {
+      "category_id": "belt",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory",
+            "clothing"
+          ],
+          "description_ko": "허리 주변에 착용하는 의복 보조 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat"
+          ],
+          "description_ko": "납작하고 길게 이어진 띠 모양이 일반적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "fastening",
+            "protection"
+          ],
+          "description_ko": "옷을 고정하고 허리 둘레를 조절하는 데 사용된다."
+        }
+      },
+      "notes": [
+        "장식용과 실용형이 모두 있음",
+        "버클 유무는 제품에 따라 다름",
+        "의류이면서 액세서리 성격을 함께 가짐"
+      ]
+    },
+    {
+      "category_id": "bench",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "여러 사람이 앉을 수 있게 만든 긴 좌석 가구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "길고 평평한 좌판이 있는 직사각형 중심 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting"
+          ],
+          "description_ko": "사람이 앉아 쉬는 데 사용된다."
+        }
+      },
+      "notes": [
+        "등받이와 팔걸이는 없을 수도 있음",
+        "실내외 모두에 놓일 수 있음",
+        "공원 벤치와 실내 벤치를 모두 포괄함"
+      ]
+    },
+    {
+      "category_id": "bicycle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "사람이 타고 이동하는 바퀴 달린 육상 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle",
+            "elongated"
+          ],
+          "description_ko": "두 바퀴와 손잡이, 길게 이어진 차체가 특징적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "exercise"
+          ],
+          "description_ko": "사람을 이동시키고 운동 수단으로도 사용된다."
+        }
+      },
+      "notes": [
+        "두 바퀴가 핵심 특징임",
+        "자전거와 유사한 킥보드·오토바이와 구분 필요",
+        "짐받이 등 부속은 생략하고 대표형만 반영"
+      ]
+    }
+  ]
+}

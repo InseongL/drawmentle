@@ -1,0 +1,179 @@
+{
+  "version": "scoring-v1",
+  "status": "draft",
+  "rationale_doc": "docs/scoring-v1.md",
+  "inputs": {
+    "catalog_curation": "config/model/catalog-curation-v1.json",
+    "attribute_vocabulary": "config/attribute-vocabulary-v3.json",
+    "attribute_dictionary": "data/attributes/draft-v3/dictionary.json",
+    "attribute_policy": "config/attribute-policy-v3.json",
+    "label_vectors": "data/artifacts/scoring/label-vectors/cc-en-300-subset.npz"
+  },
+  "output_dir": "data/artifacts/scoring/scoring-v1",
+  "tag_weighting": {
+    "method": "idf",
+    "formula": "ln((N + 1) / (max(df, min_df) + 1)) + 1",
+    "min_df": 2,
+    "note_ko": "N은 점수 지원 카테고리 수, df는 그 태그를 쓴 카테고리 수다. 한 곳에만 쓰인 태그는 두 곳에 쓰인 태그와 같은 무게로 상한을 둔다."
+  },
+  "modules": {
+    "classification": {
+      "source": "attributes",
+      "weight": 0.25,
+      "comparison": "idf_cosine"
+    },
+    "shape": {
+      "source": "attributes",
+      "weight": 0.25,
+      "comparison": "idf_soft_cosine",
+      "family_partial_credit": 0.3,
+      "families": {
+        "rounded": ["round", "oval", "dome", "crescent", "puffy_outline"],
+        "angular": ["rectangular", "box_like", "polygonal", "hexagonal", "octagonal"],
+        "pointed": ["triangular", "conical", "pointed_tip", "spikes"],
+        "long": ["elongated", "cylindrical", "straight_tube", "curved_tube", "pole"],
+        "curved_line": ["curved_outline", "wavy_line", "spiral", "zigzag", "pinched_waist"],
+        "legs": ["two_legs", "four_legs", "many_legs", "split_legs"],
+        "ears": ["pointed_ears", "rounded_ears", "long_ears"],
+        "tails": ["long_tail", "short_tail"],
+        "head_parts": ["horns", "mane", "whiskers", "beak", "long_snout", "long_neck"],
+        "sea_parts": ["fins", "tentacles", "shell"],
+        "bug_parts": ["feelers", "pincers"],
+        "human": ["human_figure", "face_features", "digits", "hair_strands"],
+        "plant": ["leaves", "petals", "stem", "branches", "tree_trunk"],
+        "wheels": ["two_wheels", "four_wheels", "many_wheels", "rails"],
+        "flight": ["wings", "rotor"],
+        "vessel": ["handle", "lid", "opening", "hollow", "spout"],
+        "edge": ["blade", "teeth", "flat_head"],
+        "building": ["windows", "door", "roof", "spire", "chimney", "crenellation", "cross_mark"],
+        "device": ["screen", "buttons", "key_rows", "antenna", "slots"],
+        "music": ["strings", "finger_keys", "flared_bell"],
+        "support": ["pedestal", "suspended", "hull"],
+        "wear": ["sleeves", "sole", "strap", "loop"],
+        "repeat": ["rungs", "bars", "compartments", "grid_pattern", "panel_lines", "stripes"],
+        "surface": ["spots", "bumpy_surface", "clustered_units", "stitched_seams", "parallel_stitches", "facets", "bristles"],
+        "elements": ["flame", "steam_lines", "rays", "droplets", "siren_light"],
+        "water": ["water_edge", "water_waves"]
+      }
+    },
+    "function": {
+      "source": "attributes",
+      "weight": 0.20,
+      "comparison": "idf_soft_cosine",
+      "family_partial_credit": 0.3,
+      "families": {
+        "locomotion": ["walking", "running", "climbing", "jumping", "crawling", "rolling", "migrating", "bending"],
+        "air": ["flying", "air_movement"],
+        "water": ["swimming", "water_flow", "precipitation"],
+        "feeding": ["grazing", "hunting", "foraging", "pollinating", "stinging", "eating", "chewing", "dining"],
+        "transport": ["transport_people", "transport_goods", "travel"],
+        "emergency": ["rescue", "firefighting", "medical_care", "wound_closure"],
+        "work": ["construction", "digging", "farming", "cutting", "fastening", "gripping", "striking"],
+        "heat_light": ["igniting", "heating", "cooking", "baking", "lighting", "electric_power", "cooling"],
+        "contain": ["holding_liquid", "holding_objects", "serving_drink"],
+        "clean": ["cleaning", "hygiene"],
+        "info": ["timekeeping", "measuring", "navigation", "computing", "displaying", "writing", "drawing", "erasing", "communication", "mailing", "signaling"],
+        "sound": ["playing_music", "sound_output", "sound_recording", "broadcast_reception", "audio_playback", "hearing"],
+        "sense": ["seeing", "photography", "smelling_breathing"],
+        "home": ["sitting", "sleeping", "shelter", "living_accommodation", "passage", "security"],
+        "body": ["wearing", "protection", "decoration"],
+        "leisure": ["exercise", "play", "ball_game", "throwing", "sightseeing"],
+        "belief": ["worship", "combat", "hiding", "photosynthesis"]
+      }
+    },
+    "association": {
+      "source": "label_vectors",
+      "weight": 0.30,
+      "comparison": "cosine",
+      "calibration": {
+        "method": "linear_percentile",
+        "zero_at_percentile": 10,
+        "one_at_percentile": 99.5,
+        "note_ko": "점수 지원 카테고리 사이 모든 쌍의 코사인 분포에서 하위 10% 지점을 0, 상위 0.5% 지점을 1로 두고 그 사이를 직선으로 잇는다. 기준값은 점수표를 만들 때 계산해 manifest에 고정한다."
+      },
+      "vector_source": {
+        "name": "fastText cc.en.300 (Common Crawl + Wikipedia)",
+        "url": "https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.vec.gz",
+        "license": "CC BY-SA 3.0",
+        "attribution": "E. Grave, P. Bojanowski, P. Gupta, A. Joulin, T. Mikolov, Learning Word Vectors for 157 Languages (LREC 2018)"
+      },
+      "tokens": {
+        "text_field": "label_en",
+        "stopwords": ["the", "of"],
+        "lookup_forms": ["exact", "lower", "capitalized"],
+        "note_ko": "영어 라벨을 공백·하이픈으로 나눠 단어 벡터를 평균한다. 뜻이 섞이거나 두 단어가 한 개념인 라벨은 아래 대체어를 쓴다. 대체어로는 다른 카탈로그 라벨의 단어를 쓰지 않는다.",
+        "overrides": {
+          "bat": ["bat", "nocturnal"],
+          "mouse": ["mouse", "rodent"],
+          "nail": ["nail", "metal"],
+          "fan": ["fan", "electric"],
+          "key": ["key", "lock"],
+          "saw": ["handsaw"],
+          "pool": ["pool", "swimming"],
+          "lighter": ["lighter", "cigarette"],
+          "matches": ["matchstick", "matches"],
+          "drill": ["drill", "power"],
+          "stitches": ["stitches", "sutures"],
+          "hot_dog": ["hotdog"],
+          "hot_tub": ["jacuzzi", "tub"],
+          "hot_air_balloon": ["balloon", "hot-air"],
+          "ice_cream": ["icecream", "ice-cream"],
+          "teddy-bear": ["teddy"],
+          "t-shirt": ["t-shirt", "tshirt"],
+          "flip_flops": ["flip-flops", "flipflops"],
+          "fire_hydrant": ["hydrant"],
+          "floor_lamp": ["lamp", "floor"],
+          "garden_hose": ["hose", "garden"],
+          "light_bulb": ["lightbulb"],
+          "paint_can": ["paint", "can"],
+          "paper_clip": ["paperclip"],
+          "roller_coaster": ["rollercoaster"],
+          "see_saw": ["seesaw"],
+          "swing_set": ["swing"],
+          "house_plant": ["houseplant"],
+          "flying_saucer": ["ufo", "saucer"],
+          "cell_phone": ["cellphone"],
+          "smiley_face": ["smiley"],
+          "string_bean": ["bean", "beans"],
+          "the_great_wall_of_china": ["wall", "china"],
+          "the_mona_lisa": ["mona", "lisa", "painting"],
+          "the_eiffel_tower": ["eiffel", "tower"],
+          "animal_migration": ["animal", "migration"],
+          "power_outlet": ["outlet", "electrical"],
+          "remote_control": ["remote", "control"]
+        }
+      }
+    }
+  },
+  "missing_axis": {
+    "policy": "exclude_and_renormalize",
+    "note_ko": "두 대상 중 하나라도 해당 축이 known이 아니면 그 축을 빼고 남은 축의 가중치 합으로 나눈다. 연상 축은 모든 대상에 있어 빠지지 않는다."
+  },
+  "self_relation": 1.0,
+  "top3_mix": {
+    "formula": "q_i = p_i / sum(p); mixed = sum(q_i * R(c_i, answer))",
+    "requires_supported_candidates": true
+  },
+  "display": {
+    "scale": 100,
+    "decimals": 2,
+    "rounding": "half_up"
+  },
+  "ranking": {
+    "answer_rank": 1,
+    "ties": "shared_competition_rank",
+    "compare_decimals": 6
+  },
+  "review_sets": {
+    "association_pairs": [
+      ["umbrella", "rain"], ["key", "door"], ["bee", "flower"], ["tent", "campfire"], ["hammer", "nail"],
+      ["fork", "knife"], ["pencil", "eraser"], ["bed", "pillow"], ["sun", "beach"], ["ocean", "beach"],
+      ["snowman", "snowflake"], ["mailbox", "envelope"], ["cow", "barn"], ["lighthouse", "ocean"],
+      ["fire_hydrant", "firetruck"], ["stethoscope", "hospital"], ["ambulance", "hospital"], ["syringe", "hospital"],
+      ["bread", "toaster"], ["frying_pan", "stove"], ["paint_can", "paintbrush"], ["baseball", "baseball_bat"],
+      ["toothbrush", "toothpaste"], ["hot_dog", "hamburger"], ["sailboat", "ocean"], ["spider", "ant"],
+      ["moon", "star"], ["rain", "cloud"], ["tree", "leaf"], ["candle", "cake"]
+    ],
+    "note_ko": "검사 스크립트의 보고용 표본이다. 혼동 후보 쌍은 속성 정책의 contrast_groups를 쓴다. 통과 기준이 아니라 변경 전후 비교 지표다."
+  }
+}

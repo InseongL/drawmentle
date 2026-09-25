@@ -1,0 +1,42 @@
+{
+  "version": "attribute-policy-v2",
+  "instructions": [
+    "Treat each module independently: ambiguous shape must not erase a clearly shared function. fan can have uncertain shape while cooling/ventilation is known.",
+    "Choose reusable discriminative attributes, not just broad properties. Before returning compare the requested category with its contrast peers using silhouette, parts, surface pattern, and primary purpose.",
+    "Do not force every category to have a unique profile. coffee_cup and mug may overlap. Record genuine overlap in notes; never invent a distinction or add the category name as a tag.",
+    "Use all clearly applicable taxonomy parents. Fruit and vegetable here mean harvested food, not a whole living plant. A fruit is food but is not tagged plant. eating means an edible item, never a cup or an animal's act of eating; use grazing or hunting for animal behavior.",
+    "A module description must explain only that axis. Classification describes kind, shape describes visible geometry/parts, function describes use/behavior. Do not leak shape or purpose into classification descriptions merely to distinguish labels.",
+    "Use canonical tag meanings consistently. A hollow drinking vessel has hollow and opening whether cup or mug. Standard drink containers use holding_liquid and serving_drink. Do not arbitrarily vary synonyms across categories.",
+    "For a polysemous category preserve ambiguity on the affected axes rather than merging incompatible meanings as known. For diamond do not combine geometric_shape and natural_object. For nail use the catalog Korean name to distinguish metal fastener from fingernail, retaining a note if uncertain.",
+    "Typical sketch conventions, not rare variants: baseball has curved stitched seams, basketball has panel division lines; blackberry is an aggregate bumpy fruit, blueberry is a single smooth berry. Describe typical features, not an assertion that any source drawing was inspected.",
+    "Church is a worship building, house is a dwelling; clarinet usually a straight woodwind tube, saxophone usually curved with a flared bell; key opens a lock, nail fastens by being driven in. Use the supplied reusable tags when these distinctions apply.",
+    "Natural water bodies have recognizable geometry even when they have no human purpose. Ocean is broad open water with waves; pond is bounded inland water. Do not manufacture a function just to avoid not_applicable.",
+    "uncertain is reserved for material ambiguity or a genuinely missing vocabulary term. A variation between individuals alone does not invalidate a representative feature. When a useful tag is missing, explain the specific missing concept in a short note.",
+    "Return a compact JSON object only. No duplicate tags. Usually 2-8 shape tags, at most 12 per module; all applicable parent tags count toward the maximum. Notes should record actual uncertainty or overlap, not boilerplate such as colors may vary."
+  ],
+  "parents": {
+    "classification": {
+      "mammal": ["animal"], "bird": ["animal"], "fish": ["animal"], "reptile": ["animal"], "amphibian": ["animal"], "insect": ["animal"], "arachnid": ["animal"], "crustacean": ["animal"], "mollusk": ["animal"],
+      "fruit": ["food"], "vegetable": ["food"], "prepared_food": ["food"],
+      "land_vehicle": ["vehicle"], "aircraft": ["vehicle"], "watercraft": ["vehicle"], "celestial_body": ["natural_object"],
+      "dwelling": ["building"], "religious_building": ["building"], "woodwind_instrument": ["instrument"], "string_instrument": ["instrument"], "brass_instrument": ["instrument"], "percussion_instrument": ["instrument"], "water_body": ["natural_object"], "drinkware": ["container"], "ball": ["sports_equipment"], "fastener": ["tool"], "broadcast_receiver": ["electronic_device"], "audio_player": ["electronic_device"]
+    }
+  },
+  "incompatible": {"classification": [["fruit", "plant"], ["vegetable", "plant"], ["geometric_shape", "natural_object"]]},
+  "contrast_groups": [
+    ["baseball", "basketball", "soccer_ball", "tennis_racquet"],
+    ["blackberry", "blueberry", "grapes", "strawberry"],
+    ["apple", "banana", "pear", "pineapple", "watermelon"],
+    ["church", "house", "castle", "skyscraper"],
+    ["clarinet", "saxophone", "trombone", "trumpet", "flute"],
+    ["coffee_cup", "cup", "mug", "wine_glass", "teapot"],
+    ["key", "nail", "screwdriver", "hammer"],
+    ["microwave", "oven", "toaster", "stove"],
+    ["ocean", "pond", "river", "lake"],
+    ["radio", "stereo", "megaphone", "microphone"],
+    ["airplane", "helicopter", "bird"],
+    ["horse", "giraffe", "zebra", "camel"],
+    ["fan", "windmill"], ["stitches", "line", "zigzag"]
+  ],
+  "note": "Project-authored conventions and contrast hints, not human-verified Quick Draw annotations. Unknown peer IDs are omitted."
+}

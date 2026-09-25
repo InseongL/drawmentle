@@ -1,0 +1,339 @@
+{
+  "entries": [
+    {
+      "category_id": "binoculars",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "tool"
+          ],
+          "description_ko": "멀리 있는 대상을 두 눈으로 함께 보도록 돕는 관측용 기기."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical"
+          ],
+          "description_ko": "보통 두 개의 관찰부가 나란히 붙은 길쭉한 형태로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "navigation",
+            "displaying"
+          ],
+          "description_ko": "원거리 대상을 확대해 살피거나 위치를 확인하는 데 쓴다."
+        }
+      },
+      "notes": [
+        "일상에서는 장난감형과 관측용이 섞여 보일 수 있음",
+        "전자기기와 도구의 경계가 다소 넓음",
+        "손으로 들고 쓰는 소형 물건으로 보는 편이 안전함"
+      ]
+    },
+    {
+      "category_id": "bird",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "깃털과 부리를 가진 날개 달린 동물의 일반 범주."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_legs",
+            "wings",
+            "beak"
+          ],
+          "description_ko": "두 다리, 날개, 부리가 함께 드러나는 단순한 새 실루엣."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "walking"
+          ],
+          "description_ko": "대개 날거나 걷고, 종에 따라 물가에서 헤엄치기도 한다."
+        }
+      },
+      "notes": [
+        "구체 종이 아닌 상위 분류임",
+        "펭귄처럼 날지 못하는 새는 예외가 있음",
+        "보조 태그는 대표적 신체 특징 중심으로만 선택"
+      ]
+    },
+    {
+      "category_id": "birthday_cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "기념일에 먹는 장식된 구운 디저트."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "보통 층이 있거나 납작한 덩어리 형태로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "serving_food",
+            "eating"
+          ],
+          "description_ko": "생일 같은 기념 행사에서 나눠 먹는 음식이다."
+        }
+      },
+      "notes": [
+        "일반 케이크와의 구분은 장식과 맥락에 의존할 수 있음",
+        "초나 장식이 함께 그려질 수 있음",
+        "원형과 직사각형 모두 흔해 단일 형상으로 고정하지 않음"
+      ]
+    },
+    {
+      "category_id": "blackberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작고 여러 알갱이가 모여 이루어진 식용 열매."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "대체로 작은 둥근 덩어리로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "생으로 먹거나 디저트 재료로 쓰인다."
+        }
+      },
+      "notes": [
+        "검은색은 이름이지만 실제 묘사 색은 달라질 수 있음",
+        "산딸기류와 형태가 비슷해 혼동 가능",
+        "열매 표면의 작은 알갱이 질감이 함께 그려질 수 있음"
+      ]
+    },
+    {
+      "category_id": "blueberry",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fruit",
+            "food"
+          ],
+          "description_ko": "작고 둥근 식용 열매."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round"
+          ],
+          "description_ko": "대체로 작은 원형 점처럼 묘사된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "그대로 먹거나 베이킹 재료로 사용된다."
+        }
+      },
+      "notes": [
+        "색상은 이름에 포함되지만 그림에서는 확정하지 않음",
+        "블랙베리와 달리 보통 더 매끈한 단일 열매로 보임",
+        "송이째보다 낱알로 그려지는 경우가 많음"
+      ]
+    },
+    {
+      "category_id": "book",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "글이나 그림을 묶어 읽는 종이 매체."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "직사각형의 납작한 덩어리로 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "writing",
+            "displaying"
+          ],
+          "description_ko": "정보를 담아 읽게 하거나 기록을 보여준다."
+        }
+      },
+      "notes": [
+        "전자책과 구별되는 종이책을 기본으로 함",
+        "표지와 여러 장의 종이 묶음이 핵심 단서",
+        "열린 책과 닫힌 책 모두 가능"
+      ]
+    },
+    {
+      "category_id": "boomerang",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "toy"
+          ],
+          "description_ko": "던져서 돌아오도록 설계된 곡선형 물건."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "elongated"
+          ],
+          "description_ko": "꺾인 각도나 굽은 팔 모양의 길쭉한 윤곽으로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "hunting"
+          ],
+          "description_ko": "놀이용으로 던지거나, 전통적으로 사냥 도구로도 쓰였다."
+        }
+      },
+      "notes": [
+        "의례용·장식용과 놀이용이 함께 존재할 수 있음",
+        "항상 돌아오는 성질을 그림만으로 단정하기 어려움",
+        "무기와 운동·놀이 기구의 경계가 다소 넓음"
+      ]
+    },
+    {
+      "category_id": "bottlecap",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "병의 입구를 덮어 내용물을 막는 작은 마개."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat"
+          ],
+          "description_ko": "보통 작고 납작한 원형으로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "fastening",
+            "protection"
+          ],
+          "description_ko": "병 입구를 밀봉해 내용물을 보호한다."
+        }
+      },
+      "notes": [
+        "병과 분리된 작은 부속물로 보는 것이 적절함",
+        "금속 뚜껑과 플라스틱 뚜껑이 모두 가능",
+        "열려 있거나 비틀린 모습이 함께 그려질 수 있음"
+      ]
+    },
+    {
+      "category_id": "bowtie",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory",
+            "clothing"
+          ],
+          "description_ko": "목에 매는 장식성 의류 소품."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "flat"
+          ],
+          "description_ko": "가운데가 좁고 양옆이 벌어진 리본 같은 형태로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "옷차림을 꾸미거나 격식을 더하는 데 사용한다."
+        }
+      },
+      "notes": [
+        "넥타이와 혼동될 수 있으나 보통 더 짧고 대칭적임",
+        "형태는 리본 매듭처럼 단순화될 수 있음",
+        "실용성보다 장식성이 강한 소품"
+      ]
+    },
+    {
+      "category_id": "bracelet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "손목에 착용하는 장신구."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval"
+          ],
+          "description_ko": "손목 둘레를 이루는 고리형 형태로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "손목에 끼워 착용하며 장식 역할을 한다."
+        }
+      },
+      "notes": [
+        "고리형, 체인형, 끈형 모두 가능",
+        "시계와 달리 시간 표시 기능은 없음",
+        "팔에 걸치는 넓은 형태보다 손목 착용이 핵심"
+      ]
+    }
+  ]
+}

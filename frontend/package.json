@@ -1,0 +1,26 @@
+{
+  "name": "sketch-drawing-demo",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "node --experimental-strip-types --test tests/unit/drawing.test.ts"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  }
+}

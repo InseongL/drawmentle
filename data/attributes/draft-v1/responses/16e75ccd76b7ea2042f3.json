@@ -1,0 +1,324 @@
+{
+  "entries": [
+    {
+      "category_id": "popsicle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "얼려서 막대에 꽂아 먹는 차가운 간식"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "막대가 달린 길쭉한 얼음 과자 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "cooling"
+          ],
+          "description_ko": "먹는 간식이며 차갑게 먹는다"
+        }
+      },
+      "notes": [
+        "막대가 있는 형태를 대표로 잡음",
+        "맛·색은 다양할 수 있음"
+      ]
+    },
+    {
+      "category_id": "postcard",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "짧은 글과 주소를 적어 보내는 인쇄된 카드"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "얇은 직사각형 종이 카드"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "writing",
+            "displaying"
+          ],
+          "description_ko": "메시지나 그림을 적어 전달하고 보관할 수 있음"
+        }
+      },
+      "notes": [
+        "우편용 카드와 기념 카드의 의미가 겹칠 수 있음",
+        "주된 대상은 얇은 종이 카드"
+      ]
+    },
+    {
+      "category_id": "potato",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vegetable",
+            "food"
+          ],
+          "description_ko": "흙속에서 자라는 덩이뿌리성 식용 작물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "irregular"
+          ],
+          "description_ko": "둥글거나 타원형의 불규칙한 덩어리"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "주로 식재료로 먹는다"
+        }
+      },
+      "notes": [
+        "껍질 유무는 생략",
+        "품종에 따라 크기와 모양이 많이 다름"
+      ]
+    },
+    {
+      "category_id": "power_outlet",
+      "attributes": {
+        "classification": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "전원을 연결하는 벽면 부속으로 보이지만, 소켓·플러그 구분 표현이 애매해 검토 필요"
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "구멍 배치와 외형이 여러 규격으로 달라 대표 형태를 단정하기 어려움"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication"
+          ],
+          "description_ko": "전기 연결부로서 기기와 전원을 이어 주는 역할"
+        }
+      },
+      "notes": [
+        "규격 차이가 커서 세부 형태 확정이 어려움",
+        "주어진 분류 용어로는 전기 연결 축의 표현이 부족함"
+      ]
+    },
+    {
+      "category_id": "purse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory",
+            "container"
+          ],
+          "description_ko": "돈이나 작은 물건을 넣어 휴대하는 작은 손가방"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "작고 각진 몸체에 여닫는 입구가 있는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "wearing"
+          ],
+          "description_ko": "작은 소지품을 넣어 들고 다니는 데 쓰임"
+        }
+      },
+      "notes": [
+        "지갑과 겹칠 수 있으나 여기서는 손가방 쪽으로 잡음",
+        "손잡이·끈 유무는 다양함"
+      ]
+    },
+    {
+      "category_id": "rabbit",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "긴 귀와 점프하는 습성이 있는 작은 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "pointed_ears",
+            "short_tail"
+          ],
+          "description_ko": "네 다리와 짧은 꼬리, 뾰족한 귀가 두드러짐"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "running",
+            "jumping",
+            "grazing"
+          ],
+          "description_ko": "풀과 잎을 먹고 재빠르게 뛰어다님"
+        }
+      },
+      "notes": [
+        "토끼류의 일반적 특징을 대표로 선택",
+        "실제 종에 따라 귀 길이와 체형 차이가 큼"
+      ]
+    },
+    {
+      "category_id": "raccoon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "얼굴의 마스크 무늬가 자주 보이는 중소형 포유류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_tail",
+            "rounded_ears",
+            "spots"
+          ],
+          "description_ko": "네 다리와 긴 꼬리, 둥근 귀와 얼굴 무늬가 특징적임"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "climbing",
+            "hunting"
+          ],
+          "description_ko": "땅을 걷고 나무를 오르며 먹이를 찾음"
+        }
+      },
+      "notes": [
+        "마스크 무늬는 대표적이지만 항상 보이는 것은 아님",
+        "꼬리는 길고 비교적 두드러지는 편"
+      ]
+    },
+    {
+      "category_id": "radio",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "전파를 받아 소리를 내는 전자 수신기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "rectangular",
+            "buttons"
+          ],
+          "description_ko": "대개 네모난 본체에 조작 버튼이 있는 형태"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_output",
+            "communication"
+          ],
+          "description_ko": "방송 신호를 받아 음성을 재생함"
+        }
+      },
+      "notes": [
+        "현대 기기와 구형 기기의 형태가 다를 수 있음",
+        "수신기 의미를 중심으로 잡음"
+      ]
+    },
+    {
+      "category_id": "rain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "구름에서 물방울이 떨어지는 날씨 현상"
+        },
+        "shape": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "형태가 고정된 물체가 아니어서 해당 없음"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "의도된 기능이 있는 대상이 아니어서 해당 없음"
+        }
+      },
+      "notes": [
+        "장면/날씨 범주와 겹칠 수 있음",
+        "물체가 아니라 현상으로 분류"
+      ]
+    },
+    {
+      "category_id": "rainbow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon"
+          ],
+          "description_ko": "비 뒤나 물방울에서 보이는 여러 색의 광학 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "elongated"
+          ],
+          "description_ko": "하늘에 걸린 휘어진 띠처럼 보이는 형태"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연 현상이라 기능 축은 해당 없음"
+        }
+      },
+      "notes": [
+        "색을 직접 묘사하는 대상이지만 색 태그는 제공되지 않음",
+        "장면으로 그려질 수 있어 대상과 배경이 겹칠 수 있음"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "entries": [
+    {
+      "category_id": "skull",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "머리의 뼈대 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "teeth",
+            "opening"
+          ],
+          "description_ko": "둥근 머리뼈에 눈구멍과 이빨이 드러난다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "protection"
+          ],
+          "description_ko": "뇌를 감싸 보호한다"
+        }
+      },
+      "notes": [
+        "위험·해적 기호로도 널리 쓰인다."
+      ]
+    },
+    {
+      "category_id": "toe",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "발 끝의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "clustered_units"
+          ],
+          "description_ko": "작고 둥근 마디가 나란히 모여 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking"
+          ],
+          "description_ko": "걸을 때 균형을 잡게 한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tooth",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "입안의 신체 부위"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "pointed_tip",
+            "smooth_surface"
+          ],
+          "description_ko": "둥근 머리 아래 뾰족한 뿌리가 갈라진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "음식을 끊고 씹는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "garden",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place"
+          ],
+          "description_ko": "식물을 가꾸는 야외 공간"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "petals",
+            "stem",
+            "leaves",
+            "irregular"
+          ],
+          "description_ko": "여러 꽃과 잎, 줄기가 모인 장면으로 그린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration"
+          ],
+          "description_ko": "식물을 가꾸어 공간을 꾸민다"
+        }
+      },
+      "notes": [
+        "여러 대상을 담은 장면이라 flower와 형태가 겹친다."
+      ]
+    },
+    {
+      "category_id": "hospital",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "의료 시설 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "cross_mark",
+            "door"
+          ],
+          "description_ko": "창문이 많은 사각 건물에 십자 표시가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care"
+          ],
+          "description_ko": "환자를 진료하고 치료한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "house",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "dwelling"
+          ],
+          "description_ko": "사람이 사는 주거용 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "windows",
+            "door"
+          ],
+          "description_ko": "삼각 지붕 아래 사각 벽에 문과 창이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "living_accommodation",
+            "shelter"
+          ],
+          "description_ko": "사람이 거주하고 비바람을 피한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "jail",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "수감 시설 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "stripes"
+          ],
+          "description_ko": "사각 건물의 창에 세로 창살이 있다"
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "구금 기능 태그가 없어 보류한다"
+        }
+      },
+      "notes": [
+        "창살을 줄무늬로 표현했고 구금 기능 태그가 없다."
+      ]
+    },
+    {
+      "category_id": "lighthouse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure"
+          ],
+          "description_ko": "해안의 항로 표지 시설"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "conical",
+            "stripes",
+            "windows",
+            "rays"
+          ],
+          "description_ko": "위로 좁아지는 탑에 줄무늬와 빛줄기가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "navigation",
+            "signaling"
+          ],
+          "description_ko": "빛을 비춰 배의 길을 안내한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "pool",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "place"
+          ],
+          "description_ko": "물놀이를 위한 인공 시설 공간"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "bounded_outline",
+            "wave_lines"
+          ],
+          "description_ko": "사각 테두리 안에 물결선이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "exercise",
+            "play"
+          ],
+          "description_ko": "사람이 헤엄치고 물놀이를 한다"
+        }
+      },
+      "notes": [
+        "bounded_outline을 인공 수조의 물 경계로 사용했다."
+      ]
+    },
+    {
+      "category_id": "skyscraper",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "매우 높은 도시 건축물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "rectangular",
+            "windows"
+          ],
+          "description_ko": "위로 긴 사각 건물에 창문이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter"
+          ],
+          "description_ko": "사무·주거 공간을 제공한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

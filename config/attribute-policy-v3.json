@@ -1,0 +1,118 @@
+{
+  "version": "attribute-policy-v3",
+  "instructions": [
+    "Treat each module independently: an ambiguous shape must not erase a clearly shared function.",
+    "Classification is a strict tree with exactly one domain root (organism, artifact, food, nature, abstract, fictional). Pick the most specific applicable leaf; parents are added locally. Harvested fruit and vegetables are food, never organism.",
+    "Shape lists what a typical monochrome sketch shows: outline, visible parts and surface marks. Prefer the shared reusable tags. Usually 2-5 shape tags.",
+    "Anatomy tags (ears, tails, whiskers, mane, horns, beak, fins, tentacles, feelers, pincers, long_snout) are literal and only for organisms, fictional beings and animal-shaped toys. Use handle, strap, loop, spout or tube tags for object parts.",
+    "Function is the typical use for artifacts and the typical behavior for organisms. For natural things record only an observable action: lighting/heating (sun, fire), water_flow (river), precipitation (cloud, rain, snow), air_movement (storms), electric_power (lightning). Otherwise use not_applicable. Never invent a human purpose for nature.",
+    "eating means an edible item, never a utensil, vessel, mouth or an animal's feeding. Use dining for cutlery, chewing for mouth/teeth, grazing/hunting/foraging for animals.",
+    "Sensory body parts use seeing, hearing and smelling_breathing; tools that aid a sense may share the tag (eyeglasses seeing, stethoscope hearing, snorkel smelling_breathing).",
+    "Do not force unique profiles. coffee_cup, cup and mug may overlap. Record genuine overlap in notes; never add the category name as a tag.",
+    "For a polysemous label follow the catalog Korean name and the typical Quick Draw sample, and keep a short note about the other sense.",
+    "uncertain is reserved for material ambiguity or a genuinely missing vocabulary term; explain the missing concept in a short note.",
+    "Return a compact JSON object only. No duplicate tags. At most 12 tags per module including parents."
+  ],
+  "parents": {
+    "classification": {
+      "animal": ["organism"], "plant": ["organism"], "fungus": ["organism"], "body_part": ["organism"],
+      "mammal": ["animal"], "bird": ["animal"], "fish": ["animal"], "reptile": ["animal"], "amphibian": ["animal"],
+      "insect": ["animal"], "arachnid": ["animal"], "crustacean": ["animal"], "mollusk": ["animal"],
+      "feline": ["mammal"], "canine": ["mammal"], "bear_family": ["mammal"], "procyonid": ["mammal"],
+      "small_mammal": ["mammal"], "ungulate": ["mammal"], "marine_mammal": ["mammal"], "primate": ["mammal"],
+      "marsupial": ["mammal"], "chiropteran": ["mammal"],
+      "waterbird": ["bird"], "bird_of_prey": ["bird"], "parrot_family": ["bird"],
+      "cartilaginous_fish": ["fish"],
+      "woody_plant": ["plant"], "herbaceous_plant": ["plant"], "succulent": ["plant"], "plant_part": ["plant"],
+      "head_part": ["body_part"], "facial_hair": ["body_part"], "limb_part": ["body_part"], "animal_part": ["body_part"],
+
+      "fruit": ["food"], "vegetable": ["food"], "prepared_food": ["food"],
+      "berry": ["fruit"], "pome_fruit": ["fruit"], "tropical_fruit": ["fruit"], "melon": ["fruit"],
+      "root_vegetable": ["vegetable"], "legume": ["vegetable"], "green_vegetable": ["vegetable"],
+      "meal": ["prepared_food"], "baked_goods": ["prepared_food"], "confection": ["prepared_food"],
+
+      "landform": ["nature"], "water_body": ["nature"], "celestial_body": ["nature"], "weather": ["nature"], "fire": ["nature"],
+      "storm": ["weather"], "cloud_precipitation": ["weather"],
+
+      "geometric_shape": ["abstract"], "symbol": ["abstract"], "pattern": ["abstract"], "activity": ["abstract"],
+      "polygon": ["geometric_shape"], "line_figure": ["geometric_shape"],
+
+      "mythical_being": ["fictional"],
+
+      "vehicle": ["artifact"], "tool": ["artifact"], "kitchenware": ["artifact"], "container": ["artifact"],
+      "furniture": ["artifact"], "artwork": ["artifact"], "appliance": ["artifact"], "lighting": ["artifact"],
+      "timepiece": ["artifact"], "electronic_device": ["artifact"], "stationery": ["artifact"], "document": ["artifact"],
+      "clothing": ["artifact"], "accessory": ["artifact"], "hygiene_item": ["artifact"], "plumbing_fixture": ["artifact"],
+      "building": ["artifact"], "infrastructure": ["artifact"], "place": ["artifact"], "instrument": ["artifact"],
+      "sports_equipment": ["artifact"], "play_equipment": ["artifact"], "toy": ["artifact"], "weapon": ["artifact"],
+      "medical_equipment": ["artifact"],
+      "land_vehicle": ["vehicle"], "aircraft": ["vehicle"], "watercraft": ["vehicle"], "vehicle_part": ["vehicle"],
+      "hand_tool": ["tool"], "garden_tool": ["tool"], "cleaning_tool": ["tool"], "fire_tool": ["tool"], "measuring_tool": ["tool"],
+      "cutlery": ["kitchenware"],
+      "drinkware": ["container"], "bag": ["container"], "storage_container": ["container"],
+      "seating": ["furniture"], "bedding": ["furniture"], "table_storage": ["furniture"],
+      "kitchen_appliance": ["appliance"], "cleaning_appliance": ["appliance"], "air_appliance": ["appliance"],
+      "computing_device": ["electronic_device"], "phone": ["electronic_device"], "audio_device": ["electronic_device"], "video_device": ["electronic_device"],
+      "writing_tool": ["stationery"], "office_supply": ["stationery"],
+      "mail_item": ["document"],
+      "top": ["clothing"], "bottom": ["clothing"], "footwear": ["clothing"], "headwear": ["clothing"],
+      "jewelry": ["accessory"], "wearable_accessory": ["accessory"],
+      "dwelling": ["building"], "religious_building": ["building"], "tower": ["building"], "fortification": ["building"],
+      "public_building": ["building"], "farm_building": ["building"],
+      "road_facility": ["infrastructure"], "building_part": ["infrastructure"], "outdoor_structure": ["infrastructure"],
+      "string_instrument": ["instrument"], "woodwind_instrument": ["instrument"], "brass_instrument": ["instrument"],
+      "percussion_instrument": ["instrument"], "keyboard_instrument": ["instrument"],
+      "game_ball": ["sports_equipment"], "striking_gear": ["sports_equipment"], "wheeled_gear": ["sports_equipment"], "water_gear": ["sports_equipment"],
+      "firearm": ["weapon"], "blade_weapon": ["weapon"]
+    },
+    "shape": {
+      "hexagonal": ["polygonal"], "octagonal": ["polygonal"]
+    }
+  },
+  "incompatible": {
+    "classification": [
+      ["organism", "artifact"], ["organism", "food"], ["organism", "nature"], ["organism", "abstract"], ["organism", "fictional"],
+      ["artifact", "food"], ["artifact", "nature"], ["artifact", "abstract"], ["artifact", "fictional"],
+      ["food", "nature"], ["food", "abstract"], ["food", "fictional"],
+      ["nature", "abstract"], ["nature", "fictional"], ["abstract", "fictional"]
+    ]
+  },
+  "contrast_groups": [
+    ["baseball", "basketball", "soccer_ball", "hockey_puck"],
+    ["baseball_bat", "golf_club", "hockey_stick", "tennis_racquet"],
+    ["blackberry", "blueberry", "grapes", "strawberry"],
+    ["apple", "pear", "banana", "pineapple", "watermelon"],
+    ["church", "house", "castle", "barn", "hospital", "jail"],
+    ["lighthouse", "skyscraper", "the_eiffel_tower", "windmill"],
+    ["clarinet", "saxophone", "trombone", "trumpet"],
+    ["guitar", "violin", "cello", "harp"],
+    ["coffee_cup", "cup", "mug", "wine_glass", "teapot", "wine_bottle"],
+    ["key", "nail", "screwdriver", "hammer"],
+    ["microwave", "oven", "toaster", "stove", "washing_machine", "dishwasher"],
+    ["ocean", "pond", "river", "beach"],
+    ["radio", "stereo", "megaphone", "microphone", "headphones"],
+    ["airplane", "helicopter", "bird", "flying_saucer"],
+    ["horse", "giraffe", "zebra", "camel", "cow"],
+    ["cat", "lion", "tiger", "dog"],
+    ["bear", "panda", "teddy-bear"],
+    ["mouse", "rabbit", "squirrel", "hedgehog"],
+    ["fan", "ceiling_fan", "windmill"],
+    ["stitches", "line", "zigzag", "squiggle"],
+    ["hexagon", "octagon", "stop_sign", "circle"],
+    ["hurricane", "tornado", "cloud"],
+    ["bus", "school_bus", "truck", "van", "car"],
+    ["ambulance", "firetruck", "police_car"],
+    ["crab", "lobster", "scorpion", "spider"],
+    ["dolphin", "whale", "shark", "fish"],
+    ["beard", "goatee", "moustache"],
+    ["clock", "alarm_clock", "wristwatch", "hourglass"],
+    ["pencil", "crayon", "marker", "paintbrush"],
+    ["bed", "couch", "pillow", "sleeping_bag"],
+    ["umbrella", "parachute", "mushroom"],
+    ["candle", "lighter", "matches", "campfire"],
+    ["computer", "laptop", "television", "keyboard"],
+    ["pants", "shorts", "underwear"],
+    ["t-shirt", "sweater", "jacket"]
+  ],
+  "note": "Project-authored conventions and contrast hints, not human-verified Quick Draw annotations. Unknown peer IDs are omitted."
+}

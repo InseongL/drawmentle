@@ -1,0 +1,333 @@
+{
+  "entries": [
+    {
+      "category_id": "helicopter",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "aircraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "회전 날개 항공기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "oval",
+            "windows",
+            "elongated"
+          ],
+          "description_ko": "둥근 동체 위에 회전 날개, 뒤로 긴 꼬리대가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "rescue"
+          ],
+          "description_ko": "수직으로 날아 사람을 옮기고 구조한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hot_air_balloon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "aircraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "뜨거운 공기로 뜨는 항공기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "panel_lines",
+            "strings",
+            "box_like"
+          ],
+          "description_ko": "큰 풍선 아래 줄로 바구니가 매달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people"
+          ],
+          "description_ko": "하늘에 떠올라 사람을 태운다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "motorbike",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "엔진이 달린 이륜차"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "handle",
+            "elongated"
+          ],
+          "description_ko": "바퀴 두 개 사이에 엔진 몸체와 핸들이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "사람을 태우고 달린다"
+        }
+      },
+      "notes": [
+        "bicycle과 형태가 겹친다."
+      ]
+    },
+    {
+      "category_id": "parachute",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "aircraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "천천히 내려오는 비행 장비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "dome",
+            "strings",
+            "panel_lines",
+            "suspended"
+          ],
+          "description_ko": "반구형 천 아래로 여러 줄에 사람이 매달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "protection"
+          ],
+          "description_ko": "공중에서 안전하게 내려온다"
+        }
+      },
+      "notes": [
+        "탈것보다 장비에 가까워 분류가 모호하다."
+      ]
+    },
+    {
+      "category_id": "pickup_truck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "짐칸이 열린 소형 트럭"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "windows",
+            "opening"
+          ],
+          "description_ko": "앞 운전석 뒤로 열린 짐칸이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_goods",
+            "transport_people"
+          ],
+          "description_ko": "짐과 사람을 싣고 달린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "police_car",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "순찰하는 긴급 차량"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "box_like",
+            "four_wheels",
+            "windows",
+            "siren_light"
+          ],
+          "description_ko": "승용차 몸체 위에 경광등이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "protection",
+            "signaling"
+          ],
+          "description_ko": "순찰하며 경광등으로 신호를 보낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sailboat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "돛으로 가는 배"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hull",
+            "triangular"
+          ],
+          "description_ko": "선체 위에 삼각 돛이 선다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "바람을 받아 사람을 태우고 나아간다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "school_bus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "land_vehicle",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "학생을 태우는 버스"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "windows",
+            "four_wheels"
+          ],
+          "description_ko": "긴 사각 차체에 창문이 줄지어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "학생을 태워 나른다"
+        }
+      },
+      "notes": [
+        "bus와 형태·기능이 같다."
+      ]
+    },
+    {
+      "category_id": "speedboat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "빠르게 달리는 배"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "hull",
+            "pointed_tip",
+            "water_waves"
+          ],
+          "description_ko": "뾰족한 뱃머리 뒤로 물결이 갈라진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "물 위를 빠르게 달린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "submarine",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "watercraft",
+            "vehicle",
+            "artifact"
+          ],
+          "description_ko": "물속을 다니는 배"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "elongated",
+            "windows"
+          ],
+          "description_ko": "길쭉한 타원 선체에 둥근 창과 잠망경이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "combat"
+          ],
+          "description_ko": "물속을 이동하며 작전한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

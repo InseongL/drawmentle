@@ -1,0 +1,343 @@
+{
+  "entries": [
+    {
+      "category_id": "diving_board",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "tool"
+          ],
+          "description_ko": "물로 뛰어들기 위해 쓰는 놀이·운동용 장치다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "rectangular",
+            "pedestal"
+          ],
+          "description_ko": "길게 뻗은 납작한 판이 받침 위에 놓인 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "play"
+          ],
+          "description_ko": "사람이 위에서 뛰어내리거나 점프 동작을 하도록 돕는다."
+        }
+      },
+      "notes": [
+        "수영장 시설과 함께 쓰이는 경우가 많다.",
+        "사다리나 난간은 보조 요소일 수 있다."
+      ]
+    },
+    {
+      "category_id": "dog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "사람과 함께 사는 개과 포유류다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "rounded_ears",
+            "short_tail",
+            "pointed_ears"
+          ],
+          "description_ko": "네 다리와 비교적 짧은 꼬리가 있는 몸통 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "hunting",
+            "protection"
+          ],
+          "description_ko": "보통 걷고 뛰며, 경우에 따라 사냥이나 경비에 쓰인다."
+        }
+      },
+      "notes": [
+        "품종에 따라 귀와 꼬리 모양 차이가 크다.",
+        "일상적 반려동물과 작업견이 함께 포함된다."
+      ]
+    },
+    {
+      "category_id": "dolphin",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "바다에 사는 수중 포유류다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "curved_body",
+            "fins",
+            "long_tail"
+          ],
+          "description_ko": "길고 유선형의 몸에 지느러미와 긴 꼬리 쪽 윤곽이 두드러진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming"
+          ],
+          "description_ko": "물속에서 빠르게 헤엄치는 데 적합하다."
+        }
+      },
+      "notes": [
+        "물고기와 달리 포유류로 분류된다.",
+        "수면 위로 튀어 오르는 모습이 자주 그려진다."
+      ]
+    },
+    {
+      "category_id": "donut",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "반죽을 익혀 만든 달콤한 간식류 음식이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "ring_bow",
+            "hollow"
+          ],
+          "description_ko": "가운데가 뚫린 둥근 고리 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹는 용도의 간식이다."
+        }
+      },
+      "notes": [
+        "구멍이 없거나 속이 채워진 변형도 있다.",
+        "도넛은 용기나 도형이 아니라 음식이다."
+      ]
+    },
+    {
+      "category_id": "door",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building"
+          ],
+          "description_ko": "건축물의 출입구를 여닫는 구성 요소다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "opening"
+          ],
+          "description_ko": "대체로 납작한 사각 패널이 출입구에 맞춰 서 있는 모습이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "shelter",
+            "unlocking"
+          ],
+          "description_ko": "출입을 막거나 열어 공간을 드나들게 한다."
+        }
+      },
+      "notes": [
+        "건물 전체가 아니라 출입부의 판을 가리킨다.",
+        "경첩이나 손잡이는 보조 요소일 수 있다."
+      ]
+    },
+    {
+      "category_id": "dragon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "fictional_entity",
+            "animal"
+          ],
+          "description_ko": "전설에 나오는 상상의 생물이다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "형태가 전승에 따라 크게 달라 일관된 대표 윤곽을 정하기 어렵다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "고정된 실제 용도가 있는 존재가 아니라 이야기 속 역할로 나타난다."
+        }
+      },
+      "notes": [
+        "날개, 뿔, 긴 꼬리 등은 버전마다 다를 수 있다.",
+        "실재 동물 분류로 해석하지 않는다."
+      ]
+    },
+    {
+      "category_id": "dresser",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "옷이나 물건을 넣어 두는 서랍식 가구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "flat"
+          ],
+          "description_ko": "대체로 네모난 몸체에 여러 겹의 서랍 면이 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_objects",
+            "living_accommodation"
+          ],
+          "description_ko": "물건을 정리 보관하는 실내 수납용 가구다."
+        }
+      },
+      "notes": [
+        "서랍 수와 비율은 다양할 수 있다.",
+        "침실 가구와 겹쳐 보일 수 있다."
+      ]
+    },
+    {
+      "category_id": "drill",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "구멍을 뚫거나 나사를 조일 때 쓰는 전동·수동 공구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle",
+            "pointed_tip"
+          ],
+          "description_ko": "손잡이와 앞으로 뻗은 본체, 앞쪽의 비트 부분이 두드러진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "digging",
+            "fastening",
+            "construction"
+          ],
+          "description_ko": "재료에 구멍을 만들거나 고정 작업을 돕는다."
+        }
+      },
+      "notes": [
+        "전동드릴과 수동드릴이 모두 포함될 수 있다.",
+        "비트 모양은 그려진 종류에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "drums",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "instrument",
+            "percussion_instrument"
+          ],
+          "description_ko": "두드려 소리를 내는 타악기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "cylindrical",
+            "box_like",
+            "flat"
+          ],
+          "description_ko": "원통형 몸체에 둥근 막면이 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "playing_music",
+            "sound_output"
+          ],
+          "description_ko": "막이나 표면을 두드려 리듬과 소리를 낸다."
+        }
+      },
+      "notes": [
+        "드럼 세트 일부일 수도 있고 단일 북일 수도 있다.",
+        "심벌은 별도 악기로 볼 수 있다."
+      ]
+    },
+    {
+      "category_id": "duck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "bird"
+          ],
+          "description_ko": "물가에 사는 오리과 조류다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "beak",
+            "wings",
+            "short_tail",
+            "oval"
+          ],
+          "description_ko": "둥근 몸에 넓은 부리와 짧은 꼬리가 어울리는 형태다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "flying",
+            "walking"
+          ],
+          "description_ko": "물에서 헤엄치고, 날고, 땅 위를 걷는다."
+        }
+      },
+      "notes": [
+        "부리와 몸통 비율이 특징적으로 그려진다.",
+        "물 위에 떠 있는 장면으로도 자주 나타난다."
+      ]
+    }
+  ]
+}

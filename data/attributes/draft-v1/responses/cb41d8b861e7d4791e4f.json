@@ -1,0 +1,354 @@
+{
+  "entries": [
+    {
+      "category_id": "cactus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant",
+            "natural_object"
+          ],
+          "description_ko": "물 저장에 적응한 다육성 식물로, 줄기와 잎의 가시가 함께 보일 수 있다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "irregular",
+            "branches",
+            "spots"
+          ],
+          "description_ko": "기둥형이나 가지형 윤곽이 가능하고, 표면에 가시처럼 보이는 돌기가 두드러질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며, 건조한 환경에서 물을 저장하는 식물로 볼 수 있다."
+        }
+      },
+      "notes": [
+        "가시와 잎의 구분이 애매할 수 있다.",
+        "선인장류 전반을 포괄하는 분류로 해석했다.",
+        "꽃이 있는 경우도 있으나 핵심 속성은 아니다."
+      ]
+    },
+    {
+      "category_id": "cake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "반죽을 구워 만든 달콤한 조리 음식으로, 여러 층이나 장식이 붙을 수 있다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "원형 또는 사각형의 납작한 덩어리로 그려지는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "serving_food",
+            "decoration"
+          ],
+          "description_ko": "먹는 용도이며, 여러 사람에게 나눠 제공되거나 행사 장식 역할도 한다."
+        }
+      },
+      "notes": [
+        "생일케이크로 한정하지 않는 일반 케이크이다.",
+        "장식은 종종 있지만 필수 속성은 아니다.",
+        "조각난 상태로 그려질 수도 있다."
+      ]
+    },
+    {
+      "category_id": "calculator",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "tool"
+          ],
+          "description_ko": "숫자 계산과 간단한 수학 처리를 돕는 전자기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "buttons"
+          ],
+          "description_ko": "작은 직사각형 몸체에 버튼 배열이 있는 형태가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "computing",
+            "displaying"
+          ],
+          "description_ko": "수식을 계산하고 결과를 화면에 표시한다."
+        }
+      },
+      "notes": [
+        "공학용과 일반용이 함께 포함될 수 있다.",
+        "종이 계산기 같은 비전자형은 보통 제외한다.",
+        "버튼과 화면이 핵심 단서다."
+      ]
+    },
+    {
+      "category_id": "calendar",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery",
+            "tool"
+          ],
+          "description_ko": "날짜와 월을 확인하도록 만든 일정용 도구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat",
+            "windows"
+          ],
+          "description_ko": "달력판은 대체로 납작한 직사각형이며 칸이나 날짜 구획이 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "timekeeping",
+            "displaying"
+          ],
+          "description_ko": "날짜, 요일, 월 정보를 보여주고 시간 흐름을 확인하게 한다."
+        }
+      },
+      "notes": [
+        "벽걸이형과 탁상형을 모두 포함할 수 있다.",
+        "전자 달력은 달력의 한 형태로 볼 수 있다.",
+        "스케줄 표와 혼동될 수 있어 맥락 확인이 필요하다."
+      ]
+    },
+    {
+      "category_id": "camel",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "사막 환경에 적응한 대형 포유류로, 등에 혹이 있는 경우가 흔하다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "horns"
+          ],
+          "description_ko": "네 다리와 긴 목이 두드러지며, 머리와 얼굴 윤곽이 길쭉하게 표현될 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing",
+            "transport_people",
+            "transport_goods"
+          ],
+          "description_ko": "걷고 풀을 뜯으며, 사람이나 짐을 나르는 동물로 쓰이기도 한다."
+        }
+      },
+      "notes": [
+        "혹의 개수는 종에 따라 다르다.",
+        "동물원 낙타와 사육용 낙타를 함께 포괄한다.",
+        "뿔처럼 보이는 귀 표현은 주의가 필요하다."
+      ]
+    },
+    {
+      "category_id": "camera",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device",
+            "tool"
+          ],
+          "description_ko": "빛을 받아 이미지를 기록하는 촬영 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "round",
+            "screen",
+            "buttons"
+          ],
+          "description_ko": "대체로 상자형 몸체에 렌즈 돌출부, 화면이나 버튼이 함께 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photography",
+            "displaying",
+            "sound_recording"
+          ],
+          "description_ko": "사진을 찍고, 일부 기기는 영상을 기록하거나 화면으로 결과를 보여준다."
+        }
+      },
+      "notes": [
+        "렌즈가 가장 중요한 식별 단서다.",
+        "필름 카메라와 디지털 카메라를 함께 포괄할 수 있다.",
+        "소리 녹음은 일부 기기에서만 해당한다."
+      ]
+    },
+    {
+      "category_id": "camouflage",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "symbol",
+            "activity"
+          ],
+          "description_ko": "주변과 비슷하게 보이도록 드러남을 줄이는 상태나 행위를 가리키는 추상 개념이다."
+        },
+        "shape": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "고정된 물체 형상이 아니라서 대표 형태를 두기 어렵다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도구의 기능이 아니라 상황이나 행동의 개념에 가깝다."
+        }
+      },
+      "notes": [
+        "구체 물체가 아니라 추상/활동 범주로 본다.",
+        "위장무늬나 군복과 혼동될 수 있다.",
+        "일러스트에서 상징적으로 표현될 수 있다."
+      ]
+    },
+    {
+      "category_id": "campfire",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_phenomenon",
+            "activity"
+          ],
+          "description_ko": "야외에서 장작 등을 태워 만든 불과 그 주변 상황을 가리킨다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "flat"
+          ],
+          "description_ko": "불꽃 모양은 불규칙하고 위로 퍼지는 윤곽으로 그려지기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "heating",
+            "lighting",
+            "cooking"
+          ],
+          "description_ko": "따뜻함과 빛을 제공하고, 야외에서 간단한 조리에 쓰일 수 있다."
+        }
+      },
+      "notes": [
+        "불 자체와 모닥불 장면이 함께 포함될 수 있다.",
+        "안전 장비보다 불의 형상이 핵심 단서다.",
+        "정확히는 사물보다 현상에 가깝다."
+      ]
+    },
+    {
+      "category_id": "candle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool",
+            "container"
+          ],
+          "description_ko": "심지에 불을 붙여 빛을 내는 작은 초 형태의 물건이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "elongated",
+            "opening"
+          ],
+          "description_ko": "대체로 가늘고 긴 원통형이며, 윗면의 심지 자리만 보일 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "heating",
+            "decoration"
+          ],
+          "description_ko": "빛을 내고 약간의 열을 내며, 장식용으로도 쓰인다."
+        }
+      },
+      "notes": [
+        "향초나 장식초를 포함할 수 있다.",
+        "용기형 캔들과는 구분이 필요하다.",
+        "불이 붙은 상태와 꺼진 상태 모두 가능하다."
+      ]
+    },
+    {
+      "category_id": "cannon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weapon",
+            "tool"
+          ],
+          "description_ko": "탄환이나 포탄을 멀리 발사하는 대형 무기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "elongated",
+            "wings"
+          ],
+          "description_ko": "긴 포신과 받침 구조가 특징이며, 일부 그림에서는 바퀴나 거치대가 함께 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat",
+            "striking"
+          ],
+          "description_ko": "표적을 강하게 타격하는 데 쓰이는 공격용 장비이다."
+        }
+      },
+      "notes": [
+        "전쟁용 대포를 기준으로 한다.",
+        "바퀴 달린 이동식 형태가 자주 그려진다.",
+        "항해용 신호포와는 용도가 다를 수 있다."
+      ]
+    }
+  ]
+}

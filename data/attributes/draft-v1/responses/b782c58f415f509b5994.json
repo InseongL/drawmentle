@@ -1,0 +1,327 @@
+{
+  "entries": [
+    {
+      "category_id": "rake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "낙엽이나 풀을 모으거나 흙을 고르는 데 쓰는 손도구입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "teeth"
+          ],
+          "description_ko": "긴 손잡이와 한쪽 끝의 이빨 모양 갈퀴 부분이 함께 보이는 형태입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "running",
+            "grazing"
+          ],
+          "description_ko": "낙엽, 잔가지, 풀 등을 긁어 모으는 데 주로 쓰입니다."
+        }
+      },
+      "notes": [
+        "정원용 손도구로 해석했습니다.",
+        "이빨 수는 그림마다 단순화될 수 있습니다."
+      ]
+    },
+    {
+      "category_id": "remote_control",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "멀리서 기기 설정을 바꾸는 휴대용 전자 조작기입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "buttons"
+          ],
+          "description_ko": "작은 직사각형 몸체에 여러 버튼이 있는 형태가 대표적입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "displaying"
+          ],
+          "description_ko": "TV나 기타 기기의 채널, 음량, 전원 등을 조작합니다."
+        }
+      },
+      "notes": [
+        "가정용 제어 장치로 보았습니다.",
+        "화면이 없는 경우가 일반적입니다."
+      ]
+    },
+    {
+      "category_id": "rhinoceros",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "대형 초식 포유류로, 피부가 두껍고 코에 뿔이 있는 종류입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "horns",
+            "short_tail"
+          ],
+          "description_ko": "튼튼한 네 다리와 코의 뿔이 특징인 무거운 몸집입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "grazing"
+          ],
+          "description_ko": "대체로 땅 위를 걸으며 풀과 잎을 먹습니다."
+        }
+      },
+      "notes": [
+        "뿔 개수는 종에 따라 달라질 수 있습니다.",
+        "야생 동물 범주로 처리했습니다."
+      ]
+    },
+    {
+      "category_id": "rifle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weapon"
+          ],
+          "description_ko": "탄환을 발사하는 총기류로, 어깨에 대고 조준하는 긴 화기입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated"
+          ],
+          "description_ko": "길고 가느다란 총열과 몸체가 이어진 형태입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "combat"
+          ],
+          "description_ko": "표적을 향해 발사하는 무기입니다."
+        }
+      },
+      "notes": [
+        "총기류로만 분류했습니다.",
+        "세부 군용/사냥용 구분은 하지 않았습니다."
+      ]
+    },
+    {
+      "category_id": "river",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "natural_object",
+            "place"
+          ],
+          "description_ko": "땅 위를 따라 흐르는 자연의 물길입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "irregular"
+          ],
+          "description_ko": "길게 이어지며 굽이치는 불규칙한 선형 형태로 그려지기 쉽습니다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 고유한 사용 기능은 없습니다."
+        }
+      },
+      "notes": [
+        "장면이 아니라 지형 요소로 보았습니다.",
+        "그림에서는 물결 모양 선으로 단순화될 수 있습니다."
+      ]
+    },
+    {
+      "category_id": "roller_coaster",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "activity",
+            "place"
+          ],
+          "description_ko": "궤도를 따라 급상승과 급강하를 반복하는 놀이시설입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "wings"
+          ],
+          "description_ko": "굽은 선로와 반복되는 높은 곡선, 지지 구조가 함께 나타나기 쉽습니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "play"
+          ],
+          "description_ko": "탑승객을 태우고 빠르게 이동하며 놀이 경험을 제공합니다."
+        }
+      },
+      "notes": [
+        "시설 자체와 탑승 활동이 겹칠 수 있습니다.",
+        "공간 구조가 강조되는 장면성 카테고리입니다."
+      ]
+    },
+    {
+      "category_id": "rollerskates",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "발에 착용해 바퀴를 굴리며 이동하는 놀이·운동용 장비입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "two_wheels",
+            "four_wheels",
+            "handle"
+          ],
+          "description_ko": "부츠형 몸체 아래에 바퀴가 달린 착용형 장비로 그려집니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "exercise",
+            "play"
+          ],
+          "description_ko": "미끄러지듯 이동하며 놀이나 운동에 사용합니다."
+        }
+      },
+      "notes": [
+        "바퀴 수는 형태에 따라 다를 수 있습니다.",
+        "착용형 장비로 보았습니다."
+      ]
+    },
+    {
+      "category_id": "sailboat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "돛의 바람을 이용해 물 위를 이동하는 배입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "long_tail",
+            "shell",
+            "wings"
+          ],
+          "description_ko": "배 몸체와 위로 솟은 돛대, 펼친 돛이 함께 보이는 형태입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "transport_people"
+          ],
+          "description_ko": "물 위를 항해하며 사람이나 물건을 옮길 수 있습니다."
+        }
+      },
+      "notes": [
+        "돛이 핵심이지만 배 본체도 함께 포함했습니다.",
+        "크기가 작은 레저용 배도 같은 범주로 처리했습니다."
+      ]
+    },
+    {
+      "category_id": "sandwich",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "빵 사이에 재료를 넣어 겹친 조리 음식입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "flat"
+          ],
+          "description_ko": "납작하고 겹겹이 쌓인 직사각형 또는 약간 불규칙한 덩어리로 보입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "먹기 위해 준비된 음식입니다."
+        }
+      },
+      "notes": [
+        "재료 구성은 다양할 수 있습니다.",
+        "가벼운 간식류로 해석했습니다."
+      ]
+    },
+    {
+      "category_id": "saw",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "재료를 자르기 위해 날카로운 이빨이 있는 수공구입니다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "blade",
+            "teeth"
+          ],
+          "description_ko": "길쭉한 몸체에 톱날의 이빨 무늬가 있는 형태입니다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cutting"
+          ],
+          "description_ko": "목재나 다른 재료를 절단하는 데 사용합니다."
+        }
+      },
+      "notes": [
+        "손톱과 전동톱은 제외하고 일반 톱으로 보았습니다.",
+        "날과 이빨 표현이 핵심입니다."
+      ]
+    }
+  ]
+}

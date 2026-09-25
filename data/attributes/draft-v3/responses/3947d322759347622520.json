@@ -1,0 +1,319 @@
+{
+  "entries": [
+    {
+      "category_id": "belt",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "wearable_accessory",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "허리에 두르는 착용 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "strap",
+            "loop"
+          ],
+          "description_ko": "긴 띠 끝에 고리 버클이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "fastening"
+          ],
+          "description_ko": "허리에 둘러 옷을 고정한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bowtie",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "wearable_accessory",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "목에 매는 착용 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pinched_waist",
+            "triangular"
+          ],
+          "description_ko": "가운데 매듭 양옆으로 삼각 날개가 펼쳐진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "목에 매어 옷차림을 꾸민다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "bracelet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "jewelry",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "손목에 두르는 장신구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "loop"
+          ],
+          "description_ko": "손목에 두르는 둥근 고리다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "손목에 차서 꾸민다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "crown",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "jewelry",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "왕이 머리에 쓰는 장신구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "spikes",
+            "spots"
+          ],
+          "description_ko": "띠 위로 뾰족한 꼭짓점이 솟고 보석이 박힌다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration"
+          ],
+          "description_ko": "머리에 써서 권위를 나타낸다"
+        }
+      },
+      "notes": [
+        "머리에 쓰는 착용품이라 hat·helmet과도 겹친다."
+      ]
+    },
+    {
+      "category_id": "eyeglasses",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "wearable_accessory",
+            "accessory",
+            "artifact"
+          ],
+          "description_ko": "눈에 쓰는 착용 소품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "loop"
+          ],
+          "description_ko": "두 개의 둥근 렌즈 테가 코다리로 이어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "seeing"
+          ],
+          "description_ko": "눈에 써서 잘 보이게 돕는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "flip_flops",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "footwear",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "발에 신는 간편 신발"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "oval",
+            "flat",
+            "sole",
+            "strap"
+          ],
+          "description_ko": "납작한 밑창에 V자 끈이 달린다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing"
+          ],
+          "description_ko": "발에 가볍게 신는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "hat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "headwear",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "머리에 쓰는 의류"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "dome",
+            "flat"
+          ],
+          "description_ko": "둥근 윗부분 둘레로 납작한 챙이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "머리에 써서 햇빛 등을 가린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "helmet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "headwear",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "머리를 보호하는 착용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "dome",
+            "opening",
+            "strap"
+          ],
+          "description_ko": "반구형 껍데기에 얼굴 창과 턱끈이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "머리에 써서 충격으로부터 보호한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "jacket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "top",
+            "clothing",
+            "artifact"
+          ],
+          "description_ko": "상체에 입는 겉옷"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "sleeves",
+            "buttons",
+            "opening"
+          ],
+          "description_ko": "소매 달린 상의 앞쪽이 열리고 단추가 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "겉에 입어 추위를 막는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "lipstick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "hygiene_item",
+            "artifact"
+          ],
+          "description_ko": "입술에 바르는 미용 용품"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "lid",
+            "pointed_tip"
+          ],
+          "description_ko": "원통형 몸체 위로 비스듬한 심이 나온다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "decoration"
+          ],
+          "description_ko": "입술을 칠해 꾸민다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

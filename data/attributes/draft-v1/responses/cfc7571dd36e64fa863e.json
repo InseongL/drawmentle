@@ -1,0 +1,335 @@
+{
+  "entries": [
+    {
+      "category_id": "headphones",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "electronic_device"
+          ],
+          "description_ko": "귀에 착용해 소리를 듣는 오디오 장치이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rounded_ears",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "양쪽 귀를 덮는 이어컵과 이를 잇는 밴드가 있는 형태로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sound_output",
+            "wearing"
+          ],
+          "description_ko": "개인적으로 음원을 듣거나 오디오를 출력하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "전자기기와 착용 소품의 성격이 함께 보일 수 있다.",
+        "머리띠형과 이어버드형 구분은 문맥에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "hedgehog",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "작은 포유류로, 몸에 가시가 있는 동물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "oval",
+            "spots"
+          ],
+          "description_ko": "작고 둥근 몸에 네 다리가 있는 모습으로 묘사된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "crawling"
+          ],
+          "description_ko": "땅 위를 움직이며 먹이를 찾는다."
+        }
+      },
+      "notes": [
+        "가시 표현이 핵심 단서가 될 수 있다.",
+        "야행성 습성을 직접 드러내지 않을 수 있다."
+      ]
+    },
+    {
+      "category_id": "helicopter",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "회전 날개를 이용해 공중을 나는 항공 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rotor",
+            "wings",
+            "elongated"
+          ],
+          "description_ko": "상부의 회전 날개와 길쭉한 기체로 나타나는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people",
+            "rescue"
+          ],
+          "description_ko": "사람을 태우고 이동하거나 구조 임무에 쓰일 수 있다."
+        }
+      },
+      "notes": [
+        "민간용과 군용 모두를 포괄할 수 있다.",
+        "착륙장면이나 비행장면으로 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "helmet",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory"
+          ],
+          "description_ko": "머리를 보호하기 위해 쓰는 착용 소품이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "hollow"
+          ],
+          "description_ko": "머리를 덮는 둥근 반구형으로 표현된다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "protection"
+          ],
+          "description_ko": "머리 부상을 줄이기 위해 착용한다."
+        }
+      },
+      "notes": [
+        "스포츠용과 안전용 모두 가능한 범주이다.",
+        "얼굴 가리개 유무는 종류에 따라 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "hexagon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape"
+          ],
+          "description_ko": "여섯 변과 여섯 꼭짓점을 가진 평면 도형이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular"
+          ],
+          "description_ko": "직선 변으로 이루어진 다각형 윤곽이 핵심이다."
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "기능 축은 해당하지 않는다."
+        }
+      },
+      "notes": [
+        "도형·기호 범주로, 구체 물체가 아니다.",
+        "그림에서는 정육각형 여부만 중요할 수 있다."
+      ]
+    },
+    {
+      "category_id": "hockey_puck",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment"
+          ],
+          "description_ko": "하키 경기에서 사용하는 납작한 원반이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "flat"
+          ],
+          "description_ko": "작고 납작한 원형으로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play"
+          ],
+          "description_ko": "하키 경기에서 미끄러뜨려 사용한다."
+        }
+      },
+      "notes": [
+        "빙상하키 장비로 보는 것이 일반적이다.",
+        "검은색 여부는 태그로 고정하지 않는다."
+      ]
+    },
+    {
+      "category_id": "hockey_stick",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "tool"
+          ],
+          "description_ko": "하키에서 공 또는 퍽을 다루는 막대형 기구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "blade"
+          ],
+          "description_ko": "긴 자루와 끝부분의 휘어진 날 모양이 특징이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "play",
+            "striking"
+          ],
+          "description_ko": "공이나 퍽을 밀거나 쳐서 경기한다."
+        }
+      },
+      "notes": [
+        "막대와 날 부분의 대비가 핵심이다.",
+        "얼음하키와 필드하키 모두를 넓게 포괄할 수 있다."
+      ]
+    },
+    {
+      "category_id": "horse",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "네 다리로 달리는 큰 초식 포유류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "long_neck",
+            "long_tail"
+          ],
+          "description_ko": "가늘고 긴 다리와 목, 꼬리가 함께 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "running",
+            "grazing"
+          ],
+          "description_ko": "걷고 달리며 풀을 먹는다."
+        }
+      },
+      "notes": [
+        "품종에 따라 체형 차이가 크다.",
+        "안장이나 마구는 말 자체의 속성이 아니다."
+      ]
+    },
+    {
+      "category_id": "hospital",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "place"
+          ],
+          "description_ko": "환자 진료와 치료를 하는 의료 시설이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "roof",
+            "windows"
+          ],
+          "description_ko": "큰 건물 외곽에 창문과 지붕이 있는 형태로 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "medical_care",
+            "shelter"
+          ],
+          "description_ko": "치료, 입원, 응급 대응을 수행한다."
+        }
+      },
+      "notes": [
+        "건물과 장소 성격이 함께 있는 항목이다.",
+        "십자 표시는 병원의 상징으로 같이 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "hot_air_balloon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "aircraft"
+          ],
+          "description_ko": "뜨거운 공기를 이용해 떠오르는 비행 탈것이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "oval",
+            "cylindrical"
+          ],
+          "description_ko": "큰 부푼 풍선과 아래의 작은 바구니로 보인다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying",
+            "transport_people"
+          ],
+          "description_ko": "사람을 태우고 하늘을 천천히 이동한다."
+        }
+      },
+      "notes": [
+        "풍선 부분과 바구니 부분의 이중 구조가 중요하다.",
+        "비행기보다 더 둥글고 느린 인상으로 그려질 수 있다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "entries": [
+    {
+      "category_id": "pond",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "water_body",
+            "nature"
+          ],
+          "description_ko": "내륙의 작은 고인 물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "water_edge",
+            "oval",
+            "irregular"
+          ],
+          "description_ko": "닫힌 물가 윤곽 안에 물이 고여 있다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도나 작용이 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cloud_precipitation",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "하늘에서 내리는 비"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "puffy_outline",
+            "droplets"
+          ],
+          "description_ko": "구름 아래로 빗방울이 떨어진다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "precipitation"
+          ],
+          "description_ko": "땅에 물을 내린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "rainbow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "weather",
+            "nature"
+          ],
+          "description_ko": "빛이 만든 기상 현상"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "curved_outline",
+            "stripes"
+          ],
+          "description_ko": "반원 아치에 여러 줄의 띠가 겹친다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "자연물이라 용도나 작용이 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "river",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "water_body",
+            "nature"
+          ],
+          "description_ko": "흐르는 내륙 물줄기"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wavy_line",
+            "elongated",
+            "water_waves"
+          ],
+          "description_ko": "구불구불 길게 이어지는 물줄기다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "water_flow"
+          ],
+          "description_ko": "물이 흘러간다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "snowflake",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "cloud_precipitation",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "하늘에서 내리는 얼음 결정"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rays",
+            "branches"
+          ],
+          "description_ko": "중심에서 여섯 갈래가 뻗고 곁가지가 난다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "precipitation"
+          ],
+          "description_ko": "눈이 되어 내린다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "sun",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "celestial_body",
+            "nature"
+          ],
+          "description_ko": "태양계 중심의 항성"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "rays"
+          ],
+          "description_ko": "둥근 원 둘레로 빛살이 뻗는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "lighting",
+            "heating"
+          ],
+          "description_ko": "빛과 열을 낸다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "tornado",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "storm",
+            "weather",
+            "nature"
+          ],
+          "description_ko": "깔때기 모양 회오리바람"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "conical",
+            "spiral"
+          ],
+          "description_ko": "아래로 좁아지는 깔때기에 소용돌이 선이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "air_movement"
+          ],
+          "description_ko": "강한 회오리바람을 일으킨다"
+        }
+      },
+      "notes": [
+        "hurricane과 혼동될 수 있다."
+      ]
+    },
+    {
+      "category_id": "bush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "woody_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "낮게 자라는 목본 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "puffy_outline",
+            "leaves",
+            "branches"
+          ],
+          "description_ko": "낮게 퍼진 부푼 잎 덩어리다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며 자란다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "cactus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "succulent",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "건조한 곳에 사는 선인장"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "spikes",
+            "cylindrical"
+          ],
+          "description_ko": "가시 돋은 원통 줄기에서 팔이 솟는다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "광합성을 하며 자란다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "flower",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "herbaceous_plant",
+            "plant",
+            "organism"
+          ],
+          "description_ko": "꽃을 피운 초본 식물"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "petals",
+            "stem",
+            "leaves"
+          ],
+          "description_ko": "둥근 중심 둘레의 꽃잎과 줄기, 잎이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis",
+            "decoration"
+          ],
+          "description_ko": "광합성을 하며 장식용으로도 쓰인다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

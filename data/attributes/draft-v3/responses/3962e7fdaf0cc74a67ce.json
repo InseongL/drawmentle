@@ -1,0 +1,302 @@
+{
+  "entries": [
+    {
+      "category_id": "squiggle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "line_figure",
+            "geometric_shape",
+            "abstract"
+          ],
+          "description_ko": "자유롭게 구불거리는 선"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wavy_line",
+            "irregular"
+          ],
+          "description_ko": "불규칙하게 구불거리는 선이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "star",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "polygon",
+            "geometric_shape",
+            "abstract"
+          ],
+          "description_ko": "별 모양 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "spikes",
+            "pointed_tip"
+          ],
+          "description_ko": "다섯 꼭짓점이 바깥으로 뾰족하게 뻗는다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": [
+        "천체가 아닌 별 모양 도형으로 작성했다."
+      ]
+    },
+    {
+      "category_id": "triangle",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "polygon",
+            "geometric_shape",
+            "abstract"
+          ],
+          "description_ko": "세 변의 다각형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "triangular"
+          ],
+          "description_ko": "세 변과 세 꼭짓점이 있는 윤곽이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "zigzag",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "line_figure",
+            "geometric_shape",
+            "abstract"
+          ],
+          "description_ko": "꺾인 선 도형"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "zigzag",
+            "elongated"
+          ],
+          "description_ko": "좌우로 뾰족하게 꺾이며 이어지는 선이다"
+        },
+        "function": {
+          "status": "not_applicable",
+          "tags": [],
+          "description_ko": "도형이라 용도가 적용되지 않는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "baseball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "game_ball",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "야구 경기용 공"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "stitched_seams"
+          ],
+          "description_ko": "둥근 공에 곡선 바느질선이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "ball_game",
+            "throwing"
+          ],
+          "description_ko": "던지고 쳐서 경기한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "baseball_bat",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "striking_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "야구에서 공을 치는 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "handle"
+          ],
+          "description_ko": "손잡이 쪽이 가늘고 끝이 굵은 긴 막대다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "striking",
+            "ball_game"
+          ],
+          "description_ko": "공을 쳐서 경기한다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "basketball",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "game_ball",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "농구 경기용 공"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "panel_lines"
+          ],
+          "description_ko": "둥근 공이 곡선으로 몇 조각 나뉜다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "ball_game",
+            "throwing"
+          ],
+          "description_ko": "튀기고 던져 골대에 넣는다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "boomerang",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "toy",
+            "artifact"
+          ],
+          "description_ko": "던지면 돌아오는 장난감"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "crescent",
+            "flat"
+          ],
+          "description_ko": "V자로 휜 납작한 날개 모양이다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "throwing",
+            "play"
+          ],
+          "description_ko": "던져서 되돌아오게 하며 논다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "diving_board",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "water_gear",
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "수영장 다이빙 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat",
+            "pedestal"
+          ],
+          "description_ko": "받침 위에 길고 납작한 판이 뻗어 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "jumping",
+            "swimming"
+          ],
+          "description_ko": "올라서서 물속으로 뛰어든다"
+        }
+      },
+      "notes": []
+    },
+    {
+      "category_id": "dumbbell",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "sports_equipment",
+            "artifact"
+          ],
+          "description_ko": "근력 운동 기구"
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "pinched_waist",
+            "cylindrical"
+          ],
+          "description_ko": "가는 손잡이 양 끝에 무거운 원판이 있다"
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "exercise"
+          ],
+          "description_ko": "들어 올려 근력 운동을 한다"
+        }
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "entries": [
+    {
+      "category_id": "brain",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "body_part"
+          ],
+          "description_ko": "생물의 신경계 중심 기관으로, 감각 정보 처리와 운동·행동 조절에 관련된다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular"
+          ],
+          "description_ko": "주름지고 불규칙한 덩어리 형태로 그려지기 쉽다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "communication",
+            "computing"
+          ],
+          "description_ko": "신경 신호를 통합해 반응과 조절을 담당하는 기관이다."
+        }
+      },
+      "notes": [
+        "신체 부위 범주로 처리.",
+        "해부학적 기관의 일반적 용도 기준.",
+        "외형은 세부 묘사보다 덩어리감이 핵심.",
+        "색상 정보는 사용하지 않음."
+      ]
+    },
+    {
+      "category_id": "bread",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "food",
+            "prepared_food"
+          ],
+          "description_ko": "곡물 반죽을 구워 만든 기본 식품으로, 식사와 간식에 널리 쓰인다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "round"
+          ],
+          "description_ko": "덩어리, 식빵, 둥근 빵처럼 비교적 단순한 형태로 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating",
+            "serving_food"
+          ],
+          "description_ko": "사람이 먹는 음식이며 다른 음식의 곁들임으로도 쓰인다."
+        }
+      },
+      "notes": [
+        "조리 음식 성격이 강함.",
+        "종류에 따라 모양이 크게 달라질 수 있음.",
+        "토스트 여부는 포함하지 않음."
+      ]
+    },
+    {
+      "category_id": "bridge",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "building",
+            "infrastructure"
+          ],
+          "description_ko": "물, 도로, 계곡 같은 장애물을 넘어 이동할 수 있게 연결하는 구조물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "flat"
+          ],
+          "description_ko": "길게 이어진 통로와 지지 구조가 함께 보이는 경우가 많다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people",
+            "transport_goods",
+            "navigation"
+          ],
+          "description_ko": "사람과 물건의 이동을 이어 주고 경로를 연결한다."
+        }
+      },
+      "notes": [
+        "교량과 유사한 길 연결 구조를 포괄.",
+        "현수교·아치교 등 세부 형식은 구분하지 않음.",
+        "장소가 아니라 구조물로 취급."
+      ]
+    },
+    {
+      "category_id": "broccoli",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vegetable",
+            "plant",
+            "food"
+          ],
+          "description_ko": "식용하는 채소로, 꽃봉오리 덩어리와 줄기를 함께 먹는 식물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "branches",
+            "stem"
+          ],
+          "description_ko": "작은 가지 모양의 꽃머리와 굵은 줄기가 특징적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "eating"
+          ],
+          "description_ko": "식재료로 사용되며 사람이 먹는다."
+        }
+      },
+      "notes": [
+        "꽃이 피기 전의 머리 모양이 대표적.",
+        "잎의 존재는 필수 특징이 아님.",
+        "색상은 일반화하지 않음."
+      ]
+    },
+    {
+      "category_id": "broom",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "tool"
+          ],
+          "description_ko": "바닥의 먼지와 쓰레기를 쓸어 모으는 청소 도구다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "handle",
+            "branches"
+          ],
+          "description_ko": "긴 손잡이와 끝부분의 솔이 결합된 형태로 그려진다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "바닥이나 표면의 이물질을 쓸어내는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "청소용 막대형 도구.",
+        "솔 부분은 브러시처럼 단순화될 수 있음.",
+        "전동 장비가 아닌 수동 도구."
+      ]
+    },
+    {
+      "category_id": "bucket",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "액체나 작은 물건을 담아 옮기는 개방형 용기다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "위가 열려 있고 손잡이가 달린 둥근 통 형태로 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "holding_objects"
+          ],
+          "description_ko": "물이나 여러 물건을 담아 보관하고 이동한다."
+        }
+      },
+      "notes": [
+        "양동이, 통 형태를 포괄.",
+        "뚜껑은 보통 필수 특징이 아님.",
+        "재질은 특정하지 않음."
+      ]
+    },
+    {
+      "category_id": "bulldozer",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "토사를 밀거나 지면을 정리하는 중장비 차량이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_wheels",
+            "blade"
+          ],
+          "description_ko": "차체 앞쪽의 넓은 날과 무게감 있는 하부 구조가 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "construction",
+            "digging"
+          ],
+          "description_ko": "땅을 밀고 고르며 건설 현장에서 작업한다."
+        }
+      },
+      "notes": [
+        "도저류 건설 장비.",
+        "바퀴식·궤도식 차이는 일반화하지 않음.",
+        "주 용도는 밀기와 정지 작업."
+      ]
+    },
+    {
+      "category_id": "bus",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "land_vehicle"
+          ],
+          "description_ko": "여러 사람을 함께 실어 나르는 대중교통 차량이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "four_wheels",
+            "windows"
+          ],
+          "description_ko": "긴 직사각형 차체에 창문이 여러 개 보이는 형태가 흔하다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "승객을 태워 정해진 경로로 이동시킨다."
+        }
+      },
+      "notes": [
+        "도시·시외 버스를 모두 포괄.",
+        "창문과 긴 차체가 대표 단서.",
+        "색상은 일반화하지 않음."
+      ]
+    },
+    {
+      "category_id": "bush",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "plant"
+          ],
+          "description_ko": "나무보다 작고 여러 줄기가 퍼진 덤불형 식물이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "branches",
+            "leaves",
+            "irregular"
+          ],
+          "description_ko": "가지와 잎이 여러 방향으로 퍼진 덩어리 형태가 보통이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "photosynthesis"
+          ],
+          "description_ko": "잎을 통해 광합성을 하는 식물이다."
+        }
+      },
+      "notes": [
+        "관목형 식물로 처리.",
+        "꽃이나 열매는 필수 특징이 아님.",
+        "정원수·야생 관목을 함께 포괄."
+      ]
+    },
+    {
+      "category_id": "butterfly",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "insect"
+          ],
+          "description_ko": "날개를 가진 곤충으로, 꽃 주변을 날아다니는 경우가 많다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "wings",
+            "two_legs",
+            "elongated"
+          ],
+          "description_ko": "좌우로 넓은 날개와 가느다란 몸통이 대표적이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "flying"
+          ],
+          "description_ko": "주로 날아다니며 꽃을 찾거나 이동한다."
+        }
+      },
+      "notes": [
+        "곤충 범주에 속함.",
+        "더듬이는 선택적 세부로 생략 가능.",
+        "유충 단계는 다루지 않음."
+      ]
+    }
+  ]
+}

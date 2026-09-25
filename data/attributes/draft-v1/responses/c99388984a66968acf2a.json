@@ -1,0 +1,347 @@
+{
+  "entries": [
+    {
+      "category_id": "couch",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "furniture"
+          ],
+          "description_ko": "사람이 앉거나 기대어 쉬도록 실내에 두는 큰 좌석용 가구이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "flat",
+            "four_legs"
+          ],
+          "description_ko": "넓고 낮은 직사각형 덩어리로 보이며, 팔걸이와 등받이가 함께 표현될 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "sitting",
+            "sleeping",
+            "shelter"
+          ],
+          "description_ko": "앉기와 휴식을 위한 좌석이며, 누워 쉬는 용도로도 자주 쓰인다."
+        }
+      },
+      "notes": [
+        "가구 범주에 속한다.",
+        "의자보다 더 넓은 좌석으로 보일 수 있다.",
+        "팔걸이 유무는 그림마다 달라질 수 있다."
+      ]
+    },
+    {
+      "category_id": "cow",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "mammal"
+          ],
+          "description_ko": "풀을 먹는 큰 초식 포유류로, 농장에서 기르는 소를 가리킨다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "four_legs",
+            "elongated",
+            "horns",
+            "short_tail"
+          ],
+          "description_ko": "네 다리와 비교적 긴 몸통이 기본이며, 머리에는 뿔이 그려질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "grazing"
+          ],
+          "description_ko": "주로 풀이나 잎을 먹고 지내는 초식 동물이다."
+        }
+      },
+      "notes": [
+        "가축으로 그려질 가능성이 높다.",
+        "젖소·황소 등 세부 구분은 여기서 고정하지 않는다.",
+        "색은 변동 가능해 포함하지 않았다."
+      ]
+    },
+    {
+      "category_id": "crab",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "crustacean"
+          ],
+          "description_ko": "딱딱한 껍질과 집게발을 가진 물속 또는 물가의 갑각류이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "irregular",
+            "many_legs",
+            "shell"
+          ],
+          "description_ko": "넓고 납작한 몸과 여러 다리, 좌우 집게가 함께 보이는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "walking",
+            "crawling"
+          ],
+          "description_ko": "바닥을 옆으로 움직이거나 기어가듯 이동하는 경우가 많다."
+        }
+      },
+      "notes": [
+        "게딱지와 집게가 핵심 단서가 된다.",
+        "종에 따라 다리 수 표현은 단순화될 수 있다.",
+        "물가 동물로 그려질 수 있다."
+      ]
+    },
+    {
+      "category_id": "crayon",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "stationery"
+          ],
+          "description_ko": "종이에 색을 칠하는 데 쓰는 필기·그리기 재료이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "cylindrical",
+            "box_like"
+          ],
+          "description_ko": "짧고 길쭉한 막대 모양이며, 끝이 뾰족하거나 둥글게 그려질 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "drawing"
+          ],
+          "description_ko": "색칠과 그림 그리기에 쓰인다."
+        }
+      },
+      "notes": [
+        "문구로 분류한다.",
+        "포장 상자는 제외하고 막대 자체를 우선 본다.",
+        "파스텔과 혼동될 수 있어 단순한 막대 형태를 남긴다."
+      ]
+    },
+    {
+      "category_id": "crocodile",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "animal",
+            "reptile"
+          ],
+          "description_ko": "물가에 사는 큰 파충류로, 길고 강한 턱을 가진다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "long_tail",
+            "four_legs",
+            "hollow"
+          ],
+          "description_ko": "길쭉한 몸, 긴 꼬리, 짧은 네 다리와 납작한 머리가 함께 나타난다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "swimming",
+            "hunting"
+          ],
+          "description_ko": "물에서 헤엄치고 먹이를 사냥하는 모습으로 자주 묘사된다."
+        }
+      },
+      "notes": [
+        "악어와 유사한 파충류 전체를 넓게 잡지 않는다.",
+        "입을 벌린 표현이 자주 나오지만 필수는 아니다.",
+        "길쭉한 꼬리와 등선이 중요하다."
+      ]
+    },
+    {
+      "category_id": "crown",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "accessory",
+            "symbol"
+          ],
+          "description_ko": "머리에 쓰는 장식성 물건이며, 왕권이나 지위를 상징하는 경우가 많다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "round",
+            "triangular",
+            "horns"
+          ],
+          "description_ko": "머리 둘레를 감싸는 띠 위로 뾰족한 장식들이 솟는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "wearing",
+            "decoration",
+            "signaling"
+          ],
+          "description_ko": "머리에 착용해 장식하고, 권위나 신분을 드러내는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "장신구와 상징의 성격이 함께 있다.",
+        "왕관 모양 장식은 여러 변형이 가능하다.",
+        "보석 장식 여부는 핵심 태그로 두지 않았다."
+      ]
+    },
+    {
+      "category_id": "cruise_ship",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "vehicle",
+            "watercraft"
+          ],
+          "description_ko": "사람을 태우고 바다 위를 이동하는 대형 배이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "elongated",
+            "hollow",
+            "windows"
+          ],
+          "description_ko": "길고 큰 선체 위에 층층이 올라간 갑판과 창문이 보이는 형태이다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "transport_people"
+          ],
+          "description_ko": "승객을 태우고 여행하거나 이동하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "대형 여객선으로 보는 것이 적절하다.",
+        "연기 굴뚝과 여러 층 구조가 나타날 수 있다.",
+        "화물선과 구분되는 점은 사람 운송 중심이다."
+      ]
+    },
+    {
+      "category_id": "cup",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "container"
+          ],
+          "description_ko": "마시기 위한 작은 용기로, 액체를 담아 입으로 옮기는 데 쓴다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "cylindrical",
+            "hollow",
+            "opening",
+            "handle"
+          ],
+          "description_ko": "윗부분이 열린 속 빈 그릇이며, 한쪽에 손잡이가 붙을 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "holding_liquid",
+            "eating"
+          ],
+          "description_ko": "음료를 담아 마시는 데 쓰이며, 식사 자리에서 자주 사용된다."
+        }
+      },
+      "notes": [
+        "머그와의 경계가 애매할 수 있다.",
+        "손잡이 유무는 그림마다 달라질 수 있다.",
+        "커피컵과 일반 컵을 강하게 구분하지 않는다."
+      ]
+    },
+    {
+      "category_id": "diamond",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "geometric_shape",
+            "natural_object"
+          ],
+          "description_ko": "다이아몬드형의 기하 도형이거나, 광물 보석을 가리킬 수 있는 항목이다."
+        },
+        "shape": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "마름모꼴 도형인지 보석 형태인지 구분이 애매해, 이 축은 추가 확인이 필요하다."
+        },
+        "function": {
+          "status": "uncertain",
+          "tags": [],
+          "description_ko": "도형이면 기능이 없고, 보석이면 장식용이지만 의미가 갈려 확정하기 어렵다."
+        }
+      },
+      "notes": [
+        "도형 의미와 보석 의미가 혼재할 수 있다.",
+        "샘플에서 어느 뜻이 우세한지 확인이 필요하다.",
+        "형태 태그를 단정하기 어렵다."
+      ]
+    },
+    {
+      "category_id": "dishwasher",
+      "attributes": {
+        "classification": {
+          "status": "known",
+          "tags": [
+            "appliance",
+            "electronic_device"
+          ],
+          "description_ko": "그릇과 식기를 자동으로 씻는 주방용 기기이다."
+        },
+        "shape": {
+          "status": "known",
+          "tags": [
+            "rectangular",
+            "box_like",
+            "opening",
+            "buttons"
+          ],
+          "description_ko": "사각형 상자처럼 보이며, 문과 조작 버튼이 함께 표현될 수 있다."
+        },
+        "function": {
+          "status": "known",
+          "tags": [
+            "cleaning"
+          ],
+          "description_ko": "식기를 물과 세제로 세척하는 데 쓰인다."
+        }
+      },
+      "notes": [
+        "주방 가전으로 분류한다.",
+        "문이 앞쪽으로 열리는 상자형 구조가 흔하다.",
+        "조리 기능은 아니다."
+      ]
+    }
+  ]
+}

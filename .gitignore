@@ -1,0 +1,32 @@
+__pycache__/
+/%SystemDrive%/
+.venv/
+data/quickdraw/raw/
+data/quickdraw/processed/
+data/quickdraw/previews/
+data/quickdraw/manifests/
+*.part
+.env
+.env.*
+!.env.example
+
+# User drawings and generated datasets stay outside Git, including row manifests.
+/data/collected/
+/data/datasets/**
+!/data/datasets/**/
+!/data/datasets/**/manifest.public.json
+!/data/datasets/**/README.md
+
+# Publishable metadata is opt-in; private manifests and model binaries stay local.
+/data/artifacts/**
+!/data/artifacts/**/
+!/data/artifacts/releases/**/public-manifest.json
+!/data/artifacts/**/README.md
+
+# Application dependencies, build output, and local caches.
+node_modules/
+/frontend/dist/
+/frontend/coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

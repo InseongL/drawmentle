@@ -1,0 +1,6 @@
+{
+  "python": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:13:34) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.1",
+  "Pillow": "11.0.0",
+  "requests": "2.32.5"
+}
