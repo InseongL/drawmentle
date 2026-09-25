@@ -1,0 +1,3428 @@
+{
+ "manifestVersion": "release-public-v1",
+ "releaseId": "dev-release-v1",
+ "status": "dev-only",
+ "modelVersion": "dev-manual-top3-v0",
+ "preprocessingVersion": "none-v0",
+ "catalogVersion": "catalog-curation-v1.1",
+ "outputCalibrationVersion": "none-v1",
+ "drawingVersions": [
+  "strokes-v1"
+ ],
+ "brushVersions": [
+  "pen-v1"
+ ],
+ "model": null,
+ "inference": {
+  "mode": "dev_manual_top3",
+  "probability": "softmax_full_catalog_then_sum_by_candidate",
+  "outputCalibration": "none",
+  "note": "모델이 없어 개발 패널에서 Top-3와 p를 직접 정한다. 운영 릴리스가 아니다."
+ },
+ "rawClasses": [
+  {
+   "classIndex": 0,
+   "categoryId": "aircraft_carrier",
+   "candidateId": "aircraft_carrier"
+  },
+  {
+   "classIndex": 1,
+   "categoryId": "airplane",
+   "candidateId": "airplane"
+  },
+  {
+   "classIndex": 2,
+   "categoryId": "alarm_clock",
+   "candidateId": "clock"
+  },
+  {
+   "classIndex": 3,
+   "categoryId": "ambulance",
+   "candidateId": "ambulance"
+  },
+  {
+   "classIndex": 4,
+   "categoryId": "angel",
+   "candidateId": "angel"
+  },
+  {
+   "classIndex": 5,
+   "categoryId": "animal_migration",
+   "candidateId": "animal_migration"
+  },
+  {
+   "classIndex": 6,
+   "categoryId": "ant",
+   "candidateId": "ant"
+  },
+  {
+   "classIndex": 7,
+   "categoryId": "anvil",
+   "candidateId": "anvil"
+  },
+  {
+   "classIndex": 8,
+   "categoryId": "apple",
+   "candidateId": "apple"
+  },
+  {
+   "classIndex": 9,
+   "categoryId": "arm",
+   "candidateId": "arm"
+  },
+  {
+   "classIndex": 10,
+   "categoryId": "asparagus",
+   "candidateId": "asparagus"
+  },
+  {
+   "classIndex": 11,
+   "categoryId": "axe",
+   "candidateId": "axe"
+  },
+  {
+   "classIndex": 12,
+   "categoryId": "backpack",
+   "candidateId": "backpack"
+  },
+  {
+   "classIndex": 13,
+   "categoryId": "banana",
+   "candidateId": "banana"
+  },
+  {
+   "classIndex": 14,
+   "categoryId": "bandage",
+   "candidateId": "bandage"
+  },
+  {
+   "classIndex": 15,
+   "categoryId": "barn",
+   "candidateId": "barn"
+  },
+  {
+   "classIndex": 16,
+   "categoryId": "baseball",
+   "candidateId": "baseball"
+  },
+  {
+   "classIndex": 17,
+   "categoryId": "baseball_bat",
+   "candidateId": "baseball_bat"
+  },
+  {
+   "classIndex": 18,
+   "categoryId": "basket",
+   "candidateId": "basket"
+  },
+  {
+   "classIndex": 19,
+   "categoryId": "basketball",
+   "candidateId": "basketball"
+  },
+  {
+   "classIndex": 20,
+   "categoryId": "bat",
+   "candidateId": "bat"
+  },
+  {
+   "classIndex": 21,
+   "categoryId": "bathtub",
+   "candidateId": "bathtub"
+  },
+  {
+   "classIndex": 22,
+   "categoryId": "beach",
+   "candidateId": "beach"
+  },
+  {
+   "classIndex": 23,
+   "categoryId": "bear",
+   "candidateId": "bear"
+  },
+  {
+   "classIndex": 24,
+   "categoryId": "beard",
+   "candidateId": "beard"
+  },
+  {
+   "classIndex": 25,
+   "categoryId": "bed",
+   "candidateId": "bed"
+  },
+  {
+   "classIndex": 26,
+   "categoryId": "bee",
+   "candidateId": "bee"
+  },
+  {
+   "classIndex": 27,
+   "categoryId": "belt",
+   "candidateId": "belt"
+  },
+  {
+   "classIndex": 28,
+   "categoryId": "bench",
+   "candidateId": "bench"
+  },
+  {
+   "classIndex": 29,
+   "categoryId": "bicycle",
+   "candidateId": "bicycle"
+  },
+  {
+   "classIndex": 30,
+   "categoryId": "binoculars",
+   "candidateId": "binoculars"
+  },
+  {
+   "classIndex": 31,
+   "categoryId": "bird",
+   "candidateId": "bird"
+  },
+  {
+   "classIndex": 32,
+   "categoryId": "birthday_cake",
+   "candidateId": "cake"
+  },
+  {
+   "classIndex": 33,
+   "categoryId": "blackberry",
+   "candidateId": "blackberry"
+  },
+  {
+   "classIndex": 34,
+   "categoryId": "blueberry",
+   "candidateId": "blueberry"
+  },
+  {
+   "classIndex": 35,
+   "categoryId": "book",
+   "candidateId": "book"
+  },
+  {
+   "classIndex": 36,
+   "categoryId": "boomerang",
+   "candidateId": "boomerang"
+  },
+  {
+   "classIndex": 37,
+   "categoryId": "bottlecap",
+   "candidateId": "bottlecap"
+  },
+  {
+   "classIndex": 38,
+   "categoryId": "bowtie",
+   "candidateId": "bowtie"
+  },
+  {
+   "classIndex": 39,
+   "categoryId": "bracelet",
+   "candidateId": "bracelet"
+  },
+  {
+   "classIndex": 40,
+   "categoryId": "brain",
+   "candidateId": "brain"
+  },
+  {
+   "classIndex": 41,
+   "categoryId": "bread",
+   "candidateId": "bread"
+  },
+  {
+   "classIndex": 42,
+   "categoryId": "bridge",
+   "candidateId": "bridge"
+  },
+  {
+   "classIndex": 43,
+   "categoryId": "broccoli",
+   "candidateId": "broccoli"
+  },
+  {
+   "classIndex": 44,
+   "categoryId": "broom",
+   "candidateId": "broom"
+  },
+  {
+   "classIndex": 45,
+   "categoryId": "bucket",
+   "candidateId": "bucket"
+  },
+  {
+   "classIndex": 46,
+   "categoryId": "bulldozer",
+   "candidateId": "bulldozer"
+  },
+  {
+   "classIndex": 47,
+   "categoryId": "bus",
+   "candidateId": "bus"
+  },
+  {
+   "classIndex": 48,
+   "categoryId": "bush",
+   "candidateId": "bush"
+  },
+  {
+   "classIndex": 49,
+   "categoryId": "butterfly",
+   "candidateId": "butterfly"
+  },
+  {
+   "classIndex": 50,
+   "categoryId": "cactus",
+   "candidateId": "cactus"
+  },
+  {
+   "classIndex": 51,
+   "categoryId": "cake",
+   "candidateId": "cake"
+  },
+  {
+   "classIndex": 52,
+   "categoryId": "calculator",
+   "candidateId": "calculator"
+  },
+  {
+   "classIndex": 53,
+   "categoryId": "calendar",
+   "candidateId": "calendar"
+  },
+  {
+   "classIndex": 54,
+   "categoryId": "camel",
+   "candidateId": "camel"
+  },
+  {
+   "classIndex": 55,
+   "categoryId": "camera",
+   "candidateId": "camera"
+  },
+  {
+   "classIndex": 56,
+   "categoryId": "camouflage",
+   "candidateId": "camouflage"
+  },
+  {
+   "classIndex": 57,
+   "categoryId": "campfire",
+   "candidateId": "campfire"
+  },
+  {
+   "classIndex": 58,
+   "categoryId": "candle",
+   "candidateId": "candle"
+  },
+  {
+   "classIndex": 59,
+   "categoryId": "cannon",
+   "candidateId": "cannon"
+  },
+  {
+   "classIndex": 60,
+   "categoryId": "canoe",
+   "candidateId": "canoe"
+  },
+  {
+   "classIndex": 61,
+   "categoryId": "car",
+   "candidateId": "car"
+  },
+  {
+   "classIndex": 62,
+   "categoryId": "carrot",
+   "candidateId": "carrot"
+  },
+  {
+   "classIndex": 63,
+   "categoryId": "castle",
+   "candidateId": "castle"
+  },
+  {
+   "classIndex": 64,
+   "categoryId": "cat",
+   "candidateId": "cat"
+  },
+  {
+   "classIndex": 65,
+   "categoryId": "ceiling_fan",
+   "candidateId": "ceiling_fan"
+  },
+  {
+   "classIndex": 66,
+   "categoryId": "cello",
+   "candidateId": "cello"
+  },
+  {
+   "classIndex": 67,
+   "categoryId": "cell_phone",
+   "candidateId": "cell_phone"
+  },
+  {
+   "classIndex": 68,
+   "categoryId": "chair",
+   "candidateId": "chair"
+  },
+  {
+   "classIndex": 69,
+   "categoryId": "chandelier",
+   "candidateId": "chandelier"
+  },
+  {
+   "classIndex": 70,
+   "categoryId": "church",
+   "candidateId": "church"
+  },
+  {
+   "classIndex": 71,
+   "categoryId": "circle",
+   "candidateId": "circle"
+  },
+  {
+   "classIndex": 72,
+   "categoryId": "clarinet",
+   "candidateId": "clarinet"
+  },
+  {
+   "classIndex": 73,
+   "categoryId": "clock",
+   "candidateId": "clock"
+  },
+  {
+   "classIndex": 74,
+   "categoryId": "cloud",
+   "candidateId": "cloud"
+  },
+  {
+   "classIndex": 75,
+   "categoryId": "coffee_cup",
+   "candidateId": "cup"
+  },
+  {
+   "classIndex": 76,
+   "categoryId": "compass",
+   "candidateId": "compass"
+  },
+  {
+   "classIndex": 77,
+   "categoryId": "computer",
+   "candidateId": "computer"
+  },
+  {
+   "classIndex": 78,
+   "categoryId": "cookie",
+   "candidateId": "cookie"
+  },
+  {
+   "classIndex": 79,
+   "categoryId": "cooler",
+   "candidateId": "cooler"
+  },
+  {
+   "classIndex": 80,
+   "categoryId": "couch",
+   "candidateId": "couch"
+  },
+  {
+   "classIndex": 81,
+   "categoryId": "cow",
+   "candidateId": "cow"
+  },
+  {
+   "classIndex": 82,
+   "categoryId": "crab",
+   "candidateId": "crab"
+  },
+  {
+   "classIndex": 83,
+   "categoryId": "crayon",
+   "candidateId": "crayon"
+  },
+  {
+   "classIndex": 84,
+   "categoryId": "crocodile",
+   "candidateId": "crocodile"
+  },
+  {
+   "classIndex": 85,
+   "categoryId": "crown",
+   "candidateId": "crown"
+  },
+  {
+   "classIndex": 86,
+   "categoryId": "cruise_ship",
+   "candidateId": "cruise_ship"
+  },
+  {
+   "classIndex": 87,
+   "categoryId": "cup",
+   "candidateId": "cup"
+  },
+  {
+   "classIndex": 88,
+   "categoryId": "diamond",
+   "candidateId": "diamond"
+  },
+  {
+   "classIndex": 89,
+   "categoryId": "dishwasher",
+   "candidateId": "dishwasher"
+  },
+  {
+   "classIndex": 90,
+   "categoryId": "diving_board",
+   "candidateId": "diving_board"
+  },
+  {
+   "classIndex": 91,
+   "categoryId": "dog",
+   "candidateId": "dog"
+  },
+  {
+   "classIndex": 92,
+   "categoryId": "dolphin",
+   "candidateId": "dolphin"
+  },
+  {
+   "classIndex": 93,
+   "categoryId": "donut",
+   "candidateId": "donut"
+  },
+  {
+   "classIndex": 94,
+   "categoryId": "door",
+   "candidateId": "door"
+  },
+  {
+   "classIndex": 95,
+   "categoryId": "dragon",
+   "candidateId": "dragon"
+  },
+  {
+   "classIndex": 96,
+   "categoryId": "dresser",
+   "candidateId": "dresser"
+  },
+  {
+   "classIndex": 97,
+   "categoryId": "drill",
+   "candidateId": "drill"
+  },
+  {
+   "classIndex": 98,
+   "categoryId": "drums",
+   "candidateId": "drums"
+  },
+  {
+   "classIndex": 99,
+   "categoryId": "duck",
+   "candidateId": "duck"
+  },
+  {
+   "classIndex": 100,
+   "categoryId": "dumbbell",
+   "candidateId": "dumbbell"
+  },
+  {
+   "classIndex": 101,
+   "categoryId": "ear",
+   "candidateId": "ear"
+  },
+  {
+   "classIndex": 102,
+   "categoryId": "elbow",
+   "candidateId": "arm"
+  },
+  {
+   "classIndex": 103,
+   "categoryId": "elephant",
+   "candidateId": "elephant"
+  },
+  {
+   "classIndex": 104,
+   "categoryId": "envelope",
+   "candidateId": "envelope"
+  },
+  {
+   "classIndex": 105,
+   "categoryId": "eraser",
+   "candidateId": "eraser"
+  },
+  {
+   "classIndex": 106,
+   "categoryId": "eye",
+   "candidateId": "eye"
+  },
+  {
+   "classIndex": 107,
+   "categoryId": "eyeglasses",
+   "candidateId": "eyeglasses"
+  },
+  {
+   "classIndex": 108,
+   "categoryId": "face",
+   "candidateId": "face"
+  },
+  {
+   "classIndex": 109,
+   "categoryId": "fan",
+   "candidateId": "fan"
+  },
+  {
+   "classIndex": 110,
+   "categoryId": "feather",
+   "candidateId": "feather"
+  },
+  {
+   "classIndex": 111,
+   "categoryId": "fence",
+   "candidateId": "fence"
+  },
+  {
+   "classIndex": 112,
+   "categoryId": "finger",
+   "candidateId": "finger"
+  },
+  {
+   "classIndex": 113,
+   "categoryId": "fire_hydrant",
+   "candidateId": "fire_hydrant"
+  },
+  {
+   "classIndex": 114,
+   "categoryId": "fireplace",
+   "candidateId": "fireplace"
+  },
+  {
+   "classIndex": 115,
+   "categoryId": "firetruck",
+   "candidateId": "firetruck"
+  },
+  {
+   "classIndex": 116,
+   "categoryId": "fish",
+   "candidateId": "fish"
+  },
+  {
+   "classIndex": 117,
+   "categoryId": "flamingo",
+   "candidateId": "flamingo"
+  },
+  {
+   "classIndex": 118,
+   "categoryId": "flashlight",
+   "candidateId": "flashlight"
+  },
+  {
+   "classIndex": 119,
+   "categoryId": "flip_flops",
+   "candidateId": "flip_flops"
+  },
+  {
+   "classIndex": 120,
+   "categoryId": "floor_lamp",
+   "candidateId": "floor_lamp"
+  },
+  {
+   "classIndex": 121,
+   "categoryId": "flower",
+   "candidateId": "flower"
+  },
+  {
+   "classIndex": 122,
+   "categoryId": "flying_saucer",
+   "candidateId": "flying_saucer"
+  },
+  {
+   "classIndex": 123,
+   "categoryId": "foot",
+   "candidateId": "foot"
+  },
+  {
+   "classIndex": 124,
+   "categoryId": "fork",
+   "candidateId": "fork"
+  },
+  {
+   "classIndex": 125,
+   "categoryId": "frog",
+   "candidateId": "frog"
+  },
+  {
+   "classIndex": 126,
+   "categoryId": "frying_pan",
+   "candidateId": "frying_pan"
+  },
+  {
+   "classIndex": 127,
+   "categoryId": "garden",
+   "candidateId": "garden"
+  },
+  {
+   "classIndex": 128,
+   "categoryId": "garden_hose",
+   "candidateId": "garden_hose"
+  },
+  {
+   "classIndex": 129,
+   "categoryId": "giraffe",
+   "candidateId": "giraffe"
+  },
+  {
+   "classIndex": 130,
+   "categoryId": "goatee",
+   "candidateId": "beard"
+  },
+  {
+   "classIndex": 131,
+   "categoryId": "golf_club",
+   "candidateId": "golf_club"
+  },
+  {
+   "classIndex": 132,
+   "categoryId": "grapes",
+   "candidateId": "grapes"
+  },
+  {
+   "classIndex": 133,
+   "categoryId": "grass",
+   "candidateId": "grass"
+  },
+  {
+   "classIndex": 134,
+   "categoryId": "guitar",
+   "candidateId": "guitar"
+  },
+  {
+   "classIndex": 135,
+   "categoryId": "hamburger",
+   "candidateId": "hamburger"
+  },
+  {
+   "classIndex": 136,
+   "categoryId": "hammer",
+   "candidateId": "hammer"
+  },
+  {
+   "classIndex": 137,
+   "categoryId": "hand",
+   "candidateId": "hand"
+  },
+  {
+   "classIndex": 138,
+   "categoryId": "harp",
+   "candidateId": "harp"
+  },
+  {
+   "classIndex": 139,
+   "categoryId": "hat",
+   "candidateId": "hat"
+  },
+  {
+   "classIndex": 140,
+   "categoryId": "headphones",
+   "candidateId": "headphones"
+  },
+  {
+   "classIndex": 141,
+   "categoryId": "hedgehog",
+   "candidateId": "hedgehog"
+  },
+  {
+   "classIndex": 142,
+   "categoryId": "helicopter",
+   "candidateId": "helicopter"
+  },
+  {
+   "classIndex": 143,
+   "categoryId": "helmet",
+   "candidateId": "helmet"
+  },
+  {
+   "classIndex": 144,
+   "categoryId": "hexagon",
+   "candidateId": "hexagon"
+  },
+  {
+   "classIndex": 145,
+   "categoryId": "hockey_puck",
+   "candidateId": "hockey_puck"
+  },
+  {
+   "classIndex": 146,
+   "categoryId": "hockey_stick",
+   "candidateId": "hockey_stick"
+  },
+  {
+   "classIndex": 147,
+   "categoryId": "horse",
+   "candidateId": "horse"
+  },
+  {
+   "classIndex": 148,
+   "categoryId": "hospital",
+   "candidateId": "hospital"
+  },
+  {
+   "classIndex": 149,
+   "categoryId": "hot_air_balloon",
+   "candidateId": "hot_air_balloon"
+  },
+  {
+   "classIndex": 150,
+   "categoryId": "hot_dog",
+   "candidateId": "hot_dog"
+  },
+  {
+   "classIndex": 151,
+   "categoryId": "hot_tub",
+   "candidateId": "hot_tub"
+  },
+  {
+   "classIndex": 152,
+   "categoryId": "hourglass",
+   "candidateId": "hourglass"
+  },
+  {
+   "classIndex": 153,
+   "categoryId": "house",
+   "candidateId": "house"
+  },
+  {
+   "classIndex": 154,
+   "categoryId": "house_plant",
+   "candidateId": "house_plant"
+  },
+  {
+   "classIndex": 155,
+   "categoryId": "hurricane",
+   "candidateId": "hurricane"
+  },
+  {
+   "classIndex": 156,
+   "categoryId": "ice_cream",
+   "candidateId": "ice_cream"
+  },
+  {
+   "classIndex": 157,
+   "categoryId": "jacket",
+   "candidateId": "jacket"
+  },
+  {
+   "classIndex": 158,
+   "categoryId": "jail",
+   "candidateId": "jail"
+  },
+  {
+   "classIndex": 159,
+   "categoryId": "kangaroo",
+   "candidateId": "kangaroo"
+  },
+  {
+   "classIndex": 160,
+   "categoryId": "key",
+   "candidateId": "key"
+  },
+  {
+   "classIndex": 161,
+   "categoryId": "keyboard",
+   "candidateId": "keyboard"
+  },
+  {
+   "classIndex": 162,
+   "categoryId": "knee",
+   "candidateId": "leg"
+  },
+  {
+   "classIndex": 163,
+   "categoryId": "knife",
+   "candidateId": "knife"
+  },
+  {
+   "classIndex": 164,
+   "categoryId": "ladder",
+   "candidateId": "ladder"
+  },
+  {
+   "classIndex": 165,
+   "categoryId": "lantern",
+   "candidateId": "lantern"
+  },
+  {
+   "classIndex": 166,
+   "categoryId": "laptop",
+   "candidateId": "laptop"
+  },
+  {
+   "classIndex": 167,
+   "categoryId": "leaf",
+   "candidateId": "leaf"
+  },
+  {
+   "classIndex": 168,
+   "categoryId": "leg",
+   "candidateId": "leg"
+  },
+  {
+   "classIndex": 169,
+   "categoryId": "light_bulb",
+   "candidateId": "light_bulb"
+  },
+  {
+   "classIndex": 170,
+   "categoryId": "lighter",
+   "candidateId": "lighter"
+  },
+  {
+   "classIndex": 171,
+   "categoryId": "lighthouse",
+   "candidateId": "lighthouse"
+  },
+  {
+   "classIndex": 172,
+   "categoryId": "lightning",
+   "candidateId": "lightning"
+  },
+  {
+   "classIndex": 173,
+   "categoryId": "line",
+   "candidateId": "line"
+  },
+  {
+   "classIndex": 174,
+   "categoryId": "lion",
+   "candidateId": "lion"
+  },
+  {
+   "classIndex": 175,
+   "categoryId": "lipstick",
+   "candidateId": "lipstick"
+  },
+  {
+   "classIndex": 176,
+   "categoryId": "lobster",
+   "candidateId": "lobster"
+  },
+  {
+   "classIndex": 177,
+   "categoryId": "lollipop",
+   "candidateId": "lollipop"
+  },
+  {
+   "classIndex": 178,
+   "categoryId": "mailbox",
+   "candidateId": "mailbox"
+  },
+  {
+   "classIndex": 179,
+   "categoryId": "map",
+   "candidateId": "map"
+  },
+  {
+   "classIndex": 180,
+   "categoryId": "marker",
+   "candidateId": "marker"
+  },
+  {
+   "classIndex": 181,
+   "categoryId": "matches",
+   "candidateId": "matches"
+  },
+  {
+   "classIndex": 182,
+   "categoryId": "megaphone",
+   "candidateId": "megaphone"
+  },
+  {
+   "classIndex": 183,
+   "categoryId": "mermaid",
+   "candidateId": "mermaid"
+  },
+  {
+   "classIndex": 184,
+   "categoryId": "microphone",
+   "candidateId": "microphone"
+  },
+  {
+   "classIndex": 185,
+   "categoryId": "microwave",
+   "candidateId": "microwave"
+  },
+  {
+   "classIndex": 186,
+   "categoryId": "monkey",
+   "candidateId": "monkey"
+  },
+  {
+   "classIndex": 187,
+   "categoryId": "moon",
+   "candidateId": "moon"
+  },
+  {
+   "classIndex": 188,
+   "categoryId": "mosquito",
+   "candidateId": "mosquito"
+  },
+  {
+   "classIndex": 189,
+   "categoryId": "motorbike",
+   "candidateId": "motorbike"
+  },
+  {
+   "classIndex": 190,
+   "categoryId": "mountain",
+   "candidateId": "mountain"
+  },
+  {
+   "classIndex": 191,
+   "categoryId": "mouse",
+   "candidateId": "mouse"
+  },
+  {
+   "classIndex": 192,
+   "categoryId": "moustache",
+   "candidateId": "moustache"
+  },
+  {
+   "classIndex": 193,
+   "categoryId": "mouth",
+   "candidateId": "mouth"
+  },
+  {
+   "classIndex": 194,
+   "categoryId": "mug",
+   "candidateId": "cup"
+  },
+  {
+   "classIndex": 195,
+   "categoryId": "mushroom",
+   "candidateId": "mushroom"
+  },
+  {
+   "classIndex": 196,
+   "categoryId": "nail",
+   "candidateId": "nail"
+  },
+  {
+   "classIndex": 197,
+   "categoryId": "necklace",
+   "candidateId": "necklace"
+  },
+  {
+   "classIndex": 198,
+   "categoryId": "nose",
+   "candidateId": "nose"
+  },
+  {
+   "classIndex": 199,
+   "categoryId": "ocean",
+   "candidateId": "ocean"
+  },
+  {
+   "classIndex": 200,
+   "categoryId": "octagon",
+   "candidateId": "octagon"
+  },
+  {
+   "classIndex": 201,
+   "categoryId": "octopus",
+   "candidateId": "octopus"
+  },
+  {
+   "classIndex": 202,
+   "categoryId": "onion",
+   "candidateId": "onion"
+  },
+  {
+   "classIndex": 203,
+   "categoryId": "oven",
+   "candidateId": "oven"
+  },
+  {
+   "classIndex": 204,
+   "categoryId": "owl",
+   "candidateId": "owl"
+  },
+  {
+   "classIndex": 205,
+   "categoryId": "paintbrush",
+   "candidateId": "paintbrush"
+  },
+  {
+   "classIndex": 206,
+   "categoryId": "paint_can",
+   "candidateId": "paint_can"
+  },
+  {
+   "classIndex": 207,
+   "categoryId": "palm_tree",
+   "candidateId": "palm_tree"
+  },
+  {
+   "classIndex": 208,
+   "categoryId": "panda",
+   "candidateId": "panda"
+  },
+  {
+   "classIndex": 209,
+   "categoryId": "pants",
+   "candidateId": "pants"
+  },
+  {
+   "classIndex": 210,
+   "categoryId": "paper_clip",
+   "candidateId": "paper_clip"
+  },
+  {
+   "classIndex": 211,
+   "categoryId": "parachute",
+   "candidateId": "parachute"
+  },
+  {
+   "classIndex": 212,
+   "categoryId": "parrot",
+   "candidateId": "parrot"
+  },
+  {
+   "classIndex": 213,
+   "categoryId": "passport",
+   "candidateId": "passport"
+  },
+  {
+   "classIndex": 214,
+   "categoryId": "peanut",
+   "candidateId": "peanut"
+  },
+  {
+   "classIndex": 215,
+   "categoryId": "pear",
+   "candidateId": "pear"
+  },
+  {
+   "classIndex": 216,
+   "categoryId": "peas",
+   "candidateId": "peas"
+  },
+  {
+   "classIndex": 217,
+   "categoryId": "pencil",
+   "candidateId": "pencil"
+  },
+  {
+   "classIndex": 218,
+   "categoryId": "penguin",
+   "candidateId": "penguin"
+  },
+  {
+   "classIndex": 219,
+   "categoryId": "piano",
+   "candidateId": "piano"
+  },
+  {
+   "classIndex": 220,
+   "categoryId": "pickup_truck",
+   "candidateId": "truck"
+  },
+  {
+   "classIndex": 221,
+   "categoryId": "picture_frame",
+   "candidateId": "picture_frame"
+  },
+  {
+   "classIndex": 222,
+   "categoryId": "pig",
+   "candidateId": "pig"
+  },
+  {
+   "classIndex": 223,
+   "categoryId": "pillow",
+   "candidateId": "pillow"
+  },
+  {
+   "classIndex": 224,
+   "categoryId": "pineapple",
+   "candidateId": "pineapple"
+  },
+  {
+   "classIndex": 225,
+   "categoryId": "pizza",
+   "candidateId": "pizza"
+  },
+  {
+   "classIndex": 226,
+   "categoryId": "pliers",
+   "candidateId": "pliers"
+  },
+  {
+   "classIndex": 227,
+   "categoryId": "police_car",
+   "candidateId": "police_car"
+  },
+  {
+   "classIndex": 228,
+   "categoryId": "pond",
+   "candidateId": "pond"
+  },
+  {
+   "classIndex": 229,
+   "categoryId": "pool",
+   "candidateId": "pool"
+  },
+  {
+   "classIndex": 230,
+   "categoryId": "popsicle",
+   "candidateId": "popsicle"
+  },
+  {
+   "classIndex": 231,
+   "categoryId": "postcard",
+   "candidateId": "postcard"
+  },
+  {
+   "classIndex": 232,
+   "categoryId": "potato",
+   "candidateId": "potato"
+  },
+  {
+   "classIndex": 233,
+   "categoryId": "power_outlet",
+   "candidateId": "power_outlet"
+  },
+  {
+   "classIndex": 234,
+   "categoryId": "purse",
+   "candidateId": "purse"
+  },
+  {
+   "classIndex": 235,
+   "categoryId": "rabbit",
+   "candidateId": "rabbit"
+  },
+  {
+   "classIndex": 236,
+   "categoryId": "raccoon",
+   "candidateId": "raccoon"
+  },
+  {
+   "classIndex": 237,
+   "categoryId": "radio",
+   "candidateId": "radio"
+  },
+  {
+   "classIndex": 238,
+   "categoryId": "rain",
+   "candidateId": "rain"
+  },
+  {
+   "classIndex": 239,
+   "categoryId": "rainbow",
+   "candidateId": "rainbow"
+  },
+  {
+   "classIndex": 240,
+   "categoryId": "rake",
+   "candidateId": "rake"
+  },
+  {
+   "classIndex": 241,
+   "categoryId": "remote_control",
+   "candidateId": "remote_control"
+  },
+  {
+   "classIndex": 242,
+   "categoryId": "rhinoceros",
+   "candidateId": "rhinoceros"
+  },
+  {
+   "classIndex": 243,
+   "categoryId": "rifle",
+   "candidateId": "rifle"
+  },
+  {
+   "classIndex": 244,
+   "categoryId": "river",
+   "candidateId": "river"
+  },
+  {
+   "classIndex": 245,
+   "categoryId": "roller_coaster",
+   "candidateId": "roller_coaster"
+  },
+  {
+   "classIndex": 246,
+   "categoryId": "rollerskates",
+   "candidateId": "rollerskates"
+  },
+  {
+   "classIndex": 247,
+   "categoryId": "sailboat",
+   "candidateId": "sailboat"
+  },
+  {
+   "classIndex": 248,
+   "categoryId": "sandwich",
+   "candidateId": "sandwich"
+  },
+  {
+   "classIndex": 249,
+   "categoryId": "saw",
+   "candidateId": "saw"
+  },
+  {
+   "classIndex": 250,
+   "categoryId": "saxophone",
+   "candidateId": "saxophone"
+  },
+  {
+   "classIndex": 251,
+   "categoryId": "school_bus",
+   "candidateId": "bus"
+  },
+  {
+   "classIndex": 252,
+   "categoryId": "scissors",
+   "candidateId": "scissors"
+  },
+  {
+   "classIndex": 253,
+   "categoryId": "scorpion",
+   "candidateId": "scorpion"
+  },
+  {
+   "classIndex": 254,
+   "categoryId": "screwdriver",
+   "candidateId": "screwdriver"
+  },
+  {
+   "classIndex": 255,
+   "categoryId": "sea_turtle",
+   "candidateId": "sea_turtle"
+  },
+  {
+   "classIndex": 256,
+   "categoryId": "see_saw",
+   "candidateId": "see_saw"
+  },
+  {
+   "classIndex": 257,
+   "categoryId": "shark",
+   "candidateId": "shark"
+  },
+  {
+   "classIndex": 258,
+   "categoryId": "sheep",
+   "candidateId": "sheep"
+  },
+  {
+   "classIndex": 259,
+   "categoryId": "shoe",
+   "candidateId": "shoe"
+  },
+  {
+   "classIndex": 260,
+   "categoryId": "shorts",
+   "candidateId": "shorts"
+  },
+  {
+   "classIndex": 261,
+   "categoryId": "shovel",
+   "candidateId": "shovel"
+  },
+  {
+   "classIndex": 262,
+   "categoryId": "sink",
+   "candidateId": "sink"
+  },
+  {
+   "classIndex": 263,
+   "categoryId": "skateboard",
+   "candidateId": "skateboard"
+  },
+  {
+   "classIndex": 264,
+   "categoryId": "skull",
+   "candidateId": "skull"
+  },
+  {
+   "classIndex": 265,
+   "categoryId": "skyscraper",
+   "candidateId": "skyscraper"
+  },
+  {
+   "classIndex": 266,
+   "categoryId": "sleeping_bag",
+   "candidateId": "sleeping_bag"
+  },
+  {
+   "classIndex": 267,
+   "categoryId": "smiley_face",
+   "candidateId": "smiley_face"
+  },
+  {
+   "classIndex": 268,
+   "categoryId": "snail",
+   "candidateId": "snail"
+  },
+  {
+   "classIndex": 269,
+   "categoryId": "snake",
+   "candidateId": "snake"
+  },
+  {
+   "classIndex": 270,
+   "categoryId": "snorkel",
+   "candidateId": "snorkel"
+  },
+  {
+   "classIndex": 271,
+   "categoryId": "snowflake",
+   "candidateId": "snowflake"
+  },
+  {
+   "classIndex": 272,
+   "categoryId": "snowman",
+   "candidateId": "snowman"
+  },
+  {
+   "classIndex": 273,
+   "categoryId": "soccer_ball",
+   "candidateId": "soccer_ball"
+  },
+  {
+   "classIndex": 274,
+   "categoryId": "sock",
+   "candidateId": "sock"
+  },
+  {
+   "classIndex": 275,
+   "categoryId": "speedboat",
+   "candidateId": "speedboat"
+  },
+  {
+   "classIndex": 276,
+   "categoryId": "spider",
+   "candidateId": "spider"
+  },
+  {
+   "classIndex": 277,
+   "categoryId": "spoon",
+   "candidateId": "spoon"
+  },
+  {
+   "classIndex": 278,
+   "categoryId": "spreadsheet",
+   "candidateId": "spreadsheet"
+  },
+  {
+   "classIndex": 279,
+   "categoryId": "square",
+   "candidateId": "square"
+  },
+  {
+   "classIndex": 280,
+   "categoryId": "squiggle",
+   "candidateId": "squiggle"
+  },
+  {
+   "classIndex": 281,
+   "categoryId": "squirrel",
+   "candidateId": "squirrel"
+  },
+  {
+   "classIndex": 282,
+   "categoryId": "stairs",
+   "candidateId": "stairs"
+  },
+  {
+   "classIndex": 283,
+   "categoryId": "star",
+   "candidateId": "star"
+  },
+  {
+   "classIndex": 284,
+   "categoryId": "steak",
+   "candidateId": "steak"
+  },
+  {
+   "classIndex": 285,
+   "categoryId": "stereo",
+   "candidateId": "stereo"
+  },
+  {
+   "classIndex": 286,
+   "categoryId": "stethoscope",
+   "candidateId": "stethoscope"
+  },
+  {
+   "classIndex": 287,
+   "categoryId": "stitches",
+   "candidateId": "stitches"
+  },
+  {
+   "classIndex": 288,
+   "categoryId": "stop_sign",
+   "candidateId": "stop_sign"
+  },
+  {
+   "classIndex": 289,
+   "categoryId": "stove",
+   "candidateId": "stove"
+  },
+  {
+   "classIndex": 290,
+   "categoryId": "strawberry",
+   "candidateId": "strawberry"
+  },
+  {
+   "classIndex": 291,
+   "categoryId": "streetlight",
+   "candidateId": "streetlight"
+  },
+  {
+   "classIndex": 292,
+   "categoryId": "string_bean",
+   "candidateId": "string_bean"
+  },
+  {
+   "classIndex": 293,
+   "categoryId": "submarine",
+   "candidateId": "submarine"
+  },
+  {
+   "classIndex": 294,
+   "categoryId": "suitcase",
+   "candidateId": "suitcase"
+  },
+  {
+   "classIndex": 295,
+   "categoryId": "sun",
+   "candidateId": "sun"
+  },
+  {
+   "classIndex": 296,
+   "categoryId": "swan",
+   "candidateId": "swan"
+  },
+  {
+   "classIndex": 297,
+   "categoryId": "sweater",
+   "candidateId": "sweater"
+  },
+  {
+   "classIndex": 298,
+   "categoryId": "swing_set",
+   "candidateId": "swing_set"
+  },
+  {
+   "classIndex": 299,
+   "categoryId": "sword",
+   "candidateId": "sword"
+  },
+  {
+   "classIndex": 300,
+   "categoryId": "syringe",
+   "candidateId": "syringe"
+  },
+  {
+   "classIndex": 301,
+   "categoryId": "table",
+   "candidateId": "table"
+  },
+  {
+   "classIndex": 302,
+   "categoryId": "teapot",
+   "candidateId": "teapot"
+  },
+  {
+   "classIndex": 303,
+   "categoryId": "teddy-bear",
+   "candidateId": "teddy-bear"
+  },
+  {
+   "classIndex": 304,
+   "categoryId": "telephone",
+   "candidateId": "telephone"
+  },
+  {
+   "classIndex": 305,
+   "categoryId": "television",
+   "candidateId": "television"
+  },
+  {
+   "classIndex": 306,
+   "categoryId": "tennis_racquet",
+   "candidateId": "tennis_racquet"
+  },
+  {
+   "classIndex": 307,
+   "categoryId": "tent",
+   "candidateId": "tent"
+  },
+  {
+   "classIndex": 308,
+   "categoryId": "the_eiffel_tower",
+   "candidateId": "the_eiffel_tower"
+  },
+  {
+   "classIndex": 309,
+   "categoryId": "the_great_wall_of_china",
+   "candidateId": "the_great_wall_of_china"
+  },
+  {
+   "classIndex": 310,
+   "categoryId": "the_mona_lisa",
+   "candidateId": "the_mona_lisa"
+  },
+  {
+   "classIndex": 311,
+   "categoryId": "tiger",
+   "candidateId": "tiger"
+  },
+  {
+   "classIndex": 312,
+   "categoryId": "toaster",
+   "candidateId": "toaster"
+  },
+  {
+   "classIndex": 313,
+   "categoryId": "toe",
+   "candidateId": "foot"
+  },
+  {
+   "classIndex": 314,
+   "categoryId": "toilet",
+   "candidateId": "toilet"
+  },
+  {
+   "classIndex": 315,
+   "categoryId": "tooth",
+   "candidateId": "tooth"
+  },
+  {
+   "classIndex": 316,
+   "categoryId": "toothbrush",
+   "candidateId": "toothbrush"
+  },
+  {
+   "classIndex": 317,
+   "categoryId": "toothpaste",
+   "candidateId": "toothpaste"
+  },
+  {
+   "classIndex": 318,
+   "categoryId": "tornado",
+   "candidateId": "tornado"
+  },
+  {
+   "classIndex": 319,
+   "categoryId": "tractor",
+   "candidateId": "tractor"
+  },
+  {
+   "classIndex": 320,
+   "categoryId": "traffic_light",
+   "candidateId": "traffic_light"
+  },
+  {
+   "classIndex": 321,
+   "categoryId": "train",
+   "candidateId": "train"
+  },
+  {
+   "classIndex": 322,
+   "categoryId": "tree",
+   "candidateId": "tree"
+  },
+  {
+   "classIndex": 323,
+   "categoryId": "triangle",
+   "candidateId": "triangle"
+  },
+  {
+   "classIndex": 324,
+   "categoryId": "trombone",
+   "candidateId": "trombone"
+  },
+  {
+   "classIndex": 325,
+   "categoryId": "truck",
+   "candidateId": "truck"
+  },
+  {
+   "classIndex": 326,
+   "categoryId": "trumpet",
+   "candidateId": "trumpet"
+  },
+  {
+   "classIndex": 327,
+   "categoryId": "t-shirt",
+   "candidateId": "t-shirt"
+  },
+  {
+   "classIndex": 328,
+   "categoryId": "umbrella",
+   "candidateId": "umbrella"
+  },
+  {
+   "classIndex": 329,
+   "categoryId": "underwear",
+   "candidateId": "underwear"
+  },
+  {
+   "classIndex": 330,
+   "categoryId": "van",
+   "candidateId": "van"
+  },
+  {
+   "classIndex": 331,
+   "categoryId": "vase",
+   "candidateId": "vase"
+  },
+  {
+   "classIndex": 332,
+   "categoryId": "violin",
+   "candidateId": "violin"
+  },
+  {
+   "classIndex": 333,
+   "categoryId": "washing_machine",
+   "candidateId": "washing_machine"
+  },
+  {
+   "classIndex": 334,
+   "categoryId": "watermelon",
+   "candidateId": "watermelon"
+  },
+  {
+   "classIndex": 335,
+   "categoryId": "waterslide",
+   "candidateId": "waterslide"
+  },
+  {
+   "classIndex": 336,
+   "categoryId": "whale",
+   "candidateId": "whale"
+  },
+  {
+   "classIndex": 337,
+   "categoryId": "wheel",
+   "candidateId": "wheel"
+  },
+  {
+   "classIndex": 338,
+   "categoryId": "windmill",
+   "candidateId": "windmill"
+  },
+  {
+   "classIndex": 339,
+   "categoryId": "wine_bottle",
+   "candidateId": "wine_bottle"
+  },
+  {
+   "classIndex": 340,
+   "categoryId": "wine_glass",
+   "candidateId": "wine_glass"
+  },
+  {
+   "classIndex": 341,
+   "categoryId": "wristwatch",
+   "candidateId": "wristwatch"
+  },
+  {
+   "classIndex": 342,
+   "categoryId": "yoga",
+   "candidateId": "yoga"
+  },
+  {
+   "classIndex": 343,
+   "categoryId": "zebra",
+   "candidateId": "zebra"
+  },
+  {
+   "classIndex": 344,
+   "categoryId": "zigzag",
+   "candidateId": "zigzag"
+  }
+ ],
+ "rawClassesSha256": "ad5bf0ea0d3ffcf218a6a442dde903478a3349eca7f1a0af629d4484be8c9859",
+ "candidates": [
+  {
+   "categoryId": "aircraft_carrier",
+   "candidateIndex": 0,
+   "displayNameKo": "항공모함"
+  },
+  {
+   "categoryId": "airplane",
+   "candidateIndex": 1,
+   "displayNameKo": "비행기"
+  },
+  {
+   "categoryId": "clock",
+   "candidateIndex": 2,
+   "displayNameKo": "시계"
+  },
+  {
+   "categoryId": "ambulance",
+   "candidateIndex": 3,
+   "displayNameKo": "구급차"
+  },
+  {
+   "categoryId": "angel",
+   "candidateIndex": 4,
+   "displayNameKo": "천사"
+  },
+  {
+   "categoryId": "animal_migration",
+   "candidateIndex": 5,
+   "displayNameKo": "동물의 이동"
+  },
+  {
+   "categoryId": "ant",
+   "candidateIndex": 6,
+   "displayNameKo": "개미"
+  },
+  {
+   "categoryId": "anvil",
+   "candidateIndex": 7,
+   "displayNameKo": "모루"
+  },
+  {
+   "categoryId": "apple",
+   "candidateIndex": 8,
+   "displayNameKo": "사과"
+  },
+  {
+   "categoryId": "arm",
+   "candidateIndex": 9,
+   "displayNameKo": "팔"
+  },
+  {
+   "categoryId": "asparagus",
+   "candidateIndex": 10,
+   "displayNameKo": "아스파라거스"
+  },
+  {
+   "categoryId": "axe",
+   "candidateIndex": 11,
+   "displayNameKo": "도끼"
+  },
+  {
+   "categoryId": "backpack",
+   "candidateIndex": 12,
+   "displayNameKo": "배낭"
+  },
+  {
+   "categoryId": "banana",
+   "candidateIndex": 13,
+   "displayNameKo": "바나나"
+  },
+  {
+   "categoryId": "bandage",
+   "candidateIndex": 14,
+   "displayNameKo": "붕대"
+  },
+  {
+   "categoryId": "barn",
+   "candidateIndex": 15,
+   "displayNameKo": "헛간"
+  },
+  {
+   "categoryId": "baseball",
+   "candidateIndex": 16,
+   "displayNameKo": "야구공"
+  },
+  {
+   "categoryId": "baseball_bat",
+   "candidateIndex": 17,
+   "displayNameKo": "야구 방망이"
+  },
+  {
+   "categoryId": "basket",
+   "candidateIndex": 18,
+   "displayNameKo": "바구니"
+  },
+  {
+   "categoryId": "basketball",
+   "candidateIndex": 19,
+   "displayNameKo": "농구공"
+  },
+  {
+   "categoryId": "bat",
+   "candidateIndex": 20,
+   "displayNameKo": "박쥐"
+  },
+  {
+   "categoryId": "bathtub",
+   "candidateIndex": 21,
+   "displayNameKo": "욕조"
+  },
+  {
+   "categoryId": "beach",
+   "candidateIndex": 22,
+   "displayNameKo": "해변"
+  },
+  {
+   "categoryId": "bear",
+   "candidateIndex": 23,
+   "displayNameKo": "곰"
+  },
+  {
+   "categoryId": "beard",
+   "candidateIndex": 24,
+   "displayNameKo": "수염"
+  },
+  {
+   "categoryId": "bed",
+   "candidateIndex": 25,
+   "displayNameKo": "침대"
+  },
+  {
+   "categoryId": "bee",
+   "candidateIndex": 26,
+   "displayNameKo": "벌"
+  },
+  {
+   "categoryId": "belt",
+   "candidateIndex": 27,
+   "displayNameKo": "허리띠"
+  },
+  {
+   "categoryId": "bench",
+   "candidateIndex": 28,
+   "displayNameKo": "벤치"
+  },
+  {
+   "categoryId": "bicycle",
+   "candidateIndex": 29,
+   "displayNameKo": "자전거"
+  },
+  {
+   "categoryId": "binoculars",
+   "candidateIndex": 30,
+   "displayNameKo": "쌍안경"
+  },
+  {
+   "categoryId": "bird",
+   "candidateIndex": 31,
+   "displayNameKo": "새"
+  },
+  {
+   "categoryId": "cake",
+   "candidateIndex": 32,
+   "displayNameKo": "케이크"
+  },
+  {
+   "categoryId": "blackberry",
+   "candidateIndex": 33,
+   "displayNameKo": "블랙베리"
+  },
+  {
+   "categoryId": "blueberry",
+   "candidateIndex": 34,
+   "displayNameKo": "블루베리"
+  },
+  {
+   "categoryId": "book",
+   "candidateIndex": 35,
+   "displayNameKo": "책"
+  },
+  {
+   "categoryId": "boomerang",
+   "candidateIndex": 36,
+   "displayNameKo": "부메랑"
+  },
+  {
+   "categoryId": "bottlecap",
+   "candidateIndex": 37,
+   "displayNameKo": "병뚜껑"
+  },
+  {
+   "categoryId": "bowtie",
+   "candidateIndex": 38,
+   "displayNameKo": "나비넥타이"
+  },
+  {
+   "categoryId": "bracelet",
+   "candidateIndex": 39,
+   "displayNameKo": "팔찌"
+  },
+  {
+   "categoryId": "brain",
+   "candidateIndex": 40,
+   "displayNameKo": "뇌"
+  },
+  {
+   "categoryId": "bread",
+   "candidateIndex": 41,
+   "displayNameKo": "빵"
+  },
+  {
+   "categoryId": "bridge",
+   "candidateIndex": 42,
+   "displayNameKo": "다리(교량)"
+  },
+  {
+   "categoryId": "broccoli",
+   "candidateIndex": 43,
+   "displayNameKo": "브로콜리"
+  },
+  {
+   "categoryId": "broom",
+   "candidateIndex": 44,
+   "displayNameKo": "빗자루"
+  },
+  {
+   "categoryId": "bucket",
+   "candidateIndex": 45,
+   "displayNameKo": "양동이"
+  },
+  {
+   "categoryId": "bulldozer",
+   "candidateIndex": 46,
+   "displayNameKo": "불도저"
+  },
+  {
+   "categoryId": "bus",
+   "candidateIndex": 47,
+   "displayNameKo": "버스"
+  },
+  {
+   "categoryId": "bush",
+   "candidateIndex": 48,
+   "displayNameKo": "덤불"
+  },
+  {
+   "categoryId": "butterfly",
+   "candidateIndex": 49,
+   "displayNameKo": "나비"
+  },
+  {
+   "categoryId": "cactus",
+   "candidateIndex": 50,
+   "displayNameKo": "선인장"
+  },
+  {
+   "categoryId": "calculator",
+   "candidateIndex": 52,
+   "displayNameKo": "계산기"
+  },
+  {
+   "categoryId": "calendar",
+   "candidateIndex": 53,
+   "displayNameKo": "달력"
+  },
+  {
+   "categoryId": "camel",
+   "candidateIndex": 54,
+   "displayNameKo": "낙타"
+  },
+  {
+   "categoryId": "camera",
+   "candidateIndex": 55,
+   "displayNameKo": "카메라"
+  },
+  {
+   "categoryId": "camouflage",
+   "candidateIndex": 56,
+   "displayNameKo": "위장"
+  },
+  {
+   "categoryId": "campfire",
+   "candidateIndex": 57,
+   "displayNameKo": "모닥불"
+  },
+  {
+   "categoryId": "candle",
+   "candidateIndex": 58,
+   "displayNameKo": "양초"
+  },
+  {
+   "categoryId": "cannon",
+   "candidateIndex": 59,
+   "displayNameKo": "대포"
+  },
+  {
+   "categoryId": "canoe",
+   "candidateIndex": 60,
+   "displayNameKo": "카누"
+  },
+  {
+   "categoryId": "car",
+   "candidateIndex": 61,
+   "displayNameKo": "자동차"
+  },
+  {
+   "categoryId": "carrot",
+   "candidateIndex": 62,
+   "displayNameKo": "당근"
+  },
+  {
+   "categoryId": "castle",
+   "candidateIndex": 63,
+   "displayNameKo": "성"
+  },
+  {
+   "categoryId": "cat",
+   "candidateIndex": 64,
+   "displayNameKo": "고양이"
+  },
+  {
+   "categoryId": "ceiling_fan",
+   "candidateIndex": 65,
+   "displayNameKo": "천장 선풍기"
+  },
+  {
+   "categoryId": "cello",
+   "candidateIndex": 66,
+   "displayNameKo": "첼로"
+  },
+  {
+   "categoryId": "cell_phone",
+   "candidateIndex": 67,
+   "displayNameKo": "휴대전화"
+  },
+  {
+   "categoryId": "chair",
+   "candidateIndex": 68,
+   "displayNameKo": "의자"
+  },
+  {
+   "categoryId": "chandelier",
+   "candidateIndex": 69,
+   "displayNameKo": "샹들리에"
+  },
+  {
+   "categoryId": "church",
+   "candidateIndex": 70,
+   "displayNameKo": "교회"
+  },
+  {
+   "categoryId": "circle",
+   "candidateIndex": 71,
+   "displayNameKo": "원"
+  },
+  {
+   "categoryId": "clarinet",
+   "candidateIndex": 72,
+   "displayNameKo": "클라리넷"
+  },
+  {
+   "categoryId": "cloud",
+   "candidateIndex": 74,
+   "displayNameKo": "구름"
+  },
+  {
+   "categoryId": "cup",
+   "candidateIndex": 75,
+   "displayNameKo": "컵"
+  },
+  {
+   "categoryId": "compass",
+   "candidateIndex": 76,
+   "displayNameKo": "나침반"
+  },
+  {
+   "categoryId": "computer",
+   "candidateIndex": 77,
+   "displayNameKo": "컴퓨터"
+  },
+  {
+   "categoryId": "cookie",
+   "candidateIndex": 78,
+   "displayNameKo": "쿠키"
+  },
+  {
+   "categoryId": "cooler",
+   "candidateIndex": 79,
+   "displayNameKo": "아이스박스"
+  },
+  {
+   "categoryId": "couch",
+   "candidateIndex": 80,
+   "displayNameKo": "소파"
+  },
+  {
+   "categoryId": "cow",
+   "candidateIndex": 81,
+   "displayNameKo": "소"
+  },
+  {
+   "categoryId": "crab",
+   "candidateIndex": 82,
+   "displayNameKo": "게"
+  },
+  {
+   "categoryId": "crayon",
+   "candidateIndex": 83,
+   "displayNameKo": "크레용"
+  },
+  {
+   "categoryId": "crocodile",
+   "candidateIndex": 84,
+   "displayNameKo": "악어"
+  },
+  {
+   "categoryId": "crown",
+   "candidateIndex": 85,
+   "displayNameKo": "왕관"
+  },
+  {
+   "categoryId": "cruise_ship",
+   "candidateIndex": 86,
+   "displayNameKo": "크루즈선"
+  },
+  {
+   "categoryId": "diamond",
+   "candidateIndex": 88,
+   "displayNameKo": "다이아몬드"
+  },
+  {
+   "categoryId": "dishwasher",
+   "candidateIndex": 89,
+   "displayNameKo": "식기세척기"
+  },
+  {
+   "categoryId": "diving_board",
+   "candidateIndex": 90,
+   "displayNameKo": "다이빙대"
+  },
+  {
+   "categoryId": "dog",
+   "candidateIndex": 91,
+   "displayNameKo": "개"
+  },
+  {
+   "categoryId": "dolphin",
+   "candidateIndex": 92,
+   "displayNameKo": "돌고래"
+  },
+  {
+   "categoryId": "donut",
+   "candidateIndex": 93,
+   "displayNameKo": "도넛"
+  },
+  {
+   "categoryId": "door",
+   "candidateIndex": 94,
+   "displayNameKo": "문"
+  },
+  {
+   "categoryId": "dragon",
+   "candidateIndex": 95,
+   "displayNameKo": "드래곤"
+  },
+  {
+   "categoryId": "dresser",
+   "candidateIndex": 96,
+   "displayNameKo": "서랍장"
+  },
+  {
+   "categoryId": "drill",
+   "candidateIndex": 97,
+   "displayNameKo": "드릴"
+  },
+  {
+   "categoryId": "drums",
+   "candidateIndex": 98,
+   "displayNameKo": "드럼"
+  },
+  {
+   "categoryId": "duck",
+   "candidateIndex": 99,
+   "displayNameKo": "오리"
+  },
+  {
+   "categoryId": "dumbbell",
+   "candidateIndex": 100,
+   "displayNameKo": "아령"
+  },
+  {
+   "categoryId": "ear",
+   "candidateIndex": 101,
+   "displayNameKo": "귀"
+  },
+  {
+   "categoryId": "elephant",
+   "candidateIndex": 103,
+   "displayNameKo": "코끼리"
+  },
+  {
+   "categoryId": "envelope",
+   "candidateIndex": 104,
+   "displayNameKo": "봉투"
+  },
+  {
+   "categoryId": "eraser",
+   "candidateIndex": 105,
+   "displayNameKo": "지우개"
+  },
+  {
+   "categoryId": "eye",
+   "candidateIndex": 106,
+   "displayNameKo": "눈"
+  },
+  {
+   "categoryId": "eyeglasses",
+   "candidateIndex": 107,
+   "displayNameKo": "안경"
+  },
+  {
+   "categoryId": "face",
+   "candidateIndex": 108,
+   "displayNameKo": "얼굴"
+  },
+  {
+   "categoryId": "fan",
+   "candidateIndex": 109,
+   "displayNameKo": "선풍기"
+  },
+  {
+   "categoryId": "feather",
+   "candidateIndex": 110,
+   "displayNameKo": "깃털"
+  },
+  {
+   "categoryId": "fence",
+   "candidateIndex": 111,
+   "displayNameKo": "울타리"
+  },
+  {
+   "categoryId": "finger",
+   "candidateIndex": 112,
+   "displayNameKo": "손가락"
+  },
+  {
+   "categoryId": "fire_hydrant",
+   "candidateIndex": 113,
+   "displayNameKo": "소화전"
+  },
+  {
+   "categoryId": "fireplace",
+   "candidateIndex": 114,
+   "displayNameKo": "벽난로"
+  },
+  {
+   "categoryId": "firetruck",
+   "candidateIndex": 115,
+   "displayNameKo": "소방차"
+  },
+  {
+   "categoryId": "fish",
+   "candidateIndex": 116,
+   "displayNameKo": "물고기"
+  },
+  {
+   "categoryId": "flamingo",
+   "candidateIndex": 117,
+   "displayNameKo": "플라밍고"
+  },
+  {
+   "categoryId": "flashlight",
+   "candidateIndex": 118,
+   "displayNameKo": "손전등"
+  },
+  {
+   "categoryId": "flip_flops",
+   "candidateIndex": 119,
+   "displayNameKo": "쪼리"
+  },
+  {
+   "categoryId": "floor_lamp",
+   "candidateIndex": 120,
+   "displayNameKo": "플로어 램프"
+  },
+  {
+   "categoryId": "flower",
+   "candidateIndex": 121,
+   "displayNameKo": "꽃"
+  },
+  {
+   "categoryId": "flying_saucer",
+   "candidateIndex": 122,
+   "displayNameKo": "비행접시"
+  },
+  {
+   "categoryId": "foot",
+   "candidateIndex": 123,
+   "displayNameKo": "발"
+  },
+  {
+   "categoryId": "fork",
+   "candidateIndex": 124,
+   "displayNameKo": "포크"
+  },
+  {
+   "categoryId": "frog",
+   "candidateIndex": 125,
+   "displayNameKo": "개구리"
+  },
+  {
+   "categoryId": "frying_pan",
+   "candidateIndex": 126,
+   "displayNameKo": "프라이팬"
+  },
+  {
+   "categoryId": "garden",
+   "candidateIndex": 127,
+   "displayNameKo": "정원"
+  },
+  {
+   "categoryId": "garden_hose",
+   "candidateIndex": 128,
+   "displayNameKo": "정원 호스"
+  },
+  {
+   "categoryId": "giraffe",
+   "candidateIndex": 129,
+   "displayNameKo": "기린"
+  },
+  {
+   "categoryId": "golf_club",
+   "candidateIndex": 131,
+   "displayNameKo": "골프채"
+  },
+  {
+   "categoryId": "grapes",
+   "candidateIndex": 132,
+   "displayNameKo": "포도"
+  },
+  {
+   "categoryId": "grass",
+   "candidateIndex": 133,
+   "displayNameKo": "풀"
+  },
+  {
+   "categoryId": "guitar",
+   "candidateIndex": 134,
+   "displayNameKo": "기타"
+  },
+  {
+   "categoryId": "hamburger",
+   "candidateIndex": 135,
+   "displayNameKo": "햄버거"
+  },
+  {
+   "categoryId": "hammer",
+   "candidateIndex": 136,
+   "displayNameKo": "망치"
+  },
+  {
+   "categoryId": "hand",
+   "candidateIndex": 137,
+   "displayNameKo": "손"
+  },
+  {
+   "categoryId": "harp",
+   "candidateIndex": 138,
+   "displayNameKo": "하프"
+  },
+  {
+   "categoryId": "hat",
+   "candidateIndex": 139,
+   "displayNameKo": "모자"
+  },
+  {
+   "categoryId": "headphones",
+   "candidateIndex": 140,
+   "displayNameKo": "헤드폰"
+  },
+  {
+   "categoryId": "hedgehog",
+   "candidateIndex": 141,
+   "displayNameKo": "고슴도치"
+  },
+  {
+   "categoryId": "helicopter",
+   "candidateIndex": 142,
+   "displayNameKo": "헬리콥터"
+  },
+  {
+   "categoryId": "helmet",
+   "candidateIndex": 143,
+   "displayNameKo": "헬멧"
+  },
+  {
+   "categoryId": "hexagon",
+   "candidateIndex": 144,
+   "displayNameKo": "육각형"
+  },
+  {
+   "categoryId": "hockey_puck",
+   "candidateIndex": 145,
+   "displayNameKo": "하키 퍽"
+  },
+  {
+   "categoryId": "hockey_stick",
+   "candidateIndex": 146,
+   "displayNameKo": "하키 스틱"
+  },
+  {
+   "categoryId": "horse",
+   "candidateIndex": 147,
+   "displayNameKo": "말"
+  },
+  {
+   "categoryId": "hospital",
+   "candidateIndex": 148,
+   "displayNameKo": "병원"
+  },
+  {
+   "categoryId": "hot_air_balloon",
+   "candidateIndex": 149,
+   "displayNameKo": "열기구"
+  },
+  {
+   "categoryId": "hot_dog",
+   "candidateIndex": 150,
+   "displayNameKo": "핫도그"
+  },
+  {
+   "categoryId": "hot_tub",
+   "candidateIndex": 151,
+   "displayNameKo": "온수 욕조"
+  },
+  {
+   "categoryId": "hourglass",
+   "candidateIndex": 152,
+   "displayNameKo": "모래시계"
+  },
+  {
+   "categoryId": "house",
+   "candidateIndex": 153,
+   "displayNameKo": "집"
+  },
+  {
+   "categoryId": "house_plant",
+   "candidateIndex": 154,
+   "displayNameKo": "화분 식물"
+  },
+  {
+   "categoryId": "hurricane",
+   "candidateIndex": 155,
+   "displayNameKo": "허리케인"
+  },
+  {
+   "categoryId": "ice_cream",
+   "candidateIndex": 156,
+   "displayNameKo": "아이스크림"
+  },
+  {
+   "categoryId": "jacket",
+   "candidateIndex": 157,
+   "displayNameKo": "재킷"
+  },
+  {
+   "categoryId": "jail",
+   "candidateIndex": 158,
+   "displayNameKo": "감옥"
+  },
+  {
+   "categoryId": "kangaroo",
+   "candidateIndex": 159,
+   "displayNameKo": "캥거루"
+  },
+  {
+   "categoryId": "key",
+   "candidateIndex": 160,
+   "displayNameKo": "열쇠"
+  },
+  {
+   "categoryId": "keyboard",
+   "candidateIndex": 161,
+   "displayNameKo": "키보드"
+  },
+  {
+   "categoryId": "leg",
+   "candidateIndex": 162,
+   "displayNameKo": "다리"
+  },
+  {
+   "categoryId": "knife",
+   "candidateIndex": 163,
+   "displayNameKo": "칼"
+  },
+  {
+   "categoryId": "ladder",
+   "candidateIndex": 164,
+   "displayNameKo": "사다리"
+  },
+  {
+   "categoryId": "lantern",
+   "candidateIndex": 165,
+   "displayNameKo": "랜턴"
+  },
+  {
+   "categoryId": "laptop",
+   "candidateIndex": 166,
+   "displayNameKo": "노트북"
+  },
+  {
+   "categoryId": "leaf",
+   "candidateIndex": 167,
+   "displayNameKo": "나뭇잎"
+  },
+  {
+   "categoryId": "light_bulb",
+   "candidateIndex": 169,
+   "displayNameKo": "전구"
+  },
+  {
+   "categoryId": "lighter",
+   "candidateIndex": 170,
+   "displayNameKo": "라이터"
+  },
+  {
+   "categoryId": "lighthouse",
+   "candidateIndex": 171,
+   "displayNameKo": "등대"
+  },
+  {
+   "categoryId": "lightning",
+   "candidateIndex": 172,
+   "displayNameKo": "번개"
+  },
+  {
+   "categoryId": "line",
+   "candidateIndex": 173,
+   "displayNameKo": "직선"
+  },
+  {
+   "categoryId": "lion",
+   "candidateIndex": 174,
+   "displayNameKo": "사자"
+  },
+  {
+   "categoryId": "lipstick",
+   "candidateIndex": 175,
+   "displayNameKo": "립스틱"
+  },
+  {
+   "categoryId": "lobster",
+   "candidateIndex": 176,
+   "displayNameKo": "바닷가재"
+  },
+  {
+   "categoryId": "lollipop",
+   "candidateIndex": 177,
+   "displayNameKo": "막대사탕"
+  },
+  {
+   "categoryId": "mailbox",
+   "candidateIndex": 178,
+   "displayNameKo": "우편함"
+  },
+  {
+   "categoryId": "map",
+   "candidateIndex": 179,
+   "displayNameKo": "지도"
+  },
+  {
+   "categoryId": "marker",
+   "candidateIndex": 180,
+   "displayNameKo": "마커펜"
+  },
+  {
+   "categoryId": "matches",
+   "candidateIndex": 181,
+   "displayNameKo": "성냥"
+  },
+  {
+   "categoryId": "megaphone",
+   "candidateIndex": 182,
+   "displayNameKo": "확성기"
+  },
+  {
+   "categoryId": "mermaid",
+   "candidateIndex": 183,
+   "displayNameKo": "인어"
+  },
+  {
+   "categoryId": "microphone",
+   "candidateIndex": 184,
+   "displayNameKo": "마이크"
+  },
+  {
+   "categoryId": "microwave",
+   "candidateIndex": 185,
+   "displayNameKo": "전자레인지"
+  },
+  {
+   "categoryId": "monkey",
+   "candidateIndex": 186,
+   "displayNameKo": "원숭이"
+  },
+  {
+   "categoryId": "moon",
+   "candidateIndex": 187,
+   "displayNameKo": "달"
+  },
+  {
+   "categoryId": "mosquito",
+   "candidateIndex": 188,
+   "displayNameKo": "모기"
+  },
+  {
+   "categoryId": "motorbike",
+   "candidateIndex": 189,
+   "displayNameKo": "오토바이"
+  },
+  {
+   "categoryId": "mountain",
+   "candidateIndex": 190,
+   "displayNameKo": "산"
+  },
+  {
+   "categoryId": "mouse",
+   "candidateIndex": 191,
+   "displayNameKo": "쥐"
+  },
+  {
+   "categoryId": "moustache",
+   "candidateIndex": 192,
+   "displayNameKo": "콧수염"
+  },
+  {
+   "categoryId": "mouth",
+   "candidateIndex": 193,
+   "displayNameKo": "입"
+  },
+  {
+   "categoryId": "mushroom",
+   "candidateIndex": 195,
+   "displayNameKo": "버섯"
+  },
+  {
+   "categoryId": "nail",
+   "candidateIndex": 196,
+   "displayNameKo": "못"
+  },
+  {
+   "categoryId": "necklace",
+   "candidateIndex": 197,
+   "displayNameKo": "목걸이"
+  },
+  {
+   "categoryId": "nose",
+   "candidateIndex": 198,
+   "displayNameKo": "코"
+  },
+  {
+   "categoryId": "ocean",
+   "candidateIndex": 199,
+   "displayNameKo": "바다"
+  },
+  {
+   "categoryId": "octagon",
+   "candidateIndex": 200,
+   "displayNameKo": "팔각형"
+  },
+  {
+   "categoryId": "octopus",
+   "candidateIndex": 201,
+   "displayNameKo": "문어"
+  },
+  {
+   "categoryId": "onion",
+   "candidateIndex": 202,
+   "displayNameKo": "양파"
+  },
+  {
+   "categoryId": "oven",
+   "candidateIndex": 203,
+   "displayNameKo": "오븐"
+  },
+  {
+   "categoryId": "owl",
+   "candidateIndex": 204,
+   "displayNameKo": "올빼미"
+  },
+  {
+   "categoryId": "paintbrush",
+   "candidateIndex": 205,
+   "displayNameKo": "붓"
+  },
+  {
+   "categoryId": "paint_can",
+   "candidateIndex": 206,
+   "displayNameKo": "페인트통"
+  },
+  {
+   "categoryId": "palm_tree",
+   "candidateIndex": 207,
+   "displayNameKo": "야자수"
+  },
+  {
+   "categoryId": "panda",
+   "candidateIndex": 208,
+   "displayNameKo": "판다"
+  },
+  {
+   "categoryId": "pants",
+   "candidateIndex": 209,
+   "displayNameKo": "바지"
+  },
+  {
+   "categoryId": "paper_clip",
+   "candidateIndex": 210,
+   "displayNameKo": "클립"
+  },
+  {
+   "categoryId": "parachute",
+   "candidateIndex": 211,
+   "displayNameKo": "낙하산"
+  },
+  {
+   "categoryId": "parrot",
+   "candidateIndex": 212,
+   "displayNameKo": "앵무새"
+  },
+  {
+   "categoryId": "passport",
+   "candidateIndex": 213,
+   "displayNameKo": "여권"
+  },
+  {
+   "categoryId": "peanut",
+   "candidateIndex": 214,
+   "displayNameKo": "땅콩"
+  },
+  {
+   "categoryId": "pear",
+   "candidateIndex": 215,
+   "displayNameKo": "배"
+  },
+  {
+   "categoryId": "peas",
+   "candidateIndex": 216,
+   "displayNameKo": "완두콩"
+  },
+  {
+   "categoryId": "pencil",
+   "candidateIndex": 217,
+   "displayNameKo": "연필"
+  },
+  {
+   "categoryId": "penguin",
+   "candidateIndex": 218,
+   "displayNameKo": "펭귄"
+  },
+  {
+   "categoryId": "piano",
+   "candidateIndex": 219,
+   "displayNameKo": "피아노"
+  },
+  {
+   "categoryId": "truck",
+   "candidateIndex": 220,
+   "displayNameKo": "트럭"
+  },
+  {
+   "categoryId": "picture_frame",
+   "candidateIndex": 221,
+   "displayNameKo": "액자"
+  },
+  {
+   "categoryId": "pig",
+   "candidateIndex": 222,
+   "displayNameKo": "돼지"
+  },
+  {
+   "categoryId": "pillow",
+   "candidateIndex": 223,
+   "displayNameKo": "베개"
+  },
+  {
+   "categoryId": "pineapple",
+   "candidateIndex": 224,
+   "displayNameKo": "파인애플"
+  },
+  {
+   "categoryId": "pizza",
+   "candidateIndex": 225,
+   "displayNameKo": "피자"
+  },
+  {
+   "categoryId": "pliers",
+   "candidateIndex": 226,
+   "displayNameKo": "펜치"
+  },
+  {
+   "categoryId": "police_car",
+   "candidateIndex": 227,
+   "displayNameKo": "경찰차"
+  },
+  {
+   "categoryId": "pond",
+   "candidateIndex": 228,
+   "displayNameKo": "연못"
+  },
+  {
+   "categoryId": "pool",
+   "candidateIndex": 229,
+   "displayNameKo": "수영장"
+  },
+  {
+   "categoryId": "popsicle",
+   "candidateIndex": 230,
+   "displayNameKo": "아이스바"
+  },
+  {
+   "categoryId": "postcard",
+   "candidateIndex": 231,
+   "displayNameKo": "엽서"
+  },
+  {
+   "categoryId": "potato",
+   "candidateIndex": 232,
+   "displayNameKo": "감자"
+  },
+  {
+   "categoryId": "power_outlet",
+   "candidateIndex": 233,
+   "displayNameKo": "콘센트"
+  },
+  {
+   "categoryId": "purse",
+   "candidateIndex": 234,
+   "displayNameKo": "핸드백"
+  },
+  {
+   "categoryId": "rabbit",
+   "candidateIndex": 235,
+   "displayNameKo": "토끼"
+  },
+  {
+   "categoryId": "raccoon",
+   "candidateIndex": 236,
+   "displayNameKo": "라쿤"
+  },
+  {
+   "categoryId": "radio",
+   "candidateIndex": 237,
+   "displayNameKo": "라디오"
+  },
+  {
+   "categoryId": "rain",
+   "candidateIndex": 238,
+   "displayNameKo": "비"
+  },
+  {
+   "categoryId": "rainbow",
+   "candidateIndex": 239,
+   "displayNameKo": "무지개"
+  },
+  {
+   "categoryId": "rake",
+   "candidateIndex": 240,
+   "displayNameKo": "갈퀴"
+  },
+  {
+   "categoryId": "remote_control",
+   "candidateIndex": 241,
+   "displayNameKo": "리모컨"
+  },
+  {
+   "categoryId": "rhinoceros",
+   "candidateIndex": 242,
+   "displayNameKo": "코뿔소"
+  },
+  {
+   "categoryId": "rifle",
+   "candidateIndex": 243,
+   "displayNameKo": "소총"
+  },
+  {
+   "categoryId": "river",
+   "candidateIndex": 244,
+   "displayNameKo": "강"
+  },
+  {
+   "categoryId": "roller_coaster",
+   "candidateIndex": 245,
+   "displayNameKo": "롤러코스터"
+  },
+  {
+   "categoryId": "rollerskates",
+   "candidateIndex": 246,
+   "displayNameKo": "롤러스케이트"
+  },
+  {
+   "categoryId": "sailboat",
+   "candidateIndex": 247,
+   "displayNameKo": "돛단배"
+  },
+  {
+   "categoryId": "sandwich",
+   "candidateIndex": 248,
+   "displayNameKo": "샌드위치"
+  },
+  {
+   "categoryId": "saw",
+   "candidateIndex": 249,
+   "displayNameKo": "톱"
+  },
+  {
+   "categoryId": "saxophone",
+   "candidateIndex": 250,
+   "displayNameKo": "색소폰"
+  },
+  {
+   "categoryId": "scissors",
+   "candidateIndex": 252,
+   "displayNameKo": "가위"
+  },
+  {
+   "categoryId": "scorpion",
+   "candidateIndex": 253,
+   "displayNameKo": "전갈"
+  },
+  {
+   "categoryId": "screwdriver",
+   "candidateIndex": 254,
+   "displayNameKo": "드라이버"
+  },
+  {
+   "categoryId": "sea_turtle",
+   "candidateIndex": 255,
+   "displayNameKo": "바다거북"
+  },
+  {
+   "categoryId": "see_saw",
+   "candidateIndex": 256,
+   "displayNameKo": "시소"
+  },
+  {
+   "categoryId": "shark",
+   "candidateIndex": 257,
+   "displayNameKo": "상어"
+  },
+  {
+   "categoryId": "sheep",
+   "candidateIndex": 258,
+   "displayNameKo": "양"
+  },
+  {
+   "categoryId": "shoe",
+   "candidateIndex": 259,
+   "displayNameKo": "신발"
+  },
+  {
+   "categoryId": "shorts",
+   "candidateIndex": 260,
+   "displayNameKo": "반바지"
+  },
+  {
+   "categoryId": "shovel",
+   "candidateIndex": 261,
+   "displayNameKo": "삽"
+  },
+  {
+   "categoryId": "sink",
+   "candidateIndex": 262,
+   "displayNameKo": "싱크대"
+  },
+  {
+   "categoryId": "skateboard",
+   "candidateIndex": 263,
+   "displayNameKo": "스케이트보드"
+  },
+  {
+   "categoryId": "skull",
+   "candidateIndex": 264,
+   "displayNameKo": "두개골"
+  },
+  {
+   "categoryId": "skyscraper",
+   "candidateIndex": 265,
+   "displayNameKo": "고층 빌딩"
+  },
+  {
+   "categoryId": "sleeping_bag",
+   "candidateIndex": 266,
+   "displayNameKo": "침낭"
+  },
+  {
+   "categoryId": "smiley_face",
+   "candidateIndex": 267,
+   "displayNameKo": "웃는 얼굴 기호"
+  },
+  {
+   "categoryId": "snail",
+   "candidateIndex": 268,
+   "displayNameKo": "달팽이"
+  },
+  {
+   "categoryId": "snake",
+   "candidateIndex": 269,
+   "displayNameKo": "뱀"
+  },
+  {
+   "categoryId": "snorkel",
+   "candidateIndex": 270,
+   "displayNameKo": "스노클"
+  },
+  {
+   "categoryId": "snowflake",
+   "candidateIndex": 271,
+   "displayNameKo": "눈송이"
+  },
+  {
+   "categoryId": "snowman",
+   "candidateIndex": 272,
+   "displayNameKo": "눈사람"
+  },
+  {
+   "categoryId": "soccer_ball",
+   "candidateIndex": 273,
+   "displayNameKo": "축구공"
+  },
+  {
+   "categoryId": "sock",
+   "candidateIndex": 274,
+   "displayNameKo": "양말"
+  },
+  {
+   "categoryId": "speedboat",
+   "candidateIndex": 275,
+   "displayNameKo": "쾌속정"
+  },
+  {
+   "categoryId": "spider",
+   "candidateIndex": 276,
+   "displayNameKo": "거미"
+  },
+  {
+   "categoryId": "spoon",
+   "candidateIndex": 277,
+   "displayNameKo": "숟가락"
+  },
+  {
+   "categoryId": "spreadsheet",
+   "candidateIndex": 278,
+   "displayNameKo": "스프레드시트"
+  },
+  {
+   "categoryId": "square",
+   "candidateIndex": 279,
+   "displayNameKo": "정사각형"
+  },
+  {
+   "categoryId": "squiggle",
+   "candidateIndex": 280,
+   "displayNameKo": "구불구불한 선"
+  },
+  {
+   "categoryId": "squirrel",
+   "candidateIndex": 281,
+   "displayNameKo": "다람쥐"
+  },
+  {
+   "categoryId": "stairs",
+   "candidateIndex": 282,
+   "displayNameKo": "계단"
+  },
+  {
+   "categoryId": "star",
+   "candidateIndex": 283,
+   "displayNameKo": "별 모양"
+  },
+  {
+   "categoryId": "steak",
+   "candidateIndex": 284,
+   "displayNameKo": "스테이크"
+  },
+  {
+   "categoryId": "stereo",
+   "candidateIndex": 285,
+   "displayNameKo": "스테레오 오디오"
+  },
+  {
+   "categoryId": "stethoscope",
+   "candidateIndex": 286,
+   "displayNameKo": "청진기"
+  },
+  {
+   "categoryId": "stitches",
+   "candidateIndex": 287,
+   "displayNameKo": "봉합 자국"
+  },
+  {
+   "categoryId": "stop_sign",
+   "candidateIndex": 288,
+   "displayNameKo": "정지 표지판"
+  },
+  {
+   "categoryId": "stove",
+   "candidateIndex": 289,
+   "displayNameKo": "레인지"
+  },
+  {
+   "categoryId": "strawberry",
+   "candidateIndex": 290,
+   "displayNameKo": "딸기"
+  },
+  {
+   "categoryId": "streetlight",
+   "candidateIndex": 291,
+   "displayNameKo": "가로등"
+  },
+  {
+   "categoryId": "string_bean",
+   "candidateIndex": 292,
+   "displayNameKo": "껍질콩"
+  },
+  {
+   "categoryId": "submarine",
+   "candidateIndex": 293,
+   "displayNameKo": "잠수함"
+  },
+  {
+   "categoryId": "suitcase",
+   "candidateIndex": 294,
+   "displayNameKo": "여행 가방"
+  },
+  {
+   "categoryId": "sun",
+   "candidateIndex": 295,
+   "displayNameKo": "태양"
+  },
+  {
+   "categoryId": "swan",
+   "candidateIndex": 296,
+   "displayNameKo": "백조"
+  },
+  {
+   "categoryId": "sweater",
+   "candidateIndex": 297,
+   "displayNameKo": "스웨터"
+  },
+  {
+   "categoryId": "swing_set",
+   "candidateIndex": 298,
+   "displayNameKo": "그네"
+  },
+  {
+   "categoryId": "sword",
+   "candidateIndex": 299,
+   "displayNameKo": "검"
+  },
+  {
+   "categoryId": "syringe",
+   "candidateIndex": 300,
+   "displayNameKo": "주사기"
+  },
+  {
+   "categoryId": "table",
+   "candidateIndex": 301,
+   "displayNameKo": "탁자"
+  },
+  {
+   "categoryId": "teapot",
+   "candidateIndex": 302,
+   "displayNameKo": "찻주전자"
+  },
+  {
+   "categoryId": "teddy-bear",
+   "candidateIndex": 303,
+   "displayNameKo": "곰 인형"
+  },
+  {
+   "categoryId": "telephone",
+   "candidateIndex": 304,
+   "displayNameKo": "전화기"
+  },
+  {
+   "categoryId": "television",
+   "candidateIndex": 305,
+   "displayNameKo": "텔레비전"
+  },
+  {
+   "categoryId": "tennis_racquet",
+   "candidateIndex": 306,
+   "displayNameKo": "테니스 라켓"
+  },
+  {
+   "categoryId": "tent",
+   "candidateIndex": 307,
+   "displayNameKo": "텐트"
+  },
+  {
+   "categoryId": "the_eiffel_tower",
+   "candidateIndex": 308,
+   "displayNameKo": "에펠탑"
+  },
+  {
+   "categoryId": "the_great_wall_of_china",
+   "candidateIndex": 309,
+   "displayNameKo": "만리장성"
+  },
+  {
+   "categoryId": "the_mona_lisa",
+   "candidateIndex": 310,
+   "displayNameKo": "모나리자"
+  },
+  {
+   "categoryId": "tiger",
+   "candidateIndex": 311,
+   "displayNameKo": "호랑이"
+  },
+  {
+   "categoryId": "toaster",
+   "candidateIndex": 312,
+   "displayNameKo": "토스터"
+  },
+  {
+   "categoryId": "toilet",
+   "candidateIndex": 314,
+   "displayNameKo": "변기"
+  },
+  {
+   "categoryId": "tooth",
+   "candidateIndex": 315,
+   "displayNameKo": "치아"
+  },
+  {
+   "categoryId": "toothbrush",
+   "candidateIndex": 316,
+   "displayNameKo": "칫솔"
+  },
+  {
+   "categoryId": "toothpaste",
+   "candidateIndex": 317,
+   "displayNameKo": "치약"
+  },
+  {
+   "categoryId": "tornado",
+   "candidateIndex": 318,
+   "displayNameKo": "토네이도"
+  },
+  {
+   "categoryId": "tractor",
+   "candidateIndex": 319,
+   "displayNameKo": "트랙터"
+  },
+  {
+   "categoryId": "traffic_light",
+   "candidateIndex": 320,
+   "displayNameKo": "신호등"
+  },
+  {
+   "categoryId": "train",
+   "candidateIndex": 321,
+   "displayNameKo": "기차"
+  },
+  {
+   "categoryId": "tree",
+   "candidateIndex": 322,
+   "displayNameKo": "나무"
+  },
+  {
+   "categoryId": "triangle",
+   "candidateIndex": 323,
+   "displayNameKo": "삼각형"
+  },
+  {
+   "categoryId": "trombone",
+   "candidateIndex": 324,
+   "displayNameKo": "트롬본"
+  },
+  {
+   "categoryId": "trumpet",
+   "candidateIndex": 326,
+   "displayNameKo": "트럼펫"
+  },
+  {
+   "categoryId": "t-shirt",
+   "candidateIndex": 327,
+   "displayNameKo": "티셔츠"
+  },
+  {
+   "categoryId": "umbrella",
+   "candidateIndex": 328,
+   "displayNameKo": "우산"
+  },
+  {
+   "categoryId": "underwear",
+   "candidateIndex": 329,
+   "displayNameKo": "속옷"
+  },
+  {
+   "categoryId": "van",
+   "candidateIndex": 330,
+   "displayNameKo": "승합차"
+  },
+  {
+   "categoryId": "vase",
+   "candidateIndex": 331,
+   "displayNameKo": "꽃병"
+  },
+  {
+   "categoryId": "violin",
+   "candidateIndex": 332,
+   "displayNameKo": "바이올린"
+  },
+  {
+   "categoryId": "washing_machine",
+   "candidateIndex": 333,
+   "displayNameKo": "세탁기"
+  },
+  {
+   "categoryId": "watermelon",
+   "candidateIndex": 334,
+   "displayNameKo": "수박"
+  },
+  {
+   "categoryId": "waterslide",
+   "candidateIndex": 335,
+   "displayNameKo": "워터슬라이드"
+  },
+  {
+   "categoryId": "whale",
+   "candidateIndex": 336,
+   "displayNameKo": "고래"
+  },
+  {
+   "categoryId": "wheel",
+   "candidateIndex": 337,
+   "displayNameKo": "바퀴"
+  },
+  {
+   "categoryId": "windmill",
+   "candidateIndex": 338,
+   "displayNameKo": "풍차"
+  },
+  {
+   "categoryId": "wine_bottle",
+   "candidateIndex": 339,
+   "displayNameKo": "와인병"
+  },
+  {
+   "categoryId": "wine_glass",
+   "candidateIndex": 340,
+   "displayNameKo": "와인잔"
+  },
+  {
+   "categoryId": "wristwatch",
+   "candidateIndex": 341,
+   "displayNameKo": "손목시계"
+  },
+  {
+   "categoryId": "yoga",
+   "candidateIndex": 342,
+   "displayNameKo": "요가"
+  },
+  {
+   "categoryId": "zebra",
+   "candidateIndex": 343,
+   "displayNameKo": "얼룩말"
+  },
+  {
+   "categoryId": "zigzag",
+   "candidateIndex": 344,
+   "displayNameKo": "지그재그"
+  }
+ ],
+ "candidatesSha256": "93cc39e3ea189be3f71fc094ce2dd6f3b321ed70191bbf8ddc04b01dd40cdf38"
+}

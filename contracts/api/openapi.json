@@ -1,0 +1,1076 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "Drawmentle API",
+  "version": "0.1.0"
+ },
+ "paths": {
+  "/api/sessions": {
+   "post": {
+    "tags": [
+     "sessions"
+    ],
+    "summary": "Create Session",
+    "operationId": "create_session_api_sessions_post",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SessionOut"
+        }
+       }
+      }
+     },
+     "201": {
+      "description": "Created",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SessionOut"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/puzzles/today": {
+   "get": {
+    "tags": [
+     "puzzles"
+    ],
+    "summary": "Get Today",
+    "operationId": "get_today_api_puzzles_today_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PuzzleOut"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/puzzles/{puzzle_id}": {
+   "get": {
+    "tags": [
+     "puzzles"
+    ],
+    "summary": "Get Puzzle",
+    "operationId": "get_puzzle_api_puzzles__puzzle_id__get",
+    "parameters": [
+     {
+      "name": "puzzle_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Puzzle Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PuzzleOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/puzzles/{puzzle_id}/submissions": {
+   "post": {
+    "tags": [
+     "submissions"
+    ],
+    "summary": "Create Submission",
+    "operationId": "create_submission_api_puzzles__puzzle_id__submissions_post",
+    "parameters": [
+     {
+      "name": "puzzle_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Puzzle Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/SubmissionIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SubmissionOut"
+        }
+       }
+      }
+     },
+     "201": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SubmissionOut"
+        }
+       }
+      },
+      "description": "Created"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/puzzles/{puzzle_id}/submissions/by-request/{submission_id}": {
+   "get": {
+    "tags": [
+     "submissions"
+    ],
+    "summary": "Get By Request",
+    "operationId": "get_by_request_api_puzzles__puzzle_id__submissions_by_request__submission_id__get",
+    "parameters": [
+     {
+      "name": "puzzle_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Puzzle Id"
+      }
+     },
+     {
+      "name": "submission_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Submission Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SubmissionOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/puzzles/{puzzle_id}/progress": {
+   "get": {
+    "tags": [
+     "submissions"
+    ],
+    "summary": "Get Progress",
+    "operationId": "get_progress_api_puzzles__puzzle_id__progress_get",
+    "parameters": [
+     {
+      "name": "puzzle_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Puzzle Id"
+      }
+     },
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 50,
+       "minimum": 1,
+       "default": 10,
+       "title": "Limit"
+      }
+     },
+     {
+      "name": "beforeAttemptNumber",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "integer",
+         "minimum": 1
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Beforeattemptnumber"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ProgressPage"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/health": {
+   "get": {
+    "tags": [
+     "health"
+    ],
+    "summary": "Health",
+    "operationId": "health_api_health_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "additionalProperties": true,
+         "type": "object",
+         "title": "Response Health Api Health Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "AnswerOut": {
+    "properties": {
+     "categoryId": {
+      "type": "string",
+      "title": "Categoryid"
+     },
+     "displayNameKo": {
+      "type": "string",
+      "title": "Displaynameko"
+     }
+    },
+    "type": "object",
+    "required": [
+     "categoryId",
+     "displayNameKo"
+    ],
+    "title": "AnswerOut"
+   },
+   "Candidate": {
+    "properties": {
+     "categoryId": {
+      "type": "string",
+      "title": "Categoryid"
+     },
+     "candidateIndex": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Candidateindex"
+     },
+     "displayNameKo": {
+      "type": "string",
+      "title": "Displaynameko"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "categoryId",
+     "candidateIndex",
+     "displayNameKo"
+    ],
+    "title": "Candidate"
+   },
+   "CollectionOut": {
+    "properties": {
+     "state": {
+      "type": "string",
+      "enum": [
+       "not_consented",
+       "not_selected",
+       "eligible",
+       "pending_upload",
+       "uploaded",
+       "verified",
+       "upload_failed",
+       "delete_pending",
+       "deleted"
+      ],
+      "title": "State"
+     },
+     "consentRevision": {
+      "type": "integer",
+      "title": "Consentrevision"
+     }
+    },
+    "type": "object",
+    "required": [
+     "state",
+     "consentRevision"
+    ],
+    "title": "CollectionOut"
+   },
+   "CollectionPolicyOut": {
+    "properties": {
+     "version": {
+      "type": "string",
+      "title": "Version"
+     },
+     "enabled": {
+      "type": "boolean",
+      "title": "Enabled"
+     }
+    },
+    "type": "object",
+    "required": [
+     "version",
+     "enabled"
+    ],
+    "title": "CollectionPolicyOut"
+   },
+   "HTTPValidationError": {
+    "properties": {
+     "detail": {
+      "items": {
+       "$ref": "#/components/schemas/ValidationError"
+      },
+      "type": "array",
+      "title": "Detail"
+     }
+    },
+    "type": "object",
+    "title": "HTTPValidationError"
+   },
+   "HistoryItem": {
+    "properties": {
+     "submissionId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Submissionid"
+     },
+     "result": {
+      "$ref": "#/components/schemas/ResultOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "submissionId",
+     "result"
+    ],
+    "title": "HistoryItem"
+   },
+   "Inference": {
+    "properties": {
+     "mode": {
+      "type": "string",
+      "enum": [
+       "dev_manual_top3",
+       "browser_onnx"
+      ],
+      "title": "Mode"
+     },
+     "probability": {
+      "type": "string",
+      "title": "Probability"
+     },
+     "outputCalibration": {
+      "type": "string",
+      "title": "Outputcalibration"
+     },
+     "note": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Note"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "mode",
+     "probability",
+     "outputCalibration"
+    ],
+    "title": "Inference"
+   },
+   "ProgressOut": {
+    "properties": {
+     "state": {
+      "type": "string",
+      "enum": [
+       "playing",
+       "solved"
+      ],
+      "title": "State"
+     },
+     "attemptCount": {
+      "type": "integer",
+      "title": "Attemptcount"
+     },
+     "bestSubmissionId": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Bestsubmissionid"
+     },
+     "bestDisplayScore": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Bestdisplayscore"
+     },
+     "bestDisplayText": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Bestdisplaytext"
+     },
+     "solvedSubmissionId": {
+      "anyOf": [
+       {
+        "type": "string",
+        "format": "uuid"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Solvedsubmissionid"
+     },
+     "answer": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AnswerOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "type": "object",
+    "required": [
+     "state",
+     "attemptCount",
+     "bestSubmissionId",
+     "bestDisplayScore",
+     "bestDisplayText"
+    ],
+    "title": "ProgressOut"
+   },
+   "ProgressPage": {
+    "properties": {
+     "puzzleId": {
+      "type": "string",
+      "title": "Puzzleid"
+     },
+     "progress": {
+      "$ref": "#/components/schemas/ProgressOut"
+     },
+     "items": {
+      "items": {
+       "$ref": "#/components/schemas/HistoryItem"
+      },
+      "type": "array",
+      "title": "Items"
+     },
+     "nextBeforeAttemptNumber": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Nextbeforeattemptnumber"
+     }
+    },
+    "type": "object",
+    "required": [
+     "puzzleId",
+     "progress",
+     "items",
+     "nextBeforeAttemptNumber"
+    ],
+    "title": "ProgressPage"
+   },
+   "PublicManifest": {
+    "properties": {
+     "manifestVersion": {
+      "type": "string",
+      "const": "release-public-v1",
+      "title": "Manifestversion"
+     },
+     "releaseId": {
+      "type": "string",
+      "title": "Releaseid"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "dev-only",
+       "production"
+      ],
+      "title": "Status"
+     },
+     "modelVersion": {
+      "type": "string",
+      "title": "Modelversion"
+     },
+     "preprocessingVersion": {
+      "type": "string",
+      "title": "Preprocessingversion"
+     },
+     "catalogVersion": {
+      "type": "string",
+      "title": "Catalogversion"
+     },
+     "outputCalibrationVersion": {
+      "type": "string",
+      "title": "Outputcalibrationversion"
+     },
+     "drawingVersions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "minItems": 1,
+      "title": "Drawingversions"
+     },
+     "brushVersions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "minItems": 1,
+      "title": "Brushversions"
+     },
+     "model": {
+      "anyOf": [
+       {
+        "additionalProperties": true,
+        "type": "object"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Model"
+     },
+     "inference": {
+      "$ref": "#/components/schemas/Inference"
+     },
+     "rawClasses": {
+      "items": {
+       "$ref": "#/components/schemas/RawClass"
+      },
+      "type": "array",
+      "title": "Rawclasses"
+     },
+     "rawClassesSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Rawclassessha256"
+     },
+     "candidates": {
+      "items": {
+       "$ref": "#/components/schemas/Candidate"
+      },
+      "type": "array",
+      "title": "Candidates"
+     },
+     "candidatesSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Candidatessha256"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "manifestVersion",
+     "releaseId",
+     "status",
+     "modelVersion",
+     "preprocessingVersion",
+     "catalogVersion",
+     "outputCalibrationVersion",
+     "drawingVersions",
+     "brushVersions",
+     "model",
+     "inference",
+     "rawClasses",
+     "rawClassesSha256",
+     "candidates",
+     "candidatesSha256"
+    ],
+    "title": "PublicManifest",
+    "description": "Everything the browser needs to produce a valid Top-3. No answer, thresholds, attributes or score table."
+   },
+   "PuzzleOut": {
+    "properties": {
+     "puzzleId": {
+      "type": "string",
+      "title": "Puzzleid"
+     },
+     "serviceDate": {
+      "type": "string",
+      "format": "date",
+      "title": "Servicedate"
+     },
+     "puzzleNumber": {
+      "type": "integer",
+      "title": "Puzzlenumber"
+     },
+     "release": {
+      "$ref": "#/components/schemas/PublicManifest"
+     },
+     "collectionPolicy": {
+      "$ref": "#/components/schemas/CollectionPolicyOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "puzzleId",
+     "serviceDate",
+     "puzzleNumber",
+     "release",
+     "collectionPolicy"
+    ],
+    "title": "PuzzleOut"
+   },
+   "RawClass": {
+    "properties": {
+     "classIndex": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Classindex"
+     },
+     "categoryId": {
+      "type": "string",
+      "title": "Categoryid"
+     },
+     "candidateId": {
+      "type": "string",
+      "title": "Candidateid"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "classIndex",
+     "categoryId",
+     "candidateId"
+    ],
+    "title": "RawClass"
+   },
+   "ResultOut": {
+    "properties": {
+     "status": {
+      "type": "string",
+      "enum": [
+       "recognized",
+       "deferred",
+       "solved"
+      ],
+      "title": "Status"
+     },
+     "reason": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Reason"
+     },
+     "attemptNumber": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Attemptnumber"
+     },
+     "displayScore": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Displayscore"
+     },
+     "displayText": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Displaytext"
+     },
+     "solved": {
+      "type": "boolean",
+      "title": "Solved"
+     },
+     "judgedAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Judgedat"
+     },
+     "answer": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AnswerOut"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "type": "object",
+    "required": [
+     "status",
+     "reason",
+     "attemptNumber",
+     "displayScore",
+     "displayText",
+     "solved",
+     "judgedAt"
+    ],
+    "title": "ResultOut"
+   },
+   "SessionOut": {
+    "properties": {
+     "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Expiresat"
+     },
+     "collection": {
+      "$ref": "#/components/schemas/CollectionOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "expiresAt",
+     "collection"
+    ],
+    "title": "SessionOut"
+   },
+   "SubmissionIn": {
+    "properties": {
+     "submissionId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Submissionid"
+     },
+     "releaseId": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Releaseid"
+     },
+     "modelVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Modelversion"
+     },
+     "preprocessingVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Preprocessingversion"
+     },
+     "catalogVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Catalogversion"
+     },
+     "outputCalibrationVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Outputcalibrationversion"
+     },
+     "drawingVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Drawingversion"
+     },
+     "brushVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._\\-]+$",
+      "title": "Brushversion"
+     },
+     "drawingHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Drawinghash"
+     },
+     "top3": {
+      "items": {
+       "$ref": "#/components/schemas/Top3Item"
+      },
+      "type": "array",
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Top3"
+     },
+     "collectionConsentRevision": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Collectionconsentrevision"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "submissionId",
+     "releaseId",
+     "modelVersion",
+     "preprocessingVersion",
+     "catalogVersion",
+     "outputCalibrationVersion",
+     "drawingVersion",
+     "brushVersion",
+     "drawingHash",
+     "top3",
+     "collectionConsentRevision"
+    ],
+    "title": "SubmissionIn"
+   },
+   "SubmissionOut": {
+    "properties": {
+     "requestSubmissionId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Requestsubmissionid"
+     },
+     "submissionId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Submissionid"
+     },
+     "puzzleId": {
+      "type": "string",
+      "title": "Puzzleid"
+     },
+     "releaseId": {
+      "type": "string",
+      "title": "Releaseid"
+     },
+     "reuse": {
+      "type": "string",
+      "enum": [
+       "new",
+       "request_retry",
+       "drawing_duplicate"
+      ],
+      "title": "Reuse"
+     },
+     "result": {
+      "$ref": "#/components/schemas/ResultOut"
+     },
+     "progress": {
+      "$ref": "#/components/schemas/ProgressOut"
+     },
+     "collection": {
+      "$ref": "#/components/schemas/CollectionOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "requestSubmissionId",
+     "submissionId",
+     "puzzleId",
+     "releaseId",
+     "reuse",
+     "result",
+     "progress",
+     "collection"
+    ],
+    "title": "SubmissionOut"
+   },
+   "Top3Item": {
+    "properties": {
+     "categoryId": {
+      "type": "string",
+      "maxLength": 64,
+      "minLength": 1,
+      "title": "Categoryid"
+     },
+     "p": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "P"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "categoryId",
+     "p"
+    ],
+    "title": "Top3Item"
+   },
+   "ValidationError": {
+    "properties": {
+     "loc": {
+      "items": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "integer"
+        }
+       ]
+      },
+      "type": "array",
+      "title": "Location"
+     },
+     "msg": {
+      "type": "string",
+      "title": "Message"
+     },
+     "type": {
+      "type": "string",
+      "title": "Error Type"
+     },
+     "input": {
+      "title": "Input"
+     },
+     "ctx": {
+      "type": "object",
+      "title": "Context"
+     }
+    },
+    "type": "object",
+    "required": [
+     "loc",
+     "msg",
+     "type"
+    ],
+    "title": "ValidationError"
+   }
+  }
+ }
+}

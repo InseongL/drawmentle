@@ -193,7 +193,9 @@ Worker는 `modelRuntime`과 `preprocess`를 호출하는 통로이며 자체 판
 
 `attribute_dictionary + extract_label_vectors → build_score_table → check_score_table → build_release`
 
-2026-09-25 기준 `judging/types.py`·`similarity.py`·`scorer.py`, `config/scoring/scoring.json`, 점수표 도구 3개와 `backend/tests/unit/test_judging.py`·`tests/test_score_table.py`를 작성했다. 규칙은 [점수 계산 규칙 v1](scoring-v1.md)을 따른다. `judge.py`(보류·성공)는 모델 임계값이 필요해 아직 작성하지 않았다.
+2026-09-25 기준 `judging/types.py`·`similarity.py`·`scorer.py`, `config/scoring/scoring.json`, 점수표 도구 3개와 `backend/tests/unit/test_judging.py`·`tests/test_score_table.py`를 작성했다. 규칙은 [점수 계산 규칙 v1](scoring-v1.md)을 따른다.
+
+같은 날 게임 루프를 구현했다. 백엔드는 `main.py`, `core/settings.py`·`errors.py`, `db/session.py`·`models.py`(+ Alembic `0001`), `sessions`·`puzzles`·`submissions`·`releases` 모듈의 계획된 파일, `judging/judge.py`, `config/scoring/recognition.json`(개발용 `recognition-dev-v0`)이다. 계획에 없던 개발 도구 `backend/app/cli.py`(개발용 릴리스 등록·문제 일정·정답 지정·OpenAPI 내보내기)를 추가했다. 프론트는 `features/game`의 7개 파일, `shared/api/client.ts`, `shared/storage/gameStorage.ts`와 모델 대신 Top-3를 정하는 `features/inference/devPrediction.ts`·`DevPredictionPanel.tsx`다(모델 연결 시 `modelRuntime.ts`로 대체). 테스트는 `backend/tests/integration/test_submissions.py`(실제 PostgreSQL, fixture 14개 사례), `frontend/tests/integration/submissionFlow.test.ts`, `frontend/tests/unit/devPrediction.test.ts`다. 수집(`collections`)·저장소 어댑터·모델 런타임은 아직 없다.
 
 두 흐름은 마지막 릴리스 단계에서 결합한다. 그 이전까지 모델 학습과 속성 점수 조정은 독립적으로 진행한다.
 

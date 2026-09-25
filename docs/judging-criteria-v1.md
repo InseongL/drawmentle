@@ -118,7 +118,9 @@
 - **버전**: 모델, 전처리, 카테고리(`catalog-curation-v1.1`), 출력 보정, 점수 체계(`scoring-v1`), 인식 기준, 성공 조건
 - **적용한 임계값 값 자체**
 
-`backend/app/modules/judging/scorer.py`의 `mix_top3` 결과(`MixResult`)가 후보별 축 점수·R·순위·q를 담는다. 보류·성공 판정과 기록은 아직 작성하지 않은 `judge.py`와 `submissions/service.py`가 맡는다.
+`backend/app/modules/judging/scorer.py`의 `mix_top3` 결과(`MixResult`)가 후보별 축 점수·R·순위·q를 담는다. 보류·성공 판정은 `judge.py`, 기록은 `submissions/service.py`가 맡는다. 계산 내역(`score-details-v1`)에는 적용한 인식 기준 값 자체와 후보별 q·R·축 점수·내부 순위가 들어가고 공개 응답에는 나가지 않는다.
+
+모델이 없는 현재 개발용 릴리스는 `config/scoring/recognition.json`의 `recognition-dev-v0`(τ_인식 0.20, τ_성공 0.50, τ_합·δ 미사용)을 쓴다. 판정 흐름을 시험하기 위한 가짜 값이며 4절의 방법으로 정한 운영 값이 아니다.
 
 ## 6. 예시
 

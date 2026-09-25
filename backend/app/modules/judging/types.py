@@ -1,11 +1,22 @@
 """Internal judging types. Separate from HTTP schemas; built by the release loader or offline tools."""
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass, field
 from types import MappingProxyType
 from typing import Mapping
 
 import numpy as np
+
+
+def content_sha256(ids, arrays: Mapping[str, np.ndarray]) -> str:
+    """Hash of category order + array values; independent of npz/zip timestamps."""
+    h = hashlib.sha256(json.dumps(list(ids)).encode())
+    for name in sorted(arrays):
+        a = np.ascontiguousarray(arrays[name], dtype=np.float64)
+        h.update(name.encode()); h.update(np.nan_to_num(a, nan=-1.0).tobytes())
+    return h.hexdigest()
 
 
 class UnsupportedCandidateError(ValueError):
@@ -37,6 +48,13 @@ class ScoreTable:
         if self.relation.shape != (n, n) or any(m.shape != (n, n) for m in self.modules.values()):
             raise ValueError("score table matrices must be square and match ids")
         object.__setattr__(self, "_index", MappingProxyType({c: i for i, c in enumerate(self.ids)}))
+
+    @classmethod
+    def from_artifact(cls, arrays: Mapping[str, np.ndarray], manifest: dict) -> "ScoreTable":
+        """Build from score-table.npz arrays and its manifest.json (scripts/scoring/build_score_table.py)."""
+        return cls(manifest["version"], tuple(manifest["ids"]), arrays["relation"],
+                   {m: arrays[m] for m in manifest["weights"]}, manifest["weights"], manifest["display"]["scale"],
+                   manifest["display"]["decimals"], manifest["ranking"]["compare_decimals"])
 
     def index(self, category_id: str) -> int:
         try:

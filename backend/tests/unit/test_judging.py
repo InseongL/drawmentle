@@ -11,6 +11,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from app.modules.judging import scorer, similarity as sim  # noqa: E402
+from app.modules.judging.judge import RecognitionRules, judge, score_details  # noqa: E402
 from app.modules.judging.types import ScoreTable, UnsupportedCandidateError  # noqa: E402
 
 
@@ -98,6 +99,53 @@ class ScorerTests(unittest.TestCase):
             scorer.mix_top3(t, "giraffe", [("horse", .5), ("horse", .2), ("deer", .1)])
         with self.assertRaises(ValueError):
             scorer.mix_top3(t, "giraffe", [("horse", float("nan")), ("zebra", .2), ("deer", .1)])
+
+
+class JudgeTests(unittest.TestCase):
+    rules = RecognitionRules(version="test", success_min_p=0.5, min_top1_p=0.2)
+
+    def test_deferral_order(self):
+        t = plan_example_table()
+        cases = [
+            ([("horse", 0.0), ("deer", 0.0), ("zebra", 0.0)], "low_confidence"),      # sum 0 first
+            ([("bird", 0.1), ("horse", 0.05), ("deer", 0.01)], "unsupported_candidate"),  # before low p1
+            ([("horse", 0.15), ("deer", 0.1), ("zebra", 0.05)], "low_confidence"),
+        ]
+        for top3, reason in cases:
+            res = judge(t, self.rules, "giraffe", top3)
+            self.assertEqual((res.status, res.reason, res.mix, res.counted), ("deferred", reason, None, False))
+
+    def test_insufficient_attributes_when_axes_unknown(self):
+        t = plan_example_table()
+        t.modules["axis"][0, 1] = np.nan
+        res = judge(t, self.rules, "giraffe", [("horse", 0.6), ("deer", 0.2), ("zebra", 0.1)])
+        self.assertEqual(res.reason, "insufficient_attributes")
+
+    def test_success_needs_top1_answer_and_threshold(self):
+        t = plan_example_table()
+        self.assertEqual(judge(t, self.rules, "giraffe", [("giraffe", .55), ("horse", .2), ("deer", .1)]).status,
+                         "solved")
+        self.assertEqual(judge(t, self.rules, "giraffe", [("giraffe", .45), ("horse", .2), ("deer", .1)]).status,
+                         "recognized")
+        high = judge(t, self.rules, "giraffe", [("zebra", .9), ("giraffe", .05), ("deer", .05)])
+        self.assertEqual(high.status, "recognized")  # answer in Top-2 is never success
+        margin = RecognitionRules(version="m", success_min_p=0.5, success_min_margin=0.2)
+        self.assertEqual(judge(t, margin, "giraffe", [("giraffe", .55), ("horse", .4), ("deer", .05)]).status,
+                         "recognized")
+
+    def test_details_record_rules_and_candidates(self):
+        t = plan_example_table()
+        top3 = [("horse", .5), ("giraffe", .3), ("deer", .15)]
+        res = judge(t, self.rules, "giraffe", top3)
+        d = score_details(res, self.rules, t, "giraffe", top3)
+        self.assertEqual((d["status"], d["recognition"]["min_top1_p"]), ("recognized", 0.2))
+        self.assertEqual([c["relationRank"] for c in d["candidates"]], [4, 1, 2])
+        deferred = judge(t, self.rules, "giraffe", [("bird", .5), ("horse", .2), ("deer", .1)])
+        self.assertIsNone(score_details(deferred, self.rules, t, "giraffe", top3)["candidates"])
+
+    def test_rules_reject_out_of_range_thresholds(self):
+        with self.assertRaises(ValueError):
+            RecognitionRules.from_config({"version": "x", "success_min_p": 1.5})
 
 
 if __name__ == "__main__":

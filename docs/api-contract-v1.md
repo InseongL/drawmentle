@@ -174,3 +174,14 @@
 같은 DB 트랜잭션 안의 결과가 확정됐는지 모르는 통신 장애에서는 새 제출 ID를 발급하지 않는다. 실패를 deferred나 0점으로 저장하지 않는다. API 구현 전 필요한 한계값·오류 문구는 이 계약을 유지하며 조정할 수 있다.
 
 DB 제약과 동시성 순서는 [DB 스키마](database-schema-v1.md), 합성 요청·응답은 [fixture](../contracts/fixtures/submission-cases.json)를 참조한다.
+
+## 10. 구현 상태 (2026-09-25)
+
+`backend/app/modules`의 세션·문제·제출 API가 이 계약대로 동작하고, 생성된 스키마는 [`contracts/api/openapi.json`](../contracts/api/openapi.json)(`python -m app.cli export-openapi`)이다. 구현하며 정한 세부 사항:
+
+- 판정 지문 `judgement-fp-v1`: 버전 문자열, 문제 ID, release·모델·전처리·카테고리·출력 보정·그림·펜 버전, 그림 해시 순서로 각 문자열을 `4바이트 big-endian 길이 + UTF-8`로 기록한 뒤 Top-3 개수와 각 `(ID, p binary64 big-endian)`을 이어 SHA-256을 만든다.
+- 문제 응답에 표시용 `puzzleNumber`(해당 날짜까지의 문제 수)를 넣는다. 공개 manifest의 `candidates`(대표 ID·candidate_index·한국어 이름)와 `rawClasses`(원본 345개 → 대표 ID)에 각각 해시가 있다.
+- 성공한 게임의 `progress`에는 제출 응답과 진행 조회 모두 `answer`·`solvedSubmissionId`를 넣는다. 성공 전에는 두 필드가 없다.
+- 추가 오류: 허용되지 않은 Origin의 변경 요청 `403 ORIGIN_NOT_ALLOWED`(운영에서는 Origin 누락도 거부), 예상하지 못한 오류 `500 INTERNAL_ERROR`, 고유 제약 충돌 `503 TEMPORARY_FAILURE`(같은 요청 ID로 재시도).
+- 수집 API(8절)는 아직 없다. 모든 응답의 `collection`은 `not_consented`와 세션의 현재 리비전이며 제출에는 `collection-disabled-v0`·`not_selected`를 기록한다.
+- 개발용 릴리스(`status: dev-only`, `inference.mode: dev_manual_top3`)는 모델이 없고 화면의 개발 패널이 Top-3를 정한다. 운영 릴리스는 같은 요청 형식에 브라우저 모델 결과를 넣는다.

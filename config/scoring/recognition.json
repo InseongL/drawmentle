@@ -1,0 +1,11 @@
+{
+  "version": "recognition-dev-v0",
+  "status": "dev-only",
+  "rationale_doc": "docs/judging-criteria-v1.md",
+  "note_ko": "모델과 보정용 검증 그림이 없어서 정한 개발용 가짜 임계값이다. 운영 기준이 아니며 모델 보정 후 새 버전으로 교체한다.",
+  "min_top1_p": 0.2,
+  "min_top3_sum": null,
+  "min_known_axes": 1,
+  "success_min_p": 0.5,
+  "success_min_margin": null
+}

@@ -1,0 +1,21 @@
+# Local development database. Bound to 127.0.0.1 only; the password below is a local-only dev value.
+#   docker compose -f infra/local/docker-compose.yml up -d
+name: drawmentle-local
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: drawmentle
+      POSTGRES_PASSWORD: drawmentle-dev
+      POSTGRES_DB: drawmentle
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U drawmentle -d drawmentle"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+volumes:
+  db-data: {}

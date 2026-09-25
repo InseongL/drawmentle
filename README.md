@@ -2,7 +2,7 @@
 
 기획 문서: [AI 스케치 게임 서비스 기획서 v3.2](<AI 스케치 게임 서비스 기획서 v3.2.md>)
 
-그림판 데모: [실행 방법과 구현 범위](frontend/README.md). `frontend`에서 `npm ci` 후 `npm run dev`로 실행한다. 그리기·Undo·Reset·제출 사본·썸네일·요청 데이터 초안을 확인할 수 있다.
+서비스명: **드로맨틀**. 게임 루프(세션·오늘의 문제·제출·판정·기록 복원)가 FastAPI + PostgreSQL + React로 동작한다. 모델이 아직 없으므로 개발용 릴리스에서는 화면의 **개발용 인식 결과** 패널이 Top-3를 대신 정하고, 인식·성공 임계값은 개발용 가짜 값(`recognition-dev-v0`: 보류 p1 < 0.20, 성공 p1 ≥ 0.50)이다. 아래 [로컬 실행](#로컬-실행) 참고.
 
 아키텍처 초안: [React + FastAPI 기반 서비스 구조](docs/service-architecture-v1.md)
 
@@ -18,11 +18,27 @@
 
 모델 구조: [Quick Draw 레퍼런스·모델 선택·입출력·학습·모바일 배포 계획](docs/model-architecture-v1.md)
 
-아키텍처 문서에는 프론트·백엔드·모델·속성·수집 담당의 산출물, Top-3/릴리스 연결 규격, 수집 상태와 후속 MLOps 연결 지점, 단계별 완료 기준을 정리했다. 현재 프론트에는 그림판 단독 프로토타입이 있으며 게임 API·학습 모델은 아직 구현 전이다. 데모는 서버 전송·AI 판정을 수행하지 않으며 아래 데이터 도구와 구분한다.
+아키텍처 문서에는 프론트·백엔드·모델·속성·수집 담당의 산출물, Top-3/릴리스 연결 규격, 수집 상태와 후속 MLOps 연결 지점, 단계별 완료 기준을 정리했다. 게임 API와 게임 화면은 구현했고, 학습 모델·브라우저 추론·학습용 그림 수집은 아직 없다(수집은 `collection-disabled-v0`로 꺼져 있고 Q&A에만 안내한다).
 
 모듈 의존성, 요청 재시도·같은 그림 중복 처리, 수집 동의 리비전, 업로드 실패와 게임 결과의 분리까지 설계했다. `.gitignore`는 사용자 그림·내부 데이터셋 manifest·모델/점수 산출물을 기본 제외하고 명시된 공개 요약만 허용한다. 아직 운영 임계값·점수 범위·수집 비율·보관 기간은 확정하지 않았다.
 
 카테고리 정리: [통합·보류 판단과 적용 규칙](docs/catalog-curation-v1.md). 검토 반영 버전 `catalog-curation-v1.1`은 345개 원본을 인식 후보 335개로 묶는다(통합 10, 별개 개념 6쌍 통합 보류). 점수 지원 초안은 334개, 데일리 후보는 323개다. `bird`는 확률을 유지하는 미지원 후보로 남기며 Top-3에 있으면 판정을 보류한다. 매핑은 [catalog-curation-v1.json](config/model/catalog-curation-v1.json)에 있다.
+
+## 로컬 실행
+
+필요: Docker Desktop, Python 3.12, Node 22.18 이상. 명령은 저장소 루트 기준이다.
+
+1. DB: `docker compose -f infra/local/docker-compose.yml up -d` (PostgreSQL 17, `127.0.0.1:5433`)
+2. 백엔드 의존성: `python -m pip install -r backend/requirements.txt`
+3. 마이그레이션: `backend`에서 `python -m alembic upgrade head`
+4. 점수표(최초 1회, 로컬 산출물): `python scripts/scoring/build_score_table.py` — 라벨 벡터가 없으면 먼저 `python scripts/scoring/extract_label_vectors.py`
+5. 개발용 릴리스와 문제 일정: `backend`에서 `python -m app.cli build-dev-release` → `python -m app.cli schedule --days 30`
+6. 서버: `backend`에서 `python -m uvicorn app.main:create_app --factory --port 8000` (API 문서 http://127.0.0.1:8000/api/docs)
+7. 화면: `frontend`에서 `npm ci` 후 `npm run dev` → http://127.0.0.1:5173 (Vite가 `/api`를 8000으로 넘긴다)
+
+개발 명령(`python -m app.cli --help`): `list-puzzles`(정답 없이 날짜·ID만), `set-answer 날짜 카테고리`(아무도 시작하지 않은 문제만), `show-answer 날짜`, `export-openapi`(`contracts/api/openapi.json` 갱신). 문제 일정의 시드는 저장하지 않으며 정답은 DB에만 있다. `data/artifacts/releases/*/private/`(점수표·판정 기준·정답 후보)는 Git에서 제외된다.
+
+테스트: `python -m unittest discover -s backend/tests/unit` · `python -m unittest discover -s backend/tests/integration`(로컬 DB에 `drawmentle_test`를 만들어 실행, DB가 없으면 건너뜀) · `python -m unittest discover -s tests` · `frontend`에서 `npm test`
 
 ## 준비한 Quick, Draw! 데이터
 

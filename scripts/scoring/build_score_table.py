@@ -20,7 +20,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 from app.modules.judging import similarity as sim  # noqa: E402
-from app.modules.judging.types import ScoreTable  # noqa: E402
+from app.modules.judging.types import ScoreTable, content_sha256  # noqa: E402
 
 CONFIG = ROOT / "config/scoring/scoring.json"
 ATTRIBUTE_MODULES = ("classification", "shape", "function")
@@ -35,15 +35,6 @@ def json_sha256(path: Path) -> str:
     """Hash of the parsed JSON (sorted keys), so CRLF/LF checkouts or reformatting do not change it."""
     canonical = json.dumps(read_json(path), ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(canonical.encode()).hexdigest()
-
-
-def content_sha256(ids, arrays: dict[str, np.ndarray]) -> str:
-    """Hash of category order + array values; independent of npz/zip timestamps."""
-    h = hashlib.sha256(json.dumps(list(ids)).encode())
-    for name in sorted(arrays):
-        a = np.ascontiguousarray(arrays[name], dtype=np.float64)
-        h.update(name.encode()); h.update(np.nan_to_num(a, nan=-1.0).tobytes())
-    return h.hexdigest()
 
 
 def load_attribute_tool():
@@ -179,9 +170,7 @@ def read(out_dir: Path) -> tuple[dict[str, np.ndarray], dict]:
 
 
 def to_score_table(arrays: dict[str, np.ndarray], manifest: dict) -> ScoreTable:
-    mods = {m: arrays[m] for m in manifest["weights"]}
-    return ScoreTable(manifest["version"], tuple(manifest["ids"]), arrays["relation"], mods, manifest["weights"],
-                      manifest["display"]["scale"], manifest["display"]["decimals"], manifest["ranking"]["compare_decimals"])
+    return ScoreTable.from_artifact(arrays, manifest)
 
 
 def main(argv=None) -> int:
