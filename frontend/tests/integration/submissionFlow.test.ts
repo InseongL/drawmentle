@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { ApiError } from '../../src/shared/api/client.ts';
-import type { Puzzle, SessionInfo, SubmissionRequest, SubmissionResponse } from '../../src/shared/api/client.ts';
-import { buildRequest, mergeHistory, newerProgress, recoverPending, sendSubmission } from '../../src/features/game/submissionFlow.ts';
+import type { HistoryItem, ProgressPage, Puzzle, SessionInfo, SubmissionRequest, SubmissionResponse } from '../../src/shared/api/client.ts';
+import { arrangeHistory, buildRequest, loadFullProgress, mergeHistory, newerProgress, recoverPending, sendSubmission } from '../../src/features/game/submissionFlow.ts';
 import type { FlowDeps } from '../../src/features/game/submissionFlow.ts';
 import type { PendingSubmission } from '../../src/shared/storage/gameStorage.ts';
 
@@ -138,4 +138,38 @@ test('history keeps one row per canonical ID, skips deferred results and ignores
   const solved = { ...one, state: 'solved' as const };
   assert.equal(newerProgress(solved, two), solved);
   assert.equal(newerProgress(one, two), two);
+});
+
+function scored(id: string, attemptNumber: number, displayScore: number): HistoryItem {
+  const result = response(id, attemptNumber).result;
+  return { submissionId: id, result: { ...result, displayScore, displayText: displayScore.toFixed(2) } };
+}
+
+test('history pins the latest submission and ranks every attempt by similarity, ties newest first', () => {
+  const items = mergeHistory([], [scored('a', 1, 30), scored('b', 2, 55), scored('c', 3, 30), scored('d', 4, 12)]);
+  const { latest, ranked } = arrangeHistory(items, 'd');
+  assert.equal(latest?.submissionId, 'd');
+  assert.deepEqual(ranked.map(i => i.submissionId), ['b', 'c', 'a', 'd']);
+  // a re-submitted old drawing becomes the pinned row; unknown or missing IDs fall back to the newest attempt
+  assert.equal(arrangeHistory(items, 'a').latest?.submissionId, 'a');
+  assert.equal(arrangeHistory(items, null).latest?.submissionId, 'd');
+  // a single attempt is not shown twice
+  assert.equal(arrangeHistory([scored('a', 1, 30)], 'a').latest, null);
+});
+
+test('the full history is loaded page by page until the cursor ends', async () => {
+  const all = Array.from({ length: 120 }, (_, i) => scored(`s${i + 1}`, i + 1, i));
+  const calls: (number | null | undefined)[] = [];
+  const api = {
+    progress: async (_: string, before?: number | null, limit = 10): Promise<ProgressPage> => {
+      calls.push(before);
+      const older = all.filter(i => before == null || i.result.attemptNumber! < before).reverse().slice(0, limit);
+      const next = older.length === limit && older.at(-1)!.result.attemptNumber! > 1 ? older.at(-1)!.result.attemptNumber! : null;
+      return { puzzleId: 'pz-1', progress: response('x', 120).progress, items: older, nextBeforeAttemptNumber: next };
+    },
+  };
+  const { items } = await loadFullProgress(api, 'pz-1');
+  assert.equal(items.length, 120);
+  assert.deepEqual(calls, [null, 71, 21]);
+  assert.equal(items[0].submissionId, 's120');
 });

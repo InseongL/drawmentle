@@ -1,7 +1,7 @@
 // HTTP calls for sessions, puzzles, submissions and progress (docs/api-contract-v1.md).
 // Types mirror contracts/api/openapi.json (python -m app.cli export-openapi); keep both in sync.
 
-export type Candidate = { categoryId: string; candidateIndex: number; displayNameKo: string };
+export type Candidate = { categoryId: string; candidateIndex: number; displayNameKo: string; displayNameEn?: string | null };
 
 export type PublicRelease = {
   releaseId: string;

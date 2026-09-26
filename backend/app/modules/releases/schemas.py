@@ -22,6 +22,7 @@ class Candidate(_Strict):
     categoryId: str
     candidateIndex: int = Field(ge=0)
     displayNameKo: str
+    displayNameEn: str | None = None  # releases before 2026-09-26 carry Korean names only
 
 
 class Inference(_Strict):

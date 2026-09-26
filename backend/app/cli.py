@@ -3,6 +3,7 @@
   build-dev-release   Build a model-less dev release (Top-3 from the dev panel) and register it.
   schedule            Create daily puzzles from the release's daily candidates (random seed, never stored).
   list-puzzles        Dates, IDs and states only (no answers).
+  assign-release      Move puzzles that have not opened and have no games to another release.
   set-answer          Change one date's answer (refused once anyone has played it).
   show-answer         Print one date's answer (dev only).
   export-openapi      Write contracts/api/openapi.json from the FastAPI schemas.
@@ -30,7 +31,7 @@ from app.modules.releases import repository as releases_repo
 from app.modules.releases.artifact_loader import ArtifactLoader, canonical_sha256
 from app.modules.releases.service import register
 
-DEV_RELEASE_ID = "dev-release-v1"
+DEV_RELEASE_ID = "dev-release-v2"  # v2 adds English category names; v1 stays for puzzles already played
 SCORE_TABLE_DIR = REPO_ROOT / "data/artifacts/scoring/scoring-v1"
 RECOGNITION = REPO_ROOT / "config/scoring/recognition.json"
 CURATION = REPO_ROOT / "config/model/catalog-curation-v1.json"
@@ -51,12 +52,14 @@ def dev_manifests(release_id: str) -> tuple[dict, dict]:
     curation = read_json(CURATION)
     cats = curation["categories"]
     labels = sorted(read_json(LABELS)["categories"], key=lambda c: c["class_index"])
+    label_en = {c["category_id"]: c["label_en"] for c in labels}
     raw = [{"classIndex": c["class_index"], "categoryId": c["category_id"],
             "candidateId": cats[c["category_id"]]["service_id"]} for c in labels]
     first_index: dict[str, int] = {}
     for r in raw:  # candidate_index = smallest raw class_index merged into the candidate
         first_index.setdefault(r["candidateId"], r["classIndex"])
-    candidates = [{"categoryId": c, "candidateIndex": i, "displayNameKo": cats[c]["display_name_ko"]}
+    candidates = [{"categoryId": c, "candidateIndex": i, "displayNameKo": cats[c]["display_name_ko"],
+                   "displayNameEn": label_en[c]}
                   for c, i in sorted(first_index.items(), key=lambda kv: kv[1])]
     public = {
         "manifestVersion": "release-public-v1", "releaseId": release_id, "status": "dev-only",
@@ -150,6 +153,28 @@ def cmd_list(args, settings: Settings, db) -> int:
     return 0
 
 
+def cmd_assign_release(args, settings: Settings, db) -> int:
+    """A puzzle keeps its release once it has opened (docs/api-contract-v1.md §3); only unopened, unplayed ones move."""
+    ctx = _context(settings, db, args.release_id)
+    now = dt.datetime.now(dt.timezone.utc)
+    moved, kept = [], []
+    for puzzle in db.execute(select(Puzzle).where(Puzzle.opens_at > now).order_by(Puzzle.service_date)).scalars():
+        if puzzle.release_id == args.release_id:
+            continue
+        played = db.execute(select(func.count()).select_from(GameSession)
+                            .where(GameSession.puzzle_id == puzzle.puzzle_id)).scalar_one()
+        if played or puzzle.answer_category_id not in ctx.answer_names:
+            kept.append(puzzle.service_date)
+            continue
+        puzzle.release_id = args.release_id
+        puzzle.answer_display_name_ko = ctx.answer_names[puzzle.answer_category_id]
+        moved.append(puzzle.service_date)
+    db.commit()
+    span = f"{moved[0]}..{moved[-1]}" if moved else "none"
+    print(f"moved {len(moved)} unopened puzzle(s) to {args.release_id} ({span}); kept {len(kept)}")
+    return 0
+
+
 def cmd_set_answer(args, settings: Settings, db) -> int:
     puzzle = _puzzle_on(db, args.date)
     ctx = _context(settings, db, puzzle.release_id)
@@ -192,6 +217,9 @@ def main(argv=None) -> int:
     p.add_argument("--seed", type=int, help="shuffle seed; default is random and not stored")
     p.set_defaults(fn=cmd_schedule)
     sub.add_parser("list-puzzles").set_defaults(fn=cmd_list)
+    p = sub.add_parser("assign-release")
+    p.add_argument("--release-id", default=DEV_RELEASE_ID)
+    p.set_defaults(fn=cmd_assign_release)
     p = sub.add_parser("set-answer")
     p.add_argument("date", type=dt.date.fromisoformat)
     p.add_argument("category")

@@ -7,11 +7,12 @@ import { renderDrawing } from './drawingSnapshot';
 type Props = {
   strokes: Strokes;
   disabled: boolean;
+  label: string;
   onStroke: (stroke: Stroke) => void;
   onDrawingChange: (drawing: boolean) => void;
 };
 
-export default function DrawingCanvas({ strokes, disabled, onStroke, onDrawingChange }: Props) {
+export default function DrawingCanvas({ strokes, disabled, label, onStroke, onDrawingChange }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const active = useRef<{ pointerId: number; stroke: Stroke } | null>(null);
   const saved = useRef(strokes);
@@ -92,13 +93,13 @@ export default function DrawingCanvas({ strokes, disabled, onStroke, onDrawingCh
     <canvas
       ref={canvasRef}
       className="drawing-canvas"
-      aria-label="그림판. 마우스, 손가락 또는 펜으로 그려보세요."
+      aria-label={label}
       aria-disabled={disabled}
       onPointerDown={start}
       onPointerMove={move}
       onPointerUp={event => finish(event)}
       onPointerCancel={event => finish(event, true)}
       onLostPointerCapture={event => finish(event, true)}
-    >그림판을 사용하려면 Canvas를 지원하는 브라우저가 필요해요.</canvas>
+    >{label}</canvas>
   );
 }

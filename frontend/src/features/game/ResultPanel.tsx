@@ -1,23 +1,24 @@
-import type { Answer } from '../../shared/api/client.ts';
+import { useI18n } from '../../shared/i18n/I18nProvider';
 
-type Props = { answer: Answer; attemptCount: number; bestDisplayText: string | null; thumbnail: string | undefined };
+type Props = { answerName: string; attemptCount: number; bestDisplayText: string | null; thumbnail: string | undefined };
 
 // Shown only after the server confirmed success; the answer comes from that response.
-export default function ResultPanel({ answer, attemptCount, bestDisplayText, thumbnail }: Props) {
+export default function ResultPanel({ answerName, attemptCount, bestDisplayText, thumbnail }: Props) {
+  const { m } = useI18n();
   return (
     <section className="result-panel" aria-labelledby="result-title">
-      <h2 id="result-title">정답이에요!</h2>
+      <h2 id="result-title">{m.result.title}</h2>
       <div className="result-body">
         {thumbnail
-          ? <img src={thumbnail} width="112" height="112" alt="정답으로 판정된 그림" />
-          : <span className="no-thumbnail">미리보기 없음</span>}
+          ? <img src={thumbnail} width="112" height="112" alt={m.result.image} />
+          : <span className="no-thumbnail">{m.history.noPreview}</span>}
         <dl>
-          <div><dt>오늘의 정답</dt><dd className="answer-word">{answer.displayNameKo}</dd></div>
-          <div><dt>총 시도</dt><dd>{attemptCount}회</dd></div>
-          <div><dt>최고 유사도</dt><dd>{bestDisplayText ?? '—'}</dd></div>
+          <div><dt>{m.result.answer}</dt><dd className="answer-word">{answerName}</dd></div>
+          <div><dt>{m.result.attempts}</dt><dd>{m.result.attemptCount(attemptCount)}</dd></div>
+          <div><dt>{m.result.best}</dt><dd>{bestDisplayText ?? '—'}</dd></div>
         </dl>
       </div>
-      <p className="result-note">내일 한국 시간 자정에 새 문제가 열려요.</p>
+      <p className="result-note">{m.result.note}</p>
     </section>
   );
 }

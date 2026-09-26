@@ -36,7 +36,7 @@
 6. 서버: `backend`에서 `python -m uvicorn app.main:create_app --factory --port 8000` (API 문서 http://127.0.0.1:8000/api/docs)
 7. 화면: `frontend`에서 `npm ci` 후 `npm run dev` → http://127.0.0.1:5173 (Vite가 `/api`를 8000으로 넘긴다)
 
-개발 명령(`python -m app.cli --help`): `list-puzzles`(정답 없이 날짜·ID만), `set-answer 날짜 카테고리`(아무도 시작하지 않은 문제만), `show-answer 날짜`, `export-openapi`(`contracts/api/openapi.json` 갱신). 문제 일정의 시드는 저장하지 않으며 정답은 DB에만 있다. `data/artifacts/releases/*/private/`(점수표·판정 기준·정답 후보)는 Git에서 제외된다.
+개발 명령(`python -m app.cli --help`): `list-puzzles`(정답 없이 날짜·ID만), `assign-release`(아직 열리지 않고 아무도 시작하지 않은 문제만 다른 릴리스로 옮김), `set-answer 날짜 카테고리`(아무도 시작하지 않은 문제만), `show-answer 날짜`, `export-openapi`(`contracts/api/openapi.json` 갱신). 문제 일정의 시드는 저장하지 않으며 정답은 DB에만 있다. 기본 개발용 릴리스는 영어 카테고리 이름을 담은 `dev-release-v2`이고, 이미 플레이된 문제는 처음 릴리스(`dev-release-v1`)를 유지한다. `data/artifacts/releases/*/private/`(점수표·판정 기준·정답 후보)는 Git에서 제외된다.
 
 테스트: `python -m unittest discover -s backend/tests/unit` · `python -m unittest discover -s backend/tests/integration`(로컬 DB에 `drawmentle_test`를 만들어 실행, DB가 없으면 건너뜀) · `python -m unittest discover -s tests` · `frontend`에서 `npm test`
 

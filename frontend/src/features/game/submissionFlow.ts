@@ -3,6 +3,8 @@
 import { ApiError } from '../../shared/api/client.ts';
 import type { Api, HistoryItem, Progress, Puzzle, SubmissionRequest, SubmissionResponse, Top3Item } from '../../shared/api/client.ts';
 import type { PendingSubmission } from '../../shared/storage/gameStorage.ts';
+import { MESSAGES } from '../../shared/i18n/messages.ts';
+import type { ErrorKey } from '../../shared/i18n/messages.ts';
 
 export type FlowDeps = {
   api: Pick<Api, 'submit' | 'byRequest' | 'ensureSession'>;
@@ -81,6 +83,30 @@ export function mergeHistory(history: readonly HistoryItem[], items: readonly Hi
   return [...byId.values()].sort((a, b) => b.result.attemptNumber! - a.result.attemptNumber!);
 }
 
+// Similarity ordering needs every attempt, so the whole history is loaded up front (50 per request).
+export async function loadFullProgress(api: Pick<Api, 'progress'>, puzzleId: string): Promise<{ progress: Progress; items: HistoryItem[] }> {
+  const first = await api.progress(puzzleId, null, 50);
+  let { progress } = first;
+  let items = first.items;
+  let cursor = first.nextBeforeAttemptNumber;
+  while (cursor != null) {
+    const page = await api.progress(puzzleId, cursor, 50);
+    progress = newerProgress(progress, page.progress);
+    items = items.concat(page.items);
+    cursor = page.nextBeforeAttemptNumber;
+  }
+  return { progress, items: mergeHistory([], items) };
+}
+
+// Display order (like 꼬맨틀): the latest submission pinned on top, then every attempt by similarity.
+// Ties keep the more recent attempt first. `latest` is null when there is nothing to pin separately.
+export function arrangeHistory(items: readonly HistoryItem[], latestId: string | null): { latest: HistoryItem | null; ranked: HistoryItem[] } {
+  const ranked = [...items].sort((a, b) =>
+    (b.result.displayScore ?? -Infinity) - (a.result.displayScore ?? -Infinity) || b.result.attemptNumber! - a.result.attemptNumber!);
+  const latest = items.find(item => item.submissionId === latestId) ?? items[0] ?? null;
+  return { latest: ranked.length > 1 ? latest : null, ranked };
+}
+
 // Responses can arrive out of order: never step back to fewer attempts or from solved to playing.
 export function newerProgress(current: Progress, incoming: Progress): Progress {
   if (current.state === 'solved' && incoming.state !== 'solved') return current;
@@ -88,14 +114,8 @@ export function newerProgress(current: Progress, incoming: Progress): Progress {
   return incoming;
 }
 
-export const DEFERRED_MESSAGE = '아직 어떤 그림인지 알아보기 어려워요. 특징을 조금 더 그려주세요.';
-
-export function errorMessage(error: ApiError): string {
-  switch (error.code) {
-    case 'GAME_ALREADY_SOLVED': return '이미 정답을 맞힌 문제예요.';
-    case 'VERSION_MISMATCH': return '문제 정보가 바뀌었어요. 그림은 그대로 두고 새로고침해주세요.';
-    case 'IDEMPOTENCY_CONFLICT': return '제출 정보가 맞지 않아 이번 제출을 멈췄어요. 다시 제출해주세요.';
-    case 'PUZZLE_CLOSED': return '이 문제는 더 이상 제출할 수 없어요.';
-    default: return error.message;
-  }
+// Screen text comes from the i18n dictionary by error code, never from the server's (Korean) message.
+export function errorKey(error: ApiError): ErrorKey {
+  if (Object.hasOwn(MESSAGES.ko.errors, error.code)) return error.code as ErrorKey;
+  return error.status === 0 || error.status >= 500 ? 'SERVER_UNREACHABLE' : 'UNKNOWN';
 }

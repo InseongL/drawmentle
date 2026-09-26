@@ -1,6 +1,8 @@
 // Dev-only stand-in for the browser model: builds a full-catalog-style Top-3 from the dev panel.
 // Ordering follows the model runtime rule (p desc, then candidateIndex asc); the server rejects other orders.
 import type { Candidate, Top3Item } from '../../shared/api/client.ts';
+import { categoryName } from '../../shared/i18n/messages.ts';
+import type { DevProblem, Lang } from '../../shared/i18n/messages.ts';
 
 export const SIMPLE_P = [0.7, 0.2, 0.1] as const;
 
@@ -10,16 +12,18 @@ export type DevPrediction =
 
 export const initialDevPrediction = (): DevPrediction => ({ mode: 'simple', categoryId: '' });
 
-export function candidateLabel(c: Candidate): string {
-  return `${c.displayNameKo} (${c.categoryId})`;
+export function candidateLabel(c: Candidate, lang: Lang): string {
+  return lang === 'ko' ? `${c.displayNameKo} (${c.categoryId})` : categoryName(c, 'en');
 }
 
-// Accepts the datalist label, the category ID or the Korean name.
+// Accepts a datalist label in either language, the category ID, or the Korean or English name.
 export function resolveCandidate(candidates: readonly Candidate[], text: string): Candidate | null {
   const value = text.trim();
   if (!value) return null;
   const id = /\(([^()]+)\)$/.exec(value)?.[1] ?? value;
-  return candidates.find(c => c.categoryId === id) ?? candidates.find(c => c.displayNameKo === value) ?? null;
+  const lower = value.toLowerCase();
+  return candidates.find(c => c.categoryId === id) ?? candidates.find(c => c.displayNameKo === value)
+    ?? candidates.find(c => categoryName(c, 'en').toLowerCase() === lower) ?? null;
 }
 
 export function orderTop3(items: Top3Item[], candidates: readonly Candidate[]): Top3Item[] {
@@ -36,12 +40,12 @@ function fillers(candidates: readonly Candidate[], exclude: string, drawingHash:
   return [pool[first], pool[second]];
 }
 
-export type DevTop3 = { ok: true; top3: Top3Item[] } | { ok: false; message: string };
+export type DevTop3 = { ok: true; top3: Top3Item[] } | { ok: false; problem: DevProblem };
 
 export function buildDevTop3(candidates: readonly Candidate[], input: DevPrediction, drawingHash: string): DevTop3 {
   if (input.mode === 'simple') {
     const chosen = resolveCandidate(candidates, input.categoryId);
-    if (!chosen) return { ok: false, message: '개발용 인식 결과에서 1위 후보를 골라주세요.' };
+    if (!chosen) return { ok: false, problem: 'pickTop1' };
     const [second, third] = fillers(candidates, chosen.categoryId, drawingHash);
     return {
       ok: true,
@@ -49,10 +53,10 @@ export function buildDevTop3(candidates: readonly Candidate[], input: DevPredict
     };
   }
   const rows = input.rows.map(row => ({ candidate: resolveCandidate(candidates, row.categoryId), p: Number(row.p) }));
-  if (rows.some(r => !r.candidate)) return { ok: false, message: '후보 세 개를 모두 목록에서 골라주세요.' };
-  if (new Set(rows.map(r => r.candidate!.categoryId)).size !== 3) return { ok: false, message: '서로 다른 후보 세 개가 필요해요.' };
-  if (rows.some(r => !Number.isFinite(r.p) || r.p < 0 || r.p > 1)) return { ok: false, message: 'p는 0부터 1 사이 숫자예요.' };
-  if (rows.reduce((sum, r) => sum + r.p, 0) > 1 + 1e-6) return { ok: false, message: 'p의 합은 1을 넘을 수 없어요.' };
+  if (rows.some(r => !r.candidate)) return { ok: false, problem: 'pickThree' };
+  if (new Set(rows.map(r => r.candidate!.categoryId)).size !== 3) return { ok: false, problem: 'distinct' };
+  if (rows.some(r => !Number.isFinite(r.p) || r.p < 0 || r.p > 1)) return { ok: false, problem: 'range' };
+  if (rows.reduce((sum, r) => sum + r.p, 0) > 1 + 1e-6) return { ok: false, problem: 'sum' };
   return { ok: true, top3: orderTop3(rows.map(r => ({ categoryId: r.candidate!.categoryId, p: r.p })), candidates) };
 }
 

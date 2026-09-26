@@ -1,33 +1,35 @@
 // Game screen state: puzzle/release fixed at load, server progress and history, local thumbnails and the
 // one unconfirmed submission. Scores and success always come from the server; nothing is recomputed here.
 import { useEffect, useRef, useState } from 'react';
-import { createApi } from '../../shared/api/client.ts';
+import { ApiError, createApi } from '../../shared/api/client.ts';
 import type { Api, HistoryItem, Progress, Puzzle, Result, SubmissionResponse, Top3Item } from '../../shared/api/client.ts';
 import { createGameStorage } from '../../shared/storage/gameStorage.ts';
 import type { GameStorage, PendingSubmission } from '../../shared/storage/gameStorage.ts';
 import { createDrawingSnapshot } from '../drawing/drawingSnapshot';
 import type { DrawingSnapshot } from '../drawing/drawingSnapshot';
 import type { Strokes } from '../drawing/drawingState.ts';
-import { DEFERRED_MESSAGE, buildRequest, errorMessage, mergeHistory, newerProgress, recoverPending, sendSubmission } from './submissionFlow.ts';
+import type { DevProblem, Messages } from '../../shared/i18n/messages.ts';
+import { buildRequest, errorKey, loadFullProgress, mergeHistory, newerProgress, recoverPending, sendSubmission } from './submissionFlow.ts';
 import type { FlowDeps, FlowOutcome } from './submissionFlow.ts';
 
-export type Notice = { tone: 'info' | 'error'; text: string };
+// Text is looked up at render time so switching language also translates notices already on screen.
+export type Text = (m: Messages) => string;
+export type Notice = { tone: 'info' | 'error'; text: Text };
 export type LastResult = { submissionId: string; result: Result; reuse: SubmissionResponse['reuse'] };
-type Predict = (snapshot: DrawingSnapshot) => { ok: true; top3: Top3Item[] } | { ok: false; message: string };
+type Predict = (snapshot: DrawingSnapshot) => { ok: true; top3: Top3Item[] } | { ok: false; problem: DevProblem };
 
 const EMPTY_PROGRESS: Progress = { state: 'playing', attemptCount: 0, bestSubmissionId: null, bestDisplayScore: null, bestDisplayText: null };
 const api = createApi();
 
-type Boot = { puzzle: Puzzle; consentRevision: number; progress: Progress; items: HistoryItem[]; cursor: number | null };
+type Boot = { puzzle: Puzzle; consentRevision: number; progress: Progress; items: HistoryItem[] };
 let boot: Promise<Boot> | null = null; // shared by StrictMode's double effect so only one session is created
 
 function loadOnce(client: Api): Promise<Boot> {
   boot ??= (async () => {
     const session = await client.ensureSession();
     const puzzle = await client.todayPuzzle();
-    const page = await client.progress(puzzle.puzzleId);
-    return { puzzle, consentRevision: session.collection.consentRevision, progress: page.progress, items: page.items,
-      cursor: page.nextBeforeAttemptNumber };
+    const { progress, items } = await loadFullProgress(client, puzzle.puzzleId);
+    return { puzzle, consentRevision: session.collection.consentRevision, progress, items };
   })();
   boot.catch(() => { boot = null; });
   return boot;
@@ -35,19 +37,17 @@ function loadOnce(client: Api): Promise<Boot> {
 
 export function useGame() {
   const [phase, setPhase] = useState<'loading' | 'ready' | 'failed'>('loading');
-  const [loadError, setLoadError] = useState('');
+  const [loadError, setLoadError] = useState<Text | null>(null);
   const [puzzle, setPuzzle] = useState<Puzzle | null>(null);
   const [progress, setProgress] = useState<Progress>(EMPTY_PROGRESS);
   const [history, setHistory] = useState<HistoryItem[]>([]);
-  const [cursor, setCursor] = useState<number | null>(null);
   const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
   const [restoredStrokes, setRestoredStrokes] = useState<Strokes>([]);
   const [pending, setPending] = useState<PendingSubmission | null>(null);
   const [busy, setBusy] = useState(false);
-  const [loadingMore, setLoadingMore] = useState(false);
   const [last, setLast] = useState<LastResult | null>(null);
   const [notice, setNotice] = useState<Notice | null>(null);
-  const [highlight, setHighlight] = useState<string | null>(null);
+  const [latestId, setLatestId] = useState<string | null>(null); // pinned row: the latest counted submission
   const consentRevision = useRef(0);
   const storage = useRef<GameStorage | null>(null);
   const inFlight = useRef(false);
@@ -65,17 +65,17 @@ export function useGame() {
     setHistory(current => mergeHistory(current, [{ submissionId, result }]));
     setThumbnails(current => current[submissionId] ? current : { ...current, [submissionId]: thumbnail });
     setLast({ submissionId, result, reuse });
-    setHighlight(result.attemptNumber != null ? submissionId : null);
-    if (result.status === 'deferred') setNotice({ tone: 'info', text: DEFERRED_MESSAGE });
-    else if (reuse === 'drawing_duplicate') setNotice({ tone: 'info', text: `같은 그림을 이미 제출했어요. ${result.attemptNumber}번째 기록을 확인해보세요.` });
+    if (result.attemptNumber != null) setLatestId(submissionId);
+    if (result.status === 'deferred') setNotice({ tone: 'info', text: m => m.notices.deferred });
+    else if (reuse === 'drawing_duplicate') setNotice({ tone: 'info', text: m => m.notices.duplicate(result.attemptNumber!) });
     else setNotice(null); // success is announced by the result panel
   }
 
   async function reloadProgress(puzzleId: string) {
     try {
-      const page = await api.progress(puzzleId);
-      setProgress(current => newerProgress(current, page.progress));
-      setHistory(current => mergeHistory(current, page.items));
+      const full = await loadFullProgress(api, puzzleId);
+      setProgress(current => newerProgress(current, full.progress));
+      setHistory(current => mergeHistory(current, full.items));
     } catch {
       // keep the current view; the next action reloads again
     }
@@ -91,7 +91,8 @@ export function useGame() {
         apply(outcome.response, p.thumbnail);
       } else {
         setPending(outcome.keepPending ? p : null);
-        setNotice({ tone: 'error', text: errorMessage(outcome.error) });
+        const key = errorKey(outcome.error);
+        setNotice({ tone: 'error', text: m => m.errors[key] });
         if (outcome.error.code === 'GAME_ALREADY_SOLVED') void reloadProgress(puzzleId);
       }
     } finally {
@@ -110,22 +111,26 @@ export function useGame() {
       consentRevision.current = b.consentRevision;
       setPuzzle(b.puzzle);
       setProgress(b.progress);
-      const items = mergeHistory([], b.items);
-      setHistory(items);
-      setCursor(b.cursor);
-      if (items[0]) setLast({ submissionId: items[0].submissionId, result: items[0].result, reuse: 'request_retry' });
+      setHistory(b.items);
+      if (b.items[0]) {
+        setLast({ submissionId: b.items[0].submissionId, result: b.items[0].result, reuse: 'request_retry' });
+        setLatestId(b.items[0].submissionId);
+      }
       setThumbnails(saved.thumbnails);
       setRestoredStrokes(saved.strokes);
       setPhase('ready');
       if (saved.pending) {
         setPending(saved.pending);
-        setNotice({ tone: 'info', text: '확인하지 못한 이전 제출을 확인하고 있어요.' });
+        setNotice({ tone: 'info', text: m => m.notices.checkingPending });
         void run(saved.pending, b.puzzle.puzzleId, () => recoverPending(deps(), b.puzzle.puzzleId, saved.pending!));
       }
     }).catch(error => {
       if (cancelled) return;
-      setLoadError(error?.code === 'PUZZLE_NOT_FOUND' ? '오늘의 문제가 아직 준비되지 않았어요.'
-        : error?.message ?? '문제를 불러오지 못했어요.');
+      if (error instanceof ApiError && error.code === 'PUZZLE_NOT_FOUND') setLoadError(() => (m: Messages) => m.notices.puzzleNotReady);
+      else {
+        const key = error instanceof ApiError ? errorKey(error) : 'UNKNOWN';
+        setLoadError(() => (m: Messages) => m.errors[key]);
+      }
       setPhase('failed');
     });
     return () => { cancelled = true; };
@@ -138,17 +143,18 @@ export function useGame() {
     let snapshot: DrawingSnapshot;
     try {
       snapshot = await createDrawingSnapshot(strokes);
-    } catch (error) {
+    } catch {
       inFlight.current = false;
       setBusy(false);
-      setNotice({ tone: 'error', text: error instanceof Error ? error.message : '제출 사본을 만들지 못했어요.' });
+      setNotice({ tone: 'error', text: m => m.notices.snapshotFailed });
       return;
     }
     const prediction = predict(snapshot);
     if (!prediction.ok) {
       inFlight.current = false;
       setBusy(false);
-      setNotice({ tone: 'error', text: prediction.message });
+      const { problem } = prediction;
+      setNotice({ tone: 'error', text: m => m.dev.problems[problem] });
       return;
     }
     const body = buildRequest(puzzle, snapshot.drawing, snapshot.drawingHash, prediction.top3, crypto.randomUUID(),
@@ -164,25 +170,9 @@ export function useGame() {
     void run(p, puzzle.puzzleId, () => sendSubmission(deps(), puzzle.puzzleId, p));
   }
 
-  async function loadMore() {
-    if (!puzzle || cursor == null || loadingMore) return;
-    setLoadingMore(true);
-    try {
-      const page = await api.progress(puzzle.puzzleId, cursor);
-      setHistory(current => mergeHistory(current, page.items));
-      setProgress(current => newerProgress(current, page.progress));
-      setCursor(page.nextBeforeAttemptNumber);
-    } catch {
-      setNotice({ tone: 'error', text: '이전 기록을 불러오지 못했어요. 잠시 후 다시 시도해주세요.' });
-    } finally {
-      setLoadingMore(false);
-    }
-  }
-
   return {
-    phase, loadError, puzzle, progress, history, thumbnails, restoredStrokes, pending, busy, last, notice, highlight,
-    hasMore: cursor != null, loadingMore,
-    submit, retry, loadMore,
+    phase, loadError, puzzle, progress, history, latestId, thumbnails, restoredStrokes, pending, busy, last, notice,
+    submit, retry,
     clearLast: () => { setLast(null); setNotice(null); },
     // Edits make result notices stale; errors about an unconfirmed submission stay until it is resolved.
     dismissNotice: () => { if (!pending) setNotice(null); },

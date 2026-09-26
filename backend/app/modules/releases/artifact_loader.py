@@ -66,8 +66,8 @@ def build_catalog(bundle: ReleaseBundle) -> ReleaseCatalog:
         raise ReleaseUnavailable("invalid public manifest") from exc
     if manifest.releaseId != bundle.release_id:
         raise ReleaseUnavailable("public manifest release id mismatch")
-    raw = [r.model_dump() for r in manifest.rawClasses]
-    cands = [c.model_dump() for c in manifest.candidates]
+    # Hash the stored lists, not re-serialised models: optional fields added later must not change old hashes.
+    raw, cands = bundle.public_manifest["rawClasses"], bundle.public_manifest["candidates"]
     if canonical_sha256(raw) != manifest.rawClassesSha256 or canonical_sha256(cands) != manifest.candidatesSha256:
         raise ReleaseUnavailable("class mapping hash mismatch")
     index = {c.categoryId: c.candidateIndex for c in manifest.candidates}
