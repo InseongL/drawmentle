@@ -113,7 +113,9 @@ python -m app.cli assign-release --release-id <새 릴리스 ID>                
 - 4의 통과 기준: PyTorch 대비 최대 오차 ≤ 1e-3, Top-1 100% 일치, 배치·단건 일치(epoch 10: 4.2e-5, epoch 20: 2.6e-5).
 - 5는 모델 해시와 출력 순서(카탈로그 345개)를 대조하고, `--recognition`이 없으면 run의 보정 초안을 판정 기준으로 쓴다. 모델 파일은 `frontend/public/models/<modelVersion>/model.onnx`(Git 제외)로 복사돼 Vite가 `/models/...`로 제공한다.
 - 6에서 오늘 열렸지만 아무도 플레이하지 않은 문제까지 옮기려면 `--include-open-unplayed`(개발 전용). 플레이된 문제는 어떤 경우에도 옮기지 않는다.
-- 브라우저 확인(선택): 앱 페이지 콘솔에서 `onnxSession.ts`의 `loadSession`으로 모델을 불러 `reference.npz`의 고정 그림 4장 상위 5개를 비교했다(epoch 10: 일치, 오차 ≤ 6.4e-6, 준비 0.27초, 장당 약 3ms). epoch 20은 아직 하지 않았다.
+- 브라우저 확인(선택): 고정 그림 4장(사각형, 가로선, 획 두 개, 점 하나)을 시스템 파이썬에서 `model.datasets.preprocess.render` + onnxruntime으로 돌려 상위 5개 logits를 기대값으로 만든다. 앱 페이지(개발 서버) 콘솔에서 `onnxSession.ts`의 `loadSession`과 `preprocess.ts`로 같은 그림을 돌려 비교한다. 기대값을 소수 다섯째 자리로 반올림하므로 오차 1e-5 안팎이면 일치다.
+    - epoch 10: 상위 5개 일치, 오차 ≤ 6.4e-6, 준비 0.27초, 장당 약 3ms
+    - epoch 20: 상위 5개 일치, 오차 ≤ 9.9e-6, 준비 0.09초, 첫 실행 28ms 뒤 장당 5~8ms, 해시 확인 통과
 - 릴리스 ID는 바꿀 때마다 새로 만든다. 등록된 릴리스의 파일·DB 행은 수정하지 않는다.
 
 ### 5.1 epoch 20 적용 기록 (2026-10-06)
@@ -126,6 +128,7 @@ python -m app.cli assign-release --release-id <새 릴리스 ID>                
 | 4. 확인 | 260장, 최대 오차 2.6e-5, Top-1·Top-3 100% 일치, 배치·단건 차이 0 → 통과 |
 | 5. 릴리스 | `model-dev-e20-v1`, 판정 기준 `recognition-20261001-093849-mobilenet_v3_small-main-e20-draft` |
 | 6. 배정 | `--include-open-unplayed`로 10-07~11-04의 29개 이동. 10-06은 플레이돼서 유지 |
+| 브라우저 확인 | 고정 그림 4장 상위 5개 일치, 오차 ≤ 9.9e-6. 릴리스 manifest의 모델 주소·해시·온도가 확인한 파일과 같음 |
 
 epoch 10 때의 결과는 같은 run의 `eval/calibration-e10.json`, `eval/validation-select-best-e10/`에 보관했다.
 
@@ -163,7 +166,7 @@ epoch 10 때의 결과는 같은 run의 `eval/calibration-e10.json`, `eval/valid
 ## 8. 다음 작업 후보
 
 - 테스트 분할 평가 1회: `model/.venv/Scripts/python -m model.evaluation.evaluate --run $RUN --split test --final`.
-- epoch 20 브라우저 확인(§5의 콘솔 비교). 10-07 문제부터 실제 게임에서 쓰인다.
+- 10-07 문제가 열리면 실제 게임 화면에서 epoch 20 판정 흐름 확인(브라우저 단독 비교는 끝남).
 - 비교 실험: stem stride 1(해상도 유지, 약 2.3배 느림), Conv1D+BiLSTM(획 순서 데이터셋 필요). 현재 구조는 top-1 70% 근처에서 한계라 정확도를 더 올리려면 이쪽이다.
 - 실제 그림판 그림 평가셋(현재 평가는 Quick Draw뿐), 사용자 획 간소화 실험.
 - 학습 스크립트가 최고 epoch를 검증 선택용 절반으로만 고르게 바꾸기(보정용 절반 누수 제거).

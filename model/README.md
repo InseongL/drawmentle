@@ -90,7 +90,7 @@ cd backend && python -m app.cli build-model-release --release-id <id> --model-di
 - `build-model-release`(백엔드 CLI): 모델 해시·출력 순서를 카탈로그와 대조하고, run의 보정 초안(또는 `--recognition`)을 판정 기준으로 넣어 `inference.mode = browser_onnx` 릴리스를 등록한다. 개발 환경에서는 모델 파일을 `frontend/public/models/<modelVersion>/`(Git 제외)로 복사해 Vite가 `/models/...`로 제공한다. 문제 배정은 바꾸지 않는다(`assign-release`로 따로).
 - 브라우저 쪽 전처리 `frontend/src/features/inference/preprocess.ts`는 [공통 사례](../contracts/fixtures/drawing-cases.json)로 파이썬과 바이트 단위 일치를 확인했다. `modelRuntime.ts`는 softmax(logits / T) → 후보 합산 → Top-3, `onnxSession.ts`는 `onnxruntime-web`(WASM, 단일 스레드)으로 모델을 받아 해시를 확인한 뒤 실행한다.
 - 2026-10-06 epoch 10 모델(학습 중): ONNX 7.5MB, PyTorch 대비 최대 오차 4.2e-5(260장 Top-1·Top-3 일치). 브라우저(onnxruntime-web 1.30)에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 6.4e-6, 준비 0.27초, 그림 한 장 약 3ms. 릴리스 `model-dev-e10-v1`, 10-06 문제에서 게임 전체 흐름을 확인했다.
-- 2026-10-06 epoch 20 모델(최종): 검증 top-1 70.2%·top-3 86.1%, T = 1.093, ONNX 7.5MB, 최대 오차 2.6e-5(260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(τ_인식 0.15·τ_성공 0.85)로 10-07~11-04 문제에 배정했다. 브라우저 비교는 아직 하지 않았다.
+- 2026-10-06 epoch 20 모델(최종): 검증 top-1 70.2%·top-3 86.1%, T = 1.093, ONNX 7.5MB, 최대 오차 2.6e-5(260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(τ_인식 0.15·τ_성공 0.85)로 10-07~11-04 문제에 배정했다. 브라우저에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 9.9e-6, 준비 0.09초, 첫 실행 뒤 그림 한 장 5~8ms.
 
 ## 8. 아직 없는 것
 

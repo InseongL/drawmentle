@@ -329,5 +329,5 @@ GPU 여유는 데이터 확대와 복수 시드 비교에 우선 사용한다. �
 - 실제 학습 속도는 mmap 기준 6.5~10천 장/초(epoch당 5~8분)로 11.1의 예상(epoch당 약 4분)보다 느렸다. 같은 설정에서도 시간대마다 속도가 달랐다.
 - 확인한 느려지는 원인: 노트북이 배터리로 바뀌면 GPU가 전력 제한으로 크게 느려진다. 11GB 학습 분할을 RAM에 복사하면 Windows가 페이지 파일로 밀어내 느려져, 4GB 초과 분할은 메모리 맵을 쓴다.
 - 평가·보정(`model/evaluation`), ONNX 변환·확인(`model/export`), 모델 릴리스 빌더(백엔드 `build-model-release`·`assign-release`), 브라우저 전처리·추론(`frontend/src/features/inference/`)을 만들었다. 전처리는 [공통 사례](../contracts/fixtures/drawing-cases.json) 9개에서 파이썬과 바이트 단위로 같다.
-- epoch 20 모델: T = 1.093, ONNX 7.5MB(PyTorch 대비 최대 오차 2.6e-5, 260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(보정 초안 τ_인식 0.15·τ_성공 0.85)로 등록해 2026-10-07~11-04 개발 문제에 배정했다. 브라우저에서 `onnxruntime-web` 단일 스레드 WASM으로 돈다(epoch 10 모델로 잰 값: 준비 0.27초, 그림 한 장 약 3ms).
+- epoch 20 모델: T = 1.093, ONNX 7.5MB(PyTorch 대비 최대 오차 2.6e-5, 260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(보정 초안 τ_인식 0.15·τ_성공 0.85)로 등록해 2026-10-07~11-04 개발 문제에 배정했다. 브라우저에서 `onnxruntime-web` 단일 스레드 WASM으로 돌며 고정 그림 4장의 결과가 파이썬과 같다(오차 ≤ 9.9e-6, 개발 PC에서 그림 한 장 5~8ms).
 - 남은 것: 테스트 분할 최종 평가(1회), 실제 그림판 그림 평가셋, 모바일 p95 측정, Conv1D-BiLSTM·stem stride 1 비교. 분석과 다음 단계는 [인수인계서 1](handoff/model-training.md)에 있다.
