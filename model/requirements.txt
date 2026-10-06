@@ -1,0 +1,5 @@
+# Model training environment (separate from backend/requirements.txt). CUDA 13.0 wheels; see model/README.md.
+torch==2.14.0
+torchvision==0.29.0
+numpy>=1.26,<3
+onnx>=1.23,<2  # torch.onnx.export (model/export/export_onnx.py)

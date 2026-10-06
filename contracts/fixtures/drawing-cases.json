@@ -1,0 +1,310 @@
+{
+ "fixtureVersion": "drawing-cases-v1",
+ "preprocessing": {
+  "version": "qd-strokes-64-v1",
+  "size": 64,
+  "span": 48.0,
+  "radius": 2.0,
+  "supersample": 4
+ },
+ "note": "strokes는 Quick Draw 형식 [[xs], [ys]]. 기대값은 64x64 uint8(행 우선, 배경 0) 바이트의 SHA-256. model/datasets/preprocess.py와 frontend/src/features/inference/preprocess.ts가 모두 일치해야 한다.",
+ "cases": [
+  {
+   "name": "square",
+   "description": "Quick Draw 좌표의 사각형",
+   "strokes": [
+    [
+     [
+      0,
+      100,
+      100,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      100,
+      100,
+      0
+     ]
+    ]
+   ],
+   "sha256": "e696cd34646a11671c32670e7aed527bab8a7cb27730d097601c94ff0fa9cade",
+   "inkPixels": 768,
+   "sum": 195076
+  },
+  {
+   "name": "wide_line",
+   "description": "가로 직선 (높이 0)",
+   "strokes": [
+    [
+     [
+      0,
+      255
+     ],
+     [
+      120,
+      120
+     ]
+    ]
+   ],
+   "sha256": "bd7fb6d6cccc6c69ef366f91a1ce687341eb46044ae1d132dd58cf48afd68b08",
+   "inkPixels": 208,
+   "sum": 52276
+  },
+  {
+   "name": "two_strokes_dot",
+   "description": "획 둘 중 하나는 점",
+   "strokes": [
+    [
+     [
+      10,
+      60
+     ],
+     [
+      10,
+      80
+     ]
+    ],
+    [
+     [
+      200
+     ],
+     [
+      30
+     ]
+    ]
+   ],
+   "sha256": "da9fdf8606b12f7328becc60bb6416fcdc56577973a49e369b5e87d1e4e094d6",
+   "inkPixels": 145,
+   "sum": 28498
+  },
+  {
+   "name": "single_dot",
+   "description": "점 하나만 있는 그림",
+   "strokes": [
+    [
+     [
+      5
+     ],
+     [
+      5
+     ]
+    ]
+   ],
+   "sha256": "2b13cd5132a0829a49376076586a512d3d27e292265721f85c58a0c7d2852a52",
+   "inkPixels": 16,
+   "sum": 3316
+  },
+  {
+   "name": "repeated_point",
+   "description": "같은 점이 반복된 획 = 점",
+   "strokes": [
+    [
+     [
+      7,
+      7,
+      7
+     ],
+     [
+      3,
+      3,
+      3
+     ]
+    ]
+   ],
+   "sha256": "2b13cd5132a0829a49376076586a512d3d27e292265721f85c58a0c7d2852a52",
+   "inkPixels": 16,
+   "sum": 3316
+  },
+  {
+   "name": "tall",
+   "description": "세로로 긴 그림 (종횡비 유지)",
+   "strokes": [
+    [
+     [
+      500,
+      520,
+      510
+     ],
+     [
+      100,
+      900,
+      500
+     ]
+    ]
+   ],
+   "sha256": "8d8b204fee0dfd7cde12841e142e03f1aa69f6d1b7bf8a9413f1ee99f6e75ba3",
+   "inkPixels": 248,
+   "sum": 52134
+  },
+  {
+   "name": "canvas_triangle",
+   "description": "화면 좌표 0~1024 삼각형",
+   "strokes": [
+    [
+     [
+      100,
+      900,
+      500,
+      100
+     ],
+     [
+      900,
+      900,
+      100,
+      900
+     ]
+    ]
+   ],
+   "sha256": "280f57351aee57640314fc3aca0c9d62372f6c946af549e06671ab4c1347e19c",
+   "inkPixels": 752,
+   "sum": 157094
+  },
+  {
+   "name": "float_coords",
+   "description": "소수 좌표",
+   "strokes": [
+    [
+     [
+      0.25,
+      33.5,
+      70.75
+     ],
+     [
+      10.5,
+      60.125,
+      12.0
+     ]
+    ]
+   ],
+   "sha256": "8052dedbcd161d20f8e33d5139f8acbbda75d331d6eea9ae43ab0925e5766c62",
+   "inkPixels": 426,
+   "sum": 86451
+  },
+  {
+   "name": "quickdraw_apple",
+   "description": "실제 Quick Draw 사과 (raw/apple.ndjson 첫 줄)",
+   "strokes": [
+    [
+     [
+      255,
+      255
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      255,
+      255
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      255,
+      255
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      255,
+      254
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      131,
+      124,
+      114,
+      69,
+      37,
+      10,
+      0,
+      0,
+      5,
+      16,
+      31,
+      50,
+      68,
+      86,
+      101,
+      115,
+      126,
+      135,
+      137,
+      135,
+      122,
+      106
+     ],
+     [
+      50,
+      39,
+      39,
+      59,
+      89,
+      127,
+      172,
+      194,
+      215,
+      233,
+      244,
+      249,
+      249,
+      241,
+      225,
+      203,
+      174,
+      143,
+      114,
+      88,
+      65,
+      45
+     ]
+    ],
+    [
+     [
+      84,
+      77,
+      81,
+      88,
+      99,
+      122,
+      138,
+      161,
+      180
+     ],
+     [
+      97,
+      85,
+      52,
+      34,
+      18,
+      4,
+      1,
+      2,
+      12
+     ]
+    ]
+   ],
+   "sha256": "25772f295906777332a20372eb64d860a3b6a559e1d5b5701c6a4a4fe1802edb",
+   "inkPixels": 687,
+   "sum": 142922
+  }
+ ]
+}

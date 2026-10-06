@@ -16,7 +16,8 @@ import type { FlowDeps, FlowOutcome } from './submissionFlow.ts';
 export type Text = (m: Messages) => string;
 export type Notice = { tone: 'info' | 'error'; text: Text };
 export type LastResult = { submissionId: string; result: Result; reuse: SubmissionResponse['reuse'] };
-type Predict = (snapshot: DrawingSnapshot) => { ok: true; top3: Top3Item[] } | { ok: false; problem: DevProblem };
+type Prediction = { ok: true; top3: Top3Item[] } | { ok: false; problem: DevProblem };
+type Predict = (snapshot: DrawingSnapshot) => Prediction | Promise<Prediction>;
 
 const EMPTY_PROGRESS: Progress = { state: 'playing', attemptCount: 0, bestSubmissionId: null, bestDisplayScore: null, bestDisplayText: null };
 const api = createApi();
@@ -149,7 +150,15 @@ export function useGame() {
       setNotice({ tone: 'error', text: m => m.notices.snapshotFailed });
       return;
     }
-    const prediction = predict(snapshot);
+    let prediction: Prediction;
+    try {
+      prediction = await predict(snapshot);
+    } catch {
+      inFlight.current = false;
+      setBusy(false);
+      setNotice({ tone: 'error', text: m => m.notices.inferenceFailed });
+      return;
+    }
     if (!prediction.ok) {
       inFlight.current = false;
       setBusy(false);

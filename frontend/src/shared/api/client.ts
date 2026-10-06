@@ -3,6 +3,18 @@
 
 export type Candidate = { categoryId: string; candidateIndex: number; displayNameKo: string; displayNameEn?: string | null };
 
+export type RawClass = { classIndex: number; categoryId: string; candidateId: string };
+
+// Present for `browser_onnx` releases: where the model file is and how to read its output.
+export type ModelInfo = {
+  url: string;
+  sha256: string;
+  bytes: number;
+  input: { name: string; shape: number[] };
+  output: { name: string; shape: number[] };
+  temperature: number;
+};
+
 export type PublicRelease = {
   releaseId: string;
   status: 'dev-only' | 'production';
@@ -13,6 +25,8 @@ export type PublicRelease = {
   drawingVersions: string[];
   brushVersions: string[];
   inference: { mode: 'dev_manual_top3' | 'browser_onnx'; note?: string | null };
+  model: ModelInfo | null;
+  rawClasses: RawClass[];
   candidates: Candidate[];
 };
 

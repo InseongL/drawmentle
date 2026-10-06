@@ -385,6 +385,23 @@ class SubmissionApiTest(unittest.TestCase):
         self.assertEqual(first["progress"]["bestSubmissionId"], first["items"][0]["submissionId"])  # tie -> latest
         self.assertEqual(self.client.get("/api/puzzles/fixture-puzzle-v1/progress?limit=51").status_code, 422)
 
+    def test_daily_metrics_summarise_play_without_answers(self):
+        from sqlalchemy.orm import Session
+
+        from app import cli
+        for status, digest in (("recognized", "1"), ("deferred", "2"), ("solved", "3")):
+            self.judge.next = status
+            self.submit(self.body({"submissionId": str(uuid.uuid4()), "drawingHash": digest * 64}))
+        with Session(self.engine) as db:
+            row = next(r for r in cli.daily_metrics(db, NOW.date(), NOW.date()) if r["release"] == "fixture-release-v1")
+        self.assertEqual((row["games"], row["submissions"], row["counted"], row["solved"], row["lowConfidence"]),
+                         (1, 3, 2, 1, 1))
+        self.assertAlmostEqual(row["deferralRate"], 1 / 3)
+        self.assertEqual((row["solveRate"], row["medianAttemptsToSolve"]), (1.0, 2.0))
+        self.assertAlmostEqual(row["meanP1"], 0.55)
+        self.assertEqual(row["top1Concentration"], 1.0)
+        self.assertNotIn("apple", json.dumps({k: v for k, v in row.items() if k != "release"}))
+
     def test_failure_before_commit_leaves_nothing(self):
         self.judge.next = "recognized"
         client = TestClient(self.app, raise_server_exceptions=False)

@@ -164,6 +164,46 @@ def download_one(item, count):
             time.sleep(2 ** attempt)
 
 
+def download_full(item):
+    """Whole simplified file for model training samples; verified by size and the object's MD5 ETag."""
+    category = item["category_id"]
+    folder = DATA / "full"
+    out, record_path = folder / f"{category}.ndjson", folder / f"{category}.json"
+    if out.exists() and record_path.exists():
+        record = json.loads(record_path.read_text(encoding="utf-8"))
+        if record["bytes"] == out.stat().st_size:
+            return category, "cached"
+    folder.mkdir(parents=True, exist_ok=True)
+    url = BASE_URL + quote(item["label_en"], safe="") + ".ndjson"
+    temporary = out.with_suffix(".ndjson.part")
+    for attempt in range(4):
+        try:
+            md5 = hashlib.md5()
+            with requests.get(url, stream=True, timeout=(20, 120)) as response:
+                response.raise_for_status()
+                headers = {key: response.headers.get(key) for key in
+                           ["ETag", "Last-Modified", "x-goog-generation", "Content-Length"]}
+                with temporary.open("wb") as stream:
+                    for chunk in response.iter_content(chunk_size=1 << 20):
+                        md5.update(chunk)
+                        stream.write(chunk)
+            size = temporary.stat().st_size
+            if headers["Content-Length"] and size != int(headers["Content-Length"]):
+                raise ValueError(f"{category}: got {size} bytes, expected {headers['Content-Length']}")
+            etag = (headers["ETag"] or "").strip('"')
+            if len(etag) == 32 and etag != md5.hexdigest():
+                raise ValueError(f"{category}: MD5 does not match ETag")
+            temporary.replace(out)
+            write_json(record_path, {"category_id": category, "label_en": item["label_en"], "url": url,
+                                     "downloaded_at_utc": datetime.now(timezone.utc).isoformat(), "bytes": size,
+                                     "md5": md5.hexdigest(), "source_headers": headers})
+            return category, "downloaded"
+        except (requests.RequestException, ValueError, OSError):
+            if attempt == 3:
+                raise
+            time.sleep(2 ** attempt)
+
+
 def render(drawing):
     """Project preprocessing, NOT a byte-identical reproduction of official .npy.
 
@@ -317,17 +357,20 @@ def preview(items):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["catalog", "download", "prepare", "verify", "preview"])
+    parser.add_argument("command", choices=["catalog", "download", "download-full", "prepare", "verify", "preview"])
     parser.add_argument("--samples-per-class", type=int, default=1000)
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
     if args.samples_per_class < 1 or not 1 <= args.workers <= 16:
         parser.error("samples must be positive; workers must be between 1 and 16")
     items = catalog()
-    if args.command == "download":
+    if args.command in ("download", "download-full"):
         failures = []
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            tasks = {pool.submit(download_one, i, args.samples_per_class): i for i in items}
+            if args.command == "download":
+                tasks = {pool.submit(download_one, i, args.samples_per_class): i for i in items}
+            else:
+                tasks = {pool.submit(download_full, i): i for i in items}
             for n, future in enumerate(as_completed(tasks), 1):
                 try:
                     cid, status = future.result()

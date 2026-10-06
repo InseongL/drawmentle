@@ -1,12 +1,14 @@
 """Dev commands. Run from backend/:  python -m app.cli <command> --help
 
   build-dev-release   Build a model-less dev release (Top-3 from the dev panel) and register it.
+  build-model-release Build a release around an exported ONNX model (model/export) and register it.
   schedule            Create daily puzzles from the release's daily candidates (random seed, never stored).
   list-puzzles        Dates, IDs and states only (no answers).
   assign-release      Move puzzles that have not opened and have no games to another release.
   set-answer          Change one date's answer (refused once anyone has played it).
   show-answer         Print one date's answer (dev only).
   export-openapi      Write contracts/api/openapi.json from the FastAPI schemas.
+  metrics             Daily play metrics per puzzle/release (deferral, solve rate, confidence) for monitoring.
 
 Release files go to data/artifacts/releases/<release-id>/ (private files stay untracked).
 """
@@ -14,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import random
 import secrets
@@ -22,10 +25,10 @@ import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 
 from app.core.settings import REPO_ROOT, Settings
-from app.db.models import GameSession, Puzzle
+from app.db.models import GameSession, Puzzle, ReleaseBundle
 from app.db.session import make_engine, make_session_factory
 from app.modules.releases import repository as releases_repo
 from app.modules.releases.artifact_loader import ArtifactLoader, canonical_sha256
@@ -36,6 +39,8 @@ SCORE_TABLE_DIR = REPO_ROOT / "data/artifacts/scoring/scoring-v1"
 RECOGNITION = REPO_ROOT / "config/scoring/recognition.json"
 CURATION = REPO_ROOT / "config/model/catalog-curation-v1.json"
 LABELS = REPO_ROOT / "data/quickdraw/metadata/labels.json"
+MODEL_RUNS = REPO_ROOT / "data/artifacts/models/runs"
+PUBLIC_MODELS = Path("frontend/public/models")  # under the artifact root; Vite serves it at /models in dev
 
 
 def read_json(path: Path):
@@ -87,24 +92,82 @@ def dev_manifests(release_id: str) -> tuple[dict, dict]:
     return public, private
 
 
-def cmd_build_dev_release(args, settings: Settings, db) -> int:
-    release_dir = settings.artifact_root / "data/artifacts/releases" / args.release_id
+def model_manifests(release_id: str, model_dir: Path, recognition: dict) -> tuple[dict, dict, dict]:
+    """Release manifests for an exported model: browser ONNX inference with the model's temperature."""
+    public, private = dev_manifests(release_id)
+    model = read_json(model_dir / "model-manifest.json")
+    onnx = model_dir / model["file"]
+    if hashlib.sha256(onnx.read_bytes()).hexdigest() != model["sha256"]:
+        raise SystemExit(f"{onnx} does not match its model manifest hash")
+    class_ids = [r["categoryId"] for r in public["rawClasses"]]
+    if hashlib.sha256(json.dumps(class_ids).encode()).hexdigest() != model["classes"]["sha256"]:
+        raise SystemExit("model output order differs from the catalogue class order")
+    if recognition.get("min_top1_p") is None or recognition.get("success_min_p") is None:
+        raise SystemExit("recognition rules need min_top1_p and success_min_p")
+    calibration = model["outputCalibration"]
+    temperature = float(calibration["temperature"])
+    public.update(
+        modelVersion=model["modelVersion"], preprocessingVersion=model["preprocessing"]["version"],
+        outputCalibrationVersion=f"temperature-{temperature:g}" if calibration["method"] == "temperature" else "none-v1",
+        model={"url": f"/models/{model['modelVersion']}/{model['file']}", "sha256": model["sha256"],
+               "bytes": model["bytes"], "input": {"name": model["input"]["name"], "shape": model["input"]["shape"]},
+               "output": {"name": model["output"]["name"], "shape": model["output"]["shape"]},
+               "temperature": temperature, "preprocessing": model["preprocessing"]},
+        inference={"mode": "browser_onnx", "probability": "softmax_full_catalog_then_sum_by_candidate",
+                   "outputCalibration": "softmax(logits / temperature) in the browser, before summing",
+                   "note": None})
+    private.update(publicManifestSha256=canonical_sha256(public), recognition=recognition)
+    return public, private, model
+
+
+def write_and_register(settings: Settings, db, release_id: str, public: dict, private: dict,
+                       model_file: Path | None = None) -> ReleaseBundle:
+    release_dir = settings.artifact_root / "data/artifacts/releases" / release_id
     private_dir = release_dir / "private"
-    public, private = dev_manifests(args.release_id)
-    existing = releases_repo.get_bundle(db, args.release_id)
+    existing = releases_repo.get_bundle(db, release_id)
     if existing is not None and existing.public_manifest_sha256 != canonical_sha256(public):
-        raise SystemExit(f"{args.release_id} is already registered with different content; use a new --release-id")
+        raise SystemExit(f"{release_id} is already registered with different content; use a new --release-id")
     private_dir.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(SCORE_TABLE_DIR / "score-table.npz", private_dir / "score-table.npz")
     shutil.copyfile(SCORE_TABLE_DIR / "manifest.json", private_dir / "score-manifest.json")
     write_json(private_dir / "private-manifest.json", private)
     write_json(release_dir / "public-manifest.json", public)
+    if model_file is not None:  # the browser downloads the model; in dev Vite serves frontend/public
+        target = settings.artifact_root / PUBLIC_MODELS / public["modelVersion"] / model_file.name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(model_file, target)
     key = (private_dir / "private-manifest.json").relative_to(settings.artifact_root).as_posix()
     bundle = register(db, settings.artifact_root, public, key, dt.datetime.now(dt.timezone.utc))
     db.commit()
+    return bundle
+
+
+def cmd_build_dev_release(args, settings: Settings, db) -> int:
+    public, private = dev_manifests(args.release_id)
+    bundle = write_and_register(settings, db, args.release_id, public, private)
     print(f"release {bundle.release_id}: {len(public['candidates'])} candidates, "
           f"{sum(a['daily'] for a in private['answers'].values())} daily answers, "
           f"{bundle.scoring_version} / {bundle.recognition_version}")
+    return 0
+
+
+def cmd_build_model_release(args, settings: Settings, db) -> int:
+    model_dir = args.model_dir.resolve()  # relative to the current folder, else to the repository root
+    if not model_dir.exists():
+        model_dir = REPO_ROOT / args.model_dir
+    if args.recognition:
+        recognition = read_json(args.recognition)
+    else:  # the calibration draft of the run the model came from, which must be for the same epoch
+        source = read_json(model_dir / "model-manifest.json")["source"]
+        calibration = read_json(MODEL_RUNS / source["runId"] / "calibration.json")
+        if calibration["epoch"] != source["epoch"]:
+            raise SystemExit("the run's calibration.json is for another epoch; rerun model.evaluation.calibrate")
+        recognition = calibration["draft"]
+    public, private, model = model_manifests(args.release_id, model_dir, recognition)
+    bundle = write_and_register(settings, db, args.release_id, public, private, model_dir / model["file"])
+    print(f"release {bundle.release_id}: model {bundle.model_version} ({model['bytes']:,} bytes, "
+          f"T={public['model']['temperature']}), recognition {bundle.recognition_version}. "
+          f"Puzzles are unchanged; use assign-release to move unopened ones.")
     return 0
 
 
@@ -154,11 +217,18 @@ def cmd_list(args, settings: Settings, db) -> int:
 
 
 def cmd_assign_release(args, settings: Settings, db) -> int:
-    """A puzzle keeps its release once it has opened (docs/api-contract-v1.md §3); only unopened, unplayed ones move."""
+    """A puzzle keeps its release once it has opened (docs/api-contract-v1.md §3); only unopened, unplayed ones move.
+
+    --include-open-unplayed (dev only) also moves today's already-open puzzle when nobody has played it yet.
+    """
     ctx = _context(settings, db, args.release_id)
     now = dt.datetime.now(dt.timezone.utc)
+    if settings.is_production and args.include_open_unplayed:
+        raise SystemExit("--include-open-unplayed is a dev-only option")
+    today = now.astimezone(ZoneInfo(settings.service_timezone)).date()
+    movable = Puzzle.service_date >= today if args.include_open_unplayed else Puzzle.opens_at > now
     moved, kept = [], []
-    for puzzle in db.execute(select(Puzzle).where(Puzzle.opens_at > now).order_by(Puzzle.service_date)).scalars():
+    for puzzle in db.execute(select(Puzzle).where(movable).order_by(Puzzle.service_date)).scalars():
         if puzzle.release_id == args.release_id:
             continue
         played = db.execute(select(func.count()).select_from(GameSession)
@@ -171,7 +241,7 @@ def cmd_assign_release(args, settings: Settings, db) -> int:
         moved.append(puzzle.service_date)
     db.commit()
     span = f"{moved[0]}..{moved[-1]}" if moved else "none"
-    print(f"moved {len(moved)} unopened puzzle(s) to {args.release_id} ({span}); kept {len(kept)}")
+    print(f"moved {len(moved)} unplayed puzzle(s) to {args.release_id} ({span}); kept {len(kept)} already played")
     return 0
 
 
@@ -196,6 +266,71 @@ def cmd_show_answer(args, settings: Settings, db) -> int:
     return 0
 
 
+METRICS_SQL = text("""
+SELECT p.service_date, p.release_id,
+       count(DISTINCT g.game_session_id) AS games,
+       count(s.submission_id) AS submissions,
+       count(*) FILTER (WHERE s.reason = 'low_confidence') AS low_confidence,
+       count(*) FILTER (WHERE s.reason = 'unsupported_candidate') AS unsupported,
+       count(*) FILTER (WHERE s.status IN ('recognized', 'solved')) AS counted,
+       count(*) FILTER (WHERE s.status = 'solved') AS solved,
+       percentile_cont(0.5) WITHIN GROUP (ORDER BY s.attempt_number) FILTER (WHERE s.status = 'solved')
+           AS median_attempts_to_solve,
+       avg((s.top3 -> 0 ->> 'p')::float8) AS mean_p1,
+       avg(s.display_score) FILTER (WHERE s.status IN ('recognized', 'solved')) AS mean_score
+FROM puzzles p
+LEFT JOIN game_sessions g ON g.puzzle_id = p.puzzle_id
+LEFT JOIN submissions s ON s.game_session_id = g.game_session_id
+WHERE p.service_date BETWEEN :start AND :end
+GROUP BY p.service_date, p.release_id
+ORDER BY p.service_date
+""")
+
+TOP1_SQL = text("""
+SELECT p.service_date, s.top3 -> 0 ->> 'categoryId' AS top1, count(*) AS n
+FROM puzzles p JOIN game_sessions g ON g.puzzle_id = p.puzzle_id JOIN submissions s ON s.game_session_id = g.game_session_id
+WHERE p.service_date BETWEEN :start AND :end
+GROUP BY p.service_date, top1
+""")
+
+
+def daily_metrics(db, start: dt.date, end: dt.date) -> list[dict]:
+    """Aggregates only; never answers or drawings. Rates are None when there is nothing to divide."""
+    top1: dict[dt.date, list[int]] = {}
+    for day, _, n in db.execute(TOP1_SQL, {"start": start, "end": end}):
+        top1.setdefault(day, []).append(n)
+    rows = []
+    for r in db.execute(METRICS_SQL, {"start": start, "end": end}).mappings():
+        subs, games = r["submissions"], r["games"]
+        counts = top1.get(r["service_date"], [])
+        rows.append({
+            "date": r["service_date"].isoformat(), "release": r["release_id"], "games": games, "submissions": subs,
+            "deferralRate": (r["low_confidence"] + r["unsupported"]) / subs if subs else None,
+            "lowConfidence": r["low_confidence"], "unsupported": r["unsupported"], "counted": r["counted"],
+            "solved": r["solved"], "solveRate": r["solved"] / games if games else None,
+            "medianAttemptsToSolve": r["median_attempts_to_solve"],
+            "meanP1": r["mean_p1"], "meanScore": float(r["mean_score"]) if r["mean_score"] is not None else None,
+            # share of the single most frequent Top-1 candidate: a stuck model or a bad release pushes this up
+            "top1Concentration": max(counts) / sum(counts) if counts else None,
+        })
+    return rows
+
+
+def cmd_metrics(args, settings: Settings, db) -> int:
+    end = args.end or dt.datetime.now(ZoneInfo(settings.service_timezone)).date()
+    rows = daily_metrics(db, end - dt.timedelta(days=args.days - 1), end)
+    if args.json:
+        print(json.dumps(rows, ensure_ascii=False, indent=1))
+        return 0
+    fmt = lambda v, pct=False: "-" if v is None else f"{v * 100:.1f}%" if pct else f"{v:.2f}" if isinstance(v, float) else str(v)  # noqa: E731
+    print("date        release            games  subs  defer   solved  solve%  med.att  p1    top1conc")
+    for r in rows:
+        print(f"{r['date']}  {r['release']:<18} {r['games']:>5} {r['submissions']:>5}  {fmt(r['deferralRate'], True):>6}"
+              f"  {r['solved']:>6}  {fmt(r['solveRate'], True):>6}  {fmt(r['medianAttemptsToSolve']):>7}"
+              f"  {fmt(r['meanP1']):>4}  {fmt(r['top1Concentration'], True):>7}")
+    return 0
+
+
 def export_openapi(out: Path) -> int:
     from app.main import create_app  # imported lazily: builds routers only, opens no DB connection
     spec = create_app(Settings()).openapi()
@@ -210,6 +345,11 @@ def main(argv=None) -> int:
     p = sub.add_parser("build-dev-release")
     p.add_argument("--release-id", default=DEV_RELEASE_ID)
     p.set_defaults(fn=cmd_build_dev_release)
+    p = sub.add_parser("build-model-release")
+    p.add_argument("--release-id", required=True)
+    p.add_argument("--model-dir", type=Path, required=True, help="data/artifacts/models/<modelVersion>")
+    p.add_argument("--recognition", type=Path, help="recognition rules JSON (default: the run's calibration draft)")
+    p.set_defaults(fn=cmd_build_model_release)
     p = sub.add_parser("schedule")
     p.add_argument("--release-id", default=DEV_RELEASE_ID)
     p.add_argument("--start", type=dt.date.fromisoformat, help="first date (default: today in service timezone)")
@@ -219,6 +359,8 @@ def main(argv=None) -> int:
     sub.add_parser("list-puzzles").set_defaults(fn=cmd_list)
     p = sub.add_parser("assign-release")
     p.add_argument("--release-id", default=DEV_RELEASE_ID)
+    p.add_argument("--include-open-unplayed", action="store_true",
+                   help="dev only: also move today's open puzzle if it has no games")
     p.set_defaults(fn=cmd_assign_release)
     p = sub.add_parser("set-answer")
     p.add_argument("date", type=dt.date.fromisoformat)
@@ -227,6 +369,11 @@ def main(argv=None) -> int:
     p = sub.add_parser("show-answer")
     p.add_argument("date", type=dt.date.fromisoformat)
     p.set_defaults(fn=cmd_show_answer, dev_only=True)
+    p = sub.add_parser("metrics")
+    p.add_argument("--days", type=int, default=7)
+    p.add_argument("--end", type=dt.date.fromisoformat, help="last date (default: today in service timezone)")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(fn=cmd_metrics)
     p = sub.add_parser("export-openapi")
     p.add_argument("--out", type=Path, default=REPO_ROOT / "contracts/api/openapi.json")
     args = ap.parse_args(argv)

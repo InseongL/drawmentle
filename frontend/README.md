@@ -21,9 +21,11 @@ Node 22.18 이상. 최초 `npm ci`, 개발 `npm run dev`(http://127.0.0.1:5173),
 
 오른쪽 위 `ENG`/`KOR` 버튼으로 모든 화면 문구를 한국어·영어로 바꾼다. 문구는 `shared/i18n/messages.ts` 한 곳에 있고, 영어 사전은 타입과 `tests/unit/i18n.test.ts`로 한국어와 같은 항목을 모두 갖추도록 검사한다. 제목은 한국어에서 `드로맨틀` + 작은 `drawmentle`, 영어에서 `Drawmentle` + 작은 `드로맨틀`이다. 선택은 이 브라우저에만 저장하고 기본은 한국어다. 서버 오류는 서버 문구 대신 오류 코드로 사전에서 찾는다. 카테고리 영어 이름은 릴리스 manifest의 `displayNameEn`을 쓰고, 영어 이름이 없는 이전 릴리스(`dev-release-v1`)는 ID를 읽기 쉬운 형태로 바꿔 보여준다(`hot_air_balloon` → `hot air balloon`).
 
-## 개발용 인식 결과 패널
+## 인식: 브라우저 모델과 개발 패널
 
-모델이 없는 개발용 릴리스(`inference.mode = dev_manual_top3`)에서만 보인다. `1위만 고르기`는 고른 후보에 p 0.7을 주고 2·3위(0.2/0.1)는 그림 해시로 정해 같은 그림이면 같은 Top-3가 된다. `세 후보와 p 직접 입력`은 세 후보와 p를 정하며 p 내림차순, 같으면 candidate_index 순으로 정렬해 보낸다. 운영 모델을 붙이면 이 패널 대신 `features/inference/modelRuntime.ts`가 같은 형식의 Top-3를 만든다.
+모델 릴리스(`inference.mode = browser_onnx`)에서는 문제를 열 때 `features/inference/onnxSession.ts`가 `onnxruntime-web`(WASM, 지연 로딩)으로 모델을 받아 해시를 확인하고, 제출 때 `preprocess.ts`(64px 렌더) → `modelRuntime.ts`(softmax(logits / T) → 후보 합산 → Top-3)로 인식한다. 모델 준비 전·실패 시 제출을 막고 다시 불러오기를 보여준다.
+
+개발 패널은 모델이 없는 개발용 릴리스(`inference.mode = dev_manual_top3`)에서만 보인다. `1위만 고르기`는 고른 후보에 p 0.7을 주고 2·3위(0.2/0.1)는 그림 해시로 정해 같은 그림이면 같은 Top-3가 된다. `세 후보와 p 직접 입력`은 세 후보와 p를 정하며 p 내림차순, 같으면 candidate_index 순으로 정렬해 보낸다. 운영 모델을 붙이면 이 패널 대신 `features/inference/modelRuntime.ts`가 같은 형식의 Top-3를 만든다.
 
 ## 파일
 

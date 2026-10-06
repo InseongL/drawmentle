@@ -2,6 +2,8 @@
 
 기획 문서: [AI 스케치 게임 서비스 기획서 v3.2](<AI 스케치 게임 서비스 기획서 v3.2.md>)
 
+인수인계: [1. 모델 학습](docs/handoff/model-training.md) · [2. 유지보수·설정 변경](docs/handoff/maintenance.md) — 이어서 작업할 사람·에이전트는 여기부터 읽는다.
+
 서비스명: **드로맨틀**. 게임 루프(세션·오늘의 문제·제출·판정·기록 복원)가 FastAPI + PostgreSQL + React로 동작한다. 모델이 아직 없으므로 개발용 릴리스에서는 화면의 **개발용 인식 결과** 패널이 Top-3를 대신 정하고, 인식·성공 임계값은 개발용 가짜 값(`recognition-dev-v0`: 보류 p1 < 0.20, 성공 p1 ≥ 0.50)이다. 아래 [로컬 실행](#로컬-실행) 참고.
 
 아키텍처 초안: [React + FastAPI 기반 서비스 구조](docs/service-architecture-v1.md)
@@ -16,7 +18,7 @@
 
 프론트 화면: [그림판·제출 기록·Q&A와 모바일/데스크톱 계획](docs/frontend-plan-v1.md)
 
-모델 구조: [Quick Draw 레퍼런스·모델 선택·입출력·학습·모바일 배포 계획](docs/model-architecture-v1.md)
+모델 구조: [Quick Draw 레퍼런스·모델 선택·입출력·학습·모바일 배포 계획](docs/model-architecture-v1.md) · 학습 실행: [model/README.md](model/README.md) (64px 데이터셋 빌더·MobileNetV3 학습 스크립트, 이 PC의 RTX 4050으로 실행)
 
 아키텍처 문서에는 프론트·백엔드·모델·속성·수집 담당의 산출물, Top-3/릴리스 연결 규격, 수집 상태와 후속 MLOps 연결 지점, 단계별 완료 기준을 정리했다. 게임 API와 게임 화면은 구현했고, 학습 모델·브라우저 추론·학습용 그림 수집은 아직 없다(수집은 `collection-disabled-v0`로 꺼져 있고 Q&A에만 안내한다).
 
@@ -36,7 +38,7 @@
 6. 서버: `backend`에서 `python -m uvicorn app.main:create_app --factory --port 8000` (API 문서 http://127.0.0.1:8000/api/docs)
 7. 화면: `frontend`에서 `npm ci` 후 `npm run dev` → http://127.0.0.1:5173 (Vite가 `/api`를 8000으로 넘긴다)
 
-개발 명령(`python -m app.cli --help`): `list-puzzles`(정답 없이 날짜·ID만), `assign-release`(아직 열리지 않고 아무도 시작하지 않은 문제만 다른 릴리스로 옮김), `set-answer 날짜 카테고리`(아무도 시작하지 않은 문제만), `show-answer 날짜`, `export-openapi`(`contracts/api/openapi.json` 갱신). 문제 일정의 시드는 저장하지 않으며 정답은 DB에만 있다. 기본 개발용 릴리스는 영어 카테고리 이름을 담은 `dev-release-v2`이고, 이미 플레이된 문제는 처음 릴리스(`dev-release-v1`)를 유지한다. `data/artifacts/releases/*/private/`(점수표·판정 기준·정답 후보)는 Git에서 제외된다.
+개발 명령(`python -m app.cli --help`): `build-model-release`(내보낸 ONNX 모델로 릴리스 등록), `metrics`(날짜·릴리스별 판 수·보류율·성공률·평균 확신도·1위 쏠림, 정답 없이), `list-puzzles`(정답 없이 날짜·ID만), `assign-release`(아직 열리지 않고 아무도 시작하지 않은 문제만 다른 릴리스로 옮김), `set-answer 날짜 카테고리`(아무도 시작하지 않은 문제만), `show-answer 날짜`, `export-openapi`(`contracts/api/openapi.json` 갱신). 문제 일정의 시드는 저장하지 않으며 정답은 DB에만 있다. 기본 개발용 릴리스는 영어 카테고리 이름을 담은 `dev-release-v2`이고, 이미 플레이된 문제는 처음 릴리스(`dev-release-v1`)를 유지한다. `data/artifacts/releases/*/private/`(점수표·판정 기준·정답 후보)는 Git에서 제외된다.
 
 테스트: `python -m unittest discover -s backend/tests/unit` · `python -m unittest discover -s backend/tests/integration`(로컬 DB에 `drawmentle_test`를 만들어 실행, DB가 없으면 건너뜀) · `python -m unittest discover -s tests` · `frontend`에서 `npm test`
 

@@ -1,0 +1,32 @@
+{
+  "version": "training-config-v1",
+  "rationale_doc": "docs/model-architecture-v1.md",
+  "note_ko": "비교 실험의 시작값이다. 최적값이 아니며 본 학습 전에 작은 표본으로 확인한다.",
+  "dataset": {
+    "root": "data/datasets",
+    "version": "qd-local1k-64-v1",
+    "recognized_only": false,
+    "placement": "auto"
+  },
+  "model": {
+    "name": "mobilenet_v3_small",
+    "stem_stride": 2
+  },
+  "train": {
+    "epochs": 30,
+    "batch_size": 512,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 1,
+    "label_smoothing": 0.0,
+    "early_stop_patience": 5,
+    "amp": "auto",
+    "seed": 20260926,
+    "augment": {
+      "degrees": 8,
+      "translate": 0.04,
+      "scale": [0.9, 1.1]
+    }
+  },
+  "output_dir": "data/artifacts/models/runs"
+}

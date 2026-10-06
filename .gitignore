@@ -2,6 +2,7 @@ __pycache__/
 /%SystemDrive%/
 .venv/
 data/quickdraw/raw/
+data/quickdraw/full/
 data/quickdraw/processed/
 data/quickdraw/previews/
 data/quickdraw/manifests/
@@ -26,6 +27,7 @@ data/quickdraw/manifests/
 # Application dependencies, build output, and local caches.
 node_modules/
 /frontend/dist/
+/frontend/public/models/
 /frontend/coverage/
 .pytest_cache/
 .mypy_cache/

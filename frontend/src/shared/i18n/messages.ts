@@ -37,13 +37,16 @@ const ko = {
     noModel: '그림 인식 모델을 준비하고 있어요.',
     empty: '그림을 그린 다음 제출해보세요.',
     devInput: '아래 개발용 인식 결과를 정하면 제출할 수 있어요.',
+    modelFailed: '그림 인식 모델을 불러오지 못했어요.',
   },
+  retryModel: '모델 다시 불러오기',
   notices: {
     deferred: '아직 어떤 그림인지 알아보기 어려워요. 특징을 조금 더 그려주세요.',
     duplicate: (n: number) => `같은 그림을 이미 제출했어요. ${n}번째 기록을 확인해보세요.`,
     checkingPending: '확인하지 못한 이전 제출을 확인하고 있어요.',
     snapshotFailed: '제출할 그림을 만들지 못했어요. 다시 시도해주세요.',
     puzzleNotReady: '오늘의 문제가 아직 준비되지 않았어요.',
+    inferenceFailed: '그림을 인식하지 못했어요. 다시 제출해주세요.',
   },
   errors: {
     NETWORK_ERROR: '연결이 불안정해요. 그림은 그대로 두고 다시 시도해주세요.',
@@ -167,13 +170,16 @@ const en: Messages = {
     noModel: 'The drawing recognizer is getting ready.',
     empty: 'Draw something, then submit.',
     devInput: 'Set the dev recognition result below to submit.',
+    modelFailed: "Couldn't load the drawing recognizer.",
   },
+  retryModel: 'Reload the recognizer',
   notices: {
     deferred: "The AI can't tell what this is yet. Add a few more details.",
     duplicate: n => `You already submitted this drawing. See attempt #${n}.`,
     checkingPending: 'Checking your last unconfirmed submission…',
     snapshotFailed: "Couldn't prepare the drawing. Please try again.",
     puzzleNotReady: "Today's puzzle isn't ready yet.",
+    inferenceFailed: "Couldn't recognize the drawing. Please submit again.",
   },
   errors: {
     NETWORK_ERROR: 'The connection is unstable. Your drawing is kept; please try again.',

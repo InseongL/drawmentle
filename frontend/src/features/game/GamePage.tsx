@@ -7,6 +7,8 @@ import { undoStroke } from '../drawing/drawingState.ts';
 import type { Strokes } from '../drawing/drawingState.ts';
 import DevPredictionPanel from '../inference/DevPredictionPanel';
 import { buildDevTop3, initialDevPrediction, isDevPredictionReady } from '../inference/devPrediction.ts';
+import { predictTop3 } from '../inference/modelRuntime.ts';
+import { useModelSession } from '../inference/useModelSession.ts';
 import GameFaq from './GameFaq';
 import ResultPanel from './ResultPanel';
 import SubmissionHistory from './SubmissionHistory';
@@ -41,6 +43,8 @@ export default function GamePage() {
   const { puzzle, progress, last } = game;
   const candidates = puzzle?.release.candidates ?? [];
   const devMode = puzzle?.release.inference.mode === 'dev_manual_top3';
+  const model = useModelSession(puzzle?.release);
+  const modelMode = puzzle?.release.inference.mode === 'browser_onnx';
   const devCheck = devMode ? isDevPredictionReady(candidates, devInput) : null;
   const solved = progress.state === 'solved';
   const locked = game.busy || game.phase !== 'ready';
@@ -48,7 +52,8 @@ export default function GamePage() {
   let blocker: string | null = null;
   if (game.phase !== 'ready') blocker = m.blockers.loading;
   else if (solved) blocker = m.blockers.solved;
-  else if (!devMode) blocker = m.blockers.noModel;
+  else if (modelMode && model.status === 'failed') blocker = m.blockers.modelFailed;
+  else if (!devMode && model.status !== 'ready') blocker = m.blockers.noModel;
   else if (!strokes.length) blocker = m.blockers.empty;
   else if (devCheck && !devCheck.ok) blocker = m.blockers.devInput;
   const canSubmit = !blocker && !locked && !drawing && !game.pending;
@@ -62,7 +67,16 @@ export default function GamePage() {
   async function submit() {
     if (!canSubmit) return;
     setEdited(false);
-    await game.submit(strokes, snapshot => buildDevTop3(candidates, devInput, snapshot.drawingHash));
+    if (model.status === 'ready' && puzzle?.release.model) {
+      const { session } = model;
+      const { rawClasses, model: info } = puzzle.release;
+      await game.submit(strokes, async snapshot => ({
+        ok: true,
+        top3: await predictTop3(session, snapshot.drawing.strokes, { rawClasses, candidates, temperature: info.temperature }),
+      }));
+    } else {
+      await game.submit(strokes, snapshot => buildDevTop3(candidates, devInput, snapshot.drawingHash));
+    }
   }
 
   const lastScored = last && last.result.displayText != null ? last.result : null;
@@ -119,6 +133,9 @@ export default function GamePage() {
             {edited && last && !game.busy && <p className="notice">{m.edited}</p>}
             {!game.notice && blocker && <p className="notice">{blocker}</p>}
             {!game.notice && !blocker && !lastScored && <p className="notice">{m.ready}</p>}
+            {modelMode && model.status === 'failed' && (
+              <button type="button" className="retry-button" onClick={model.retry}>{m.retryModel}</button>
+            )}
             {game.pending && !game.busy && (
               <button type="button" className="retry-button" onClick={game.retry}>{m.retry}</button>
             )}

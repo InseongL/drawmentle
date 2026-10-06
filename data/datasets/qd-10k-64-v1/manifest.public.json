@@ -1,0 +1,44 @@
+{
+ "datasetVersion": "qd-10k-64-v1",
+ "createdAt": "2026-10-01T00:38:35+00:00",
+ "preprocessing": {
+  "version": "qd-strokes-64-v1",
+  "size": 64,
+  "span": 48.0,
+  "radius": 2.0,
+  "supersample": 4
+ },
+ "source": {
+  "name": "Quick, Draw! simplified (Google, CC BY 4.0)",
+  "dir": "data/quickdraw/full",
+  "sampling": "smallest sha256(seed:key_id), 10000 per class",
+  "seed": 20260926
+ },
+ "classes": {
+  "count": 345,
+  "sha256": "13bbd348275d9865503b4ab69ab0b4a8c82c35e0c7a3acc49346b89c982f9709"
+ },
+ "samples": 3450000,
+ "splits": {
+  "train": 2760943,
+  "validation": 344327,
+  "test": 344730
+ },
+ "splitPolicy": "existing 28px split for known key_ids, else sha256(64px image) buckets 80/10/10; identical images forced into the lowest split",
+ "duplicates": {
+  "identicalImages": 914,
+  "movedBetweenSplits": 45
+ },
+ "recognizedTrue": 3163519,
+ "files": {
+  "images.npy": "cb8b8defcb2a2382eca30599b8ceaaf15aa8a17816a753c06594b9b8cda7368f",
+  "labels.npy": "6f91b586230432262f1ac54b663ca5cef85bfafb01bc7bfdca82fe44bce1d040",
+  "split.npy": "d6cc45c018afe99ca9bd78c240ed6c3b394a609dab682e40d30a20eaaa5e98dc",
+  "recognized.npy": "bc4ba155448ca774960b8af89018ddb4bae271c69b5df089be5888e68e41a5b9",
+  "key_ids.npy": "9654bd17ca003433de9e63fe5959a172f01e2226b77fc36dc82d1658e44df19d"
+ },
+ "code": {
+  "commit": "83eab4f323299f53ae7bd3ca1a8fc38df3b15fe2",
+  "dirty": true
+ }
+}
