@@ -400,7 +400,22 @@ class SubmissionApiTest(unittest.TestCase):
         self.assertEqual((row["solveRate"], row["medianAttemptsToSolve"]), (1.0, 2.0))
         self.assertAlmostEqual(row["meanP1"], 0.55)
         self.assertEqual(row["top1Concentration"], 1.0)
+        # the recognised drawing had the answer as Top-1 but did not end the game
+        self.assertEqual((row["nearMiss"], row["nearMissShare"]), (1, 0.5))
+        self.assertAlmostEqual(row["nearMissMedianP1"], 0.55)
         self.assertNotIn("apple", json.dumps({k: v for k, v in row.items() if k != "release"}))
+
+    def test_near_miss_counts_only_the_answer_as_top1(self):
+        from sqlalchemy.orm import Session
+
+        from app import cli
+        self.judge.next = "recognized"
+        other = [{"categoryId": "pear", "p": 0.6}, {"categoryId": "apple", "p": 0.3}, {"categoryId": "banana", "p": 0.1}]
+        self.submit(self.body({"submissionId": str(uuid.uuid4()), "drawingHash": "4" * 64, "top3": other}))
+        with Session(self.engine) as db:
+            row = next(r for r in cli.daily_metrics(db, NOW.date(), NOW.date()) if r["release"] == "fixture-release-v1")
+        self.assertEqual((row["counted"], row["nearMiss"], row["nearMissShare"], row["nearMissMedianP1"]),
+                         (1, 0, None, None))
 
     def test_failure_before_commit_leaves_nothing(self):
         self.judge.next = "recognized"

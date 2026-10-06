@@ -277,6 +277,11 @@ SELECT p.service_date, p.release_id,
        count(*) FILTER (WHERE s.status = 'solved') AS solved,
        percentile_cont(0.5) WITHIN GROUP (ORDER BY s.attempt_number) FILTER (WHERE s.status = 'solved')
            AS median_attempts_to_solve,
+       count(*) FILTER (WHERE s.status = 'recognized' AND s.top3 -> 0 ->> 'categoryId' = p.answer_category_id)
+           AS near_miss,
+       percentile_cont(0.5) WITHIN GROUP (ORDER BY (s.top3 -> 0 ->> 'p')::float8)
+           FILTER (WHERE s.status = 'recognized' AND s.top3 -> 0 ->> 'categoryId' = p.answer_category_id)
+           AS near_miss_median_p1,
        avg((s.top3 -> 0 ->> 'p')::float8) AS mean_p1,
        avg(s.display_score) FILTER (WHERE s.status IN ('recognized', 'solved')) AS mean_score
 FROM puzzles p
@@ -310,6 +315,10 @@ def daily_metrics(db, start: dt.date, end: dt.date) -> list[dict]:
             "lowConfidence": r["low_confidence"], "unsupported": r["unsupported"], "counted": r["counted"],
             "solved": r["solved"], "solveRate": r["solved"] / games if games else None,
             "medianAttemptsToSolve": r["median_attempts_to_solve"],
+            # Top-1 was the answer but p1 stayed below the success threshold; a too strict threshold pushes these up
+            "nearMiss": r["near_miss"],
+            "nearMissShare": r["near_miss"] / (r["near_miss"] + r["solved"]) if r["near_miss"] + r["solved"] else None,
+            "nearMissMedianP1": r["near_miss_median_p1"],
             "meanP1": r["mean_p1"], "meanScore": float(r["mean_score"]) if r["mean_score"] is not None else None,
             # share of the single most frequent Top-1 candidate: a stuck model or a bad release pushes this up
             "top1Concentration": max(counts) / sum(counts) if counts else None,
@@ -324,10 +333,11 @@ def cmd_metrics(args, settings: Settings, db) -> int:
         print(json.dumps(rows, ensure_ascii=False, indent=1))
         return 0
     fmt = lambda v, pct=False: "-" if v is None else f"{v * 100:.1f}%" if pct else f"{v:.2f}" if isinstance(v, float) else str(v)  # noqa: E731
-    print("date        release            games  subs  defer   solved  solve%  med.att  p1    top1conc")
+    print("date        release            games  subs  defer   solved  solve%  med.att  near%   nearP1  p1    top1conc")
     for r in rows:
         print(f"{r['date']}  {r['release']:<18} {r['games']:>5} {r['submissions']:>5}  {fmt(r['deferralRate'], True):>6}"
               f"  {r['solved']:>6}  {fmt(r['solveRate'], True):>6}  {fmt(r['medianAttemptsToSolve']):>7}"
+              f"  {fmt(r['nearMissShare'], True):>6}  {fmt(r['nearMissMedianP1']):>6}"
               f"  {fmt(r['meanP1']):>4}  {fmt(r['top1Concentration'], True):>7}")
     return 0
 
