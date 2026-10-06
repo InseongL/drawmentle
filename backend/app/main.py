@@ -9,12 +9,14 @@ from sqlalchemy.engine import Engine
 from app.core.errors import error_response, install_error_handlers
 from app.core.settings import Settings
 from app.db.session import make_engine, make_session_factory
+from app.modules.collections.router import router as collections_router
 from app.modules.judging.judge import judge
 from app.modules.puzzles.router import router as puzzles_router
 from app.modules.releases.artifact_loader import ArtifactLoader
 from app.modules.releases.service import ReleaseService
 from app.modules.sessions.router import router as sessions_router
 from app.modules.submissions.router import router as submissions_router
+from app.storage.object_store import open_store
 
 MUTATING = {"POST", "PUT", "PATCH", "DELETE"}
 
@@ -45,9 +47,11 @@ def create_app(settings: Settings | None = None, *, engine: Engine | None = None
     app.state.releases = ReleaseService(ArtifactLoader(settings.artifact_root))
     app.state.judge = judge_fn
     app.state.clock = clock
+    app.state.store = open_store(settings.artifact_root, settings.collection.storage_backend,
+                                 settings.collection.storage_root)
     install_origin_check(app, settings)
     install_error_handlers(app)
-    for router in (sessions_router, puzzles_router, submissions_router):
+    for router in (sessions_router, puzzles_router, submissions_router, collections_router):
         app.include_router(router)
 
     @app.get("/api/health", tags=["health"])

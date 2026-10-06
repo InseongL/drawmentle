@@ -31,3 +31,4 @@ class SessionContext:
     session_id: uuid.UUID
     expires_at: dt.datetime
     consent_revision: int
+    collection_enabled: bool = False

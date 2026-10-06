@@ -92,7 +92,24 @@ cd backend && python -m app.cli build-model-release --release-id <id> --model-di
 - 2026-10-06 epoch 10 모델(학습 중): ONNX 7.5MB, PyTorch 대비 최대 오차 4.2e-5(260장 Top-1·Top-3 일치). 브라우저(onnxruntime-web 1.30)에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 6.4e-6, 준비 0.27초, 그림 한 장 약 3ms. 릴리스 `model-dev-e10-v1`, 10-06 문제에서 게임 전체 흐름을 확인했다.
 - 2026-10-06 epoch 20 모델(최종): 검증 top-1 70.2%·top-3 86.1%, T = 1.093, ONNX 7.5MB, 최대 오차 2.6e-5(260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(τ_인식 0.15·τ_성공 0.85), 이어 카테고리 정리 v1.2를 적용한 `model-dev-e20-v2`로 10-07~11-04 문제에 배정했다. 브라우저에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 9.9e-6, 준비 0.09초, 첫 실행 뒤 그림 한 장 5~8ms. 테스트 분할 최종 평가(1회, 344,730장): 원본 top-1 70.1%·top-3 86.2%, 게임 후보 top-1 71.0%, τ 0.85 잘못된 성공 4.7%로 검증과 같다. 이 테스트 분할은 다시 쓰지 않는다.
 
-## 8. 아직 없는 것
+## 8. 사용자 그림으로 재학습 (MLOps)
+
+흐름과 운영값은 [MLOps](../docs/mlops-v1.md)에 있다. 이 폴더의 도구:
+
+```bash
+model/.venv/Scripts/python -m model.datasets.build_user_dataset --export data/collected/exports/<id> --version user-<id>
+model/.venv/Scripts/python -m model.datasets.compose --version qd-10k-64-v1+user-<id> --part qd-10k-64-v1 --part user-<id>:4
+model/.venv/Scripts/python -m model.training.train --dataset qd-10k-64-v1+user-<id> --init-from <champion run>/best.pt --epochs 5 --lr 3e-4 --warmup-epochs 0
+model/.venv/Scripts/python -m model.evaluation.compare --candidate <run> --user-dataset user-<id>
+python -m model.pipelines.retrain --new --until dataset        # 위 단계를 기록과 함께 순서대로 (학습은 --until train 이상일 때만)
+```
+
+- 사용자 데이터셋은 Quick Draw와 같은 렌더 규칙을 쓰고, 세션 묶음 단위로 나눈다. test 분할은 실제 그림판 평가셋이다.
+- 결합 데이터셋은 매니페스트만 있는 폴더이고 부품 데이터셋을 제자리에서 읽는다(`sketch_dataset.open_dataset`). 부품을 지우면 그 결합 데이터셋으로는 학습·평가할 수 없다.
+- `--init-from`은 다른 run의 가중치로 시작한다(옵티마이저·스케줄은 새로). `run.json`의 `initFrom`에 경로·epoch·해시가 남는다.
+- `compare`는 챔피언과 후보를 같은 자료로 평가하고 `config/mlops/mlops.json`의 `gates`로 판정한다(불합격이면 종료 코드 3).
+
+## 9. 아직 없는 것
 
 - 사용자 획의 간소화(Quick Draw는 RDP로 간소화된 획): 렌더 결과 차이가 작다고 보고 아직 적용하지 않음
 - 실제 그림판으로 그린 평가 그림(현재 평가는 Quick Draw 검증 분할뿐)

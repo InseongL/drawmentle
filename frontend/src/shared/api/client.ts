@@ -61,7 +61,10 @@ export type Progress = {
   answer?: Answer;
 };
 
-export type Collection = { state: string; consentRevision: number };
+export type CollectionState = 'not_consented' | 'not_selected' | 'eligible' | 'pending_upload' | 'uploaded'
+  | 'verified' | 'upload_failed' | 'delete_pending' | 'deleted';
+// Session-level views use `eligible` for "consented"; per-submission views report that drawing's state.
+export type Collection = { state: CollectionState; consentRevision: number };
 export type Top3Item = { categoryId: string; p: number };
 
 export type SubmissionRequest = {
@@ -93,6 +96,21 @@ export type HistoryItem = { submissionId: string; result: Result };
 export type ProgressPage = { puzzleId: string; progress: Progress; items: HistoryItem[]; nextBeforeAttemptNumber: number | null };
 export type SessionInfo = { expiresAt: string; collection: Collection };
 
+// Training contribution (docs/api-contract-v1.md §8). The server picks the upload path; uploads never change a game.
+export type ConsentRequest = { expectedRevision: number; enabled: boolean; policyVersion?: string };
+export type ConsentResponse = { enabled: boolean; policyVersion: string | null; collection: Collection };
+export type UploadGrant = {
+  sampleId: string;
+  uploadId: string;
+  method: 'PUT';
+  url: string;
+  contentType: 'application/json';
+  maxBytes: number;
+  expiresAt: string;
+};
+export type UploadResponse = { collection: Collection; grant: UploadGrant | null };
+export type CompleteRequest = { sampleId: string; uploadId: string; consentRevision: number };
+
 export class ApiError extends Error {
   readonly status: number;
   readonly code: string;
@@ -112,14 +130,16 @@ export class ApiError extends Error {
 type Fetch = (input: string, init?: RequestInit) => Promise<Response>;
 
 export function createApi(fetcher: Fetch = (input, init) => fetch(input, init)) {
-  async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
+  // `raw` sends a prepared JSON text as is (the drawing file must keep its exact bytes for the hash check).
+  async function request<T>(method: string, path: string, body?: unknown, raw?: string): Promise<T> {
     let response: Response;
+    const payload = raw ?? (body === undefined ? undefined : JSON.stringify(body));
     try {
       response = await fetcher(path, {
         method,
         credentials: 'same-origin',
-        headers: body === undefined ? undefined : { 'Content-Type': 'application/json' },
-        body: body === undefined ? undefined : JSON.stringify(body),
+        headers: payload === undefined ? undefined : { 'Content-Type': 'application/json' },
+        body: payload,
       });
     } catch {
       throw new ApiError(0, 'NETWORK_ERROR', '연결이 불안정해요. 그림은 그대로 두고 다시 시도해주세요.', true, true);
@@ -148,6 +168,12 @@ export function createApi(fetcher: Fetch = (input, init) => fetch(input, init)) 
       request<SubmissionResponse>('POST', `${puzzlePath(puzzleId)}/submissions`, body),
     byRequest: (puzzleId: string, submissionId: string) =>
       request<SubmissionResponse>('GET', `${puzzlePath(puzzleId)}/submissions/by-request/${encodeURIComponent(submissionId)}`),
+    setConsent: (body: ConsentRequest) => request<ConsentResponse>('PUT', '/api/collection-consent', body),
+    requestUpload: (submissionId: string, consentRevision: number) =>
+      request<UploadResponse>('POST', `/api/submissions/${encodeURIComponent(submissionId)}/drawing-upload`, { consentRevision }),
+    putUpload: (grant: UploadGrant, drawing: string) => request<null>(grant.method, grant.url, undefined, drawing),
+    completeUpload: (submissionId: string, body: CompleteRequest) =>
+      request<{ collection: Collection }>('POST', `/api/submissions/${encodeURIComponent(submissionId)}/drawing-complete`, body),
   };
 }
 

@@ -1,19 +1,22 @@
-// Per-puzzle browser storage: current strokes, fixed thumbnails by canonical submission ID, and the one
-// submission whose outcome is not yet confirmed. Server results stay authoritative; this only restores UI.
+// Per-puzzle browser storage: current strokes, fixed thumbnails by canonical submission ID, the one
+// submission whose outcome is not yet confirmed, and (only while the player consents to training contribution)
+// fixed drawings waiting to be uploaded. Server results stay authoritative; this only restores UI.
 import type { SubmissionRequest } from '../api/client.ts';
 import type { Strokes } from '../../features/drawing/drawingState.ts';
 
-export type PendingSubmission = { body: SubmissionRequest; thumbnail: string; createdAt: string };
+// `drawing` (serialised strokes-v1) is kept only when the player consented at submit time.
+export type PendingSubmission = { body: SubmissionRequest; thumbnail: string; createdAt: string; drawing?: string };
 
 export type StoredGame = {
   strokes: Strokes;
   thumbnails: Record<string, string>;
   pending: PendingSubmission | null;
+  uploads: Record<string, string>; // canonical submission ID -> serialised drawing still to upload
 };
 
 type KeyValue = Pick<Storage, 'getItem' | 'setItem'>;
 
-const empty = (): StoredGame => ({ strokes: [], thumbnails: {}, pending: null });
+const empty = (): StoredGame => ({ strokes: [], thumbnails: {}, pending: null, uploads: {} });
 const keyFor = (puzzleId: string) => `drawmentle:game:v1:${puzzleId}`;
 
 function defaultStorage(): KeyValue | null {
@@ -36,6 +39,7 @@ export function createGameStorage(puzzleId: string, storage: KeyValue | null = d
         strokes: Array.isArray(parsed?.strokes) ? parsed.strokes : [],
         thumbnails: parsed?.thumbnails && typeof parsed.thumbnails === 'object' ? parsed.thumbnails : {},
         pending: parsed?.pending?.body?.submissionId ? parsed.pending : null,
+        uploads: parsed?.uploads && typeof parsed.uploads === 'object' ? parsed.uploads : {},
       };
     } catch {
       cache = empty();
@@ -60,6 +64,13 @@ export function createGameStorage(puzzleId: string, storage: KeyValue | null = d
     savePending: (pending: PendingSubmission | null) => update({ pending }),
     saveThumbnail: (submissionId: string, thumbnail: string) =>
       update({ thumbnails: { ...load().thumbnails, [submissionId]: thumbnail } }),
+    queueUpload: (submissionId: string, drawing: string) =>
+      update({ uploads: { ...load().uploads, [submissionId]: drawing } }),
+    dropUpload: (submissionId: string) => {
+      const { [submissionId]: _, ...rest } = load().uploads;
+      return update({ uploads: rest });
+    },
+    clearUploads: () => update({ uploads: {} }),
   };
 }
 

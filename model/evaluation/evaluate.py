@@ -75,34 +75,46 @@ def subset_mask(images: np.ndarray, subset: str) -> np.ndarray:
 
 
 def predict(run_dir: Path, checkpoint: str, split: str) -> dict:
-    """Logits for a split, cached under <run>/eval as float16 (with labels and the subset parity)."""
+    """Logits for a split of the run's own dataset, cached under <run>/eval as float16."""
+    import torch
+    ck = torch.load(run_dir / f"{checkpoint}.pt", map_location="cpu", weights_only=False)
+    dataset_dir = ROOT / ck["config"]["dataset"]["root"] / ck["config"]["dataset"]["version"]
+    return predict_dataset(run_dir, checkpoint, dataset_dir, split, f"logits-{split}-{checkpoint}-e{ck['epoch']}.npz")
+
+
+def predict_dataset(run_dir: Path, checkpoint: str, dataset_dir: Path, split: str, cache_name: str | None = None) -> dict:
+    """Logits of one model on any dataset split (composites included), with labels, Google's recognized flag,
+    the select/calibrate parity and the dataset part of each row. Cached under <run>/eval as float16."""
     import torch
 
-    from model.datasets.sketch_dataset import SketchDataset, to_input
+    from model.datasets.sketch_dataset import open_dataset, split_meta, to_input
     from model.networks.sketch_classifier import build
 
     ck = torch.load(run_dir / f"{checkpoint}.pt", map_location="cpu", weights_only=False)
     cfg = ck["config"]
-    cache = run_dir / "eval" / f"logits-{split}-{checkpoint}-e{ck['epoch']}.npz"
+    if cache_name is None:  # the run's own dataset keeps the name `predict` has always used
+        own = Path(dataset_dir).name == cfg["dataset"]["version"]
+        cache_name = (f"logits-{split}-{checkpoint}-e{ck['epoch']}.npz" if own
+                      else f"logits-{Path(dataset_dir).name}-{split}-{checkpoint}-e{ck['epoch']}.npz")
+    cache = run_dir / "eval" / cache_name
     if cache.exists():
         data = np.load(cache)
+        source = data["source"] if "source" in data.files else np.zeros(len(data["labels"]), dtype=np.uint8)
         return {"logits": data["logits"], "labels": data["labels"], "recognized": data["recognized"],
-                "odd": data["odd"], "epoch": ck["epoch"], "config": cfg}
-    dataset_dir = ROOT / cfg["dataset"]["root"] / cfg["dataset"]["version"]
+                "odd": data["odd"], "source": source, "epoch": ck["epoch"], "config": cfg}
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = build(cfg["model"]["name"], **{k: v for k, v in cfg["model"].items() if k != "name"}).to(device)
     model.load_state_dict(ck["model"])
     model.eval()
-    data = SketchDataset(dataset_dir, split, device)
+    data = open_dataset(dataset_dir, split, device)
     chunks, ys = [], []
     with torch.no_grad(), torch.autocast(device.type, dtype=torch.bfloat16, enabled=device.type == "cuda"):
         for x, y in data.batches(2048, shuffle=False):
             chunks.append(model(to_input(x)).float().cpu().numpy().astype(np.float16))
             ys.append(y.cpu().numpy())
-    mask = np.load(dataset_dir / "split.npy") == SPLIT_CODES[split]
-    images = np.load(dataset_dir / "images.npy", mmap_mode="r")[np.flatnonzero(mask)]
-    out = {"logits": np.concatenate(chunks), "labels": np.concatenate(ys),
-           "recognized": np.load(dataset_dir / "recognized.npy")[mask], "odd": subset_mask(images, "calibrate")}
+    meta = split_meta(dataset_dir, split)
+    out = {"logits": np.concatenate(chunks), "labels": np.concatenate(ys), "recognized": meta["recognized"],
+           "odd": meta["odd"], "source": meta["source"]}
     cache.parent.mkdir(parents=True, exist_ok=True)
     np.savez(cache, **out)
     return out | {"epoch": ck["epoch"], "config": cfg}

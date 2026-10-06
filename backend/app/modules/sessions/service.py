@@ -1,4 +1,7 @@
-"""Anonymous cookie sessions: issue, reuse while valid, authenticate. Consent changes belong to collections."""
+"""Anonymous cookie sessions: issue, reuse while valid, authenticate. Consent changes belong to collections.
+
+A new session starts at consent revision 0 (not consented) with its first consent-history row.
+"""
 from __future__ import annotations
 
 import datetime as dt
@@ -10,7 +13,7 @@ from sqlalchemy.orm import Session
 
 from app.core.errors import ApiError
 from app.core.settings import Settings
-from app.db.models import AnonymousSession
+from app.db.models import AnonymousSession, CollectionConsent
 
 from . import repository
 from .schemas import CollectionOut, SessionContext, SessionOut
@@ -35,6 +38,9 @@ def ensure(db: Session, settings: Settings, token: str | None, now: dt.datetime)
                            expires_at=now + dt.timedelta(days=settings.session_ttl_days),
                            consent_revision=0, collection_enabled=False)
     repository.add(db, row)
+    db.flush()
+    db.add(CollectionConsent(session_id=row.session_id, revision=0, enabled=False, policy_version=None,
+                             changed_at=now))
     db.commit()
     return row, token
 
@@ -47,14 +53,14 @@ def authenticate(db: Session, token: str | None, now: dt.datetime) -> SessionCon
         raise ApiError(401, "SESSION_REQUIRED", "세션이 필요해요. 페이지를 새로고침해주세요.")
     if not _valid(row, now):
         raise ApiError(401, "SESSION_EXPIRED", "세션이 만료됐어요. 페이지를 새로고침해주세요.")
-    return SessionContext(row.session_id, row.expires_at, row.consent_revision)
+    return SessionContext(row.session_id, row.expires_at, row.consent_revision, row.collection_enabled)
 
 
-def collection_view(consent_revision: int) -> CollectionOut:
-    # Collection is disabled (collection-disabled-v0): nobody can consent yet.
-    return CollectionOut(state="not_consented", consentRevision=consent_revision)
+def collection_view(enabled: bool, consent_revision: int) -> CollectionOut:
+    """Session-level view: `eligible` means consented (new drawings may be selected), else `not_consented`."""
+    return CollectionOut(state="eligible" if enabled else "not_consented", consentRevision=consent_revision)
 
 
 def session_view(row: AnonymousSession) -> SessionOut:
     return SessionOut(expiresAt=row.expires_at.astimezone(dt.timezone.utc),
-                      collection=collection_view(row.consent_revision))
+                      collection=collection_view(row.collection_enabled, row.consent_revision))

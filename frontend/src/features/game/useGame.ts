@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { ApiError, createApi } from '../../shared/api/client.ts';
 import type { Api, HistoryItem, Progress, Puzzle, Result, SubmissionResponse, Top3Item } from '../../shared/api/client.ts';
+import { uploadDrawing, wantsUpload } from '../collection/drawingUpload.ts';
 import { createGameStorage } from '../../shared/storage/gameStorage.ts';
 import type { GameStorage, PendingSubmission } from '../../shared/storage/gameStorage.ts';
 import { createDrawingSnapshot } from '../drawing/drawingSnapshot';
 import type { DrawingSnapshot } from '../drawing/drawingSnapshot';
+import { serializeDrawing } from '../drawing/drawingState.ts';
 import type { Strokes } from '../drawing/drawingState.ts';
 import type { DevProblem, Messages } from '../../shared/i18n/messages.ts';
 import { buildRequest, errorKey, loadFullProgress, mergeHistory, newerProgress, recoverPending, sendSubmission } from './submissionFlow.ts';
@@ -22,7 +24,7 @@ type Predict = (snapshot: DrawingSnapshot) => Prediction | Promise<Prediction>;
 const EMPTY_PROGRESS: Progress = { state: 'playing', attemptCount: 0, bestSubmissionId: null, bestDisplayScore: null, bestDisplayText: null };
 const api = createApi();
 
-type Boot = { puzzle: Puzzle; consentRevision: number; progress: Progress; items: HistoryItem[] };
+type Boot = { puzzle: Puzzle; consentRevision: number; consented: boolean; progress: Progress; items: HistoryItem[] };
 let boot: Promise<Boot> | null = null; // shared by StrictMode's double effect so only one session is created
 
 function loadOnce(client: Api): Promise<Boot> {
@@ -30,7 +32,8 @@ function loadOnce(client: Api): Promise<Boot> {
     const session = await client.ensureSession();
     const puzzle = await client.todayPuzzle();
     const { progress, items } = await loadFullProgress(client, puzzle.puzzleId);
-    return { puzzle, consentRevision: session.collection.consentRevision, progress, items };
+    return { puzzle, consentRevision: session.collection.consentRevision,
+      consented: session.collection.state === 'eligible', progress, items };
   })();
   boot.catch(() => { boot = null; });
   return boot;
@@ -50,14 +53,65 @@ export function useGame() {
   const [notice, setNotice] = useState<Notice | null>(null);
   const [latestId, setLatestId] = useState<string | null>(null); // pinned row: the latest counted submission
   const consentRevision = useRef(0);
+  const [consented, setConsented] = useState(false);
+  const [consentBusy, setConsentBusy] = useState(false);
+  const uploading = useRef(new Set<string>());
   const storage = useRef<GameStorage | null>(null);
   const inFlight = useRef(false);
+  const puzzleRef = useRef<Puzzle | null>(null); // read by callbacks that outlive a render
 
   const deps = (): FlowDeps => ({
     api,
     savePending: p => storage.current?.savePending(p),
     saveThumbnail: (id, thumbnail) => storage.current?.saveThumbnail(id, thumbnail),
   });
+
+  // Training contribution runs beside the game: errors are swallowed and the drawing stays queued for a retry.
+  async function upload(submissionId: string, drawing: string) {
+    const store = storage.current;
+    if (!store || uploading.current.has(submissionId)) return;
+    uploading.current.add(submissionId);
+    try {
+      const collection = await uploadDrawing(api, submissionId, drawing, consentRevision.current);
+      consentRevision.current = Math.max(consentRevision.current, collection.consentRevision);
+      if (collection.state !== 'upload_failed') store.dropUpload(submissionId); // done, or nothing left to do
+    } catch {
+      // network or server trouble: try again on the next visit
+    } finally {
+      uploading.current.delete(submissionId);
+    }
+  }
+
+  function queueUpload(response: SubmissionResponse, drawing: string | undefined) {
+    if (!drawing || !puzzleRef.current?.collectionPolicy.enabled || !wantsUpload(response.collection.state)) return;
+    storage.current?.queueUpload(response.submissionId, drawing);
+    void upload(response.submissionId, drawing);
+  }
+
+  async function setCollectionConsent(enabled: boolean) {
+    const policy = puzzleRef.current?.collectionPolicy;
+    if (!policy?.enabled || consentBusy) return;
+    setConsentBusy(true);
+    try {
+      const res = await api.setConsent({ expectedRevision: consentRevision.current, enabled,
+        ...(enabled ? { policyVersion: policy.version } : {}) });
+      consentRevision.current = res.collection.consentRevision;
+      setConsented(res.enabled);
+      if (!res.enabled) storage.current?.clearUploads();
+    } catch (error) {
+      const key = error instanceof ApiError ? errorKey(error) : 'UNKNOWN';
+      setNotice({ tone: 'error', text: m => m.errors[key] });
+      try { // another tab may have changed it: show the server's current choice
+        const session = await api.ensureSession();
+        consentRevision.current = session.collection.consentRevision;
+        setConsented(session.collection.state === 'eligible');
+      } catch {
+        // keep the current view
+      }
+    } finally {
+      setConsentBusy(false);
+    }
+  }
 
   function apply(response: SubmissionResponse, thumbnail: string) {
     const { result, submissionId, reuse } = response;
@@ -90,6 +144,7 @@ export function useGame() {
       if (outcome.kind === 'result') {
         setPending(null);
         apply(outcome.response, p.thumbnail);
+        queueUpload(outcome.response, p.drawing);
       } else {
         setPending(outcome.keepPending ? p : null);
         const key = errorKey(outcome.error);
@@ -110,6 +165,8 @@ export function useGame() {
       storage.current = store;
       const saved = store.load();
       consentRevision.current = b.consentRevision;
+      puzzleRef.current = b.puzzle;
+      setConsented(b.consented);
       setPuzzle(b.puzzle);
       setProgress(b.progress);
       setHistory(b.items);
@@ -120,6 +177,9 @@ export function useGame() {
       setThumbnails(saved.thumbnails);
       setRestoredStrokes(saved.strokes);
       setPhase('ready');
+      if (b.puzzle.collectionPolicy.enabled && b.consented) {
+        for (const [id, drawing] of Object.entries(saved.uploads)) void upload(id, drawing);
+      }
       if (saved.pending) {
         setPending(saved.pending);
         setNotice({ tone: 'info', text: m => m.notices.checkingPending });
@@ -168,7 +228,9 @@ export function useGame() {
     }
     const body = buildRequest(puzzle, snapshot.drawing, snapshot.drawingHash, prediction.top3, crypto.randomUUID(),
       consentRevision.current);
-    const p: PendingSubmission = { body, thumbnail: snapshot.thumbnail, createdAt: new Date().toISOString() };
+    const keepDrawing = consented && puzzle.collectionPolicy.enabled;
+    const p: PendingSubmission = { body, thumbnail: snapshot.thumbnail, createdAt: new Date().toISOString(),
+      ...(keepDrawing ? { drawing: serializeDrawing(snapshot.drawing) } : {}) };
     setPending(p);
     await run(p, puzzle.puzzleId, () => sendSubmission(deps(), puzzle.puzzleId, p));
   }
@@ -181,7 +243,7 @@ export function useGame() {
 
   return {
     phase, loadError, puzzle, progress, history, latestId, thumbnails, restoredStrokes, pending, busy, last, notice,
-    submit, retry,
+    submit, retry, consented, consentBusy, setCollectionConsent,
     clearLast: () => { setLast(null); setNotice(null); },
     // Edits make result notices stale; errors about an unconfirmed submission stay until it is resolved.
     dismissNotice: () => { if (!pending) setNotice(null); },

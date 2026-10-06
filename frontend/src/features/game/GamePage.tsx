@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useI18n } from '../../shared/i18n/I18nProvider';
 import { categoryName } from '../../shared/i18n/messages.ts';
 import type { Messages } from '../../shared/i18n/messages.ts';
+import CollectionConsent from '../collection/CollectionConsent';
 import DrawingCanvas from '../drawing/DrawingCanvas';
 import { undoStroke } from '../drawing/drawingState.ts';
 import type { Strokes } from '../drawing/drawingState.ts';
@@ -141,6 +142,11 @@ export default function GamePage() {
             )}
           </div>
 
+          {puzzle?.collectionPolicy.enabled && (
+            <CollectionConsent enabled={game.consented} busy={game.consentBusy}
+              onChange={enabled => void game.setCollectionConsent(enabled)} />
+          )}
+
           {devMode && !solved && (
             <DevPredictionPanel candidates={candidates} value={devInput} disabled={locked} onChange={setDevInput}
               problem={strokes.length && devCheck && !devCheck.ok ? devCheck.problem : null} />
@@ -156,7 +162,7 @@ export default function GamePage() {
 
       <SubmissionHistory items={game.history} latestId={game.latestId} progress={progress} thumbnails={game.thumbnails} />
 
-      <GameFaq />
+      <GameFaq collectionEnabled={puzzle?.collectionPolicy.enabled ?? false} />
 
       <footer className="credits">
         <p>

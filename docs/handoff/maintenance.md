@@ -118,11 +118,16 @@ cd backend && python -m alembic upgrade head
 | `SESSION_COOKIE_NAME` / `SESSION_TTL_DAYS` | `dm_session` / 30 | |
 | `COOKIE_SECURE` | 운영에서만 true | |
 | `ALLOWED_ORIGINS` | `http://127.0.0.1:5173,http://localhost:5173` | 쉼표 구분. 변경 요청의 Origin 검사 |
-| `ARTIFACT_ROOT` | 저장소 루트 | 릴리스 비공개 파일 경로 기준 |
+| `ARTIFACT_ROOT` | 저장소 루트 | 릴리스 비공개 파일·수집 원본(`data/collected/`) 경로 기준 |
+| `COLLECTION_CONFIG` | `config/collection/collection.json` | 수집 운영 설정 파일([MLOps §2.1](../mlops-v1.md)) |
+
+### 3.6.1 수집·재학습 운영값
+
+수집(표본 비율, 업로드 한도, 보관 기간, 검수 표시)은 `config/collection/collection.json`, 재학습·교체 기준·경고 기준·재학습 권고 조건은 `config/mlops/mlops.json`에서 바꾼다. 키별 뜻은 [MLOps §2](../mlops-v1.md). 수집은 `enabled: false`로 꺼져 있다. 켜기 전에 [MLOps §8](../mlops-v1.md)의 결정이 필요하다.
 
 ### 3.7 DB 스키마
 
-마이그레이션은 Alembic `backend/migrations/versions/0001_game_tables.py` 하나다. 바꿀 때는 `backend/app/db/models.py` 수정 → `cd backend && python -m alembic revision --autogenerate -m "..."` → 생성된 파일 검토 → `upgrade head` → `python -m alembic check`(차이 없음 확인). game_sessions와 submissions는 서로 참조하므로(최고·성공 제출) 외래 키를 테이블 생성 뒤에 따로 만든다.
+마이그레이션은 Alembic `0001_game_tables.py`(게임)와 `0002_collection_tables.py`(수집·검수: collection_consents, drawing_samples, drawing_uploads, label_reviews)다. 새 DB나 재설정 뒤에는 `cd backend && python -m alembic upgrade head`를 먼저 한다(2026-10-06 개발 DB에 0002 적용). 바꿀 때는 `backend/app/db/models.py` 수정 → `cd backend && python -m alembic revision --autogenerate -m "..."` → 생성된 파일 검토 → `upgrade head` → `python -m alembic check`(차이 없음 확인). game_sessions와 submissions는 서로 참조하므로(최고·성공 제출) 외래 키를 테이블 생성 뒤에 따로 만든다.
 
 ## 4. 깨면 안 되는 동작 (테스트가 지키는 것)
 
@@ -152,6 +157,8 @@ cd backend && python -m alembic upgrade head
 - 1위 쏠림(가장 많이 나온 1위 후보의 비율)
 - 아깝게 놓친 제출 `near%`(1위가 정답이었지만 성공 기준에 못 미친 인식 제출의 비율)와 그 제출의 p1 중앙값 `nearP1`. 성공 기준이 너무 엄격한지 보는 신호다([판정 기준 §4.2](../judging-criteria-v1.md)).
 
+`--check`를 붙이면 `config/mlops/mlops.json`의 `monitoring` 기준을 넘는 날·릴리스를 경고하고 종료 코드 2를 낸다(작업 스케줄러에 걸어 쓰기 좋다). 수집·검수 상태와 재학습 권고는 `python -m app.cli mlops-status`. 전체 흐름은 [MLOps](../mlops-v1.md).
+
 모델을 바꾼 뒤 보류율이나 1위 쏠림이 튀면 릴리스를 의심한다. 되돌릴 때는 아직 안 열린 문제를 이전 릴리스로 `assign-release`한다. 자동 재학습·자동 배포는 하지 않는다(MLOps 원칙: 단계마다 사람이 확인).
 
 ## 7. 알려진 문제와 함정
@@ -161,7 +168,9 @@ cd backend && python -m alembic upgrade head
 - 프론트 `npm install` 때 protobufjs postinstall 경고(allow-scripts)가 나지만 동작에는 영향이 없다.
 - `onnxruntime-web`은 단일 스레드 WASM(14MB)이다. 여러 스레드를 쓰려면 페이지에 COOP/COEP 헤더가 필요하다. 실행 엔진은 모델 릴리스일 때만 지연 로딩된다.
 - 운영 배포(HTTPS, 정적 파일·모델 CDN, 운영 DB)는 아직 설계만 있다. 개발 서버는 127.0.0.1에서만 받는다. 실제 휴대폰 테스트에는 HTTPS 환경이 필요하다(그림 해시 계산에 보안 컨텍스트 필요).
-- 학습용 그림 수집(동의·업로드·검수)은 미구현이다(`collection-disabled-v0`). Q&A에만 안내한다.
+- 학습용 그림 수집은 구현했지만 꺼져 있다(`collection.json`의 `enabled: false`). 켜면 동의 체크박스와 수집용 Q&A 답변이 나타난다. 원본 저장소는 아직 로컬 파일뿐이다(운영용 객체 저장소 미구현).
+- 수집을 켠 채 동의한 브라우저는 제출한 그림의 사본을 업로드될 때까지 localStorage(`uploads`)에 둔다. 동의를 해제하면 지운다.
+- 정리 작업 `collection-reconcile`은 정기 실행이 필요하다(아직 스케줄러에 걸지 않았다).
 
 ## 8. 커밋 상태와 남은 일
 
@@ -171,4 +180,5 @@ cd backend && python -m alembic upgrade head
     - 운영 기준은 정했다(τ_성공 0.85, τ_인식 0.15, [판정 기준 §4.2](../judging-criteria-v1.md)). 출시 전 실제 그림판 그림으로 확인하고, 출시 뒤 `metrics`의 `defer`·`solve%`·`near%`로 조정 여부를 본다(테스트 분할은 끝남, 다시 쓰지 않는다)
     - 어려운 데일리 정답은 카테고리 정리 v1.2로 처리했다. 성공률 5~10%인 10개는 실제 플레이 정답률(`metrics`)을 보고 다시 정한다
     - 10-07 문제가 열리면 실제 게임 화면에서 epoch 20 판정 흐름 확인(브라우저 단독 비교는 끝남, 인수인계서 1 §5)
-    - 운영 배포 설계와 수집 기능
+    - 운영 배포 설계
+    - MLOps 구조는 완성([MLOps](../mlops-v1.md)): 수집을 켜기 전 결정(안내 문구·법적 검토, 보관 기간, 실패 표본 비율, 운영 저장소, 검수자, 정기 실행) — MLOps §8

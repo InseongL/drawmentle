@@ -29,7 +29,8 @@ FIXTURE = json.loads((REPO / "contracts/fixtures/submission-cases.json").read_te
 DEFAULT_URL = "postgresql+psycopg://drawmentle:drawmentle-dev@127.0.0.1:5433/drawmentle_test"
 NOW = dt.datetime(2026, 9, 22, 10, 0, tzinfo=dt.timezone.utc)
 IDS = ("apple", "pear", "banana")
-GAME_TABLES = "submission_score_details, submission_requests, submissions, game_sessions, anonymous_sessions"
+GAME_TABLES = ("label_reviews, drawing_uploads, drawing_samples, collection_consents, submission_score_details, "
+               "submission_requests, submissions, game_sessions, anonymous_sessions")
 
 try:
     import sqlalchemy as sa
@@ -229,11 +230,64 @@ class SubmissionApiTest(unittest.TestCase):
         if "storedResults" in expect:
             self.assertEqual(self.counts(), (expect["storedResults"], expect["storedRequests"]))
 
+    def enable_collection(self, sampling_decision: str) -> None:
+        """Collection on (every solved drawing selected), then consent once: revision 0 -> 1."""
+        import dataclasses
+
+        from app.core.collection_config import Sampling
+        cfg = self.settings.collection
+        rates = {"success_sample": (1.0, 0.0, 0.0), "failure_sample": (0.0, 1.0, 1.0)}[sampling_decision]
+        settings = dataclasses.replace(self.settings, collection=dataclasses.replace(
+            cfg, enabled=True, sampling=Sampling("sampling-fixture", *rates)))
+        self.app = create_app(settings, engine=self.engine, judge_fn=self.judge, clock=lambda: NOW)
+        self.client = self.new_client()
+        res = self.client.put("/api/collection-consent", json={"expectedRevision": 0, "enabled": True,
+                                                               "policyVersion": cfg.notice_version})
+        self.assertEqual((res.status_code, res.json()["collection"]["consentRevision"]), (200, 1), res.text)
+
+    def run_operation(self, step: dict, canon: dict) -> None:
+        """Collection steps of the fixture: uploads never change the game (api-contract §8)."""
+        submission_id = next(iter(canon.values()))
+        before = self.counts()
+        if step["operation"] == "drawing_upload_network_failure":
+            grant = self.client.post(f"/api/submissions/{submission_id}/drawing-upload",
+                                     json={"consentRevision": 1}).json()["grant"]
+            # the PUT never arrives; finishing anyway finds no file
+            res = self.client.post(f"/api/submissions/{submission_id}/drawing-complete",
+                                   json={"sampleId": grant["sampleId"], "uploadId": grant["uploadId"],
+                                         "consentRevision": 1})
+            self.assertEqual(res.json()["collection"]["state"], "upload_failed", res.text)
+        elif step["operation"] == "withdraw_consent_then_late_drawing_complete":
+            grant = self.client.post(f"/api/submissions/{submission_id}/drawing-upload",
+                                     json={"consentRevision": 1}).json()["grant"]
+            self.assertEqual(self.client.put(grant["url"], content=b'{"late":true}').status_code, 204)
+            res = self.client.put("/api/collection-consent", json={"expectedRevision": 1, "enabled": False})
+            self.assertEqual(res.status_code, 200, res.text)
+            res = self.client.post(f"/api/submissions/{submission_id}/drawing-complete",
+                                   json={"sampleId": grant["sampleId"], "uploadId": grant["uploadId"],
+                                         "consentRevision": 1})
+            self.assertEqual(res.json()["collection"]["state"], "delete_pending", res.text)
+        else:
+            raise AssertionError(f"unknown fixture operation {step['operation']}")
+        expect = step["expect"]
+        progress = self.progress()["progress"]
+        self.assertEqual((progress["state"], progress["attemptCount"]), (expect["gameState"], expect["attemptCount"]))
+        if "storedResults" in expect:
+            self.assertEqual(self.counts()[0], expect["storedResults"])
+        if expect.get("noExtraGameAttempt"):
+            self.assertEqual(self.counts(), before)
+        if expect.get("sampleNotVerified") or "sampleUsableForTraining" in expect:
+            with self.engine.connect() as conn:
+                state = conn.execute(sa.text("SELECT state FROM drawing_samples")).scalar_one()
+            self.assertNotEqual(state, "verified")
+            self.assertIn(state, ("delete_pending", "deleted"))
+
     def run_case(self, case: dict):
         canon, responses = {}, {k: v for k, v in FIXTURE["responses"].items()}
         for step in case["steps"]:
             if "operation" in step:
-                self.skipTest(f"{step['operation']}: collection is disabled (collection-disabled-v0)")
+                self.run_operation(step, canon)
+                continue
             self.judge.next = step.get("stubResult")
             if step.get("method") == "GET":
                 res = self.client.get(step["path"])
@@ -252,6 +306,8 @@ class SubmissionApiTest(unittest.TestCase):
                 if "consentHistory" in setup:  # current revision 2, disabled
                     with self.engine.begin() as conn:
                         conn.execute(sa.text("UPDATE anonymous_sessions SET consent_revision = 2"))
+                if setup.get("collectionEnabled"):
+                    self.enable_collection(setup["samplingDecision"])
                 self.run_case(case)
 
     def test_fixture_concurrent_same_drawing(self):

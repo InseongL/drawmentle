@@ -284,6 +284,189 @@
     }
    }
   },
+  "/api/collection-consent": {
+   "put": {
+    "tags": [
+     "collection"
+    ],
+    "summary": "Put Consent",
+    "operationId": "put_consent_api_collection_consent_put",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ConsentIn"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ConsentOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/submissions/{submission_id}/drawing-upload": {
+   "post": {
+    "tags": [
+     "collection"
+    ],
+    "summary": "Post Drawing Upload",
+    "operationId": "post_drawing_upload_api_submissions__submission_id__drawing_upload_post",
+    "parameters": [
+     {
+      "name": "submission_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Submission Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/UploadIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/UploadOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/collection-uploads/{upload_id}": {
+   "put": {
+    "tags": [
+     "collection"
+    ],
+    "summary": "Put Collection Upload",
+    "operationId": "put_collection_upload_api_collection_uploads__upload_id__put",
+    "parameters": [
+     {
+      "name": "upload_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Upload Id"
+      }
+     }
+    ],
+    "responses": {
+     "204": {
+      "description": "Successful Response"
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/submissions/{submission_id}/drawing-complete": {
+   "post": {
+    "tags": [
+     "collection"
+    ],
+    "summary": "Post Drawing Complete",
+    "operationId": "post_drawing_complete_api_submissions__submission_id__drawing_complete_post",
+    "parameters": [
+     {
+      "name": "submission_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "format": "uuid",
+       "title": "Submission Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/CompleteIn"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CompleteOut"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/api/health": {
    "get": {
     "tags": [
@@ -342,6 +525,17 @@
      "displayNameKo": {
       "type": "string",
       "title": "Displaynameko"
+     },
+     "displayNameEn": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Displaynameen"
      }
     },
     "additionalProperties": false,
@@ -399,6 +593,107 @@
      "enabled"
     ],
     "title": "CollectionPolicyOut"
+   },
+   "CompleteIn": {
+    "properties": {
+     "sampleId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Sampleid"
+     },
+     "uploadId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Uploadid"
+     },
+     "consentRevision": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Consentrevision"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "sampleId",
+     "uploadId",
+     "consentRevision"
+    ],
+    "title": "CompleteIn"
+   },
+   "CompleteOut": {
+    "properties": {
+     "collection": {
+      "$ref": "#/components/schemas/CollectionOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "collection"
+    ],
+    "title": "CompleteOut"
+   },
+   "ConsentIn": {
+    "properties": {
+     "expectedRevision": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Expectedrevision"
+     },
+     "enabled": {
+      "type": "boolean",
+      "title": "Enabled"
+     },
+     "policyVersion": {
+      "anyOf": [
+       {
+        "type": "string",
+        "maxLength": 64,
+        "minLength": 1
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Policyversion"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "expectedRevision",
+     "enabled"
+    ],
+    "title": "ConsentIn"
+   },
+   "ConsentOut": {
+    "properties": {
+     "enabled": {
+      "type": "boolean",
+      "title": "Enabled"
+     },
+     "policyVersion": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Policyversion"
+     },
+     "collection": {
+      "$ref": "#/components/schemas/CollectionOut"
+     }
+    },
+    "type": "object",
+    "required": [
+     "enabled",
+     "policyVersion",
+     "collection"
+    ],
+    "title": "ConsentOut"
    },
    "HTTPValidationError": {
     "properties": {
@@ -1030,6 +1325,92 @@
      "p"
     ],
     "title": "Top3Item"
+   },
+   "UploadGrant": {
+    "properties": {
+     "sampleId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Sampleid"
+     },
+     "uploadId": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Uploadid"
+     },
+     "method": {
+      "type": "string",
+      "const": "PUT",
+      "title": "Method"
+     },
+     "url": {
+      "type": "string",
+      "title": "Url"
+     },
+     "contentType": {
+      "type": "string",
+      "const": "application/json",
+      "title": "Contenttype"
+     },
+     "maxBytes": {
+      "type": "integer",
+      "title": "Maxbytes"
+     },
+     "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Expiresat"
+     }
+    },
+    "type": "object",
+    "required": [
+     "sampleId",
+     "uploadId",
+     "method",
+     "url",
+     "contentType",
+     "maxBytes",
+     "expiresAt"
+    ],
+    "title": "UploadGrant"
+   },
+   "UploadIn": {
+    "properties": {
+     "consentRevision": {
+      "type": "integer",
+      "minimum": 0.0,
+      "title": "Consentrevision"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "consentRevision"
+    ],
+    "title": "UploadIn"
+   },
+   "UploadOut": {
+    "properties": {
+     "collection": {
+      "$ref": "#/components/schemas/CollectionOut"
+     },
+     "grant": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/UploadGrant"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "type": "object",
+    "required": [
+     "collection",
+     "grant"
+    ],
+    "title": "UploadOut"
    },
    "ValidationError": {
     "properties": {

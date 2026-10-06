@@ -1,6 +1,6 @@
 # DB 스키마와 트랜잭션 v1 — 구현 기준안
 
-기준: [API 계약](api-contract-v1.md), [서비스 아키텍처](service-architecture-v1.md), [핵심 파일 계획](core-file-plan-v1.md). PostgreSQL을 사용하는 설계안이며 실제 테이블·마이그레이션을 생성한 상태는 아니다.
+기준: [API 계약](api-contract-v1.md), [서비스 아키텍처](service-architecture-v1.md), [핵심 파일 계획](core-file-plan-v1.md). PostgreSQL 기준이며 Alembic `0001_game_tables`(2절 게임 테이블)와 `0002_collection_tables`(3절 수집·검수 테이블, 2026-10-06)로 구현했다. 구현하며 더한 것: 수집 테이블의 `created_at`·`updated_at`, `drawing_samples.selection`(선정 사유 사본), `label_reviews.note`. 새 세션은 만들 때 리비전 0 동의 이력 행을 함께 만들고, 0002는 기존 세션의 현재 리비전을 이력으로 채운다.
 
 게임 기록, 학습용 그림, 검수 라벨의 수명과 책임을 분리한다. 첫 화면 연결에는 게임 테이블부터 구현하고, 수집 테이블은 수집 기능을 연결할 때 추가한다. MLOps 실행기·작업 큐·모델 관리 서버는 초기 필수 구성에 포함하지 않는다.
 
@@ -111,7 +111,7 @@
 
 `submission_id`를 PK/FK로 하는 1:1 테이블에 `details_version`, `details jsonb`를 둔다. q, 후보별 관계 점수, 속성별 기여도·보정·가중치·내부 순위와 적용 규칙을 담는다. 보류에서는 계산하지 못한 값은 NULL 또는 미계산 사유로 남기고 허위 0점을 만들지 않는다. 정답과 내부 순위가 섞일 수 있으므로 공개 응답 모델로 직접 직렬화하지 않는다.
 
-## 3. 수집 테이블 — 수집 기능 연결 시 추가
+## 3. 수집 테이블 — 0002에서 추가 (운영 흐름은 [MLOps](mlops-v1.md))
 
 ### collection_consents
 

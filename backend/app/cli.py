@@ -8,7 +8,12 @@
   set-answer          Change one date's answer (refused once anyone has played it).
   show-answer         Print one date's answer (dev only).
   export-openapi      Write contracts/api/openapi.json from the FastAPI schemas.
-  metrics             Daily play metrics per puzzle/release (deferral, solve rate, confidence) for monitoring.
+  metrics             Daily play metrics per puzzle/release (deferral, solve rate, confidence); --check warns.
+  collection-reconcile  Expire upload grants, apply retention, delete withdrawn drawings, remove orphan files.
+  review-export       Write a label-review batch (index.html + items.csv) of verified, unreviewed drawings.
+  review-import       Append label reviews from a filled items.csv (all rows checked before writing).
+  collection-export   Export accepted, still-consented drawings for training (data/collected/exports/<id>/).
+  mlops-status        Collection/review counts and whether a retrain is recommended (never runs anything).
 
 Release files go to data/artifacts/releases/<release-id>/ (private files stay untracked).
 """
@@ -33,6 +38,7 @@ from app.db.session import make_engine, make_session_factory
 from app.modules.releases import repository as releases_repo
 from app.modules.releases.artifact_loader import ArtifactLoader, canonical_sha256
 from app.modules.releases.service import register
+from app.storage.object_store import open_store
 
 DEV_RELEASE_ID = "dev-release-v2"  # v2 adds English category names; v1 stays for puzzles already played
 SCORING_CONFIG = REPO_ROOT / "config/scoring/scoring.json"
@@ -41,6 +47,8 @@ RECOGNITION = REPO_ROOT / "config/scoring/recognition.json"
 CURATION = REPO_ROOT / "config/model/catalog-curation-v1.json"
 LABELS = REPO_ROOT / "data/quickdraw/metadata/labels.json"
 MODEL_RUNS = REPO_ROOT / "data/artifacts/models/runs"
+MLOPS_CONFIG = REPO_ROOT / "config/mlops/mlops.json"
+COLLECTED = Path("data/collected")  # under the artifact root, untracked
 PUBLIC_MODELS = Path("frontend/public/models")  # under the artifact root; Vite serves it at /models in dev
 
 
@@ -326,12 +334,33 @@ def daily_metrics(db, start: dt.date, end: dt.date) -> list[dict]:
     return rows
 
 
+def monitoring_alerts(rows: list[dict], cfg: dict) -> list[str]:
+    """Thresholds from config/mlops/mlops.json `monitoring`. Days with fewer than min_games games are not judged."""
+    alerts = []
+    for r in rows:
+        if r["games"] < cfg["min_games"]:
+            continue
+        where = f"{r['date']} {r['release']}"
+        if r["deferralRate"] is not None and r["deferralRate"] > cfg["max_deferral_rate"]:
+            alerts.append(f"{where}: deferral {r['deferralRate']:.1%} > {cfg['max_deferral_rate']:.0%}")
+        if r["solveRate"] is not None and r["solveRate"] < cfg["min_solve_rate"]:
+            alerts.append(f"{where}: solve rate {r['solveRate']:.1%} < {cfg['min_solve_rate']:.0%}")
+        if (r["nearMissShare"] is not None and r["nearMissShare"] > cfg["max_near_miss_share"]
+                and (r["nearMissMedianP1"] or 0) >= cfg["near_miss_p1"]):
+            alerts.append(f"{where}: near misses {r['nearMissShare']:.1%} with median p1 {r['nearMissMedianP1']:.2f}"
+                          " - success threshold may be too strict")
+        if r["top1Concentration"] is not None and r["top1Concentration"] > cfg["max_top1_concentration"]:
+            alerts.append(f"{where}: one Top-1 candidate is {r['top1Concentration']:.1%} of submissions")
+    return alerts
+
+
 def cmd_metrics(args, settings: Settings, db) -> int:
     end = args.end or dt.datetime.now(ZoneInfo(settings.service_timezone)).date()
     rows = daily_metrics(db, end - dt.timedelta(days=args.days - 1), end)
+    alerts = monitoring_alerts(rows, read_json(MLOPS_CONFIG)["monitoring"]) if args.check else []
     if args.json:
-        print(json.dumps(rows, ensure_ascii=False, indent=1))
-        return 0
+        print(json.dumps({"rows": rows, "alerts": alerts} if args.check else rows, ensure_ascii=False, indent=1))
+        return 2 if alerts else 0
     fmt = lambda v, pct=False: "-" if v is None else f"{v * 100:.1f}%" if pct else f"{v:.2f}" if isinstance(v, float) else str(v)  # noqa: E731
     print("date        release            games  subs  defer   solved  solve%  med.att  near%   nearP1  p1    top1conc")
     for r in rows:
@@ -339,6 +368,104 @@ def cmd_metrics(args, settings: Settings, db) -> int:
               f"  {r['solved']:>6}  {fmt(r['solveRate'], True):>6}  {fmt(r['medianAttemptsToSolve']):>7}"
               f"  {fmt(r['nearMissShare'], True):>6}  {fmt(r['nearMissMedianP1']):>6}"
               f"  {fmt(r['meanP1']):>4}  {fmt(r['top1Concentration'], True):>7}")
+    if args.check:
+        print("\n".join(["", "ALERTS:", *alerts]) if alerts else "\nno alerts")
+    return 2 if alerts else 0
+
+
+def _store(settings: Settings):
+    return open_store(settings.artifact_root, settings.collection.storage_backend, settings.collection.storage_root)
+
+
+def _utc_now() -> dt.datetime:
+    return dt.datetime.now(dt.timezone.utc)
+
+
+def cmd_collection_reconcile(args, settings: Settings, db) -> int:
+    from app.workers import collection_reconcile
+    print(json.dumps(collection_reconcile.run(args.factory, settings, _store(settings), _utc_now())))
+    return 0
+
+
+def cmd_review_export(args, settings: Settings, db) -> int:
+    from app.modules.collections import review
+    now = _utc_now()
+    out = args.out or settings.artifact_root / COLLECTED / "review" / f"batch-{now:%Y%m%d-%H%M%S}"
+    print(json.dumps(review.export_batch(args.factory, settings, _store(settings), out, args.limit,
+                                         args.include_uncertain, now), ensure_ascii=False))
+    return 0
+
+
+def cmd_review_import(args, settings: Settings, db) -> int:
+    from app.modules.collections import review
+    print(json.dumps(review.import_batch(args.factory, args.csv, args.reviewer, _utc_now())))
+    return 0
+
+
+def cmd_collection_export(args, settings: Settings, db) -> int:
+    from app.modules.collections import export
+    out_root = args.out_root or settings.artifact_root / COLLECTED / "exports"
+    print(json.dumps(export.export_training(args.factory, settings, _store(settings), out_root, _utc_now()),
+                     ensure_ascii=False))
+    return 0
+
+
+STATUS_SQL = text("SELECT state, count(*) AS n FROM drawing_samples GROUP BY state")
+REVIEW_SQL = text("""
+SELECT coalesce(lr.decision, 'unreviewed') AS decision, count(*) AS n
+FROM drawing_samples s
+LEFT JOIN LATERAL (SELECT decision FROM label_reviews r WHERE r.sample_id = s.sample_id
+                   ORDER BY r.revision DESC LIMIT 1) lr ON true
+WHERE s.state = 'verified' GROUP BY 1
+""")
+
+
+def mlops_status(db, settings: Settings, now: dt.datetime) -> dict:
+    """Counts and a retrain recommendation from config/mlops/mlops.json `retrain_triggers`. Runs nothing."""
+    from app.modules.collections.export import EXPORT_SQL
+    cfg = read_json(MLOPS_CONFIG)
+    states = {r["state"]: r["n"] for r in db.execute(STATUS_SQL).mappings()}
+    reviews = {r["decision"]: r["n"] for r in db.execute(REVIEW_SQL).mappings()}
+    exportable = {str(r["sample_id"]) for r in db.execute(
+        EXPORT_SQL, {"notices": list(settings.collection.training_notice_versions)}).mappings()}
+    manifests = sorted((settings.artifact_root / COLLECTED / "exports").glob("*/manifest.json"))
+    last_export = read_json(manifests[-1]) if manifests else None
+    new_accepted = len(exportable - set(last_export["sampleIds"] if last_export else []))
+    champion = REPO_ROOT / cfg["champion"]["run"] / "run.json"
+    finished = read_json(champion).get("finishedAt") if champion.exists() else None
+    days = (now - dt.datetime.fromisoformat(finished)).days if finished else None
+    t = cfg["retrain_triggers"]
+    reasons = []
+    if new_accepted >= t["min_new_accepted"]:
+        reasons.append(f"{new_accepted} new accepted drawings >= {t['min_new_accepted']}")
+    if days is not None and days >= t["max_days_since_training"] and new_accepted >= t["min_accepted_for_time_trigger"]:
+        reasons.append(f"{days} days since the champion was trained, {new_accepted} new accepted drawings")
+    return {"collection": {"enabled": settings.collection.enabled, "notice": settings.collection.notice_version,
+                           "sampling": settings.collection.sampling.version},
+            "samples": states, "verifiedReviews": reviews, "exportable": len(exportable),
+            "lastExport": None if last_export is None else {"id": last_export["exportId"],
+                                                            "createdAt": last_export["createdAt"],
+                                                            "count": last_export["count"]},
+            "newAcceptedSinceLastExport": new_accepted,
+            "champion": {"run": cfg["champion"]["run"], "release": cfg["champion"]["release_id"],
+                         "daysSinceTraining": days},
+            "retrainRecommended": bool(reasons), "reasons": reasons}
+
+
+def cmd_mlops_status(args, settings: Settings, db) -> int:
+    status = mlops_status(db, settings, _utc_now())
+    if args.json:
+        print(json.dumps(status, ensure_ascii=False, indent=1))
+        return 0
+    c = status["collection"]
+    print(f"collection: {'on' if c['enabled'] else 'off'} (notice {c['notice']}, {c['sampling']})")
+    print(f"samples by state: {status['samples'] or '-'}")
+    print(f"verified samples by latest review: {status['verifiedReviews'] or '-'}")
+    last = status["lastExport"]["id"] if status["lastExport"] else "none"
+    print(f"exportable now: {status['exportable']}, new since last export: {status['newAcceptedSinceLastExport']}"
+          f" (last export: {last})")
+    print(f"champion: {status['champion']['release']} ({status['champion']['daysSinceTraining']} days since training)")
+    print("retrain recommended: " + ("yes - " + "; ".join(status["reasons"]) if status["retrainRecommended"] else "no"))
     return 0
 
 
@@ -384,7 +511,24 @@ def main(argv=None) -> int:
     p.add_argument("--days", type=int, default=7)
     p.add_argument("--end", type=dt.date.fromisoformat, help="last date (default: today in service timezone)")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--check", action="store_true", help="warn on config/mlops/mlops.json thresholds (exit code 2)")
     p.set_defaults(fn=cmd_metrics)
+    sub.add_parser("collection-reconcile").set_defaults(fn=cmd_collection_reconcile)
+    p = sub.add_parser("review-export")
+    p.add_argument("--limit", type=int, default=200)
+    p.add_argument("--include-uncertain", action="store_true", help="also re-show samples last marked uncertain")
+    p.add_argument("--out", type=Path, help="default: data/collected/review/batch-<time>")
+    p.set_defaults(fn=cmd_review_export)
+    p = sub.add_parser("review-import")
+    p.add_argument("csv", type=Path)
+    p.add_argument("--reviewer", required=True, help="who reviewed (a name or handle, stored with each decision)")
+    p.set_defaults(fn=cmd_review_import)
+    p = sub.add_parser("collection-export")
+    p.add_argument("--out-root", type=Path, help="default: data/collected/exports")
+    p.set_defaults(fn=cmd_collection_export)
+    p = sub.add_parser("mlops-status")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(fn=cmd_mlops_status)
     p = sub.add_parser("export-openapi")
     p.add_argument("--out", type=Path, default=REPO_ROOT / "contracts/api/openapi.json")
     args = ap.parse_args(argv)
@@ -395,6 +539,7 @@ def main(argv=None) -> int:
     if settings.is_production and (getattr(args, "dev_only", False) or args.command == "build-dev-release"):
         raise SystemExit(f"{args.command} is a dev-only command")
     factory = make_session_factory(make_engine(settings.database_url))
+    args.factory = factory  # commands that use one short transaction per item open their own sessions
     with factory() as db:
         return args.fn(args, settings, db)
 

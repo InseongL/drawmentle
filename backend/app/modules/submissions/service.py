@@ -1,6 +1,7 @@
 """Submission use cases in one DB transaction each (docs/database-schema-v1.md §4).
 
-Lock order: anonymous session -> game. Repositories never commit; this module commits once per request.
+Lock order: anonymous session -> game (-> collection sample). Repositories never commit; this module commits once
+per request.
 """
 from __future__ import annotations
 
@@ -18,13 +19,13 @@ from sqlalchemy.orm import Session
 from app.core.errors import ApiError
 from app.core.settings import Settings
 from app.db.models import AnonymousSession, GameSession, Puzzle, Submission, SubmissionScoreDetails
+from app.modules.collections import service as collections
 from app.modules.judging.judge import DETAILS_VERSION, Judgement, judge, score_details
 from app.modules.puzzles import service as puzzles
 from app.modules.releases.artifact_loader import ReleaseCatalog
 from app.modules.releases.service import ReleaseService
 from app.modules.sessions import repository as sessions_repo
 from app.modules.sessions.schemas import SessionContext
-from app.modules.sessions.service import collection_view
 
 from . import repository
 from .schemas import AnswerOut, HistoryItem, ProgressOut, ProgressPage, ResultOut, SubmissionIn, SubmissionOut
@@ -104,7 +105,7 @@ def _response(db: Session, request_id: uuid.UUID, sub: Submission, game: GameSes
     return SubmissionOut(requestSubmissionId=request_id, submissionId=sub.submission_id, puzzleId=puzzle.puzzle_id,
                          releaseId=puzzle.release_id, reuse=reuse, result=result_view(sub, puzzle),
                          progress=progress_view(db, game, puzzle),
-                         collection=collection_view(session.consent_revision))
+                         collection=collections.submission_view(db, session, sub))
 
 
 @dataclass(frozen=True)
@@ -166,8 +167,11 @@ def submit(db: Session, releases: ReleaseService, settings: Settings, auth: Sess
     judgement = judge_fn(context.table, context.rules, puzzle.answer_category_id, top3)
 
     # 7-8. Store result, details and request mapping; update the game in the same transaction.
+    #      Collection selection is decided here once (independent of consent) and never re-drawn.
+    submission_id = uuid.uuid4()
+    policy, selection = collections.select(settings.collection, submission_id, judgement.status)
     sub = Submission(
-        submission_id=uuid.uuid4(), game_session_id=game.game_session_id, release_id=puzzle.release_id,
+        submission_id=submission_id, game_session_id=game.game_session_id, release_id=puzzle.release_id,
         drawing_version=req.drawingVersion, brush_version=req.brushVersion, drawing_hash=req.drawingHash,
         top3=[{"categoryId": c, "p": p} for c, p in top3], top3_sum=sum(p for _, p in top3),
         status=judgement.status, reason=judgement.reason,
@@ -175,8 +179,7 @@ def submit(db: Session, releases: ReleaseService, settings: Settings, auth: Sess
         comparison_score=judgement.mix.mixed if judgement.mix else None,
         display_score=Decimal(judgement.mix.display_text) if judgement.mix else None,
         display_text=judgement.mix.display_text if judgement.mix else None,
-        judged_at=now, collection_policy_version=settings.collection_policy_version,
-        collection_selection="not_selected")
+        judged_at=now, collection_policy_version=policy, collection_selection=selection)
     details = SubmissionScoreDetails(
         submission_id=sub.submission_id, details_version=DETAILS_VERSION,
         details=score_details(judgement, context.rules, context.table, puzzle.answer_category_id, top3))

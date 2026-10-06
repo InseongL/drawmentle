@@ -1,4 +1,4 @@
-"""Game tables (docs/database-schema-v1.md §2). Collection/review tables are added with those features."""
+"""Game tables (docs/database-schema-v1.md §2) and collection/review tables (§3, docs/mlops-v1.md)."""
 from __future__ import annotations
 
 import datetime as dt
@@ -168,3 +168,102 @@ class SubmissionScoreDetails(Base):
                                                      primary_key=True)
     details_version: Mapped[str] = mapped_column(Text)
     details: Mapped[dict] = mapped_column(JSONB)
+
+
+# Collection and review (docs/database-schema-v1.md §3). Drawings themselves live in the object store, never in rows.
+SAMPLE_STATES = "('pending_upload', 'uploaded', 'verified', 'upload_failed', 'delete_pending', 'deleted')"
+UPLOAD_STATES = "('issued', 'received', 'verified', 'rejected', 'expired')"
+
+
+class CollectionConsent(Base):
+    """Append-only consent history. The session row caches the latest revision."""
+    __tablename__ = "collection_consents"
+    __table_args__ = (
+        CheckConstraint("revision >= 0", name="ck_collection_consents_revision"),
+        CheckConstraint("NOT enabled OR policy_version IS NOT NULL", name="ck_collection_consents_policy"),
+    )
+    session_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("anonymous_sessions.session_id"),
+                                                  primary_key=True)
+    revision: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    enabled: Mapped[bool] = mapped_column(Boolean)
+    policy_version: Mapped[str | None] = mapped_column(Text)
+    changed_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+
+
+class DrawingSample(Base):
+    """One consented, selected submission's drawing. `verified` means the file was checked, not label-reviewed."""
+    __tablename__ = "drawing_samples"
+    __table_args__ = (
+        ForeignKeyConstraint(["session_id", "consent_revision"],
+                             ["collection_consents.session_id", "collection_consents.revision"],
+                             name="fk_drawing_samples_consent"),
+        ForeignKeyConstraint(["active_upload_id", "sample_id"],
+                             ["drawing_uploads.upload_id", "drawing_uploads.sample_id"],
+                             name="fk_drawing_samples_active_upload", use_alter=True),
+        CheckConstraint(f"state IN {SAMPLE_STATES}", name="ck_drawing_samples_state"),
+        CheckConstraint("selection IN ('success_sample', 'failure_sample')", name="ck_drawing_samples_selection"),
+        CheckConstraint("state <> 'verified' OR (verified_at IS NOT NULL AND verified_object_key IS NOT NULL "
+                        "AND file_sha256 IS NOT NULL AND byte_size IS NOT NULL)", name="ck_drawing_samples_verified"),
+        CheckConstraint("state <> 'deleted' OR deleted_at IS NOT NULL", name="ck_drawing_samples_deleted"),
+        Index("ix_drawing_samples_session_state", "session_id", "state"),
+        Index("ix_drawing_samples_state_updated", "state", "updated_at"),
+    )
+    sample_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    submission_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("submissions.submission_id"),
+                                                     unique=True)
+    session_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True))
+    consent_revision: Mapped[int] = mapped_column(BigInteger)
+    selection: Mapped[str] = mapped_column(Text)
+    state: Mapped[str] = mapped_column(Text)
+    active_upload_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True))
+    verified_object_key: Mapped[str | None] = mapped_column(Text)
+    verified_object_version: Mapped[str | None] = mapped_column(Text)
+    file_sha256: Mapped[str | None] = mapped_column(Text)
+    byte_size: Mapped[int | None] = mapped_column(BigInteger)
+    stroke_count: Mapped[int | None] = mapped_column(Integer)
+    point_count: Mapped[int | None] = mapped_column(Integer)
+    verified_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
+    deletion_requested_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
+    deleted_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
+    last_error_code: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+
+
+class DrawingUpload(Base):
+    """One upload grant. A new grant gets a new ID and temporary key; late files to old keys are never verified."""
+    __tablename__ = "drawing_uploads"
+    __table_args__ = (
+        UniqueConstraint("upload_id", "sample_id", name="uq_drawing_uploads_id_sample"),
+        CheckConstraint(f"state IN {UPLOAD_STATES}", name="ck_drawing_uploads_state"),
+        Index("ix_drawing_uploads_state_expires", "state", "expires_at"),
+    )
+    upload_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    sample_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("drawing_samples.sample_id"))
+    object_key: Mapped[str] = mapped_column(Text, unique=True)
+    consent_revision: Mapped[int] = mapped_column(BigInteger)
+    expires_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+    state: Mapped[str] = mapped_column(Text)
+    last_error_code: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
+
+
+class LabelReview(Base):
+    """Append-only human label decisions. No row means unreviewed; nothing is filled from the model or the answer."""
+    __tablename__ = "label_reviews"
+    __table_args__ = (
+        UniqueConstraint("sample_id", "revision", name="uq_label_reviews_sample_revision"),
+        CheckConstraint("decision IN ('accepted', 'rejected', 'uncertain')", name="ck_label_reviews_decision"),
+        CheckConstraint("decision <> 'accepted' OR reviewed_category_id IS NOT NULL", name="ck_label_reviews_label"),
+        CheckConstraint("revision > 0", name="ck_label_reviews_revision"),
+    )
+    review_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True)
+    sample_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("drawing_samples.sample_id"))
+    revision: Mapped[int] = mapped_column(Integer)
+    decision: Mapped[str] = mapped_column(Text)
+    reviewed_category_id: Mapped[str | None] = mapped_column(Text)
+    catalog_version: Mapped[str] = mapped_column(Text)
+    reviewer_ref: Mapped[str] = mapped_column(Text)
+    note: Mapped[str | None] = mapped_column(Text)
+    reviewed_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))

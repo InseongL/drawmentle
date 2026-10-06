@@ -3,7 +3,8 @@ import type { Candidate } from '../api/client.ts';
 
 export type Lang = 'ko' | 'en';
 
-type Faq = readonly (readonly [string, string])[];
+type FaqEntry = readonly [string, string];
+type Faq = readonly FaqEntry[];
 
 const ko = {
   title: '드로맨틀',
@@ -40,6 +41,11 @@ const ko = {
     modelFailed: '그림 인식 모델을 불러오지 못했어요.',
   },
   retryModel: '모델 다시 불러오기',
+  collection: {
+    label: '내 그림을 학습용으로 제공하기 (선택)',
+    note: '체크하면 이후 제출하는 그림 중 일부가 사람의 확인을 거쳐 그림 인식 개선에 쓰여요. 언제든 해제할 수 있고, 해제하면 저장된 그림은 삭제돼요.',
+    more: '자세히',
+  },
   notices: {
     deferred: '아직 어떤 그림인지 알아보기 어려워요. 특징을 조금 더 그려주세요.',
     duplicate: (n: number) => `같은 그림을 이미 제출했어요. ${n}번째 기록을 확인해보세요.`,
@@ -58,6 +64,13 @@ const ko = {
     VERSION_MISMATCH: '문제 정보가 바뀌었어요. 그림은 그대로 두고 새로고침해주세요.',
     IDEMPOTENCY_CONFLICT: '제출 정보가 맞지 않아 이번 제출을 멈췄어요. 다시 제출해주세요.',
     GAME_ALREADY_SOLVED: '이미 정답을 맞힌 문제예요.',
+    CONSENT_REVISION_CONFLICT: '학습용 제공 선택이 다른 곳에서 바뀌었어요. 현재 선택을 다시 확인해주세요.',
+    CONSENT_POLICY_OUTDATED: '학습용 제공 안내가 바뀌었어요. 새로고침 후 다시 선택해주세요.',
+    COLLECTION_DISABLED: '지금은 학습용 그림을 받지 않아요.',
+    SAMPLE_DELETED: '이 그림은 삭제됐어요.',
+    INVALID_DRAWING: '그림 파일을 확인하지 못했어요.',
+    UPLOAD_EXPIRED: '그림 보내기 시간이 지났어요.',
+    UPLOAD_NOT_FOUND: '그림 보내기 정보를 찾을 수 없어요.',
     PUZZLE_CLOSED: '이 문제는 더 이상 제출할 수 없어요.',
     INVALID_TOP3: '인식 결과 형식이 올바르지 않아요.',
     INVALID_REQUEST: '요청 형식이 올바르지 않아요.',
@@ -124,8 +137,12 @@ const ko = {
     ['지우기를 누르면 기록도 없어지나요?', '지우기는 현재 그림판만 비워요. 제출한 그림과 점수는 아래 기록에 남아요. 같은 그림을 다시 제출하거나 통신 오류로 재시도해도 횟수가 중복으로 늘어나지 않아요.'],
     ['새 문제는 언제 나오나요?', '매일 한국 시간 자정에 새 문제가 열려요. 풀고 있던 문제는 이어서 풀 수 있어요.'],
     ['새로고침해도 이어 할 수 있나요?', '같은 브라우저에서 진행한 기록을 이어 볼 수 있어요. 브라우저 데이터를 지우거나 다른 기기로 접속하면 이전 기록이나 그림을 복원하지 못할 수 있어요.'],
-    ['제가 그린 그림이 학습에 사용되나요?', '지금은 사용하지 않아요. 제출할 때 그림 원본은 서버로 보내지 않고, AI 인식 결과와 같은 그림인지 구분하는 값만 보내요. 그림과 미리보기는 이 브라우저에만 저장돼요. 학습용 제공 기능을 추가하게 되면 원하는 분만 선택할 수 있게 따로 안내할게요.'],
   ] as Faq,
+  // The last FAQ entry follows the server's collection policy (off: nothing is sent; on: opt-in explained).
+  faqCollection: {
+    off: ['제가 그린 그림이 학습에 사용되나요?', '지금은 사용하지 않아요. 제출할 때 그림 원본은 서버로 보내지 않고, AI 인식 결과와 같은 그림인지 구분하는 값만 보내요. 그림과 미리보기는 이 브라우저에만 저장돼요. 학습용 제공 기능을 추가하게 되면 원하는 분만 선택할 수 있게 따로 안내할게요.'],
+    on: ['제가 그린 그림이 학습에 사용되나요?', '그림판 아래 \'내 그림을 학습용으로 제공하기\'를 체크한 분의 그림만 사용해요. 체크하면 그 뒤에 제출하는 그림 중 일부의 원본 획이 서버에 저장되고, 사람이 무엇을 그린 그림인지 확인한 뒤에만 그림 인식 학습에 쓰여요. 체크하지 않으면 지금처럼 원본은 보내지 않아요. 체크를 해제하면 저장된 그림은 바로 학습 대상에서 빠지고 삭제돼요. 다만 이미 학습을 마친 모델에서 따로 지워지지는 않아요. 게임 진행과 점수는 체크 여부와 상관없이 같아요.'],
+  } as { off: FaqEntry; on: FaqEntry },
   credits: {
     categories: '그림 카테고리',
     association: '연상 점수',
@@ -173,6 +190,11 @@ const en: Messages = {
     modelFailed: "Couldn't load the drawing recognizer.",
   },
   retryModel: 'Reload the recognizer',
+  collection: {
+    label: 'Contribute my drawings to training (optional)',
+    note: 'If ticked, some of the drawings you submit afterwards are checked by a person and used to improve recognition. You can untick at any time; your stored drawings are then deleted.',
+    more: 'Details',
+  },
   notices: {
     deferred: "The AI can't tell what this is yet. Add a few more details.",
     duplicate: n => `You already submitted this drawing. See attempt #${n}.`,
@@ -191,6 +213,13 @@ const en: Messages = {
     VERSION_MISMATCH: 'The puzzle was updated. Your drawing is kept; please reload.',
     IDEMPOTENCY_CONFLICT: "This submission didn't match what was sent before, so it was stopped. Please submit again.",
     GAME_ALREADY_SOLVED: 'You already solved this puzzle.',
+    CONSENT_REVISION_CONFLICT: 'Your training-contribution choice changed elsewhere. Please check the current choice.',
+    CONSENT_POLICY_OUTDATED: 'The training-contribution notice changed. Please reload and choose again.',
+    COLLECTION_DISABLED: "Drawings for training aren't being collected right now.",
+    SAMPLE_DELETED: 'This drawing was deleted.',
+    INVALID_DRAWING: "Couldn't check the drawing file.",
+    UPLOAD_EXPIRED: 'The time to send the drawing has passed.',
+    UPLOAD_NOT_FOUND: "Couldn't find the drawing upload.",
     PUZZLE_CLOSED: 'This puzzle no longer accepts submissions.',
     INVALID_TOP3: 'The recognition result is not valid.',
     INVALID_REQUEST: 'The request is not valid.',
@@ -257,8 +286,11 @@ const en: Messages = {
     ['Does Clear delete my history?', 'Clear only empties the drawing board. Your submitted drawings and scores stay in the list below. Submitting the same drawing again or retrying after a network error never counts twice.'],
     ['When is a new puzzle released?', 'A new puzzle opens every day at midnight Korea time (KST). You can keep working on the puzzle you started.'],
     ['Can I continue after reloading?', 'Your progress in the same browser is kept. If you clear browser data or switch devices, earlier history or drawings may not come back.'],
-    ['Are my drawings used for training?', 'Not now. When you submit, the drawing itself is not sent to the server — only the AI recognition result and a value that tells identical drawings apart. Drawings and previews are stored only in this browser. If a training contribution option is added later, it will be opt-in and explained separately.'],
   ],
+  faqCollection: {
+    off: ['Are my drawings used for training?', 'Not now. When you submit, the drawing itself is not sent to the server — only the AI recognition result and a value that tells identical drawings apart. Drawings and previews are stored only in this browser. If a training contribution option is added later, it will be opt-in and explained separately.'],
+    on: ['Are my drawings used for training?', "Only if you tick 'Contribute my drawings to training' below the drawing board. Then the strokes of some of the drawings you submit afterwards are stored on the server and used to train the recognizer only after a person checks what they show. If you don't tick it, the drawing itself is never sent, as before. Unticking removes your stored drawings from training right away and deletes them; models already trained are not changed. Play and scores are the same either way."],
+  },
   credits: {
     categories: 'Drawing categories',
     association: 'Association score',

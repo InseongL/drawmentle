@@ -1,0 +1,43 @@
+{
+  "version": "collection-config-v1",
+  "status": "draft",
+  "rationale_doc": "docs/mlops-v1.md",
+  "note_ko": "학습용 그림 수집의 운영 설정이다. 값을 바꾸면 서버를 다시 시작한다. 기존 제출의 표본 선정 결과와 이미 받은 동의는 바뀌지 않는다.",
+  "enabled": false,
+  "notice_version": "collection-notice-v1-draft",
+  "training_notice_versions": ["collection-notice-v1-draft"],
+  "sampling": {
+    "version": "sampling-v1",
+    "success_rate": 1.0,
+    "failure_rate": 0.2,
+    "deferred_rate": 0.0,
+    "note_ko": "대표 제출마다 한 번, 동의와 무관하게 sha256(version:submissionId)로 정한다. 비율을 바꾸면 version을 올린다."
+  },
+  "upload": {
+    "grant_ttl_seconds": 600,
+    "max_bytes": 65536,
+    "max_strokes": 64,
+    "max_points_per_stroke": 1024,
+    "max_points": 4096,
+    "coordinate_max": 1024
+  },
+  "retention": {
+    "verified_days": 365,
+    "temp_hours": 24,
+    "derived_datasets": "report",
+    "note_ko": "verified_days가 지나면 정리 작업이 표본을 delete_pending으로 바꾸고 파일을 지운다. 0이면 기간 제한 없음. 삭제된 그림이 든 검수 묶음·내보내기 폴더는 항상 지운다. 사용자 데이터셋은 derived_datasets가 delete면 지우고 report면 목록만 보고한다."
+  },
+  "storage": {
+    "backend": "local",
+    "root": "data/collected/objects"
+  },
+  "review": {
+    "show_model_prediction": true,
+    "show_puzzle_answer": false,
+    "note_ko": "검수 화면에 참고 정보로 보여줄지 정한다. 어느 쪽도 라벨로 자동 채우지 않는다."
+  },
+  "export": {
+    "group_salt": "drawmentle-export-v1",
+    "note_ko": "내보내기 파일에는 세션 ID 대신 sha256(group_salt:session_id)만 남긴다."
+  }
+}

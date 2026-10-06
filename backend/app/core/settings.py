@@ -2,11 +2,14 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
+
+from app.core.collection_config import CollectionConfig
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEV_DATABASE_URL = "postgresql+psycopg://drawmentle:drawmentle-dev@127.0.0.1:5433/drawmentle"
+COLLECTION_CONFIG = REPO_ROOT / "config/collection/collection.json"
 
 
 def _bool(name: str, default: bool) -> bool:
@@ -24,11 +27,15 @@ class Settings:
     allowed_origins: tuple[str, ...] = ("http://127.0.0.1:5173", "http://localhost:5173")
     artifact_root: Path = REPO_ROOT
     service_timezone: str = "Asia/Seoul"
-    collection_policy_version: str = "collection-disabled-v0"
+    collection: CollectionConfig = field(default_factory=lambda: CollectionConfig.load(COLLECTION_CONFIG))
 
     @property
     def is_production(self) -> bool:
         return self.app_env == "production"
+
+    @property
+    def collection_policy_version(self) -> str:
+        return self.collection.selection_policy
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -43,6 +50,7 @@ class Settings:
             allowed_origins=tuple(o.strip() for o in origins.split(",") if o.strip()) if origins
             else cls.allowed_origins,
             artifact_root=Path(os.environ.get("ARTIFACT_ROOT", str(REPO_ROOT))),
+            collection=CollectionConfig.load(Path(os.environ.get("COLLECTION_CONFIG", str(COLLECTION_CONFIG)))),
         )
         if settings.is_production and (settings.database_url == DEV_DATABASE_URL or not settings.cookie_secure):
             raise RuntimeError("production requires DATABASE_URL and secure cookies")

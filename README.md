@@ -2,7 +2,7 @@
 
 기획 문서: [AI 스케치 게임 서비스 기획서 v3.2](<AI 스케치 게임 서비스 기획서 v3.2.md>)
 
-인수인계: [1. 모델 학습](docs/handoff/model-training.md) · [2. 유지보수·설정 변경](docs/handoff/maintenance.md) — 이어서 작업할 사람·에이전트는 여기부터 읽는다.
+인수인계: [1. 모델 학습](docs/handoff/model-training.md) · [2. 유지보수·설정 변경](docs/handoff/maintenance.md) — 이어서 작업할 사람·에이전트는 여기부터 읽는다. 사용자 그림 수집에서 재학습·교체·관찰까지는 [MLOps](docs/mlops-v1.md).
 
 서비스명: **드로맨틀**. 게임 루프(세션·오늘의 문제·제출·판정·기록 복원)가 FastAPI + PostgreSQL + React로 동작한다. 모델이 아직 없으므로 개발용 릴리스에서는 화면의 **개발용 인식 결과** 패널이 Top-3를 대신 정하고, 인식·성공 임계값은 개발용 가짜 값(`recognition-dev-v0`: 보류 p1 < 0.20, 성공 p1 ≥ 0.50)이다. 아래 [로컬 실행](#로컬-실행) 참고.
 
@@ -20,7 +20,7 @@
 
 모델 구조: [Quick Draw 레퍼런스·모델 선택·입출력·학습·모바일 배포 계획](docs/model-architecture-v1.md) · 학습 실행: [model/README.md](model/README.md) (64px 데이터셋 빌더·MobileNetV3 학습 스크립트, 이 PC의 RTX 4050으로 실행)
 
-아키텍처 문서에는 프론트·백엔드·모델·속성·수집 담당의 산출물, Top-3/릴리스 연결 규격, 수집 상태와 후속 MLOps 연결 지점, 단계별 완료 기준을 정리했다. 게임 API·게임 화면·학습 모델(MobileNetV3-Small epoch 20)·브라우저 추론은 연결했다. 학습용 그림 수집은 아직 없다(`collection-disabled-v0`로 꺼져 있고 Q&A에만 안내한다).
+아키텍처 문서에는 프론트·백엔드·모델·속성·수집 담당의 산출물, Top-3/릴리스 연결 규격, 수집 상태와 후속 MLOps 연결 지점, 단계별 완료 기준을 정리했다. 게임 API·게임 화면·학습 모델(MobileNetV3-Small epoch 20)·브라우저 추론은 연결했다. 학습용 그림 수집·검수·재학습 파이프라인(MLOps)도 만들었지만 수집은 설정으로 꺼 두었다(`config/collection/collection.json`, 켜기 전 결정은 [MLOps §8](docs/mlops-v1.md)).
 
 모듈 의존성, 요청 재시도·같은 그림 중복 처리, 수집 동의 리비전, 업로드 실패와 게임 결과의 분리까지 설계했다. `.gitignore`는 사용자 그림·내부 데이터셋 manifest·모델/점수 산출물을 기본 제외하고 명시된 공개 요약만 허용한다. 아직 운영 임계값·점수 범위·수집 비율·보관 기간은 확정하지 않았다.
 

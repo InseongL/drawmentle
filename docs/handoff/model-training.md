@@ -185,7 +185,7 @@ epoch 10 때의 결과는 같은 run의 `eval/calibration-e10.json`, `eval/valid
 - 비교 실험: stem stride 1(해상도 유지, 약 2.3배 느림), Conv1D+BiLSTM(획 순서 데이터셋 필요). 현재 구조는 top-1 70% 근처에서 한계라 정확도를 더 올리려면 이쪽이다.
 - 실제 그림판 그림 평가셋(현재 평가는 Quick Draw뿐), 사용자 획 간소화 실험.
 - 학습 스크립트가 최고 epoch를 검증 선택용 절반으로만 고르게 바꾸기(보정용 절반 누수 제거).
-- 학습용 그림 수집은 꺼져 있다(`collection-disabled-v0`). 재학습 루프를 돌리려면 수집·검수 기능이 먼저 필요하다.
+- 사용자 그림으로 다시 학습하는 흐름은 [MLOps](../mlops-v1.md)에 있다: 수집·검수 → `collection-export` → `model.pipelines.retrain`(사용자·결합 데이터셋, 챔피언 가중치에서 warm start, 보정·평가, 챔피언 비교와 교체 기준, ONNX 확인, 승인 후 릴리스). 수집은 아직 꺼져 있다. 교체 뒤에는 `config/mlops/mlops.json`의 `champion`을 새 모델로 바꾼다.
 
 ## 9. 관련 파일
 

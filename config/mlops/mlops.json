@@ -1,0 +1,70 @@
+{
+  "version": "mlops-config-v1",
+  "status": "draft",
+  "rationale_doc": "docs/mlops-v1.md",
+  "note_ko": "재학습 흐름의 운영값이다. 단계마다 사람이 실행하고 확인한다. 자동 학습·자동 배포는 하지 않는다.",
+  "runtime": {
+    "model_python": "model/.venv/Scripts/python.exe",
+    "backend_python": "python",
+    "pipelines_dir": "data/artifacts/mlops/pipelines",
+    "note_ko": "파이프라인이 단계마다 부르는 파이썬. 모델 단계는 학습 가상환경, 백엔드·ONNX 확인은 시스템 파이썬(DB 접속·onnxruntime)."
+  },
+  "champion": {
+    "run": "data/artifacts/models/runs/20261001-093849-mobilenet_v3_small-main",
+    "checkpoint": "best",
+    "release_id": "model-dev-e20-v2",
+    "note_ko": "지금 게임에 붙은 모델. 새 모델은 이 모델과 같은 자료로 비교한다. 교체하면 이 값을 새 모델로 바꾼다."
+  },
+  "dataset": {
+    "base_version": "qd-10k-64-v1",
+    "user_split": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "split_salt": "user-split-v1",
+    "train_repeat": 4,
+    "min_accepted_per_label": 0,
+    "note_ko": "사용자 그림은 세션 묶음 단위로 나눈다. train_repeat는 학습 때 사용자 그림을 몇 번 반복해 넣을지다."
+  },
+  "training": {
+    "config": "config/model/training.json",
+    "init": "warm_start",
+    "epochs": 5,
+    "lr": 0.0003,
+    "warmup_epochs": 0,
+    "placement": "mmap",
+    "note_ko": "warm_start는 챔피언 가중치에서 이어 학습한다. scratch는 처음부터 학습한다(약 30 epoch, 수 시간)."
+  },
+  "gates": {
+    "eval_subset": "select",
+    "max_top1_drop": 0.002,
+    "max_false_success": 0.05,
+    "daily_floor_rate": 0.05,
+    "max_daily_below_floor": 0,
+    "max_answer_regression": 0.1,
+    "min_user_eval_samples": 200,
+    "min_user_top1_gain": 0.0,
+    "max_onnx_diff": 0.001,
+    "note_ko": "모두 통과해야 릴리스를 만들 수 있다. 사용자 평가 그림이 min_user_eval_samples보다 적으면 그 항목은 판단 보류로 기록한다."
+  },
+  "monitoring": {
+    "min_games": 20,
+    "max_deferral_rate": 0.1,
+    "min_solve_rate": 0.2,
+    "max_near_miss_share": 0.5,
+    "near_miss_p1": 0.7,
+    "max_top1_concentration": 0.3,
+    "note_ko": "metrics --check의 경고 기준. 판 수가 min_games보다 적은 날은 판단하지 않는다."
+  },
+  "retrain_triggers": {
+    "min_new_accepted": 2000,
+    "max_days_since_training": 90,
+    "min_accepted_for_time_trigger": 200,
+    "note_ko": "mlops-status가 재학습을 권할 조건. 권고만 하고 실행하지 않는다."
+  },
+  "release": {
+    "id_prefix": "model-user",
+    "note_ko": "새 릴리스 ID는 <id_prefix>-<파이프라인 ID>로 만든다."
+  }
+}

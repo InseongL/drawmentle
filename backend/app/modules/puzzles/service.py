@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from app.core.errors import ApiError
 from app.core.settings import Settings
 from app.db.models import Puzzle
+from app.modules.collections.service import policy_view
 from app.modules.releases.service import ReleaseService
 
 from . import repository
@@ -48,6 +49,7 @@ def get_visible(db: Session, puzzle_id: str, now: dt.datetime) -> Puzzle:
 
 def public_view(db: Session, releases: ReleaseService, settings: Settings, puzzle: Puzzle) -> PuzzleOut:
     catalog = releases.catalog(db, puzzle.release_id)
+    version, enabled = policy_view(settings.collection)
     return PuzzleOut(puzzleId=puzzle.puzzle_id, serviceDate=puzzle.service_date,
                      puzzleNumber=repository.number(db, puzzle.service_date), release=catalog.manifest,
-                     collectionPolicy=CollectionPolicyOut(version=settings.collection_policy_version, enabled=False))
+                     collectionPolicy=CollectionPolicyOut(version=version, enabled=enabled))

@@ -183,5 +183,21 @@ DB 제약과 동시성 순서는 [DB 스키마](database-schema-v1.md), 합성 �
 - 문제 응답에 표시용 `puzzleNumber`(해당 날짜까지의 문제 수)를 넣는다. 공개 manifest의 `candidates`(대표 ID·candidate_index·한국어 이름)와 `rawClasses`(원본 345개 → 대표 ID)에 각각 해시가 있다.
 - 성공한 게임의 `progress`에는 제출 응답과 진행 조회 모두 `answer`·`solvedSubmissionId`를 넣는다. 성공 전에는 두 필드가 없다.
 - 추가 오류: 허용되지 않은 Origin의 변경 요청 `403 ORIGIN_NOT_ALLOWED`(운영에서는 Origin 누락도 거부), 예상하지 못한 오류 `500 INTERNAL_ERROR`, 고유 제약 충돌 `503 TEMPORARY_FAILURE`(같은 요청 ID로 재시도).
-- 수집 API(8절)는 아직 없다. 모든 응답의 `collection`은 `not_consented`와 세션의 현재 리비전이며 제출에는 `collection-disabled-v0`·`not_selected`를 기록한다.
+- 수집 API(8절)는 2026-10-06 구현했고 설정(`config/collection/collection.json`의 `enabled`)으로 켠다. 꺼져 있으면 동의는 409 `COLLECTION_DISABLED`, 오늘 문제의 `collectionPolicy`는 `{version: collection-disabled-v0, enabled: false}`, 제출에는 `collection-disabled-v0`·`not_selected`를 기록한다. 세부는 아래 10.1절.
 - 개발용 릴리스(`status: dev-only`, `inference.mode: dev_manual_top3`)는 모델이 없고 화면의 개발 패널이 Top-3를 정한다. 운영 릴리스는 같은 요청 형식에 브라우저 모델 결과를 넣는다.
+
+### 10.1 수집 API 구현 세부 (2026-10-06)
+
+| 요청 | 본문 | 응답 |
+|---|---|---|
+| `PUT /api/collection-consent` | `{expectedRevision, enabled, policyVersion?}` (enabled=true면 오늘 문제 `collectionPolicy.version`) | `{enabled, policyVersion, collection: {state, consentRevision}}` |
+| `POST /api/submissions/{id}/drawing-upload` | `{consentRevision}` | `{collection, grant: null 또는 {sampleId, uploadId, method: "PUT", url, contentType: "application/json", maxBytes, expiresAt}}` |
+| `PUT {grant.url}` (로컬 저장소: `/api/collection-uploads/{uploadId}`) | 제출 때 해시를 만든 strokes-v1 JSON 그대로 | 204 |
+| `POST /api/submissions/{id}/drawing-complete` | `{sampleId, uploadId, consentRevision}` | `{collection}` |
+
+- 세션 단위 `collection.state`는 `not_consented` 또는 `eligible`(동의함)이다. 제출 단위는 그 그림의 상태(8절의 9가지)다.
+- 같은 시도의 권한을 유효 시간 안에 다시 요청하면 같은 권한을 돌려준다. 만료됐거나 실패한 뒤에는 새 uploadId·새 임시 경로를 준다. 이미 `uploaded`·`verified`면 권한 없이 상태만 준다.
+- 파일 확인 실패(형식·한도·정규화·해시 불일치)는 표본을 `upload_failed`로 기록한 뒤 422 `INVALID_DRAWING`, 파일이 없으면 200 `upload_failed`. 확인 중 동의가 바뀌거나 철회되면 `verified`가 되지 않는다.
+- 추가 오류 코드: 409 `COLLECTION_DISABLED`(수집 꺼짐), 409 `CONSENT_POLICY_OUTDATED`(안내 버전이 다름), 404 `UPLOAD_NOT_FOUND`(남의 업로드 포함), 410 `UPLOAD_EXPIRED`(만료·교체된 권한), 413 `INVALID_DRAWING`(크기 초과).
+- 표본 선정: `sha256(sampling.version:submissionId)`의 앞 8바이트로 만든 0~1 값이 상태별 비율보다 작으면 선정한다(정답 `success_sample`, 그 외 `failure_sample`).
+
