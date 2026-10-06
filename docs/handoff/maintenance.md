@@ -53,7 +53,8 @@ cd backend && python -m alembic upgrade head
 |---|---|---|
 | `dev-release-v1` | 모델 없음(개발 패널), 영어 이름 없음 | 2026-09-24 ~ 09-26 |
 | `dev-release-v2` | 모델 없음(개발 패널), 영어 이름 포함 | 2026-09-27 ~ 10-05 |
-| `model-dev-e10-v1` | epoch 10 모델, T 1.036, 기준: 성공 p1 ≥ 0.9 / 보류 p1 < 0.15 | **2026-10-06 ~ 11-04** |
+| `model-dev-e10-v1` | epoch 10 모델, T 1.036, 기준: 성공 p1 ≥ 0.9 / 보류 p1 < 0.15 | 2026-10-06(플레이돼서 남음) |
+| `model-dev-e20-v1` | epoch 20 모델(최종), T 1.093, 기준: 성공 p1 ≥ 0.85 / 보류 p1 < 0.15 | **2026-10-07 ~ 11-04** |
 
 문제 일정은 11-04까지다. 그 뒤에는 오늘 문제가 없어 화면에 "오늘의 문제가 아직 준비되지 않았어요"가 뜬다. 연장하려면 `python -m app.cli schedule --days 30 --release-id <릴리스>`를 쓴다(기본 릴리스는 `dev-release-v2`라 개발 패널 문제가 생긴다).
 
@@ -65,14 +66,14 @@ cd backend && python -m alembic upgrade head
 
 1. 기준 JSON을 만든다. 버전 이름은 새로 짓는다.
     ```json
-    {"version": "recognition-e10-relaxed-v1", "status": "dev-only", "min_top1_p": 0.15, "min_top3_sum": null,
+    {"version": "recognition-e20-relaxed-v1", "status": "dev-only", "min_top1_p": 0.15, "min_top3_sum": null,
      "min_known_axes": 1, "success_min_p": 0.7, "success_min_margin": null}
     ```
-2. `cd backend && python -m app.cli build-model-release --release-id model-dev-e10-v2 --model-dir ../data/artifacts/models/mobilenet_v3_small-20261001-093849-e10 --recognition <JSON 경로>`
-3. `python -m app.cli assign-release --release-id model-dev-e10-v2`. 오늘 문제가 아직 플레이되지 않았으면 `--include-open-unplayed`(개발 전용)를 붙인다.
+2. `cd backend && python -m app.cli build-model-release --release-id model-dev-e20-v2 --model-dir ../data/artifacts/models/mobilenet_v3_small-20261001-093849-e20 --recognition <JSON 경로>`
+3. `python -m app.cli assign-release --release-id model-dev-e20-v2`. 오늘 문제가 아직 플레이되지 않았으면 `--include-open-unplayed`(개발 전용)를 붙인다.
 
 - 개발 패널 릴리스의 기준은 `config/scoring/recognition.json`(`recognition-dev-v0`)이고 `build-dev-release`가 읽는다.
-- 기준 판단 근거는 `model.evaluation.calibrate`의 기준표와 [판정 기준 §4.1](../judging-criteria-v1.md)이다. 현재 사용자 결정 대기(잘못된 성공 목표).
+- 기준 판단 근거는 `model.evaluation.calibrate`의 기준표, [인수인계서 1 §6](model-training.md)의 epoch 20 기준표, [판정 기준 §4.1](../judging-criteria-v1.md)(epoch 10 기준)이다. 개발 릴리스는 보정 초안(잘못된 성공 ≤ 5% → τ 0.85)을 쓰기로 했다(2026-10-06). 운영용 목표는 아직 정하지 않았다.
 
 ### 3.2 점수(유사도) 규칙
 
@@ -160,14 +161,10 @@ cd backend && python -m alembic upgrade head
 
 ## 8. 커밋 상태와 남은 일
 
-- 마지막 커밋 `83eab4f`(원격 반영됨). 그 뒤 작업은 아직 커밋하지 않았다. 사용자 확인 후 커밋한다.
-    - 학습 준비와 본 학습 도구: `model/`, `config/model/training.json`, `scripts/quickdraw_data.py`의 `download-full`
-    - 평가·보정·ONNX: `model/evaluation`, `model/export`
-    - 브라우저 추론: `frontend/src/features/inference/*`, `GamePage`·`useGame` 연결, `onnxruntime-web` 의존성
-    - 백엔드: `build-model-release`, `assign-release --include-open-unplayed`, `metrics`, 릴리스 manifest 선택 필드 `displayNameEn`
-    - 테스트·문서: 공통 사례 파일, 테스트, 문서, 이 인수인계서
+- 마지막 코드 커밋 `61a46d9`: 모델 학습·평가·ONNX 도구, 브라우저 추론, 모델 릴리스 CLI, 인수인계서. 그 뒤로는 epoch 20 결과에 맞춰 문서만 고쳤다. 본 학습 완료와 `model-dev-e20-v1` 등록·배정은 Git 제외 산출물과 개발 DB에만 있다.
+- 커밋·푸시는 사용자 확인 후에만 한다.
 - 남은 일과 결정
-    - 판정 기준 목표, 어려운 데일리 정답 처리: 인수인계서 1 §7
-    - 학습 마무리와 새 모델 릴리스
+    - 운영용 판정 기준 목표, 어려운 데일리 정답 처리, 테스트 분할 평가 시점: 인수인계서 1 §7
+    - epoch 20 모델 브라우저 확인(인수인계서 1 §5)
     - 점수표 경로 하드코딩 정리(§3.2)
     - 운영 배포 설계와 수집 기능

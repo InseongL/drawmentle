@@ -1,6 +1,6 @@
 # 그림 인식 모델 학습
 
-설계 기준은 [모델 구조](../docs/model-architecture-v1.md)다. 여기에는 **학습 준비와 실행 방법**만 적는다. 평가·보정·ONNX 변환·브라우저 추론은 아직 없다.
+설계 기준은 [모델 구조](../docs/model-architecture-v1.md)다. 여기에는 **데이터·학습·평가·ONNX 변환의 실행 방법**을 적는다. 본 학습 기록과 분석, 다음 작업은 [인수인계서 1](../docs/handoff/model-training.md)에 있다.
 
 ## 1. 환경 (한 번만)
 
@@ -25,7 +25,7 @@ model/.venv/Scripts/python -m model.datasets.build_manifest --version qd-local1k
 - 전처리 `qd-strokes-64-v1`: 긴 변 48px, 중심 정렬, 선 반지름 2px, 4×4 표본 평균. 규칙은 [`datasets/preprocess.py`](datasets/preprocess.py) 상단 주석이 기준이며 브라우저도 같은 식으로 구현한다.
 - 분할: 기존 28px 분할을 이어받고 새 그림은 64px 이미지 해시로 정한다. 같은 이미지는 같은 분할로 묶는다.
 
-본 학습용 표본(클래스당 1만 장)은 원본 전체(simplified 345개 파일, **24.0GB**)를 `data/quickdraw/full/`에 받은 뒤 만든다. 다운로드는 아직 하지 않았다.
+본 학습용 표본(클래스당 1만 장)은 원본 전체(simplified 345개 파일, **24.0GB**)를 `data/quickdraw/full/`에 받은 뒤 만든다(2026-10-01 받음, `python scripts/quickdraw_data.py download-full`).
 
 ```bash
 model/.venv/Scripts/python -m model.datasets.build_manifest --version qd-10k-64-v1 --source-dir data/quickdraw/full --per-class 10000
@@ -53,7 +53,7 @@ model/.venv/Scripts/python -m model.training.train
 | 예상: 로컬 1k 데이터 (학습 27.6만 장) | epoch당 약 25초, 30 epoch 약 15분 |
 | 예상: 클래스당 1만 장 (학습 약 276만 장) | epoch당 약 4분, 30 epoch 약 2시간 |
 
-예상치는 위 두 측정의 느린 쪽 기준이며 실제 학습으로 확인하지 않았다. 노트북에서는 전원을 연결하고 절전·잠자기를 끈다. 오래 돌리면 발열로 느려질 수 있다.
+예상치는 위 두 측정의 느린 쪽 기준이다. 실제 본 학습(`qd-10k-64-v1`, mmap)은 6.5~10천 장/초, epoch당 5~8분이었고 epoch 25에서 조기 종료됐다(2026-10-01~06, 일시정지 두 번). 노트북에서는 전원을 연결하고 절전·잠자기를 끈다. 오래 돌리면 발열로 느려질 수 있다.
 
 학습 초반(수백 step)에는 MobileNetV3의 BatchNorm 이동 평균(momentum 0.01)이 아직 따라오지 않아 **평가 모드 정확도가 거의 0**으로 보일 수 있다. 2026-09-26 300 step 점검에서 평가 모드 0.3%, 배치 통계 평가 11%였다. 데이터·라벨 오류가 아니며 1 epoch 이상이면 정상화된다.
 
@@ -89,11 +89,12 @@ cd backend && python -m app.cli build-model-release --release-id <id> --model-di
 - `check_onnx`: torch 없이 onnxruntime만으로 파일 해시, PyTorch 대비 최대 오차(≤ 1e-3), Top-1 일치, 배치/단건 일치를 확인한다.
 - `build-model-release`(백엔드 CLI): 모델 해시·출력 순서를 카탈로그와 대조하고, run의 보정 초안(또는 `--recognition`)을 판정 기준으로 넣어 `inference.mode = browser_onnx` 릴리스를 등록한다. 개발 환경에서는 모델 파일을 `frontend/public/models/<modelVersion>/`(Git 제외)로 복사해 Vite가 `/models/...`로 제공한다. 문제 배정은 바꾸지 않는다(`assign-release`로 따로).
 - 브라우저 쪽 전처리 `frontend/src/features/inference/preprocess.ts`는 [공통 사례](../contracts/fixtures/drawing-cases.json)로 파이썬과 바이트 단위 일치를 확인했다. `modelRuntime.ts`는 softmax(logits / T) → 후보 합산 → Top-3, `onnxSession.ts`는 `onnxruntime-web`(WASM, 단일 스레드)으로 모델을 받아 해시를 확인한 뒤 실행한다.
-- 2026-10-06 epoch 10 모델: ONNX 7.5MB, PyTorch 대비 최대 오차 4.2e-5(260장 Top-1·Top-3 일치). 브라우저(onnxruntime-web 1.30)에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 6.4e-6, 준비 0.27초, 그림 한 장 약 3ms. 릴리스 `model-dev-e10-v1`로 등록했으며 문제에는 아직 배정하지 않았다.
+- 2026-10-06 epoch 10 모델(학습 중): ONNX 7.5MB, PyTorch 대비 최대 오차 4.2e-5(260장 Top-1·Top-3 일치). 브라우저(onnxruntime-web 1.30)에서 고정 그림 4장의 상위 5개가 같고 오차 ≤ 6.4e-6, 준비 0.27초, 그림 한 장 약 3ms. 릴리스 `model-dev-e10-v1`, 10-06 문제에서 게임 전체 흐름을 확인했다.
+- 2026-10-06 epoch 20 모델(최종): 검증 top-1 70.2%·top-3 86.1%, T = 1.093, ONNX 7.5MB, 최대 오차 2.6e-5(260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(τ_인식 0.15·τ_성공 0.85)로 10-07~11-04 문제에 배정했다. 브라우저 비교는 아직 하지 않았다.
 
 ## 8. 아직 없는 것
 
-- 모델 릴리스를 실제 문제에 배정해 게임 전체 흐름 확인(`assign-release`)
+- 테스트 분할 최종 평가(`evaluate --split test --final`, 1회)
 - 사용자 획의 간소화(Quick Draw는 RDP로 간소화된 획): 렌더 결과 차이가 작다고 보고 아직 적용하지 않음
 - 실제 그림판으로 그린 평가 그림(현재 평가는 Quick Draw 검증 분할뿐)
 - Conv1D + BiLSTM 비교 모델(획 순서 데이터셋 필요)

@@ -325,6 +325,9 @@ GPU 여유는 데이터 확대와 복수 시드 비교에 우선 사용한다. �
 ### 11.2 본 학습과 후속 도구 (2026-10-06)
 
 - 원본 simplified 345개 파일(24.0GB)에서 클래스당 1만 장 무작위 표본 `qd-10k-64-v1`(학습 2,760,943 / 검증 344,327 / 테스트 344,730)을 만들었다.
-- MobileNetV3-Small 본 학습을 epoch 11에서 일시정지했다(사용자 요청). 최고는 epoch 10, 검증 top-1 66.9%·top-3 84.1%, 게임 후보 기준 top-1 67.8%. 학습률이 아직 최대의 73%라 이어서 학습할 여지가 있다.
-- 노트북이 배터리로 바뀌면 GPU가 전력 제한으로 크게 느려진다. 11GB 학습 분할을 RAM에 복사하면 Windows가 페이지 파일로 밀어내 느려져, 4GB 초과 분할은 메모리 맵을 쓴다.
-- 평가·보정(`model/evaluation`), ONNX 변환·확인(`model/export`, `onnx` 설치 대기), 모델 릴리스 빌더(백엔드 `build-model-release`), 브라우저 전처리·추론 로직(`frontend/src/features/inference/preprocess.ts`·`modelRuntime.ts`)을 만들었다. 전처리는 [공통 사례](../contracts/fixtures/drawing-cases.json) 9개에서 파이썬과 바이트 단위로 같다.
+- MobileNetV3-Small 본 학습을 마쳤다. 두 번 일시정지(epoch 3, 11)했다가 이어서 epoch 25에서 조기 종료됐고, 최고는 **epoch 20**이다. 검증 top-1 70.2%·top-3 86.1%, 게임 후보 기준 top-1 71.1%. epoch 20 뒤로는 학습 손실만 줄고 검증은 그대로여서 이 구조·입력·표본 크기에서는 거의 한계다.
+- 실제 학습 속도는 mmap 기준 6.5~10천 장/초(epoch당 5~8분)로 11.1의 예상(epoch당 약 4분)보다 느렸다. 같은 설정에서도 시간대마다 속도가 달랐다.
+- 확인한 느려지는 원인: 노트북이 배터리로 바뀌면 GPU가 전력 제한으로 크게 느려진다. 11GB 학습 분할을 RAM에 복사하면 Windows가 페이지 파일로 밀어내 느려져, 4GB 초과 분할은 메모리 맵을 쓴다.
+- 평가·보정(`model/evaluation`), ONNX 변환·확인(`model/export`), 모델 릴리스 빌더(백엔드 `build-model-release`·`assign-release`), 브라우저 전처리·추론(`frontend/src/features/inference/`)을 만들었다. 전처리는 [공통 사례](../contracts/fixtures/drawing-cases.json) 9개에서 파이썬과 바이트 단위로 같다.
+- epoch 20 모델: T = 1.093, ONNX 7.5MB(PyTorch 대비 최대 오차 2.6e-5, 260장 Top-1·Top-3 일치). 릴리스 `model-dev-e20-v1`(보정 초안 τ_인식 0.15·τ_성공 0.85)로 등록해 2026-10-07~11-04 개발 문제에 배정했다. 브라우저에서 `onnxruntime-web` 단일 스레드 WASM으로 돈다(epoch 10 모델로 잰 값: 준비 0.27초, 그림 한 장 약 3ms).
+- 남은 것: 테스트 분할 최종 평가(1회), 실제 그림판 그림 평가셋, 모바일 p95 측정, Conv1D-BiLSTM·stem stride 1 비교. 분석과 다음 단계는 [인수인계서 1](handoff/model-training.md)에 있다.
