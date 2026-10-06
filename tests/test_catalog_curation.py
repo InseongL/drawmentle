@@ -42,7 +42,7 @@ class CatalogCurationTests(unittest.TestCase):
 
     def test_held_merges_keep_each_concept_independent(self):
         groups = [g for g in self.catalog["groups"] if g["decision"] == "hold"]
-        self.assertEqual({g["id"] for g in groups}, {"bowed_string", "small_berry", "pencil", "book", "washer", "whirlwind"})
+        self.assertEqual({g["id"] for g in groups}, {"small_berry", "book", "washer"})
         for group in groups:
             for cid in group["members"]:
                 row = self.catalog["categories"][cid]
@@ -66,8 +66,25 @@ class CatalogCurationTests(unittest.TestCase):
         self.assertFalse(categories["bird"]["daily_candidate"])
 
     def test_user_daily_overrides_are_preserved(self):
+        categories = self.catalog["categories"]
         for cid in ("star", "smiley_face"):
-            self.assertTrue(self.catalog["categories"][cid]["daily_candidate"])
+            self.assertTrue(categories[cid]["daily_candidate"])
+        overrides = {o["category_id"]: o["daily_candidate"] for o in self.catalog["daily_overrides"]}
+        for cid, daily in overrides.items():
+            self.assertEqual(categories[cid]["daily_candidate"], daily)
+        for cid in ("marker", "pond", "pool", "bear", "garden_hose", "aircraft_carrier", "cooler"):
+            self.assertFalse(overrides[cid])
+            self.assertTrue(categories[cid]["scoring"])  # still recognised and scored, never an answer
+
+    def test_model_confusion_merges_accept_each_others_drawings(self):
+        categories = self.catalog["categories"]
+        merges = {g["keep"]: g["remove"] for g in self.catalog["groups"] if g.get("criterion") == "model_confusion"}
+        self.assertEqual(merges, {"tornado": ["hurricane"], "violin": ["cello"], "pencil": ["crayon"],
+                                  "bicycle": ["motorbike"]})
+        for keep, removed in merges.items():
+            self.assertTrue(categories[keep]["daily_candidate"])
+            for cid in removed:
+                self.assertEqual(categories[cid]["service_id"], keep)
 
 
 if __name__ == "__main__":

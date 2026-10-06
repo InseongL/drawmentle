@@ -1,5 +1,5 @@
 {
-  "version": "scoring-v1",
+  "version": "scoring-v2",
   "status": "draft",
   "rationale_doc": "docs/scoring-v1.md",
   "inputs": {
@@ -9,7 +9,7 @@
     "attribute_policy": "config/attribute-policy-v3.json",
     "label_vectors": "data/artifacts/scoring/label-vectors/cc-en-300-subset.npz"
   },
-  "output_dir": "data/artifacts/scoring/scoring-v1",
+  "output_dir": "data/artifacts/scoring/scoring-v2",
   "tag_weighting": {
     "method": "idf",
     "formula": "ln((N + 1) / (max(df, min_df) + 1)) + 1",

@@ -20,7 +20,7 @@
 | DB | PostgreSQL 17, Docker `drawmentle-local-db-1`, `127.0.0.1:5433` | `docker compose -f infra/local/docker-compose.yml up -d` |
 | 릴리스 자료 | `data/artifacts/releases/<id>/`(공개 manifest만 추적, `private/`은 제외) | CLI `build-dev-release`·`build-model-release` |
 | 모델 파일(개발) | `frontend/public/models/<modelVersion>/model.onnx`(Git 제외) | `build-model-release`가 복사, Vite가 `/models/...`로 제공 |
-| 점수표 | `data/artifacts/scoring/scoring-v1/`(Git 제외) | `scripts/scoring/*.py` |
+| 점수표 | `data/artifacts/scoring/<version>/`(Git 제외, 현재 `scoring-v2`) | `scripts/scoring/*.py`. 릴리스 CLI는 `config/scoring/scoring.json`의 `output_dir`을 쓴다 |
 | 학습 | `model/`, 가상환경 `model/.venv` | 인수인계서 1 |
 
 요청 한 번의 흐름: 화면이 세션·오늘 문제·공개 manifest를 받는다. 모델 릴리스면 브라우저가 모델을 받아 해시를 확인한다. 그림을 64px로 렌더해 추론하고, 후보별 확률을 합산한 Top-3를 보낸다. 서버는 릴리스 비공개 자료(점수표·판정 기준)로 판정하고 한 트랜잭션에 기록한다. 계약 상세는 [API 계약](../api-contract-v1.md)과 [DB 스키마](../database-schema-v1.md)다.
@@ -54,7 +54,8 @@ cd backend && python -m alembic upgrade head
 | `dev-release-v1` | 모델 없음(개발 패널), 영어 이름 없음 | 2026-09-24 ~ 09-26 |
 | `dev-release-v2` | 모델 없음(개발 패널), 영어 이름 포함 | 2026-09-27 ~ 10-05 |
 | `model-dev-e10-v1` | epoch 10 모델, T 1.036, 기준: 성공 p1 ≥ 0.9 / 보류 p1 < 0.15 | 2026-10-06(플레이돼서 남음) |
-| `model-dev-e20-v1` | epoch 20 모델(최종), T 1.093, 기준: 성공 p1 ≥ 0.85 / 보류 p1 < 0.15 | **2026-10-07 ~ 11-04** |
+| `model-dev-e20-v1` | epoch 20 모델(최종), T 1.093, 기준: 성공 p1 ≥ 0.85 / 보류 p1 < 0.15, 카테고리 v1.1·`scoring-v1` | 없음(v2로 옮김) |
+| `model-dev-e20-v2` | `model-dev-e20-v1`과 같은 모델·기준, 카테고리 v1.2(통합 14, 데일리 312)·`scoring-v2` | **2026-10-07 ~ 11-04** |
 
 문제 일정은 11-04까지다. 그 뒤에는 오늘 문제가 없어 화면에 "오늘의 문제가 아직 준비되지 않았어요"가 뜬다. 연장하려면 `python -m app.cli schedule --days 30 --release-id <릴리스>`를 쓴다(기본 릴리스는 `dev-release-v2`라 개발 패널 문제가 생긴다).
 
@@ -79,7 +80,7 @@ cd backend && python -m alembic upgrade head
 
 - 설정은 `config/scoring/scoring.json`(축 가중치, IDF, 계열 부분 점수, 연상 보정), 근거는 [점수 계산 규칙](../scoring-v1.md)이다.
 - 바꿀 때는 `version`과 `output_dir`을 새로 정하고(예: `scoring-v2`), `build_score_table.py` → `check_score_table.py`로 무결성과 데일리 후보의 가까운 카테고리를 확인한다.
-- **함정**: `backend/app/cli.py`의 `SCORE_TABLE_DIR`가 `data/artifacts/scoring/scoring-v1`로 고정돼 있다. 새 점수 버전으로 릴리스를 만들려면 이 경로를 바꾸거나 인자로 받게 고쳐야 한다.
+- `backend/app/cli.py`의 `SCORE_TABLE_DIR`는 `scoring.json`의 `output_dir`을 따른다(2026-10-06 고침). 새 점수 버전을 만들면 릴리스 CLI도 그 표를 쓴다. 이미 등록된 릴리스는 자기 `private/score-table.npz` 사본을 쓰므로 영향이 없다.
 - 점수만 바꿀 때는 모델을 다시 학습하지 않는다(기획서 원칙).
 
 ### 3.3 카테고리(통합·데일리 후보)
@@ -87,6 +88,8 @@ cd backend && python -m alembic upgrade head
 - 설정은 `config/model/catalog-curation-v1.json`, 근거는 [카테고리 정리](../catalog-curation-v1.md)다. 대표 ID 합산, 미지원 `bird`, 데일리 후보 여부를 담는다.
 - 데일리 후보에서만 빼는 일(`daily_candidate`)은 비교적 가볍다. 버전을 올린 뒤 새 릴리스와 `schedule`로 반영한다. 이미 잡힌 문제의 정답은 `set-answer`로 바꿀 수 있다(플레이 전만).
 - 통합(service_id)을 바꾸면 후보 목록·점수표 ID·브라우저 합산이 모두 바뀐다. 카탈로그 버전, 점수표, 새 릴리스를 함께 다시 만든다. 모델 출력 345개는 그대로라 재학습은 필요 없다.
+- 2026-10-06 v1.2 적용 순서(예시): 정리 파일 수정(`version`·`counts`·`daily_overrides`, `tests/test_catalog_curation.py`의 보류 목록) → `scoring.json`의 `version`·`output_dir`을 `scoring-v2`로 → `build_score_table.py` → `check_score_table.py` → `calibrate`·`evaluate`(통합 뒤 확신도 확인) → `build-model-release --release-id model-dev-e20-v2` → 일정에 든 문제 중 빠진 정답 확인(이번에는 없었음) → `assign-release`.
+- **함정**: 릴리스를 다시 만들 때는 항상 새 `--release-id`를 쓴다. 같은 ID로 다시 실행하면 공개 manifest가 같을 경우 비공개 파일(점수표·판정 기준·정답)을 덮어쓴 뒤 해시 검사에서 막혀, 기존 릴리스가 깨질 수 있다.
 
 ### 3.4 문제 일정·정답 (개발)
 
@@ -161,10 +164,10 @@ cd backend && python -m alembic upgrade head
 
 ## 8. 커밋 상태와 남은 일
 
-- 마지막 코드 커밋 `61a46d9`: 모델 학습·평가·ONNX 도구, 브라우저 추론, 모델 릴리스 CLI, 인수인계서. 그 뒤로는 epoch 20 결과에 맞춰 문서만 고쳤다. 본 학습 완료와 `model-dev-e20-v1` 등록·배정은 Git 제외 산출물과 개발 DB에만 있다.
+- 마지막 코드 커밋 `61a46d9`: 모델 학습·평가·ONNX 도구, 브라우저 추론, 모델 릴리스 CLI, 인수인계서. 그 뒤로는 epoch 20 결과 문서, 카테고리 정리 v1.2(정리 파일·테스트·점수 설정·릴리스 CLI 점수표 경로)를 고쳤다. 릴리스 등록·배정은 Git 제외 산출물과 개발 DB에, 공개 manifest만 Git에 있다.
 - 커밋·푸시는 사용자 확인 후에만 한다.
 - 남은 일과 결정
-    - 운영용 판정 기준 목표, 어려운 데일리 정답 처리: 인수인계서 1 §7(테스트 분할 최종 평가는 끝남, 다시 쓰지 않는다)
+    - 운영용 판정 기준 목표: 인수인계서 1 §7(테스트 분할 최종 평가는 끝남, 다시 쓰지 않는다)
+    - 어려운 데일리 정답은 카테고리 정리 v1.2로 처리했다. 성공률 5~10%인 10개는 실제 플레이 정답률(`metrics`)을 보고 다시 정한다
     - 10-07 문제가 열리면 실제 게임 화면에서 epoch 20 판정 흐름 확인(브라우저 단독 비교는 끝남, 인수인계서 1 §5)
-    - 점수표 경로 하드코딩 정리(§3.2)
     - 운영 배포 설계와 수집 기능

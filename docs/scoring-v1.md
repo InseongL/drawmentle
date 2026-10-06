@@ -2,6 +2,8 @@
 
 기준: [기획서 v3.2](<../AI 스케치 게임 서비스 기획서 v3.2.md>) §7(유사도와 내부 순위), [속성 사전 v3](attribute-dictionary.md), [카테고리 정리 v1.1](catalog-curation-v1.md). 작성일: 2026-09-25. 상태: 초안.
 
+> **scoring-v2 (2026-10-06)**: 규칙·설정은 이 문서 그대로이고 입력 카테고리만 [카테고리 정리 v1.2](catalog-curation-v1.md)로 바뀌었다. 점수 지원 카테고리가 330개(N=330)가 되어 IDF와 연상 보정 기준(0.084 / 0.529)이 조금 달라졌고 모든 점수가 약간씩 바뀐다. 아래 수치는 scoring-v1(334개) 기준이다.
+
 보류·성공 판정은 [판정 기준 v1](judging-criteria-v1.md)을 따른다. 이 문서는 점수만 다룬다.
 
 설정: [scoring.json](../config/scoring/scoring.json) · 계산 함수: [similarity.py](../backend/app/modules/judging/similarity.py), [scorer.py](../backend/app/modules/judging/scorer.py) · 도구: [scripts/scoring](../scripts/scoring/)

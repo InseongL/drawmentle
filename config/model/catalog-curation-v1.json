@@ -1,7 +1,7 @@
 {
-  "version": "catalog-curation-v1.1",
+  "version": "catalog-curation-v1.2",
   "status": "draft",
-  "decided_at": "2026-09-23",
+  "decided_at": "2026-10-06",
   "source_catalog": {
     "file": "data/quickdraw/metadata/labels.json",
     "version": "qd-categories-v1",
@@ -12,7 +12,7 @@
     "attributes": "data/attributes/draft-v3/dictionary.json (sketch-attributes-v3)",
     "tag_similarity": "모듈별 태그 multi-hot 코사인의 평균. 두 대상 모두 known인 축만 사용한다.",
     "samples": "data/quickdraw/previews (라벨별 20장)",
-    "recognition_model": null
+    "recognition_model": "mobilenet_v3_small-20261001-093849-e20 (qd-10k-64-v1 검증 분할 344,327장, T 1.093, 성공 기준 p1 ≥ 0.85)"
   },
   "model_handling": {
     "raw_outputs": 345,
@@ -27,17 +27,18 @@
     "same_or_subtype": "같은 개념이거나 한쪽이 다른 쪽의 하위 종류다. 부분을 전체로 인정하는 규칙은 part_as_whole로 구분한다.",
     "no_sketch_difference": "태그 유사도와 미리보기만으로 구분 불가를 확정할 수 없다. 별개 개념의 통합은 보류하고 원본 후보를 유지한다.",
     "broad_parent": "넓은 상위 개념은 점수·정답에서 제외할 수 있지만 인식 확률과 후보에는 남긴다.",
-    "part_as_whole": "그림 구분 불가능의 증명이 아니라 부분을 전체의 정답으로도 인정하는 게임 규칙 초안이다. 양방향 혼동과 부분 그림의 성공 허용은 출시 전 검증한다."
+    "part_as_whole": "그림 구분 불가능의 증명이 아니라 부분을 전체의 정답으로도 인정하는 게임 규칙 초안이다. 양방향 혼동과 부분 그림의 성공 허용은 출시 전 검증한다.",
+    "model_confusion": "인식 모델이 두 개념을 서로 많이 헷갈려, 1위로 맞혀도 확률을 나눠 가져 성공 확신도에 닿지 못한다. 그림으로 구분되지 않는다는 근거로 보고 통합해 서로의 그림을 정답으로 인정한다."
   },
   "counts": {
     "raw_classes": 345,
-    "inference_candidates": 335,
-    "service_categories": 334,
-    "merged_away": 10,
+    "inference_candidates": 331,
+    "service_categories": 330,
+    "merged_away": 14,
     "dropped": 0,
     "unsupported_candidates": 1,
-    "daily_candidates": 323,
-    "held_merge_groups": 6
+    "daily_candidates": 312,
+    "held_merge_groups": 3
   },
   "groups": [
     {
@@ -84,18 +85,29 @@
     },
     {
       "id": "bowed_string",
-      "decision": "hold",
-      "criterion": "no_sketch_difference",
+      "decision": "merge",
+      "keep": "violin",
+      "remove": [
+        "cello"
+      ],
+      "criterion": "model_confusion",
       "tag_similarity": {
         "violin~cello": 0.96
       },
-      "reason_ko": "첼로와 바이올린은 별개 악기다. 크기·받침 등 구분 단서의 사용 여부를 태그와 20장 표본만으로 확정할 수 없어 통합을 보류한다.",
-      "proposed_keep": "violin",
-      "members": [
-        "violin",
-        "cello"
-      ],
-      "previous_decision": "merge"
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "confusion": {
+          "violin->cello": 0.184,
+          "cello->violin": 0.068
+        },
+        "success_rate_at_0_85": {
+          "violin": 0.078,
+          "cello": 0.071,
+          "merged": 0.274
+        }
+      },
+      "reason_ko": "모델이 바이올린을 첼로로 18% 헷갈려 둘 다 성공률이 7~8%다. 통합하면 27%가 된다. 크기·받침 단서가 Quick Draw 그림에서는 잘 드러나지 않았다. 바이올린 정답에 첼로 그림을 인정한다. 기타는 별개 악기로 유지한다(reviewed_and_kept).",
+      "previous_decision": "hold"
     },
     {
       "id": "small_berry",
@@ -127,18 +139,29 @@
     },
     {
       "id": "pencil",
-      "decision": "hold",
-      "criterion": "no_sketch_difference",
+      "decision": "merge",
+      "keep": "pencil",
+      "remove": [
+        "crayon"
+      ],
+      "criterion": "model_confusion",
       "tag_similarity": {
         "pencil~crayon": 0.9
       },
-      "reason_ko": "크레용과 연필은 별개 도구다. 태그 공유만으로 형태 구분 불가나 정답 상호 인정이 입증되지 않아 통합을 보류한다.",
-      "proposed_keep": "pencil",
-      "members": [
-        "pencil",
-        "crayon"
-      ],
-      "previous_decision": "merge"
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "confusion": {
+          "pencil->crayon": 0.142,
+          "crayon->pencil": 0.119
+        },
+        "success_rate_at_0_85": {
+          "pencil": 0.102,
+          "crayon": 0.082,
+          "merged": 0.311
+        }
+      },
+      "reason_ko": "모델이 연필과 크레용을 서로 12~14% 헷갈려 둘 다 성공률이 8~10%다. 통합하면 31%가 된다. 연필 정답에 크레용 그림을 인정한다.",
+      "previous_decision": "hold"
     },
     {
       "id": "foot",
@@ -224,18 +247,29 @@
     },
     {
       "id": "whirlwind",
-      "decision": "hold",
-      "criterion": "no_sketch_difference",
+      "decision": "merge",
+      "keep": "tornado",
+      "remove": [
+        "hurricane"
+      ],
+      "criterion": "model_confusion",
       "tag_similarity": {
         "tornado~hurricane": 0.74
       },
-      "reason_ko": "허리케인의 원형 소용돌이와 토네이도의 깔때기 윤곽은 구분 단서가 될 수 있어 통합을 보류한다.",
-      "proposed_keep": "tornado",
-      "members": [
-        "tornado",
-        "hurricane"
-      ],
-      "previous_decision": "merge"
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "confusion": {
+          "tornado->hurricane": 0.251,
+          "hurricane->tornado": 0.293
+        },
+        "success_rate_at_0_85": {
+          "tornado": 0.013,
+          "hurricane": 0.01,
+          "merged": 0.583
+        }
+      },
+      "reason_ko": "모델이 허리케인과 토네이도를 서로 25~29% 헷갈려 둘 다 성공률이 1% 안팎이다. 통합하면 58%가 된다. 소용돌이·깔때기 단서가 Quick Draw 그림에서는 구분 단서로 작동하지 않았다. 토네이도 정답에 허리케인 그림을 인정한다.",
+      "previous_decision": "hold"
     },
     {
       "id": "leg",
@@ -249,6 +283,28 @@
         "leg~knee": 0.47
       },
       "reason_ko": "부분을 그려도 전체 정답으로 인정하는 게임 규칙 초안으로 통합을 유지한다. 그림 구분 불가능이나 낮은 태그 유사도의 원인이 입증된 것은 아니며 출시 전 검증한다."
+    },
+    {
+      "id": "two_wheeler",
+      "decision": "merge",
+      "keep": "bicycle",
+      "remove": [
+        "motorbike"
+      ],
+      "criterion": "model_confusion",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "confusion": {
+          "bicycle->motorbike": 0.139,
+          "motorbike->bicycle": 0.269
+        },
+        "success_rate_at_0_85": {
+          "bicycle": 0.271,
+          "motorbike": 0.202,
+          "merged": 0.765
+        }
+      },
+      "reason_ko": "모델이 오토바이를 자전거로 27%, 자전거를 오토바이로 14% 헷갈려 성공률이 20~27%다. 통합하면 77%가 된다. 바퀴 두 개 탈것이라는 그림이 같다. 자전거 정답에 오토바이 그림을 인정한다."
     },
     {
       "id": "generic_bird",
@@ -436,6 +492,83 @@
       "catalog_daily_status": "exclude_proposed",
       "daily_candidate": true,
       "reason_ko": "기호이지만 얼굴이라는 구체적 대상으로 인식되고 그리기 쉽다. 사용자 결정(2026-09-23)으로 정답 후보에 넣는다."
+    },
+    {
+      "category_id": "marker",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 0.3%(1위 22%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.003,
+        "top1": 0.224
+      }
+    },
+    {
+      "category_id": "pond",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 0.9%(1위 40%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.009,
+        "top1": 0.404
+      }
+    },
+    {
+      "category_id": "pool",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 4.2%(1위 28%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.042,
+        "top1": 0.281
+      }
+    },
+    {
+      "category_id": "bear",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 2.2%(1위 27%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.022,
+        "top1": 0.273
+      }
+    },
+    {
+      "category_id": "garden_hose",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 2.3%(1위 29%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.023,
+        "top1": 0.293
+      }
+    },
+    {
+      "category_id": "aircraft_carrier",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 2.5%(1위 30%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.025,
+        "top1": 0.305
+      }
+    },
+    {
+      "category_id": "cooler",
+      "catalog_daily_status": "candidate_unvalidated",
+      "daily_candidate": false,
+      "reason_ko": "그림 한 장 성공률이 4.1%(1위 38%)로 통합해도 나아지지 않는다. 인식 후보와 점수에는 남기고 정답에서만 뺀다. 사용자 결정(2026-10-06).",
+      "model_evidence": {
+        "recognition_model": "epoch 20",
+        "success_rate_at_0_85": 0.041,
+        "top1": 0.377
+      }
     }
   ],
   "categories": {
@@ -444,7 +577,7 @@
       "display_name_ko": "항공모함",
       "service_id": "aircraft_carrier",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "airplane": {
       "class_index": 1,
@@ -607,7 +740,7 @@
       "display_name_ko": "곰",
       "service_id": "bear",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "beard": {
       "class_index": 24,
@@ -650,7 +783,8 @@
       "display_name_ko": "자전거",
       "service_id": "bicycle",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": true,
+      "curation_group": "two_wheeler"
     },
     "binoculars": {
       "class_index": 30,
@@ -914,9 +1048,9 @@
     "cello": {
       "class_index": 66,
       "display_name_ko": "첼로",
-      "service_id": "cello",
-      "scoring": true,
-      "daily_candidate": true,
+      "service_id": "violin",
+      "scoring": false,
+      "daily_candidate": false,
       "curation_group": "bowed_string"
     },
     "cell_phone": {
@@ -1010,7 +1144,7 @@
       "display_name_ko": "아이스박스",
       "service_id": "cooler",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "couch": {
       "class_index": 80,
@@ -1036,9 +1170,9 @@
     "crayon": {
       "class_index": 83,
       "display_name_ko": "크레용",
-      "service_id": "crayon",
-      "scoring": true,
-      "daily_candidate": true,
+      "service_id": "pencil",
+      "scoring": false,
+      "daily_candidate": false,
       "curation_group": "pencil"
     },
     "crocodile": {
@@ -1358,7 +1492,7 @@
       "display_name_ko": "정원 호스",
       "service_id": "garden_hose",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "giraffe": {
       "class_index": 129,
@@ -1546,9 +1680,9 @@
     "hurricane": {
       "class_index": 155,
       "display_name_ko": "허리케인",
-      "service_id": "hurricane",
-      "scoring": true,
-      "daily_candidate": true,
+      "service_id": "tornado",
+      "scoring": false,
+      "daily_candidate": false,
       "curation_group": "whirlwind"
     },
     "ice_cream": {
@@ -1726,7 +1860,7 @@
       "display_name_ko": "마커펜",
       "service_id": "marker",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "matches": {
       "class_index": 181,
@@ -1787,9 +1921,10 @@
     "motorbike": {
       "class_index": 189,
       "display_name_ko": "오토바이",
-      "service_id": "motorbike",
-      "scoring": true,
-      "daily_candidate": true
+      "service_id": "bicycle",
+      "scoring": false,
+      "daily_candidate": false,
+      "curation_group": "two_wheeler"
     },
     "mountain": {
       "class_index": 190,
@@ -2066,14 +2201,14 @@
       "display_name_ko": "연못",
       "service_id": "pond",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "pool": {
       "class_index": 229,
       "display_name_ko": "수영장",
       "service_id": "pool",
       "scoring": true,
-      "daily_candidate": true
+      "daily_candidate": false
     },
     "popsicle": {
       "class_index": 230,
@@ -2887,5 +3022,5 @@
       "daily_candidate": false
     }
   },
-  "previous_version": "catalog-curation-v1"
+  "previous_version": "catalog-curation-v1.1"
 }

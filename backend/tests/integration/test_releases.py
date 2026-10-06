@@ -86,7 +86,8 @@ class ModelReleaseTest(unittest.TestCase):
             self.assertEqual((context.rules.version, context.rules.success_min_p, context.rules.min_top1_p),
                              ("test-recognition-v1", 0.9, 0.15))
             self.assertEqual(context.catalog.manifest.model["temperature"], 1.25)
-            self.assertEqual(len(context.catalog.candidate_index), 335)
+            self.assertEqual(len(context.catalog.candidate_index),
+                             cli.read_json(cli.CURATION)["counts"]["inference_candidates"])
         published = self.root / "frontend/public/models/test-model-e1/model.onnx"
         self.assertEqual(published.read_bytes(), (model_dir / "model.onnx").read_bytes())
 

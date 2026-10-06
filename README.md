@@ -12,7 +12,7 @@
 
 판정: [판정 기준 v1](docs/judging-criteria-v1.md) — 요청 검사 → 보류 → 점수 → 성공 순서와 정답 인정 범위. 인식·성공 임계값은 모델 평가 후 정한다.
 
-점수 계산: [점수 계산 규칙 v1](docs/scoring-v1.md) — 속성 태그 3축(분류·형태·기능) + 영어 라벨 단어 벡터 연상 1축. `scripts/scoring`으로 334×334 점수표를 만들고 검사한다.
+점수 계산: [점수 계산 규칙 v1](docs/scoring-v1.md) — 속성 태그 3축(분류·형태·기능) + 영어 라벨 단어 벡터 연상 1축. `scripts/scoring`으로 점수표(현재 `scoring-v2`, 330×330)를 만들고 검사한다.
 
 구현 기준: [게임 API 계약](docs/api-contract-v1.md) · [DB 스키마와 트랜잭션](docs/database-schema-v1.md) · [합성 제출 사례 14개](contracts/fixtures/submission-cases.json)
 
@@ -24,7 +24,7 @@
 
 모듈 의존성, 요청 재시도·같은 그림 중복 처리, 수집 동의 리비전, 업로드 실패와 게임 결과의 분리까지 설계했다. `.gitignore`는 사용자 그림·내부 데이터셋 manifest·모델/점수 산출물을 기본 제외하고 명시된 공개 요약만 허용한다. 아직 운영 임계값·점수 범위·수집 비율·보관 기간은 확정하지 않았다.
 
-카테고리 정리: [통합·보류 판단과 적용 규칙](docs/catalog-curation-v1.md). 검토 반영 버전 `catalog-curation-v1.1`은 345개 원본을 인식 후보 335개로 묶는다(통합 10, 별개 개념 6쌍 통합 보류). 점수 지원 초안은 334개, 데일리 후보는 323개다. `bird`는 확률을 유지하는 미지원 후보로 남기며 Top-3에 있으면 판정을 보류한다. 매핑은 [catalog-curation-v1.json](config/model/catalog-curation-v1.json)에 있다.
+카테고리 정리: [통합·보류 판단과 적용 규칙](docs/catalog-curation-v1.md). 현재 버전 `catalog-curation-v1.2`는 345개 원본을 인식 후보 331개로 묶는다(통합 14, 별개 개념 3쌍 통합 보류). 점수 지원 초안은 330개, 데일리 후보는 312개다. v1.2는 인식 모델이 많이 헷갈리는 짝 4개를 통합하고 인식이 너무 어려운 7개를 정답에서 뺐다. `bird`는 확률을 유지하는 미지원 후보로 남기며 Top-3에 있으면 판정을 보류한다. 매핑은 [catalog-curation-v1.json](config/model/catalog-curation-v1.json)에 있다.
 
 ## 로컬 실행
 

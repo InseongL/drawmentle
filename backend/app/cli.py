@@ -35,7 +35,8 @@ from app.modules.releases.artifact_loader import ArtifactLoader, canonical_sha25
 from app.modules.releases.service import register
 
 DEV_RELEASE_ID = "dev-release-v2"  # v2 adds English category names; v1 stays for puzzles already played
-SCORE_TABLE_DIR = REPO_ROOT / "data/artifacts/scoring/scoring-v1"
+SCORING_CONFIG = REPO_ROOT / "config/scoring/scoring.json"
+SCORE_TABLE_DIR = REPO_ROOT / json.loads(SCORING_CONFIG.read_text(encoding="utf-8-sig"))["output_dir"]
 RECOGNITION = REPO_ROOT / "config/scoring/recognition.json"
 CURATION = REPO_ROOT / "config/model/catalog-curation-v1.json"
 LABELS = REPO_ROOT / "data/quickdraw/metadata/labels.json"
